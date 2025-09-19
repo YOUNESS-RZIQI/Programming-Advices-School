@@ -1,0 +1,26 @@
+The 1 one and the last one hhhhh : 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+	string FirstName, LastName;
+
+	cout << "First : \n";
+	cin >> FirstName;
+	
+	
+	cout << "Last  : \n";
+	cin.ignore(1,'\n');
+	getline(cin, LastName);
+	
+
+	cout << FirstName << "\n";
+	cout << LastName << endl;
+
+
+	return 0;
+}

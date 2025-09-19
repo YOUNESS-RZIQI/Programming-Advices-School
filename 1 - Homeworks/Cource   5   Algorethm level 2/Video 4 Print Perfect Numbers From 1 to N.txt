@@ -1,0 +1,70 @@
+
+#include <iostream>
+using namespace std;
+
+
+int Enter_Positive_Number(string Message)
+{
+
+	int Num;
+
+	do
+	{
+
+		cout << Message;
+		cin >> Num;
+		cout << endl;
+
+
+	} while (Num <= 0);
+
+
+	return Num;
+
+}
+
+bool Check_Perfect_Number_or_Not(int Num)
+{
+
+	int Sum = 0;
+	
+		for (int i = 1; i <= Num / 2; i++)
+		{
+
+			if (Num % i == 0)
+			{
+				Sum += i;
+			}
+
+		}
+	
+
+	return Num == Sum;
+}
+
+void Print_Perfect_Number_From_1_to(int Num)
+{
+
+
+	for ( int i = 1 ; i<=Num ; i++)
+	{
+
+		if (Check_Perfect_Number_or_Not(i))
+		{
+
+			cout << i  << endl;
+
+		}
+	}
+
+}
+
+int main()
+{
+
+	Print_Perfect_Number_From_1_to(Enter_Positive_Number("Please enter a Number : "));
+
+	return 0;
+}
+
+

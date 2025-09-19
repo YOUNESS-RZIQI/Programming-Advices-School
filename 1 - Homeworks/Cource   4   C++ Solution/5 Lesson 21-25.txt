@@ -1,0 +1,340 @@
+The 21 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float Enter_Area_Circumference()
+{
+
+	float L;
+
+
+	cout << "please Enter ! Circumference ![ L ]  Here : ";
+	cin >> L;
+
+
+	return L;
+}
+
+float Calculat_Circle_Area_By_Circumference(float L)
+{
+
+	float Area;
+	const float PI = 3.141592653589793238;
+	Area = pow(L,2) / (4*PI) ;
+
+	return Area;
+
+}
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	Print_Reslut(Calculat_Circle_Area_By_Circumference(Enter_Area_Circumference()));
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 22 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+struct stInfo
+{
+	float a, b;
+};
+
+stInfo Enter_Area_By_Isoscels_Triangle()
+{
+
+	stInfo Info;
+
+
+	cout << "please Enter  [ a ]  Here : ";
+	cin >> Info.a;
+
+	cout << "please Enter  [ b ]  Here : ";
+	cin >> Info.b;
+
+
+	return Info;
+}
+
+float Calculat_Circle_Area_By_Isoscels_Triangle(stInfo Info )
+{
+
+	float Area;
+	const float PI = 3.141592653589793238;
+
+	Area = ( PI * ( pow(Info.b , 2) / 4 ) * ( (2*Info.a-Info.b) / (2 * Info.a + Info.b)  ) ) ;
+
+	return Area;
+
+}
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	Print_Reslut(Calculat_Circle_Area_By_Isoscels_Triangle(Enter_Area_By_Isoscels_Triangle()));
+
+	return 0;
+}
+
+
+
+The 22' one : 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
+void Enter_Area_By_Isoscels_Triangle(float &a , float &b)
+{
+
+	cout << "please Enter  [ a ]  Here : ";
+	cin >> a;
+
+	cout << "please Enter  [ b ]  Here : ";
+	cin >> b;
+	
+}
+
+float Calculat_Circle_Area_By_Isoscels_Triangle(float a, float b)
+{
+
+	float Area;
+	const float PI = 3.141592653589793238;
+
+	Area = ( PI * ( pow(b , 2) / 4 ) * ( (2*a-b) / (2 * a + b)  ) ) ;
+
+	return Area;
+
+}
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	float a, b;
+
+	Enter_Area_By_Isoscels_Triangle(a, b);
+	Print_Reslut(Calculat_Circle_Area_By_Isoscels_Triangle(a,b));
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 23 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+
+void Enter_Area_By_Arbitrary_Triangle(float &a , float &b , float &c)
+{
+
+	cout << "please Enter  [ a ]  Here : ";
+	cin >> a;
+
+	cout << "please Enter  [ b ]  Here : ";
+	cin >> b;
+
+	cout << "please Enter  [ c ]  Here : ";
+	cin >> c;
+	
+}
+
+float Calculat_Circle_Area_By_Arbitrary_Triangle(float a, float b , float c)
+{
+
+	float Area,P , HI;
+	const float PI = 3.141592653589793238;
+
+	P = (a + b + c) / 2;
+
+	HI = (a * b * c) / (4 * sqrt(P * (P - a) * (P - b) * (P - c))) ;
+
+	Area = PI * pow(HI, 2);
+
+
+	return Area;
+
+}
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	float a, b , c;
+
+	Enter_Area_By_Arbitrary_Triangle(a, b ,c);
+	Print_Reslut(Calculat_Circle_Area_By_Arbitrary_Triangle(a,b,c));
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The 24 one :   Number between    ? to ? !!!!!
+
+
+
+
+#include <iostream>
+using namespace std;
+
+float Enter_Age()
+{
+
+	float Age;
+
+	cout << "   Please Enter A Age Between 18-45 : ";
+	cin >> Age;
+
+	return Age;
+}
+
+
+float Number_In_Ranege(float Num, float From, float To)
+{
+	return (Num >= From && Num <= To);
+}
+
+
+
+void Print_Age_Result(float Age)
+{
+
+	if (Number_In_Ranege(Age, 18, 45))
+		cout << "    The " << Age << " is Valid Age \n\n";
+	else
+		cout << "    The  " << Age << " is Invalid Age \n\n";
+
+}
+
+
+
+int main()
+{
+
+	Print_Age_Result(Enter_Age());
+	
+	return 0;
+}
+
+
+
+
+
+The 25 one : 
+
+
+#include <iostream>
+using namespace std;
+
+float Enter_Age()
+{
+
+	float Age;
+
+	cout << "   Please Enter A Age Between 18-45 : ";
+	cin >> Age;
+
+	return Age;
+}
+
+bool Number_In_Ranege(float Num, float From, float To)
+{
+	return (Num >= From && Num <= To);
+}
+
+float Stay_Intil_True(float From, float To)
+{
+
+	float Age;
+
+	do
+	{
+		
+		Age = Enter_Age();
+	
+	} while (!Number_In_Ranege(Age, From, To));
+
+	return Age;
+
+}
+
+void Print_Age_Result(float Age)
+{
+	
+	cout << "    Your Age is " << Age << "\n\n";
+
+}
+
+
+
+int main()
+{
+
+	Print_Age_Result(Stay_Intil_True(18,45));
+	
+	return 0;
+}
+
+

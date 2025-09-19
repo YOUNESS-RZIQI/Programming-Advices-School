@@ -1,0 +1,179 @@
+
+
+
+
+My Version :
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+struct st_Client_Info
+{
+	string Account_Number;
+	string Pin_Code;
+	string Full_Name;
+	string Phone_Number;
+	string Account_Balance;
+
+};
+
+string Join_String(vector <string>& vNames, const string& delim)
+{
+
+	string S1 = "";
+
+	for (string& s : vNames)
+	{
+		S1 = S1 + s + delim;
+	}
+
+	return S1.substr(0, S1.length() - delim.length());
+}
+
+string Convert_Recorde_to_Line(const st_Client_Info & Client_Info)
+{
+
+	vector <string> vClient_Info;
+
+	vClient_Info.push_back(Client_Info.Account_Number);
+	vClient_Info.push_back(Client_Info.Pin_Code);
+	vClient_Info.push_back(Client_Info.Full_Name);
+	vClient_Info.push_back(Client_Info.Phone_Number);
+	vClient_Info.push_back(Client_Info.Account_Balance);
+
+
+	return Join_String(vClient_Info, "#//#");
+}
+
+st_Client_Info Read_New_Client()
+{
+
+	st_Client_Info Client_Info;
+
+	cout << "\n                                   B A N Q U E\n\n\n";
+
+	Client_Info.Account_Number = Input_Lib::Ask_for_string("Account Number  : ");
+	Client_Info.Pin_Code = Input_Lib::Ask_for_string("Pin Code        : ");
+	Client_Info.Full_Name = Input_Lib::Ask_for_string("Full Name       : ");
+	Client_Info.Phone_Number = Input_Lib::Ask_for_string("Phone Number    : ");
+	Client_Info.Account_Balance = Input_Lib::Ask_for_string("Account Balance : ");
+
+	return Client_Info;
+
+}
+
+int main()
+{
+	st_Client_Info Client_Info;
+	Client_Info = Read_New_Client();
+
+
+	cout << "\n\nResult of Converting Recorde to Line : \n\n";
+	cout << Convert_Recorde_to_Line(Client_Info) << "\n\n";
+
+
+	system("pause>0");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Teacher Version :
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+struct st_Client_Info
+{
+	string Account_Number;
+	string Pin_Code;
+	string Full_Name;
+	string Phone_Number;
+	double Account_Balance;
+
+};
+
+string Convert_Record_to_Line(const st_Client_Info & Client_Info , const string & delim = "#//#")
+{
+
+	string Client_Record = "";
+
+	Client_Record += Client_Info.Account_Number  + delim;
+	Client_Record += Client_Info.Pin_Code        + delim;
+	Client_Record += Client_Info.Full_Name       + delim;
+	Client_Record += Client_Info.Phone_Number    + delim;
+	Client_Record += to_string(Client_Info.Account_Balance);
+
+
+	return Client_Record;
+}
+
+st_Client_Info Read_New_Client()
+{
+
+	st_Client_Info Client_Info;
+
+	cout << "\n                          B A N Q U E\n\n\n";
+
+	Client_Info.Account_Number = Input_Lib::Ask_for_string("Account Number  : ");
+	Client_Info.Pin_Code = Input_Lib::Ask_for_string("Pin Code        : ");
+	Client_Info.Full_Name = Input_Lib::Ask_for_string("Full Name       : ");
+	Client_Info.Phone_Number = Input_Lib::Ask_for_string("Phone Number    : ");
+	cout << "Account Balance : ";
+	cin >> Client_Info.Account_Balance;
+
+
+	return Client_Info;
+
+}
+
+int main()
+{
+	st_Client_Info Client_Info;
+	Client_Info = Read_New_Client();
+
+
+	cout << "\n\nResult of Converting Recorde to Line : \n\n";
+	cout << Convert_Record_to_Line(Client_Info) << "\n\n";
+
+
+	system("pause>0");
+}

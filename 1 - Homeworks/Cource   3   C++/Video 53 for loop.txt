@@ -1,0 +1,702 @@
+The 0 one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+void Text_Question()
+{
+
+	cout << "       Dear User this is the Operation of Addition the all odd Numbers that exist in the Number that you well choose \n";
+	cout << "                                         So choose a Number ( !! only positive Number!! ): ";
+
+}
+
+void Asking_for_Input(int &i)
+{
+
+	cin >> i;
+	cout << endl;
+
+}
+
+void Result(int i)
+{
+
+	if ( abs(i) % 2 == 0)
+	{
+		
+		i = --i;
+
+		for (int t = 0; i >= 0; i = i - 2)
+		{
+
+			 cout << i << endl;
+
+		}
+
+	}
+	else
+	{
+		
+
+		for (int t = 0; i >= 0; i = i - 2)
+		{
+
+			 cout << i << endl;
+
+		}
+
+	}
+
+
+}
+
+void Addition_Odd_Numbers()
+{
+
+	int i;
+
+	Text_Question();
+	Asking_for_Input(i);
+	Result(i);
+
+
+}
+
+
+int main()
+{
+
+	Addition_Odd_Numbers();
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 1 one :    from (.) to 100
+
+
+#include <iostream>
+using namespace std;
+
+void Asking_for_Number_Texte()
+{
+
+	cout << "Printing Numbers from (.) to 100 :\n          (.) = ";
+
+}
+
+void Result_of_Asking()
+{
+	float i;
+	cin >> i;
+
+	for (i; i <= 100; i++)
+	{
+
+		cout << endl << " Allah " << i << endl;
+
+	}
+
+}
+
+void Printing_Numbers_directly()
+{
+
+	
+
+	Asking_for_Number_Texte();
+	Result_of_Asking();
+	
+
+
+}
+
+int main()
+{
+
+
+	Printing_Numbers_directly();
+
+
+
+	return 0;
+}
+
+
+
+The 2 one : from 100 to ?
+
+#include <iostream>
+using namespace std;
+
+void Asking_for_Number_Texte()
+{
+
+	cout << "Printing Numbers from (.) to 100 :\n          (.) = ";
+
+}
+
+void Result_of_Asking()
+{
+	float i;
+	cin >> i;
+
+	for (i; i >= 100; i--)
+	{
+
+		cout << endl << " Allah " << i << endl;
+
+	}
+
+}
+
+void Printing_Numbers_directly()
+{
+
+	
+
+	Asking_for_Number_Texte();
+	Result_of_Asking();
+	
+
+
+}
+
+int main()
+{
+
+
+	Printing_Numbers_directly();
+
+
+
+	return 0;
+}
+
+
+
+
+
+#   26 :   Use Functions & Procedures
+
+
+#include <iostream>
+using namespace std;
+
+void Asking_for_Number_Texte()
+{
+
+	cout << "Printing Numbers from (.) to 100 :\n          (.) = ";
+
+}
+
+void Result_of_Asking()
+{
+	float i;
+	cin >> i;
+	
+
+	for (float t=1; t<= abs(i); t++)
+	{
+
+		cout << endl << t << endl;
+
+	}
+
+}
+
+void Printing_Numbers_directly()
+{
+
+
+
+	Asking_for_Number_Texte();
+	Result_of_Asking();
+
+
+
+}
+
+int main()
+{
+
+
+	Printing_Numbers_directly();
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+#   27 :    Use Functions & Procedures
+
+
+#include <iostream>
+using namespace std;
+
+void Asking_for_Number_Texte(int &i)
+{
+
+	cout << "Printing Numbers from (.) to 1 :\n          (.) = ";
+	
+	cin >> i;
+
+}
+
+void Result_of_Asking(int i)
+{
+	
+	
+	for (int t = 1; i >= t; i--)
+	{
+
+		cout << i << endl;
+
+	}
+
+}
+
+void Printing_Numbers_directly()
+{
+
+	int i;
+
+	Asking_for_Number_Texte(i);
+	Result_of_Asking(i);
+
+
+
+}
+
+int main()
+{
+
+
+	Printing_Numbers_directly();
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+#   28 :    Use Functions & Procedures
+
+
+
+#include <iostream>
+using namespace std;
+
+void Text_Question()
+{
+
+	cout << "       Dear User this is the Operation of Addition the all odd Numbers that exist in the Number that you well choose \n";
+	cout << "                                         So choose a Number ( !! only positive Number!! ): ";
+
+}
+
+void Asking_for_Input(int &i)
+{
+
+	cin >> i;
+	cout << endl;
+
+}
+
+void Result(int i)
+{
+
+	int sum=0;
+	i = abs(i);
+
+
+	for (int t = 1; t <= i; t = t + 2)
+	{
+
+		cout << t << endl;
+		sum = sum + t;
+
+
+	}
+
+	
+	cout << "\n\n The result is : " << sum << endl;
+	
+
+}
+
+void Addition_Odd_Numbers()
+{
+
+	int i;
+
+	Text_Question();
+	Asking_for_Input(i);
+	Result(i);
+
+
+}
+
+
+int main()
+{
+
+	Addition_Odd_Numbers();
+
+	return 0;
+}
+
+
+
+
+
+
+#   29 :    Use Functions & Procedures
+
+
+
+#include <iostream>
+using namespace std;
+
+void Text_Question()
+{
+
+	cout << "       Dear User this is the Operation of Addition the all odd Numbers that exist in the Number that you well choose \n";
+	cout << "                                         So choose a Number ( !! only positive Number!! ): ";
+
+}
+
+void Asking_for_Input(int &i)
+{
+
+	cin >> i;
+	cout << endl;
+
+}
+
+void Result(int i)
+{
+
+	int sum=0;
+	i = abs(i);
+
+
+	for (int t = 0; t <= i; t = t + 2)
+	{
+
+		cout << t << endl;
+		sum = sum + t;
+
+
+	}
+
+	
+	cout << "\n\n The result is : " << sum << endl;
+	
+
+}
+
+void Addition_Odd_Numbers()
+{
+
+	int i;
+
+	Text_Question();
+	Asking_for_Input(i);
+	Result(i);
+
+
+}
+
+
+int main()
+{
+
+	Addition_Odd_Numbers();
+
+	return 0;
+}
+
+
+
+
+
+
+#   30 :  do not validate positive numbers           Use Functions & Procedures
+
+
+
+
+
+
+
+
+
+
+#   32 :    Use Functions & Procedures
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void calculate_Factorial_Function(int i)
+{
+	int sum = 1;
+
+	i = abs(i);
+
+	
+		for (int t = 1; i > t; i--)
+		{
+
+			sum = sum * i;
+
+
+		}
+
+		cout << "\n                      The result is : " << sum << endl;
+
+	
+
+	
+
+
+}
+
+int Cin_Factorial(int& i)
+{
+
+	cin >> i;
+	return i ;
+}
+
+void Asking_for_Factorial()
+{
+
+	cout << "    !! In This Operation We Will Calculate The Factorial Of A Number !!\n";
+	cout << "                      Choose A Number : ";
+
+}
+
+void Calculate_Factorial_Procec()
+{
+
+	int i;
+
+	Asking_for_Factorial();
+
+	Cin_Factorial(i);
+
+	calculate_Factorial_Function(i);
+	
+
+
+
+}
+
+
+
+int main()
+{
+
+
+	Calculate_Factorial_Procec();
+
+
+	return 0;
+}
+
+
+
+
+
+#   46 :  use char(i) function to print the ABCDEF... & abcdef...                  Use Functions & Procedures
+
+
+#include <iostream>
+using namespace std;
+
+void Cout_Letter_Result(char Letter)
+{
+
+	switch (Letter)
+	{
+	case 'A':
+		cout << "               You chosed: A \n";
+		break;
+
+	case 'B':
+		cout << "               You chosed: B \n";
+		break;
+
+	case 'C':
+		cout << "               You chosed: C \n";
+		break;
+
+	case 'D':
+		cout << "               You chosed: D \n";
+		break;
+
+	case 'E':
+		cout << "               You chosed: E \n";
+		break;
+
+	case 'F':
+		cout << "               You chosed: F \n";
+		break;
+
+	case 'G':
+		cout << "               You chosed: G \n";
+		break;
+
+	case 'H':
+		cout << "               You chosed: H \n";
+		break;
+
+	case 'I':
+		cout << "               You chosed: I \n";
+		break;
+
+	case 'J':
+		cout << "               You chosed: J \n";
+		break;
+
+	case 'K':
+		cout << "               You chosed: K \n";
+		break;
+
+
+	case 'a':
+		cout << "               You chosed: a \n";
+		break;
+
+	case 'b':
+		cout << "               You chosed: b \n";
+		break;
+
+	case 'c':
+		cout << "               You chosed: c \n";
+		break;
+
+	case 'd':
+		cout << "               You chosed: d \n";
+		break;
+
+	case 'e':
+		cout << "               You chosed: e \n";
+		break;
+
+	case 'f':
+		cout << "               You chosed: f \n";
+		break;
+
+	case 'g':
+		cout << "               You chosed: g \n";
+		break;
+
+	case 'h':
+		cout << "               You chosed: h \n";
+		break;
+
+	case 'i':
+		cout << "               You chosed: i \n";
+		break;
+
+	case 'j':
+		cout << "               You chosed: j \n";
+		break;
+
+	case 'k':
+		cout << "               You chosed: k \n";
+
+
+	default:
+		cout << "               Invalid choice! \n";
+		break;
+	}
+
+	
+
+
+
+
+
+}
+
+void Cin_Letter(char &Letter)
+{
+
+	cin >> Letter;
+	cout << endl;
+
+}
+
+void Question_Menu_Letter()
+{
+
+	cout << "*************************************************\n";
+	cout << "*                  Choose a Letter              *\n";
+	cout << "*************************************************\n";
+	cout << "*                 A       OR       a            *\n";
+	cout << "*                 B       OR       b            *\n";
+	cout << "*                 C       OR       c            *\n";
+	cout << "*                 D       OR       d            *\n";
+	cout << "*                 E       OR       e            *\n";
+	cout << "*                 F       OR       f            *\n";
+	cout << "*                 J       OR       j            *\n";
+	cout << "*                 H       OR       h            *\n";
+	cout << "*                 I       OR       i            *\n";
+	cout << "*                 G       OR       g            *\n";
+	cout << "*                 K       OR       k            *\n";
+	cout << "*************************************************\n";
+	cout << endl << endl << "               Your choice is : ";
+}
+
+void Which_Letter(char &Letter)
+{
+
+	Question_Menu_Letter();
+	Cin_Letter(Letter);
+	Cout_Letter_Result(Letter);
+
+}
+
+
+
+int main()
+{
+
+	char Letter;
+
+	Which_Letter(Letter);
+
+	return 0;
+}
+
+
+
+
+
+
+

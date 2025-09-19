@@ -1,0 +1,52 @@
+
+
+
+/*
+
+	 It is about void Poiter : it let the ide control which variable Kind to choose ( int , float ... )
+	 but when you want to print the value that the addreess has you need to do casting using this syntax : 
+
+										 *(static_cast<float*>(ptr))
+
+
+*/
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	void * p;
+
+	int   i = 10   ;
+	float f = 10.1 ;
+
+
+
+	p = &i;
+
+	cout << "this is the address of 'i' : " << p << endl;
+	cout << "But if the value we need the casting to int : " << *(static_cast<int*>(p)) << "\n\n";
+
+	
+
+	p = &f;
+
+	cout << "this is the address of 'f' : " << p << endl;
+	cout << "But if the value we need the casting to float : " << *(static_cast<float*>(p)) << "\n\n";
+
+
+
+
+
+	return 0;
+}

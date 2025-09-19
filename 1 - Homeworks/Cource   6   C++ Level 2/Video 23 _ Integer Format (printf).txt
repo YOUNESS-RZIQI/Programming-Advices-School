@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cstdio>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+
+//  %0*d  or  %d
+
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+
+	short Page = 1, Total_Pages = 10;
+
+	printf("Hi there you are in the Page %d / %d \n", Page, Total_Pages);
+	printf("Expacting two degites  : %0*d  \n",2, Page);
+	printf("Expacting two degites  : %02d  \n", Page);
+
+
+	printf("Expacting thre degites : %0*d \n", 3, Page);
+	printf("Expacting thre degites : %03d \n", Page);
+
+
+	printf("Expacting fore degites : %0*d \n", 4, Page);
+	printf("Expacting fore degites : %04d \n", Page);
+
+
+	printf("Expacting five degites : %0*d \n", 5, Page);
+	printf("Expacting five degites : %05d \n\n\n", Page);
+
+
+
+
+	short  Num1 = 10, Num2 = 20, Sum = Num1 + Num2;
+
+
+	printf("The Sum of %d + %d = %d\n\n", Num1, Num2, Sum);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+// if you want to issure two digits int the part of int and float you should print the Num as two number by do this simple caldulation
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+	float Num = 1.1;
+
+	printf("This is the number : %02d.%02d\n", (int)Num, (int)((Num - (int)Num) * 100));
+
+
+
+	return 0;
+}

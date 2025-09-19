@@ -1,0 +1,55 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	vector <int> Numbers;
+
+	Numbers.push_back(10);
+	Numbers.push_back(20);
+	Numbers.push_back(30);
+	Numbers.push_back(40);
+	Numbers.push_back(50);
+
+
+	cout << "\n\nThe First Values : \n\n";
+
+	for (const int& i : Numbers)
+	{
+		cout << i << " ";
+	}
+
+	cout << "\n\nUpdate Values : \n\n";
+
+	for ( int & i : Numbers)
+	{
+		i = 20;
+		cout << i << " ";
+	}
+
+
+	cout << "\n\nUpdate Values : \n\n";
+
+	Numbers[0] = 1;
+	Numbers.at(1) = 2;
+	Numbers.at(2) = 3;
+	Numbers.at(3) = 4;
+	Numbers[4] = 5;
+
+	for (const int & i : Numbers)
+	{
+		cout << i << " ";
+	}
+
+
+	cout << "\n\n\n";
+
+
+
+	return 0;
+}

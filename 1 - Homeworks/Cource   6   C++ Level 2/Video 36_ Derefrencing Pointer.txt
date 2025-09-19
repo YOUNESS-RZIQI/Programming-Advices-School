@@ -1,0 +1,56 @@
+Dereferencing  is to have the pointer and the key (*)  to accesses the valuer that the addressee have ;
+
+
+
+example : 
+
+
+int a = 10 ;
+
+int * p = &a;
+
+to change a value do :        a = 20                 or do   Dereferencing :                      *p = 20
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+
+	int a = 10;
+
+
+	cout << "The value of a : " << a << "\n\n";
+	
+	int* p = &a;
+	
+	cout << "The value of the poiter ( it mains the addressee ) : " << p << "\n\n";
+
+
+	cout << "The value of Dereferencing  : " << *p << "\n\n";
+
+
+	*p = 20;
+
+	cout << "changing a val by *p : " << a << "\n\n";
+	cout << "The value of the poiter ( it mains the addressee ) : " << p << "\n\n";
+
+
+
+	a = 30;
+
+	cout << "changing a val by a : " << a << "\n\n";
+	cout << "The value of the poiter ( it mains the addressee ) : " << p << "\n\n";
+
+
+
+
+	return 0;
+}

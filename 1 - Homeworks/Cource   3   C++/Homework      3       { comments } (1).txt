@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	
+	
+	//The code below will print my name 
+	//on the screen, and it is amazing
+	
+	
+	cout << "Youness Rziqi" << endl;  
+	cout << "There is to many people tha traing to learn programming but they give up \n";
+	cout << "so i will be the extantion and i will kip mouving\n";
+
+	return 0;
+
+
+
+}

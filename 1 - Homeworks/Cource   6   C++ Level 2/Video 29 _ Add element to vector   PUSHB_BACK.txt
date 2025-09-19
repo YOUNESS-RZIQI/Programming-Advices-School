@@ -1,0 +1,117 @@
+
+
+
+// Vector
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include "InputLib.h";
+using namespace std;
+
+
+void Ask_User_for_Num(vector <int> & V_Numbers)
+{
+
+	char IsAgain = 'y';
+
+
+	do
+	{
+
+		V_Numbers.push_back(Input_Lib::Read_Number("Please Enter the Number that you want to add : "));
+
+
+		cout << "\n\nDo you want to add more Number ?   Y / N : ";
+		cin >> IsAgain;
+
+	} while (IsAgain == 'Y' || IsAgain == 'y');
+
+
+}
+
+void Print_Result(const vector <int> &V_Numbers)
+{
+
+	cout << "\n\n" << endl;
+
+	for (const int & N : V_Numbers)
+	{
+
+		cout << N << endl;
+
+	}
+
+	cout << endl;
+
+}
+
+int main()
+{
+
+	vector <int> V_Numbers;
+
+	Ask_User_for_Num(V_Numbers);
+	
+	Print_Result(V_Numbers);
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+// Vector
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+
+
+int main()
+{
+
+	vector <string> V_Numbers = { "10" , "20" , "30" , "40" , "50" };
+
+	cout << "\n\nThe Numbers in the vectoar are : ";
+
+	for (string &Number : V_Numbers)
+	{
+		cout << Number << " ";
+	}
+
+
+	cout << endl;
+
+	return 0;
+}
+
+
+
+
+
+	HOME WORK : 
+
+
+
+
+
+
+
+
+
+

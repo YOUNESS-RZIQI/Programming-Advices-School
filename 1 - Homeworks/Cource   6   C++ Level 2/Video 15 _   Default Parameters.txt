@@ -1,0 +1,27 @@
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+int MySum(int =0, int=0, int=0, int=0);
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+	cout << MySum(1, 2) << endl;
+	cout << MySum(1, 2 , 3) << endl;
+	cout << MySum(1, 2 , 3 , 4) << endl;
+
+	return 0;
+}
+
+int MySum(int a  , int b  , int c  , int d )
+{
+
+	return (a + b + c + d);
+
+}

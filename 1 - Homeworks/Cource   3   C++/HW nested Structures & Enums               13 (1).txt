@@ -1,0 +1,83 @@
+the only project : 
+
+
+            it is about nested Structurs and Enums
+
+
+
+
+#include <iostream>
+using namespace std;
+
+enum enGender { Female, Male };
+enum enFavoritColor { Black , Green, White };
+enum enMaritalStatus { Married , Single };
+
+
+struct stNabers
+{
+	string Left;
+	string Right;
+
+};
+
+
+struct stAddriss
+{
+	string POBox;
+	string Street;
+	stNabers Nabers;
+
+};
+
+
+struct stContact
+{
+
+	string PhoneNumber;
+	string Email;
+	stAddriss Addriss;
+
+};
+
+
+
+
+struct stPerson1
+{
+	string FirsName;
+	string LastName;
+	stContact Contact;
+
+	enGender Gender;
+	enFavoritColor FavoritColor;
+	enMaritalStatus MaritalStatus;
+
+};
+
+
+
+
+
+int main()
+{
+	stPerson1 Person1;
+
+
+	Person1.Contact.Addriss.Nabers.Left = "Khalide";
+	Person1.Contact.Addriss.Nabers.Right = "Mohammade";
+	Person1.Contact.Addriss.POBox = "7777";
+	Person1.Contact.Addriss.Street = "Derb Tobis";
+	Person1.FavoritColor = enFavoritColor::White;
+	Person1.FirsName = "Youness";
+	Person1.Gender = enGender::Male;
+	Person1.LastName = "RZIQI";
+	Person1.MaritalStatus = enMaritalStatus::Single;
+	
+
+	cout << "Your first Name is : " << Person1.FirsName << "\n";
+
+
+
+	return 0;
+}

@@ -1,0 +1,94 @@
+#include <iostream>
+using namespace std;
+
+
+// %.*f , 1   or   %.1f   or %.f
+
+
+
+int main()
+{
+
+
+
+	float PI = 233.14159265;
+
+	printf("I well show just 1 Num after Fraction Of PI : %.f \n\n\n", PI);    // The first  way
+
+
+	printf("I well show just 1 Num after Fraction Of PI : %.*f \n", 1, PI); // The second way
+	printf("I well show just 1 Num after Fraction Of PI : %.*f \n", 1, PI); // The second way
+
+	printf("I well show just 2 Num after Fraction Of PI : %.2f \n", PI);    // The first  way
+	printf("I well show just 2 Num after Fraction Of PI : %.*f \n", 2, PI); // The second way
+
+	printf("I well show just 3 Num after Fraction Of PI : %.3f \n", PI);    // The first  way
+	printf("I well show just 3 Num after Fraction Of PI : %.*f \n", 3, PI); // The second way
+
+
+	printf("I well show just 4 Num after Fraction Of PI : %.4f \n", PI);    // The first  way
+	printf("I well show just 4 Num after Fraction Of PI : %.*f \n", 4, PI); // The second way
+
+
+
+	float P = 233.0;
+
+	printf("\n\n\nI well show just 1 Num after Fraction Of PI : %.1f \n", P);    // The first  way
+	printf("I well show just 1 Num after Fraction Of PI : %.*f \n", 1, P); // The second way
+
+	printf("I well show just 2 Num after Fraction Of PI : %.2f \n", P);    // The first  way
+	printf("I well show just 2 Num after Fraction Of PI : %.*f \n", 2, P); // The second way
+
+	printf("I well show just 3 Num after Fraction Of PI : %.3f \n", P);    // The first  way
+	printf("I well show just 3 Num after Fraction Of PI : %.*f \n", 3, P); // The second way
+
+
+	printf("I well show just 4 Num after Fraction Of PI : %.4f \n", P);    // The first  way
+	printf("I well show just 4 Num after Fraction Of PI : %.*f \n", 4, P); // The second way
+
+
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if you want to issure two digits int the part of int and float you should print the Num as two number by do this simple caldulation
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+	float Num = 1.1;
+
+	printf("This is the number : %02d.%02d\n", (int)Num, (int)((Num - (int)Num) * 100));
+
+
+
+	return 0;
+}

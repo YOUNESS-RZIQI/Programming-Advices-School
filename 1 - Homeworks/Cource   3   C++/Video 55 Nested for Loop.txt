@@ -1,0 +1,517 @@
+The 1 one :          Maltuplation_Calculation
+
+
+
+
+
+// Always let the code be the last thing
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Maltuplation_Calculation()
+{
+
+	for (int i = 0; i <= 10; i++)
+	{
+		cout << " i = " << i << "\n\n---------------\n\n" ;
+
+
+		for (int j = 1; j <= 10; j++)
+		{
+
+			cout  << i << "*" << j << " = " << i * j << endl << endl ;
+
+		}
+
+		cout << "---------------\n\n";
+
+	}
+
+
+
+}
+
+
+int main()
+{
+
+	Maltuplation_Calculation();
+
+	return 0;
+}
+
+
+
+The 2 one :       Printing Stars
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void Printing_Stars()
+{
+
+	for (int i = 0; i < 10 ; i++)
+	{
+                  
+                 cout << i + 1 ;
+                   
+		for (int j = 0; j < 10; j++)
+		{
+
+			cout << "*";
+
+		}
+
+		cout << "\n";
+
+	}
+
+
+}
+
+int main()
+{
+
+	Printing_Stars();
+
+	return 0;
+}
+
+
+
+
+
+The 3 one :     Print stars from 1-10
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void Printing_Stars()
+{
+
+	for (int i = 1; i <= 10; i++)
+	{
+
+		cout << i ;
+
+		for (int j = 1; j <= i; j++)
+		{
+
+			cout << "*";
+
+		}
+
+		cout << "\n";
+
+	}
+
+
+}
+
+int main()
+{
+
+	Printing_Stars();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The 4 one :          Printing_AA___ZZ
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Print_AA___ZZ()
+{
+
+	for (char i = 65; i <= 90; i++)
+	{
+		cout << "Letter : " << i << endl;
+
+		for (char j = 65; j <= 90; j++)
+		{
+
+			cout << i << j << endl << endl;
+
+		}
+
+		cout << "==========================\n";
+
+	}
+
+
+
+
+}
+
+
+int main()
+{
+
+	Print_AA___ZZ();
+
+	return 0;
+}
+
+
+
+
+
+The 5 one :        Print stars 
+
+                      *******
+                      ******
+                      *****
+                      ****
+                      ***
+                      **
+                      *
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Print_10stars_to_1star()
+{
+
+	for (int i = 10 ; i >= 1; i--)
+	{	
+
+		for (int j = 1; j <= i ; j++ )
+		{
+
+			cout << "*";
+
+		}
+
+		cout << endl;
+
+	}
+
+
+
+
+}
+
+
+int main()
+{
+
+	Print_10stars_to_1star();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 6 one :           PrintINT :  
+                                 A
+                                 AB
+                                 ABC
+                                 ABCD
+                                 ABCDE
+                                 ABCDEF
+                                 ABCDEFJ
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Printing_A_AB_ABC_ABCD___()
+{
+
+	for (int i = 65; i <= 70; i++)
+	{
+
+		for (char j = 65; j <= i; j++)
+		{
+
+			cout << j << " ";
+
+		}
+
+		cout << "\n";
+
+	}
+
+
+
+
+}
+
+
+int main()
+{
+
+	Printing_A_AB_ABC_ABCD___();
+
+	return 0;
+}
+
+
+
+
+The 7 oen :           Print : 
+                                 1234567
+                                 123456
+                                 12345
+                                 1234
+                                 123
+                                 12
+                                 1
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Printing_123456_12345_1234_123_12_1_()
+{
+
+	for (int i = 10; i >= 1; i--)
+	{
+		
+		for (int j = 1; j <= i; j++)
+		{
+
+			cout << j << " " ;
+
+		}
+
+		cout << "\n";
+
+	}
+
+
+
+}
+
+
+int main()
+{
+
+	Printing_123456_12345_1234_123_12_1_();
+
+	return 0;
+}
+
+
+
+
+
+The 8 oen :             Printing: 
+                                 1
+                                 12
+                                 1234
+                                 12345
+                                 1234567
+                                 12345678
+                                 123456789
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Printing_1_12_123_1234_12345_123456_1234567()
+{
+
+	for (int i = 1; i <= 10; i++)
+	{
+
+		for (int j = 1; j <= i;j++)
+		{
+
+			cout << j << " " ;
+
+		}
+
+		cout << "\n";
+
+	}
+
+
+
+}
+
+
+int main()
+{
+
+	Printing_1_12_123_1234_12345_123456_1234567();
+
+	return 0;
+}
+
+
+
+
+
+The 9 one :           Printing : 
+                                 123456789
+                                 23456789
+                                 3456789
+                                 456789
+                                 56789
+                                 6789
+                                 789
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void 	Printing_1234_234_34_4___()
+{
+	int j = 1;
+	for (int i = 1; i <= 10; i++)
+	{
+
+		for (int j = i; j <= 10;j++)
+		{
+
+			cout << j << " " ;
+
+
+		}
+
+		cout << "\n";
+
+	}
+
+
+
+}
+
+
+int main()
+{
+
+	Printing_1234_234_34_4___();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

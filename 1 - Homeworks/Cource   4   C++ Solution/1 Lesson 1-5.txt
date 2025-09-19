@@ -1,0 +1,314 @@
+The 1 one : 
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+void Print_Name(string Name)
+{
+
+	cout << " Your Name is :" << Name << "\n\n";
+
+}
+
+
+int main()
+{
+
+	Print_Name("Younrss Rziqi");
+
+	return 0;
+}
+
+
+
+
+
+The 2 one : 
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string Ask_for_Name()
+{
+	string Name;
+
+
+	cout << "   Please enter your Name : ";
+	getline(cin, Name);
+
+	return Name;
+
+
+}
+
+string Get_Name(string Name)
+{
+
+	return " " + Name + " ";
+
+}
+
+void Print_Name(string Name)
+{
+
+	cout << " Your Name is :" << Name << "\n\n";
+
+}
+
+
+int main()
+{
+
+	Print_Name(Get_Name(Ask_for_Name()));
+
+	return 0;
+}
+
+
+
+
+The 3 one : 
+
+
+#include <iostream>
+using namespace std;
+
+enum enCheck_if_Odd_or_Even { Odd = 1 , Even = 0 };
+
+int Enter_Number()
+{
+
+	int Number = 0;
+
+	cout << "Please enter a Number : ";
+	cin >> Number;
+
+	return Number;
+
+}
+
+enCheck_if_Odd_or_Even Check_if_Odd_or_Even(int Number)
+{
+
+	if (Number % 2 == 0)
+		return enCheck_if_Odd_or_Even::Even;
+	else
+		return enCheck_if_Odd_or_Even::Odd;
+
+
+}
+
+
+void Odd_or_Even_Result(enCheck_if_Odd_or_Even Result)
+{
+
+	if (Result == enCheck_if_Odd_or_Even::Even)
+		cout << "The Number that you entered is : Even Number \n\n";
+	else
+		cout << "The Number that you entered is : Odd Number \n\n";
+
+
+}
+
+
+
+
+
+
+int main()
+{
+
+	Odd_or_Even_Result(Check_if_Odd_or_Even(Enter_Number()));
+
+	return 0;
+}
+
+
+
+
+
+
+The 4 one : 
+
+
+
+
+#include <iostream>
+using namespace std;
+
+struct stConditions
+{
+	int Age;
+	char Driver_License;
+};
+enum enCheck_Result{ Hired = 1 , Rejected = 0};
+stConditions Enter_Info()
+{
+	stConditions Conditions;
+
+	cout << "Please enter your Age : ";
+	cin >> Conditions.Age;
+
+	cout << "Do you have a Driver Licese ( Y/N ) ? ";
+	cin >> Conditions.Driver_License;
+
+	return Conditions;
+
+}
+enCheck_Result Check_Conditions(stConditions Conditions)
+{
+
+	if (Conditions.Age > 21 && (Conditions.Driver_License == 'y' || Conditions.Driver_License == 'Y'))
+		return enCheck_Result::Hired;
+	else
+		return enCheck_Result::Rejected;
+
+}
+void Print_Conditions_Result(enCheck_Result Result)
+{
+
+	if (Result == enCheck_Result::Hired)
+		cout << "   Hired\n\n";
+	else
+		cout << "   Rejected\n\n";
+
+}
+
+int main()
+{
+
+	Print_Conditions_Result(Check_Conditions(Enter_Info()));
+
+	return 0;
+}
+
+
+
+
+
+The 4' one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+struct stConditions
+{
+	int Age;
+	char Driver_License;
+};
+
+
+stConditions Enter_Info()
+{
+	stConditions Conditions;
+
+	cout << "Please enter your Age : ";
+	cin >> Conditions.Age;
+
+	cout << "Do you have a Driver Licese ( Y/N ) ? ";
+	cin >> Conditions.Driver_License;
+
+	return Conditions;
+
+}
+
+int Check_Conditions(stConditions Conditions)
+{
+
+	return (Conditions.Age > 21 && (Conditions.Driver_License == 'y' || Conditions.Driver_License == 'Y'));
+		
+
+}
+
+void Print_Conditions_Result(stConditions Conditions)
+{
+
+	if (Check_Conditions(Conditions))
+		cout << "   Hired\n\n";
+	else
+		cout << "   Rejected\n\n";
+
+}
+
+int main()
+{
+
+	Print_Conditions_Result(Enter_Info());
+
+	return 0;
+}
+
+
+
+
+
+
+The 5 one : 
+
+
+#include <iostream>
+using namespace std;
+
+struct stConditions
+{
+	int Age;
+	char Driver_License, Recommendation;
+};
+
+
+stConditions Enter_Info()
+{
+	stConditions Conditions;
+
+	cout << "Please enter your Age : ";
+	cin >> Conditions.Age;
+
+	cout << "Do you have a Driver Licese ( Y/N ) ? ";
+	cin >> Conditions.Driver_License;
+
+	cout << "Do you have a Recommendation ( Y/N ) ? ";
+	cin >> Conditions.Recommendation;
+
+	return Conditions;
+
+}
+
+int Check_Conditions(stConditions Conditions)
+{
+
+	return (  (Conditions.Recommendation=='Y'  || Conditions.Recommendation == 'y') || (Conditions.Age > 21 && (Conditions.Driver_License == 'y' || Conditions.Driver_License == 'Y')));
+
+
+}
+
+void Print_Conditions_Result(stConditions Conditions)
+{
+
+	if (Check_Conditions(Conditions))
+		cout << "   Hired\n\n";
+	else
+		cout << "   Rejected\n\n";
+
+}
+
+int main()
+{
+
+	Print_Conditions_Result(Enter_Info());
+
+	return 0;
+}
+
+
+
+
+
+

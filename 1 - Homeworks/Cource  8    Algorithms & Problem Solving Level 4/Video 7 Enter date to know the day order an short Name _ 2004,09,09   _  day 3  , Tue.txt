@@ -1,0 +1,62 @@
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Check_Lib.h"
+#include "Input_Lib.h"
+#include "Screen_Lib.h"
+using namespace std;
+
+short Operation(const short& Year, const short& Month, const short& Day)
+{
+
+	int a, y, m , day_order;
+
+	a = (14 - Month) / 12;
+	y = Year - a;
+	m = Month + (12 * a) - 2;
+
+	day_order = (Day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
+	return day_order;
+}
+
+void DayNameOfWeek_Operatoin(const short& Year, const short& Month, const short& Day)
+{
+
+	short Day_Order = 0;
+	string Days[]{ "Sun","Mun","Tue","Wedn","Thu","Fri","Sat" };
+
+	Day_Order = Operation(Year, Month, Day);
+
+	cout << "Day Order : " << Day_Order << "\n";
+	cout << "Day Nam   : " << Days[Day_Order] << "\n";
+						 
+}
+
+void DayNameOfWeek(const short& Year, const short& Month, const short& Day)
+{
+	cout << "--------------------------------------\n";
+	cout << "\n\nDate      : " << Day << "/" << Month << "/" << Year << endl;
+	DayNameOfWeek_Operatoin(Year, Month, Day);
+	cout << "\n\n--------------------------------------\n";
+
+}
+
+
+int main()
+{
+	Screen_Lib::Red_Screen();
+
+	short Year = Input_Lib::Read_Positive_Number ("Please enter the year   : ");
+	short Month = Input_Lib::Read_Positive_Number("Please enter the Month  : ");
+	short Day = Input_Lib::Read_Positive_Number  ("Please enter the Day    : ");
+
+	DayNameOfWeek(Year, Month,Day);
+
+
+	system("pause>0");
+	return 0;
+}

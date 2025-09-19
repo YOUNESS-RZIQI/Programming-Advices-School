@@ -1,0 +1,68 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	string Message = "Hi My name is YOUNESS RZIQI , Programming Advices";
+
+	cout << Message << endl;
+
+	// Lenght of the string :
+
+	cout << "\nLenght : " << Message.length() << endl;
+
+	// add in the end of the Message even if there is \n it will add it after it = append to char array 
+
+	Message.append("\t @Hi");
+	cout << "After the add = append : " << Message << endl;
+
+	// add in spesifk pleace (Num , Message)
+
+	Message.insert(2, " \t Name \t");
+	cout << "After insert : " << Message << endl;
+
+
+	// substr : go to the place and gave 8? degets 
+
+	cout << "\nAfter Substr : " << Message.substr(23, 7) << endl;
+
+	// push_back : add to the string in the last deget 
+
+	Message.push_back('$');
+	cout << "\nThe push word just with the char : " << Message << endl;
+
+	// pop_back : delet the last char in the char array
+
+	Message.pop_back();
+	cout << "\nThe pop of one char : " << Message << endl;
+
+	// find : tels you the place of the thing in the char array 
+
+	cout << "\n Find YOUNESS : " << Message.find("YOUNESS") << endl;
+
+	// find if does not find it gave's you a big Number of the place in the char array
+
+	cout << "\n Find youness : " << Message.find("youness") << endl;
+
+	// npos : it means no possition 
+	
+	if (Message.find("youness") == Message.npos)
+		cout << "\n!!! Error !!!\t youness is not found\n\n";
+
+	// clear : it clear the all degets in the string (char array) 
+
+	Message.clear();
+
+	cout << "\n Clear result : " << Message << "\n\n\n\n\n";
+
+
+
+
+
+	return 0;
+}

@@ -1,0 +1,52 @@
+The one and only one :   about calculate 3 Grandes
+
+    
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Intring_3_Grades(float Grade[3])
+{
+
+	cout << "Pleas Enter The First Grade  : \n";
+	cin >> Grade[0];
+
+	cout << "Pleas Enter The Second Grade : \n";
+	cin >> Grade[1];
+
+	cout << "Pleas Enter The Third Grade  : \n";
+	cin >> Grade[2];
+
+}
+float Calculate_Average_Of_3_Grades(float Grade[3])
+{
+
+	return  (Grade[0] + Grade[1] + Grade[2]) / 3;
+	
+
+}
+void Printing_Average_Of_3_Grades(float Grade[3])
+{
+
+	cout << "\n**************************************\n";
+	cout << "The average of grades is : " << Calculate_Average_Of_3_Grades(Grade) << "\n";
+	
+
+}
+
+
+
+int main()
+{
+
+	float Grades[3];
+
+	Intring_3_Grades(Grades);
+	Printing_Average_Of_3_Grades(Grades);
+
+
+	return 0;
+}

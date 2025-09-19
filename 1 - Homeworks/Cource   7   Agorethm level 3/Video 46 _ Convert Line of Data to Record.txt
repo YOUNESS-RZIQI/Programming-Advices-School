@@ -1,0 +1,95 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+struct st_Client_Info
+{
+	string Account_Number;
+	string Pin_Code;
+	string Full_Name;
+	string Phone_Number;
+	double Account_Balance;
+
+};
+
+vector <string> Split_String(string s, string delim)
+{
+
+	vector <string> vNames;
+
+	short pos = 0;
+	string Word;
+
+	while ((pos = s.find(delim)) != std::string::npos)
+	{
+
+		Word = s.substr(0, pos);
+
+		if (Word != "")
+		{
+			vNames.push_back(Word);
+		}
+
+		s.erase(0, pos + delim.length());
+
+	}
+
+	if (s != "")
+	{
+		vNames.push_back(s);
+	}
+
+
+	return vNames;
+}
+
+st_Client_Info Convert_Line_of_Data_to_Record(string s , const string & delim = "#//#")
+{
+
+	st_Client_Info Client_Info;
+
+	vector <string> vClient_Info;
+
+	vClient_Info = Split_String(s, delim);
+
+
+	Client_Info.Account_Number = vClient_Info[0];
+	Client_Info.Pin_Code = vClient_Info[1];
+	Client_Info.Full_Name = vClient_Info[2];
+	Client_Info.Phone_Number = vClient_Info[3];
+	(Client_Info.Account_Balance) = stod(vClient_Info[4]);
+	 
+	return Client_Info;
+}
+
+void Print_Client_Info(st_Client_Info Client_Info)
+{
+
+	cout << "\n                          B A N Q U E\n\n\n";
+
+	cout << "Acount Number   : " <<Client_Info.Account_Number << endl;
+	cout << "Pin Code        : " <<Client_Info.Pin_Code << endl;
+	cout << "Full Name       : " <<Client_Info.Full_Name << endl;
+	cout << "Phone Number    : " <<Client_Info.Phone_Number << endl;
+	cout << "Account Balance : " <<Client_Info.Account_Balance << "\n\n\n";
+
+}
+
+int main()
+{
+
+	string stLine = "A150#//#1234#//#Mohammed Abu-Hadhoud#//#079999#//#5270.000000";
+
+	cout << stLine << "\n\n";
+
+	st_Client_Info Client_Info = Convert_Line_of_Data_to_Record(stLine);
+	Print_Client_Info(Client_Info);
+	
+
+	system("pause>0");
+}

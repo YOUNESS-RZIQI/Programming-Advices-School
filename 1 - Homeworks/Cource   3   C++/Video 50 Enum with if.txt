@@ -1,0 +1,123 @@
+#include <iostream>
+using namespace std;
+
+enum EnSystemColor { Red = 1, Bleu = 2, Green = 3, Yellow = 4 };
+
+int main()
+{
+
+	
+
+	cout << "*\n";
+	cout << " System Colors  : \n";
+	cout << " (1) Red   \n";
+	cout << " (2) Bleu  \n";
+	cout << " (3) Green  \n";
+	cout << " (4) Yellow  \n";
+	cout << "*\n";
+	cout << "Please Choose a Numbern \n";
+	int S;
+	EnSystemColor SystemColor;
+	cin >> S;
+
+	SystemColor = (EnSystemColor)S;
+
+	if (SystemColor == EnSystemColor::Red)
+	{
+
+		system("color 4F ");
+
+	}
+	else if (SystemColor == EnSystemColor::Bleu)
+	{
+
+		system("color 1F");
+
+	}
+	else if (SystemColor == EnSystemColor::Green)
+	{
+
+		system("color 2F");
+
+	}
+	else if (SystemColor == EnSystemColor::Yellow)
+	{
+
+		system("color 6F");
+
+	}
+	else
+	{
+
+		cout << "?!?!?!?  Error  ?!?!?!?\n";
+
+	}
+
+
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+enum EnWhich_Country { Morocco = 1, Others = 2 };
+
+
+int main()
+{
+
+	cout << "\n";
+	cout << "	Choose your Country : \n";
+	cout << "  (1) Morocco\n";
+	cout << "  (2) Others\n";
+	cout << "\n";
+	cout << "	Your Choice ? ";
+
+	int c;
+	EnWhich_Country Country;
+	cin >> c;
+
+	Country = (EnWhich_Country)c;
+
+	if (Country == EnWhich_Country::Morocco)
+	{
+
+		cout << "\n\n         Your Country is : Morocco  \n\n";
+
+	}
+	else if (Country == EnWhich_Country::Others)
+	{
+
+		cout << "\n\n         Your Country is : Other !!  \n\n";
+
+	}
+	else
+	{
+
+		cout << "\n\n         !!! Wrong Number !!!  \n\n";
+
+	}
+
+
+
+
+	return 0;
+}

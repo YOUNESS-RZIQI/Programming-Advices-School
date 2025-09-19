@@ -1,0 +1,254 @@
+The 1 one :    By Ref 
+
+
+#include <iostream>
+using namespace std;
+
+void MyFunction(int &Num1)
+{
+
+	Num1 = 10;
+
+	cout << "BY    Value : " << Num1 << endl;
+
+	
+}
+
+
+int main()
+{
+
+	int Num1;
+
+	Num1 = 20;
+
+
+	MyFunction(Num1);
+	
+	cout << "BY Referenc : " << Num1 << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 2 one :     By val 
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void MyFunction(int Num1)
+{
+
+	Num1 = 10;
+
+	cout << "BY    Value : " << Num1 << endl;
+
+	
+}
+
+
+int main()
+{
+
+	int Num1;
+
+	Num1 = 20;
+
+
+	MyFunction(Num1);
+	
+	cout << "BY Referenc : " << Num1 << endl;
+
+
+	return 0;
+}
+
+
+
+
+The 3 one :    The value and the Reference ( the address of the variable )
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+int main()
+{
+
+	int Num1;
+
+	Num1 = 20;
+
+
+	
+	
+	cout << Num1 << endl;
+	cout << &Num1 << endl;
+
+
+
+	return 0;
+}
+
+
+
+The 4 one :    change in the global variable 
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int Num1 = 20;
+
+
+void MyFunction(int &Num1)
+{
+
+	::Num1 = 10;
+
+	cout << "BY    Value : " << ::Num1 << endl;
+
+	
+}
+
+
+int main()
+{
+
+
+	
+
+	MyFunction(Num1);
+	
+	cout << "BY Referenc : " << ::Num1 << endl;
+
+
+	return 0;
+}
+
+
+
+
+The 5 one :   swaping using By Ref 
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+
+
+void swaping_the_two_Numbers(int &Number1, int &Number2)
+{
+
+	int temp;
+	temp = Number1;
+	Number1 = Number2;
+	Number2 = temp ;
+
+
+	cout << "After swap in side Function Number1=" << Number1 << endl;
+	cout << "After swap in side Function Number2=" << Number2 << endl;
+
+
+}
+
+
+
+
+void  output_two_Numbers()
+{
+
+	int Number1, Number2;
+
+	cout << "Pleas enter the Number1 ? \n";
+	cin >> Number1;
+
+	cout << "Pleas enter the Number2 ? \n";
+	cin >> Number2;
+
+	cout << "\n\nYour result is : \n";
+
+	cout << "Before swap Number1=" << Number1 << "\n";
+	cout << "Before swap Number1=" << Number2 << "\n\n\n";
+
+	cout << "the swap is : \n";
+
+	swaping_the_two_Numbers(Number1 ,Number2);
+
+
+	cout << "\n\nAfter swap in side main Number1=" << Number1 << endl;
+	cout << "After swap in side main Number2=" << Number2 << endl;
+	
+
+}
+
+
+int main()
+{
+
+	output_two_Numbers();
+
+
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

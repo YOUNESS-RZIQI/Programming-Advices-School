@@ -1,0 +1,184 @@
+The 1 one :  of the teacher 
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct strInfo
+{
+
+	string Person;
+	string First_Name;
+	string Last_Name;
+	int Age;
+	string Phone_Number;
+
+};
+
+
+void InPut_Info(strInfo &Info)
+{
+	
+	cout << "\nPleas enter which Person Number is this : \n";
+	getline(cin, Info.Person);
+	
+	cout << "Pleas enter your First Name : \n";
+	getline(cin, Info.First_Name);
+
+	cout << "Pleas enter your Last Name : \n";
+	getline(cin, Info.Last_Name);
+
+	cout << "Pleas enter your Age : \n";
+	cin >> Info.Age;
+
+	cout << "Pleas enter your Phone Number : \n";
+	cin.ignore(1, '\n');
+	getline(cin,Info.Phone_Number);
+	
+	
+
+}
+
+
+
+void OutPut_Info(strInfo Info)
+{
+
+	cout << "\n\nThe Info of Person : " << Info.Person << "\n";
+	cout << "************************************\n";
+	cout << "Firs    Name : " << Info.First_Name << "\n";
+	cout << "Last    Name : " << Info.Last_Name << "\n";
+	cout << "     Age     : " << Info.Age << "\n";
+	cout << "Phone Number : " << Info.Phone_Number << "\n";
+	cout << "************************************\n";
+
+
+}
+
+
+
+int main()
+{
+
+	strInfo Person_1_Info, Person_2_Info;
+
+	InPut_Info(Person_1_Info);
+	InPut_Info(Person_2_Info);
+
+
+	OutPut_Info(Person_1_Info);
+	OutPut_Info(Person_2_Info);
+
+
+
+	return 0;
+}
+
+
+
+
+
+The 2 one :     
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+struct stSalary
+{
+
+	short Monthly;
+	short Yearly;
+
+};
+
+struct stUserInfo
+{
+
+	string Full_Name;
+	short Age;
+	string City;
+	string Country;
+	stSalary Salary;
+	string Gender;
+	bool Marital_Statas;
+
+};
+
+
+void Input_User_Info(stUserInfo &Info)
+{
+
+	cout << "Pleas enter your Full Name      : \n";
+	getline(cin, Info.Full_Name);
+
+	cout << "Pleas enter your Age            : \n";
+	cin >> Info.Age;
+
+	cout << "Pleas enter your City           : \n";
+	cin.ignore(1,'\n');
+	getline(cin, Info.City);
+
+	cout << "Pleas enter your Country        : \n";
+	getline(cin, Info.Country);
+
+	cout << "Pleas enter your Montyly Salary : \n";
+	cin >> Info.Salary.Monthly;
+
+	cout << "Pleas enter you Yearly Salary   : \n";
+	cin >> Info.Salary.Yearly;
+
+	cout << "Pleas enter your Gernder        : \n";
+	cin.ignore(1, '\n');
+	getline(cin, Info.Gender);
+
+	cout << "Pleas answer \'Are you Maried ?\': \n";
+	cin >> Info.Marital_Statas;
+	cout << "\n\n\n" << endl;
+
+
+
+}
+
+void Output_User_Info(stUserInfo Info)
+{
+
+
+	cout << "**************************************\n";
+	cout << "Full Name      : " << Info.Full_Name << ".\n";
+	cout << "Age            : " << Info.Age << ".\n";
+	cout << "City           : " << Info.City << ".\n";
+	cout << "Country        : " << Info.Country << ".\n";
+	cout << "Monthly Salary : " << Info.Salary.Monthly << ".\n";
+	cout << "Yearly  Salary : " << Info.Salary.Yearly << ".\n";
+	cout << "Gender         : " << Info.Gender << ".\n";
+	cout << "Marital Statas : " << Info.Marital_Statas << "\n";
+	cout << "**************************************\n";
+
+
+
+}
+
+
+
+
+int main()
+{
+
+	stUserInfo UserInfo;
+
+	Input_User_Info(UserInfo);
+	Output_User_Info(UserInfo);
+
+
+
+
+	return 0;
+}
+
+
+

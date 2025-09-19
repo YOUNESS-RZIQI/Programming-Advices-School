@@ -1,0 +1,115 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+void Fill_Matrix_W_Randum_Numbers(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Arr[i][j] = Randam_Number_In_Range(1, 10);
+		}
+
+	}
+
+
+}
+
+void Print_Matrix(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			printf("%02d\t", Arr[i][j]);
+			//cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+
+
+bool is_scalar_Matrix(int Arr[3][3], const short& Rows, const int& Colms)
+{
+
+	short First_Diagonal_Element = Arr[0][0];
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Colms; j++)
+		{
+
+
+			if (i == j && Arr[i][j] != First_Diagonal_Element)
+				return false;
+
+			if (i != j && Arr[i][j] != 0)
+				return false;
+
+		}
+
+	}
+
+	return true;
+
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	int Arr_1[3][3];
+
+	int Arr_2[3][3] = { {9,0,0}, {0,9,0}, {0,0,9} };
+
+	Fill_Matrix_W_Randum_Numbers(Arr_1, 3, 3);
+
+
+	Print_Matrix(Arr_2, 3, 3);
+
+
+	//cout << "The Matrex 1 : \n\n";
+	//Print_Matrix(Arr_2, 3, 3);
+	cout << "\n\n" << endl;
+
+
+	if (is_scalar_Matrix(Arr_2, 3, 3))
+		cout << "Yes , it is scalar\n";
+	else
+		cout << "No  , it is not scalar\n";
+
+
+
+
+
+
+	cout << "\n\n" << endl;
+
+	system("pause>0");
+
+}

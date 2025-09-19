@@ -1,0 +1,49 @@
+💁‍♂️  💁‍♂️  This one :  
+
+
+
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+int main()
+{
+	
+	Screen_Lib::Purple_Screen();
+
+	for (string i : {"1", "2", "03"})
+		cout << i << endl;
+
+	return 0;
+}
+
+
+
+💁‍♂️  💁‍♂️  This one :  
+
+
+
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+	string Arr[]{ "1", "2", "03" };
+
+	for (string i : Arr)
+		cout << i << endl;
+
+	return 0;
+}

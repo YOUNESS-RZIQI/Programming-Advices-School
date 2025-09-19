@@ -1,0 +1,35 @@
+If you want to do a Read only property in a Class :
+
+	Rule : 
+		
+		* all the variables should be private not public always in a class  
+		* second do just Get property , Do not do Set property to not lett the Developer change it .
+
+
+Code :
+
+
+#include <iostream>
+using namespace std;
+
+// Set/Get allways
+
+class clsPersson
+{
+	short ID = 10;
+public:
+	short Id()
+	{
+		return ID;
+	}
+};
+
+
+int main(void)
+{
+	clsPersson p;
+
+	cout << "This is the ID : " << p.Id() << endl;
+
+	return 0;
+}

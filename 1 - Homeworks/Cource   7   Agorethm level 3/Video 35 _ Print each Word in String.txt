@@ -1,0 +1,129 @@
+💁‍♂️  💁‍♂️  This one   My Version : 
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+void Print_First_leter_in_String(const string& Word)
+{
+
+	bool is_First_letter = true;
+
+	cout << "\n\nThe First Letter in Each Word in String is : \n\n";
+
+	for (int i = 0; i < Word.length(); i++)
+	{
+
+		if (Word[i] != ' ' && is_First_letter)
+		{
+			cout << endl;
+		}
+
+		if (Word[i] != ' ')
+		{
+			cout << Word[i] ;
+		}
+
+		is_First_letter = (Word[i] == ' ' ? true : false);
+
+	}
+
+}
+
+
+int main()
+{
+
+	string S1 = Input_Lib::Ask_for_string("Please Enter you String : ");
+
+	cout << "\n\n";
+
+	Print_First_leter_in_String(S1);
+
+	cout << "\n\n";
+
+
+	return 0;
+}
+
+
+💁‍♂️  💁‍♂️  This one   Teacher  Version : 
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+void Print_Each_Word_in_String(string S1)
+{
+
+	string delim = " ";
+
+	cout << "\nYour Names are : \n\n";
+
+	short pos = 0;
+	string Word;
+
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+
+		Word = S1.substr(0, pos);
+
+		if (Word != "")
+		{
+			cout << Word << endl;
+		}
+
+		S1.erase(0, pos + delim.length());
+
+	}
+
+	if (S1 != " ")
+	{
+		cout << S1 << "\n\n";
+	}
+
+}
+
+void PrintEachWordInString(string S1)
+{
+	string delim = " "; // delimiter
+	cout << "\nYour string wrords are: \n\n";
+	short pos = 0;
+	string sWord; // define a string variable
+	// use find() function to get the position of the delimiters
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+		sWord = S1.substr(0, pos); // store the word
+		if (sWord != "")
+		{
+			cout << sWord << endl;
+		}
+		S1.erase(0, pos + delim.length()); /* erase() until
+		positon and move to next word. */
+	}
+	if (S1 != "")
+	{
+		cout << S1 << endl; // it print last word of the string.
+	}
+}
+
+int main()
+{
+	
+	//Print_Each_Word_in_String(Input_Lib::Ask_for_string("Please Enter Your Names : "));
+
+	return 0;
+}
+

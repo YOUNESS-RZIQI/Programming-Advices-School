@@ -1,0 +1,41 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+
+
+
+int main()
+{
+
+	vector <int> v_Number;
+
+
+	v_Number.push_back(10);
+	v_Number.push_back(20);
+	v_Number.push_back(30);
+	v_Number.push_back(40);
+	v_Number.push_back(50);
+
+
+	//v_Number.clear();
+
+	if(v_Number.size()>0)
+	{
+		cout << "\n The first emelent in vector is : " << v_Number.front() << endl;
+
+		cout << "\n The last emelent in vector is : " << v_Number.back() << endl;
+	}
+
+	cout << "\n the size of the vector is : " << v_Number.size() << endl;
+
+	cout << "\n the capacty of the vector is : " << v_Number.capacity() << endl;
+
+	cout << "\n is empty ??  : " << v_Number.empty() << endl;
+
+
+
+
+
+
+	return 0;
+}

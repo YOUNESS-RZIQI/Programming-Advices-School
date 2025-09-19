@@ -1,0 +1,40 @@
+the pointers is a variable that can have only the address of other variable only nothing else less of more , and the pointer should be the same category of the variable address if int should be int ... 
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+
+	int a = 10;
+	int b = 20;
+
+	cout << "a Value is : " << a << "\n\n";
+	cout << "a address is : " << &a << "\n\n";
+
+
+	int * p = &a;
+
+
+	cout << "p address in a  : " << p << "\n\n" << endl;
+
+	p = &b;
+
+	cout << "b Value is : " << b << "\n\n";
+	cout << "b address is : " << &b << "\n\n";
+
+
+	cout << "p address in b : " << p << "\n\n" << endl;
+
+	cout << "b = " << b << " a = " << a << endl;
+
+
+	return 0;
+}

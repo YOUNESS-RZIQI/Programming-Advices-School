@@ -1,0 +1,364 @@
+   The 1 one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Read_Array_Data(int Numbers[100], int &length)
+{
+
+	cout << "   Choose how many number you want to enter from 0-100 !\n           ";
+	cin >> length;
+	length = abs(length);
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << "   Ener Number[" << i + 1 << "] :\n           ";
+		cin >> Numbers[i];
+
+	}
+
+
+}
+
+void Print_Array_Data(int Numbers[100], int length)
+{
+
+	cout << "   The Numbers that you choosed they are : \n";
+	
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << "           Number[" << i + 1 << "] is : " << Numbers[i] << endl ;
+		
+
+	}
+
+	cout << "   ***************************************************\n";
+
+}
+
+int Sum_Calculation(int Numbers[100], int length)
+{
+	int sum = 0;
+	for (int i = 0; i < length; i++)
+	{
+
+		sum += Numbers[i];
+
+	}
+
+	return sum;
+
+}
+
+float Average_Calculation(int Numbers[100], int length)
+{
+
+	float Average;
+
+	Average = (float)Sum_Calculation(Numbers, length) / length;
+
+	return Average;
+
+}
+
+
+void Calculat_Numbers_Sum_and_Average()
+{
+
+	int Numbers[100], length;
+
+
+	Read_Array_Data(Numbers,length);
+
+	if(length != 0)
+	{
+
+	Print_Array_Data(Numbers,length);
+	cout << "   Sum     is : " << Sum_Calculation(Numbers, length) << "\n";
+	cout << "   Average is : " << Average_Calculation(Numbers, length) << endl << endl;
+
+	}
+	else
+	{
+
+		cout << " The Result is 0  :) \n\n";
+
+	}
+
+}
+
+
+
+
+int main()
+{
+
+
+	Calculat_Numbers_Sum_and_Average();
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The second one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Read_Array_Data(int Numbers[100], int &length)
+{
+
+	cout << "   Choose how many number you want to enter from 0-100 !\n           ";
+	cin >> length;
+	length = abs(length);
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << "   Ener Number[" << i + 1 << "] :\n           ";
+		cin >> Numbers[i];
+
+	}
+
+
+}
+
+void Print_Array_Data(int Numbers[100], int length)
+{
+
+	cout << "   The Numbers that you choosed they are : \n";
+	
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << "           Number[" << i + 1 << "] is : " << Numbers[i] << endl ;
+		
+
+	}
+
+	cout << "   ***************************************************\n";
+
+}
+
+int Sum_Calculation(int Numbers[100], int length)
+{
+	int sum = 0;
+	for (int i = 0; i < length; i++)
+	{
+
+		sum += Numbers[i];
+
+	}
+
+	return sum;
+
+}
+
+float Average_Calculation(int Numbers[100], int length)
+{
+
+	float Average;
+
+	Average = (float)Sum_Calculation(Numbers, length) / length;
+
+	return Average;
+
+}
+
+
+void Calculat_Numbers_Sum_and_Average()
+{
+
+	int Numbers[100], length;
+
+
+	Read_Array_Data(Numbers,length);
+
+	if(length != 0)
+	{
+
+	Print_Array_Data(Numbers,length);
+
+	float Sum = Sum_Calculation(Numbers, length);
+
+	cout << "   Sum     is : " << Sum << "\n";
+	cout << "   Average is : " << Sum / length << endl << endl;
+
+	}
+	else
+	{
+
+		cout << " The Result is 0  :) \n\n";
+
+	}
+
+}
+
+
+
+
+int main()
+{
+
+
+	Calculat_Numbers_Sum_and_Average();
+
+
+	return 0;
+}
+
+
+
+
+
+
+The 3 one : 
+
+
+
+// alwayse let the code be the last thing ??!!
+
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+
+struct strStudent_Info
+{
+
+	string First_Name;
+	string Last_Name;
+	string Age;
+	string Phone_Number;
+
+};
+
+void How_Many_Student(int& Num_of_Student)
+{
+
+	cout << "                     Welcome to Enter Student Informations   \n\n";
+	cout << "           How many Student there are ? : ";
+	cin >> Num_of_Student;
+	cout << "\n\n";
+	Num_of_Student = abs(Num_of_Student);
+
+}
+
+void Students_Data(strStudent_Info Student_Info[100], int Num_of_Student)
+{
+
+
+
+	for (int i = 0; i < Num_of_Student; i++)
+	{
+
+		cout << "   ***************************************************************\n";
+		cout << "   Plese enter the info of the Student Number (" << i + 1 << ") :\n";
+		cout << "                    First Name   : ";
+		cin >> Student_Info[i].First_Name;
+		cout << "                    Last Name    : ";
+		cin >> Student_Info[i].Last_Name;
+		cout << "                    Age          : ";
+		cin >> Student_Info[i].Age;
+		cout << "                    Phone_Number : ";
+		cin >> Student_Info[i].Phone_Number;
+		cout << "   ***************************************************************\n\n";
+
+	}
+
+
+
+}
+
+void Print_Students_Data(strStudent_Info Student_Info[100], int Num_of_Student)
+{
+
+
+
+	for (int i = 0; i < Num_of_Student; i++)
+	{
+
+		cout << "   ---------------------------------------------------------------\n";
+		cout << "   The Info of the Student Number (" << i + 1 << ") is :\n";
+		cout << "                    First Name   : ";
+		cout << Student_Info[i].First_Name;
+		cout << "\n                    Last Name    : ";
+		cout << Student_Info[i].Last_Name;
+		cout << "\n                    Age          : ";
+		cout << Student_Info[i].Age;
+		cout << "\n                    Phone_Number : ";
+		cout << Student_Info[i].Phone_Number;
+		cout << "\n   ---------------------------------------------------------------\n\n";
+
+	}
+
+
+
+}
+
+void Akin_and_Gaving_Sudent_Info()
+{
+
+	strStudent_Info Student_Info[100];
+	int Num_of_Student = 0;
+
+
+	How_Many_Student(Num_of_Student);
+	Students_Data(Student_Info, Num_of_Student);
+	Print_Students_Data(Student_Info, Num_of_Student);
+
+
+}
+
+
+
+int main()
+{
+
+	Akin_and_Gaving_Sudent_Info();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

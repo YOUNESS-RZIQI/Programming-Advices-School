@@ -1,0 +1,28 @@
+in the formatting we can not use string but in the real the string is array of characters so we well use character array as a string :-)  : 
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+
+	char Name[] = "Youness Rziqi";
+	char School[] = "Programming Advices";
+
+
+	printf("Hi %s .\n", Name);
+	printf("You Have been selected to Study in %s School \n\n", School);
+
+
+	char Num = 'A'; // char Num = 65;
+
+	printf("The example :%c\n", Num);
+	printf("The example :%*c\n", 3,  Num);
+	printf("The example :%3c\n", Num);
+
+
+
+	return 0;
+}

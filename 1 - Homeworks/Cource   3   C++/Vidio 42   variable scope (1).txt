@@ -1,0 +1,76 @@
+The 1 one :  it is the home work
+
+#include <iostream>
+using namespace std;
+
+int TheYear = 2027;
+
+void MyAge()
+{
+
+	int Age = 23;
+
+	cout << "Your age after geting you certification (3 years ) will be \" " << Age << "\"" << endl;
+
+}
+
+
+int main()
+{
+
+	int Age = 20;
+
+	cout << "Your age is \" " << Age << "\"" << endl;
+
+	MyAge();
+
+	cout << "Your will get your certification in  \" " << ::TheYear << " \"" << endl;
+
+	return 0;
+}
+
+
+The 2 one :  of the teacher 
+
+
+#include <iostream>
+using namespace std;
+
+
+int x = 7000;
+
+void MyFunction1()
+{
+
+	int x = 500;
+
+	cout << "The local value of x incide function is " << x << endl;
+
+
+}
+
+
+int main()
+{
+
+	int x = 10;
+
+	cout << "The local value of x incide Main     is " << x << endl;
+
+	MyFunction1();
+
+	cout << "The   global   value  of  x          is " << ::x << endl;
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+

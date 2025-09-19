@@ -1,0 +1,619 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+const string ClientsFileName = "Clients.txt";
+
+struct sClient
+{
+    string AccountNumber;
+    string PinCode;
+    string Name;
+    string Phone;
+    double AccountBalance;
+};
+
+sClient Globle_Client;
+
+enum enATM_MainMenueOptions { eQuick_Withdraw = 1, eNormal_Withdraw = 2, eDeposit = 3, eCheck_Balance = 4, eLogout = 5,};
+enum enQuick_Withdraw_MenueOptions { e20$ = 1, e50$ = 2, e100$ = 3, e200$ = 4, e400$ = 5, e600$ = 6, e800$ = 7, e1000$ = 8, eExit = 9 };
+
+void LogIn();
+void Show_ATM_Mian_Menue();
+
+
+
+void GoBackTo_ATM_MainMenue()
+{
+    cout << "\n\nPress any key to go back to Main Menue...";
+    system("pause>0");
+    Show_ATM_Mian_Menue();
+
+}
+
+bool FindClientByAccountNumber_and_PinCode(string AccountNumber , string PinCode, vector <sClient> vClients, sClient& Client)
+{
+
+    for (sClient C : vClients)
+    {
+
+        if (C.AccountNumber == AccountNumber && C.PinCode == PinCode)
+        {
+            Client = C;
+            return true;
+        }
+
+    }
+    return false;
+
+}
+
+vector<string> SplitString(string S1, string Delim)
+{
+
+    vector<string> vString;
+
+    short pos = 0;
+    string sWord; // define a string variable  
+
+    // use find() function to get the position of the delimiters  
+    while ((pos = S1.find(Delim)) != std::string::npos)
+    {
+        sWord = S1.substr(0, pos); // store the word   
+        if (sWord != "")
+        {
+            vString.push_back(sWord);
+        }
+
+        S1.erase(0, pos + Delim.length());  /* erase() until positon and move to next word. */
+    }
+
+    if (S1 != "")
+    {
+        vString.push_back(S1); // it adds last word of the string.
+    }
+
+    return vString;
+
+}
+
+sClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
+{
+
+    sClient Client;
+    vector<string> vClientData;
+
+    vClientData = SplitString(Line, Seperator);
+
+    Client.AccountNumber = vClientData[0];
+    Client.PinCode = vClientData[1];
+    Client.Name = vClientData[2];
+    Client.Phone = vClientData[3];
+    Client.AccountBalance = stod(vClientData[4]);//cast string to double
+
+
+    return Client;
+
+}
+
+vector <sClient> LoadCleintsDataFromFile(string FileName)
+{
+
+    vector <sClient> vClients;
+
+    fstream MyFile;
+    MyFile.open(FileName, ios::in);//read Mode
+
+    if (MyFile.is_open())
+    {
+
+        string Line;
+        sClient Client;
+
+        while (getline(MyFile, Line))
+        {
+
+            Client = ConvertLinetoRecord(Line);
+
+            vClients.push_back(Client);
+        }
+
+        MyFile.close();
+
+    }
+
+    return vClients;
+
+}
+
+string ConvertRecordToLine(sClient Client, string Seperator = "#//#")
+{
+
+    string stClientRecord = "";
+
+    stClientRecord += Client.AccountNumber + Seperator;
+    stClientRecord += Client.PinCode + Seperator;
+    stClientRecord += Client.Name + Seperator;
+    stClientRecord += Client.Phone + Seperator;
+    stClientRecord += to_string(Client.AccountBalance);
+
+    return stClientRecord;
+
+}
+
+vector <sClient> SaveCleintsDataToFile(string FileName, vector <sClient> vClients)
+{
+
+    fstream MyFile;
+    MyFile.open(FileName, ios::out);//overwrite
+
+    string DataLine;
+
+    if (MyFile.is_open())
+    {
+
+        for (sClient C : vClients)
+        {
+
+           
+                //we only write records that are not marked for delete.  
+            DataLine = ConvertRecordToLine(C);
+            MyFile << DataLine << endl;
+
+            
+
+        }
+
+        MyFile.close();
+
+    }
+
+    return vClients;
+
+}
+
+short Read_WithDrow_MainMenueOption()
+{
+    short Choice = 0;
+
+    while (Choice < 1 || Choice > 9)
+    {
+        cout << "Choose what do you want to do? [1 to 9]? ";
+        cin >> Choice;
+    }
+
+    return Choice;
+}
+
+short Read_Norma_Withdrao_Mawnt()
+{
+    cout << "Please enter how Mush you want to withdraw ? ";
+    short Choice = 0;
+    cin >> Choice;
+
+    return Choice;
+}
+
+short Read_ATM_MainMenueOption()
+{
+    cout << "Choose what do you want to do? [1 to 5]? ";
+    short Choice = 0;
+    cin >> Choice;
+
+    return Choice;
+}
+
+string ReadClientAccountNumber()
+{
+    string AccountNumber = "";
+
+    cout << "\nPlease enter AccountNumber? ";
+    cin >> AccountNumber;
+    return AccountNumber;
+
+}
+
+string ReadClientPinCode()
+{
+    string AccountNumber = "";
+
+    cout << "\nPlease enter Pin Code? ";
+    cin >> AccountNumber;
+    return AccountNumber;
+
+}
+
+//  Operations her 
+
+
+bool is_the_amount_exceeds_the_balance(enQuick_Withdraw_MenueOptions Choice)
+{
+
+    switch (Choice)
+    {
+    case eExit:
+        GoBackTo_ATM_MainMenue();
+        break;
+    case e20$:
+		if (20 > Globle_Client.AccountBalance) {
+			return true;
+        }
+        break;
+    case e50$:
+        if (50 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+    case e100$:
+        if (100 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+    case e200$:
+        if (200 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+    case e400$:
+        if (400 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+    case e600$:
+        if (600 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+    case e800$:
+        if (800 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+    case e1000$:
+        if (1000 > Globle_Client.AccountBalance) {
+            return true;
+        }
+
+        break;
+   
+    default:
+        break;
+    }
+
+    return false;
+}
+
+bool Perfrom_Qucik_Withdraw_MenueOptions(enQuick_Withdraw_MenueOptions Quick_Withdraw_MenueOptions)
+{
+    vector <sClient> vClients = LoadCleintsDataFromFile(ClientsFileName);
+
+    //Validate that the amount does not exceeds the balance
+
+    while (is_the_amount_exceeds_the_balance(Quick_Withdraw_MenueOptions)){
+
+        cout << "\n! ! ! Your Balance is Just " << Globle_Client.AccountBalance << " Please enter A Valid Informations   ! ! !\n\n\n";
+        Quick_Withdraw_MenueOptions = enQuick_Withdraw_MenueOptions(Read_WithDrow_MainMenueOption());
+    }
+
+
+    char Answer = 'n';
+    cout << "\nAre you sur you want to do this Transaction ? Y/N ";
+    cin >> Answer;
+    if (toupper(Answer) == 'Y')
+    {
+
+        switch (Quick_Withdraw_MenueOptions)
+        {
+        case e20$:
+            Globle_Client.AccountBalance -= 20;
+            break;
+        case e50$:
+            Globle_Client.AccountBalance -= 50;
+            break;
+        case e100$:
+            (Globle_Client.AccountBalance -= 100);
+            break;
+        case e200$:
+            Globle_Client.AccountBalance -= 200;
+            break;
+        case e400$:
+            Globle_Client.AccountBalance -= 400;
+            break;
+        case e600$:
+            Globle_Client.AccountBalance -= 600;
+            break;
+        case e800$:
+            Globle_Client.AccountBalance -= 800;
+            break;
+        case e1000$:
+            Globle_Client.AccountBalance -= 1000;
+            break;
+        case eExit:
+            break;
+        default:
+            break;
+        }
+
+
+        // Refrech the client in vector
+
+        for (sClient& C : vClients)
+        {
+            if (C.AccountNumber == Globle_Client.AccountNumber && C.PinCode == Globle_Client.PinCode)
+                C = Globle_Client;
+
+        }
+
+        cout << "\nDone Seccesfuly , Your New Balance is " << Globle_Client.AccountBalance << "$\n\n";
+
+
+        SaveCleintsDataToFile(ClientsFileName, vClients);
+        return true;
+    }
+
+    return false;
+}
+
+void Quick_Withdraw_Screen()
+{
+
+    cout << "=====================================\n";
+    cout << "           Qucik Withdraw            \n";
+    cout << "=====================================\n";
+    cout << "\t[1] 20       [2] 50\n";
+    cout << "\t[3] 100      [4] 200\n";
+    cout << "\t[5] 400      [6] 600\n";
+    cout << "\t[7] 800      [8] 1000\n";
+    cout << "\t[9] Exit\n";
+    cout << "=====================================\n";
+    cout << "\tYour Balance is : " << Globle_Client.AccountBalance << "\n\n";
+
+    Perfrom_Qucik_Withdraw_MenueOptions((enQuick_Withdraw_MenueOptions)Read_WithDrow_MainMenueOption());
+
+
+}
+
+void PrintClientCard(sClient Client)
+{
+
+	cout << "\n-----------------------------------\n";
+    cout << "\nThe following are the client details:\n";
+    cout << "-----------------------------------";
+    cout << "\nAccout Number: " << Client.AccountNumber;
+    cout << "\nPin Code     : " << Client.PinCode;
+    cout << "\nName         : " << Client.Name;
+    cout << "\nPhone        : " << Client.Phone;
+    cout << "\nAccount Balance: " << Client.AccountBalance;
+    cout << "\n-----------------------------------\n";
+
+}
+
+bool Perfrom_Norml_Withdraw_MenueOptions()
+{
+    vector <sClient> vClients = LoadCleintsDataFromFile(ClientsFileName);
+
+    PrintClientCard(Globle_Client);
+
+    int Amount = 0;
+    cout << "\nPlease enter withdraw amount that is from the Multiple of 5? ";
+    cin >> Amount;
+
+    //Validate that the amount does not exceeds the balance
+
+    while (Amount > Globle_Client.AccountBalance )
+    {
+        cout << "\nAmount Exceeds the balance, you can withdraw up to : " << Globle_Client.AccountBalance << endl;
+        cout << "Please enter another amount? ";
+        cin >> Amount;
+    }
+
+    while (Amount % 5 != 0)
+    {
+        cout << "\n! ! ! Amount is not a Multiple of 5 ! ! ! \n\n";
+        cout << "Please enter another amount? ";
+        cin >> Amount;
+    }
+
+
+    char Answer = 'n';
+    cout << "\nAre you sur you want to do this Transaction ? Y/N ";
+    cin >> Answer;
+
+    if (toupper(Answer) == 'Y')
+    {
+        Globle_Client.AccountBalance -= Amount;
+        cout << "\nDone Seccesfuly , Your New Balance is " << Globle_Client.AccountBalance << "$\n\n";
+
+         // Refrech
+         for (sClient& C : vClients)
+    {
+        if (C.AccountNumber == Globle_Client.AccountNumber && C.PinCode == Globle_Client.PinCode)
+            C = Globle_Client;
+
+    }
+
+         SaveCleintsDataToFile(ClientsFileName, vClients);
+         return true;
+    }
+
+    return false;
+}
+
+void Norml_Withdraw_Screen()
+{
+
+    cout << "=====================================\n";
+    cout << "           Normal Withdraw            \n";
+    cout << "=====================================\n";
+
+    Perfrom_Norml_Withdraw_MenueOptions();
+
+}
+
+bool ShowDepositScreen()
+{
+    cout << "\n-----------------------------------\n";
+    cout << "\tDeposit Screen";
+    cout << "\n-----------------------------------\n";
+
+    vector <sClient> vClients = LoadCleintsDataFromFile(ClientsFileName);
+
+    PrintClientCard(Globle_Client);
+
+    double Amount = 0;
+    cout << "\nPlease enter deposit amount? ";
+
+	while (Amount <= 0)
+	{
+		cout << "\n! ! ! Amount should be greater than 0 ! ! ! \n\n";
+		cout << "Please enter another amount? ";
+    
+        cin >> Amount;
+    }
+
+
+    char Answer = 'n';
+
+    cout << "\n\nAre you sure you want perfrom this transaction? y/n ? ";
+    cin >> Answer;
+    if (Answer == 'y' || Answer == 'Y')
+    {
+        Globle_Client.AccountBalance += Amount;
+
+        cout << "\nDone Seccesfuly , Your New Balance is " << Globle_Client.AccountBalance << "$\n\n";
+
+        for (sClient& C : vClients)
+        {
+            if (C.AccountNumber == Globle_Client.AccountNumber && C.PinCode == Globle_Client.PinCode)
+                C = Globle_Client;
+
+        }
+
+
+        SaveCleintsDataToFile(ClientsFileName, vClients);
+
+        return true;
+    }
+
+    return false;
+}
+
+void Show_Balance_Screen()
+{
+    cout << "\n-----------------------------------\n";
+    cout << "\tCheck Balance Screen";
+    cout << "\n-----------------------------------\n\n\n\n";
+
+    cout << "\tYour Balance Account is : " << Globle_Client.AccountBalance << "$\n\n";
+
+
+}
+
+
+
+void Perfrom_ATM_MainMenueOptions(enATM_MainMenueOptions ATM_MainMenueOptions)
+{
+
+	// ATM_MainMenueOptions = (enATM_MainMenueOptions)Read_ATM_MainMenueOption();
+    switch (ATM_MainMenueOptions)
+    {
+    case eQuick_Withdraw:
+        system("cls");
+        Quick_Withdraw_Screen();
+        GoBackTo_ATM_MainMenue();
+        break;
+    case eNormal_Withdraw:
+        system("cls");
+        Norml_Withdraw_Screen();
+        GoBackTo_ATM_MainMenue();
+        break;
+    case eDeposit:
+        system("cls");
+        ShowDepositScreen();
+        GoBackTo_ATM_MainMenue();
+        break;
+    case eCheck_Balance:
+        system("cls");
+        Show_Balance_Screen();
+        GoBackTo_ATM_MainMenue();
+        break;
+    case eLogout:
+        system("cls");
+        LogIn();
+        break;
+    default:
+        system("cls");
+        cout << "\n\n\n\nError\n\n\n";
+        system("pause>0");
+        break;
+    }
+
+}
+
+void Show_ATM_Mian_Menue()
+{
+
+
+	system("cls");
+    cout << "=====================================\n";
+    cout << "         ATM Main Menue Screen       \n";
+    cout << "=====================================\n";
+    cout << "\t[1] Quick Withdraw.\n";
+    cout << "\t[2] Normal Withdraw.\n";
+    cout << "\t[3] Deposit\n";
+    cout << "\t[4] Check Balance.\n";
+    cout << "\t[5] Logout.\n";
+    cout << "=====================================\n";
+
+    Perfrom_ATM_MainMenueOptions((enATM_MainMenueOptions)Read_ATM_MainMenueOption());
+
+}
+
+void LogIn()
+{
+    bool LoginFail = false;
+
+    vector < sClient > vClients = LoadCleintsDataFromFile(ClientsFileName);
+
+    do
+    {
+        system("cls");
+        cout << "\n-----------------------------------\n";
+        cout << "\tLogin Screen ";
+        cout << "\n-----------------------------------\n";
+
+        if (LoginFail)
+        {
+            cout << "Wrong :  AccountNumber/PinCode\n";
+        }
+
+        string Account_Number;
+        cout << "Accout Number : "; getline(cin >> ws, Account_Number);
+        string PinCode;
+        cout << "Pin Code : "; getline(cin >> ws, PinCode);
+
+        LoginFail = !FindClientByAccountNumber_and_PinCode(Account_Number, PinCode,vClients, Globle_Client);
+
+    } while (LoginFail);
+
+    Show_ATM_Mian_Menue();
+
+}
+ 
+int main()
+{
+
+    LogIn();
+
+    system("pause>0");
+    return 0;
+}

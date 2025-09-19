@@ -1,0 +1,704 @@
+The 1 one :           Printine fro 1-5 by for loop & while loop
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	cout << " By for loop :\n";
+
+	for (int i = 1; i <= 5; i++)
+	{
+
+		cout << i << endl;
+
+	}
+
+	cout << " By while loop :\n";
+
+	int j= 1;
+	
+
+
+
+	while (j <= 5)
+	{
+
+		cout << j << endl ;
+		j++;
+
+	}
+
+
+
+	return 0;
+}
+
+
+
+The 2 one :           Enter a Possitive Number 
+
+
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+
+	system("color 5F");
+
+	int i = 0;
+	
+	cout << " Please enter a possitive Number : ";
+	cin >> i;
+
+	while (i < 0)
+	{
+
+		cout << "        !!  Wrong !! \n";
+		cout << " Please enter a possitive Number : ";
+		cin >> i;
+
+	}
+
+	cout << " You Entered The Number : " << i << endl << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+The 3 one :          Range of two Numbers 18-45
+
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+int Range_of_2_Numbers(int From, int To)
+{
+	system("color 5E");
+
+	int Number;
+
+	cout << " Enter a Number Btween " << From << " to " << To << " :\n";
+	cin >> Number;
+
+	while (Number < 18 || Number > 45 )
+	{
+
+		cout << "   Wrong Number ,  Enter a Number Between " << From << " to " << To << " :\n";
+		cin >> Number;
+
+	}
+
+	return Number;
+
+}
+
+int main()
+{
+
+
+	cout << " The Number you entered  :	" << Range_of_2_Numbers( 18 , 45 ) << endl << endl;
+
+
+	return 0;
+}
+
+
+
+
+#   26 :          from 1 to N
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Possitive_Number_and_Non_fraction_and_grader_then___(int& Number)
+{
+
+	while (Number <= 0 )
+	{
+
+		cout << "            !!  wrong Number  !!\n	   ";
+		cout << " Please enter a Possitive & whiout fraction & Number Grader then 1 : ";
+		cin >> Number;
+
+	}
+
+
+}
+
+void From_1_to_N_Result(int Number)
+{
+
+	cout << " The result is :\n";
+
+	for (int i = 1; i <= Number; i++)
+	{
+
+		cout << i << endl;
+
+	}
+
+
+
+}
+
+void From_1_to_N()
+{
+	int Number = 0;
+
+	cout << "                !!    Printing from  N to 1    !! \n\n";
+	cout << " Please enter a Possitive & whiout fraction & Number Grader then 1 : ";
+	cin >> Number;
+
+	Possitive_Number_and_Non_fraction_and_grader_then___(Number);
+
+	From_1_to_N_Result(Number);
+}
+
+
+
+
+
+int main()
+{
+
+	From_1_to_N();
+
+	return 0;
+}
+
+
+
+
+
+
+
+#   27 :          from N to 1
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Possitive_Number_and_Non_fraction_and_grader_then___(int& Number, int to)
+{
+
+	while (Number <= to)
+	{
+
+		cout << "            !!  wrong Number  !!\n	   ";
+		cout << " Please enter a Possitive & whiout fraction & Number Grader then 1 : ";
+		cin >> Number;
+
+	}
+
+
+}
+
+void From_1_to_N_Result(int Number, int to)
+{
+
+	cout << " The result is :\n";
+
+	for (int i = Number; Number >= to; Number--)
+	{
+
+		cout << Number << endl;
+
+	}
+
+
+
+}
+
+void From_1_to_N()
+{
+	int Number = 0;
+
+	cout << "                !!    Printing from  N to 1    !! \n\n";
+	cout << " Please enter a Possitive & whiout fraction & Number Grader then 1 : ";
+	cin >> Number;
+
+	Possitive_Number_and_Non_fraction_and_grader_then___(Number, 1);
+
+	From_1_to_N_Result(Number, 1);
+}
+
+
+
+
+
+int main()
+{
+
+	From_1_to_N();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+#   28 :          som odd number fro 1 to N
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Possitive_Number( int& Number)
+{
+
+	while (Number <= 1)
+	{
+		
+		cout << " !! Wrong !! \n";
+		cout << " Please enter a Possitive  & Number Grader then 1 : ";
+		cin >> Number;
+
+	}
+
+	cout << endl;
+
+}
+
+void From_1_to_N_Sum_odd_Numbers_Result(int Number)
+{
+
+	int Sum = 0;
+
+	for (int i = 1; i <= Number; i = i + 2)
+	{
+
+		Sum += i;
+
+	}
+
+	cout << " The Sum of odd Numbers that exist From 1 to " << Number << " is : " << Sum << "\n\n";
+
+
+}
+
+void Som_odd_Numbers_From_1_to_N()
+{
+	int Number = 0;
+
+	cout << "                !!    Printing Sum odd Numbers from  N to 1    !! \n\n";
+	cout << " Please enter a Possitive  & Number Grader then 1 : ";
+	cin >> Number;
+
+	Possitive_Number(Number);
+
+	From_1_to_N_Sum_odd_Numbers_Result(Number);
+}
+
+
+
+
+
+int main()
+{
+
+	Som_odd_Numbers_From_1_to_N();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+#   29 :       sum even numbers from 1 to N 
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Possitive_Number( int& Number)
+{
+
+	while (Number < 1)
+	{
+		
+		cout << " !! Wrong !! \n";
+		cout << " Please enter a Possitive  & Number Grader then 1 : ";
+		cin >> Number;
+
+	}
+
+	cout << endl;
+
+}
+
+void From_1_to_N_Sum_even_Numbers_Result(int Number)
+{
+	if (Number == 1)
+	{
+
+		cout << " The Sum of even Numbers that exist between 1 and " << Number << " is : 0\n\n";
+
+	}
+	else
+	{ 
+	int Sum = 0;
+
+	for (int i = 2; i <= Number; i = i + 2)
+	{
+
+		Sum += i;
+
+	}
+
+	cout << " The Sum of odd Numbers that exist From 1 to " << Number << " is : " << Sum << "\n\n";
+	}
+
+}
+
+void Som_even_Numbers_From_1_to_N()
+{
+	int Number = 0;
+
+	cout << "                !!    Printing Sum odd Numbers from  N to 1    !! \n\n";
+	cout << " Please enter a Possitive  & Number Grader then 1 : ";
+	cin >> Number;
+
+	Possitive_Number(Number);
+
+	
+		From_1_to_N_Sum_even_Numbers_Result(Number);
+
+	
+
+}
+
+
+
+
+
+int main()
+{
+
+	Som_even_Numbers_From_1_to_N();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+#   30 :          calculat factorial of N : ex: 6 : 6*5*4*3*2*1
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Asking_for_Possitif_Number(int &Number)
+{
+
+	
+	cout << " Please enter a Possitive  & Number Grader then 1 : ";
+	cin >> Number;
+
+
+	while (Number < 1)
+	{
+
+		cout << " !! Wrong !! \n";
+		cout << " Please enter a Possitive  & Number Grader then 1 : ";
+		cin >> Number;
+
+	}
+
+	cout << endl;
+
+}
+
+void Doing_Factorial_Number(int Number)
+{
+	int Factoriale = 1;
+	for (int i = 1; i <= Number; i++)
+	{
+		
+
+		Factoriale *= i;
+
+
+	}
+
+	cout << "  The result is :  " << Factoriale << endl << endl;
+}
+
+void Calculate_Factorial()
+{
+	int Number=0;
+
+	Asking_for_Possitif_Number(Number);
+
+	Doing_Factorial_Number(Number);
+
+
+}
+
+int main()
+{
+
+	Calculate_Factorial();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#   32 :         Enter Num1 , Num2    : Num1^Num2
+ 
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void Asking_for_two_Possitif_Number(int &Num1, int& Num2)
+{
+	
+
+	cout << " Please enter Possitive Number 1 : ";
+	cin >> Num1;
+	cout << " Please enter Possitive Number 2 : ";
+	cin >> Num2;
+
+
+	while (Num1 < 0 || Num2 < 0)
+	{
+
+		cout << " !! Wrong !! \n";
+		cout << " Please enter Possitive Number 1 : ";
+		cin >> Num1;
+		cout << " Please enter Possitive Number 2 : ";
+		cin >> Num2;
+
+	}
+
+	cout << endl;
+
+}
+
+int Factorial_operation_Between_Num1_Num2(int Num1, int Num2)
+{
+
+	int Multiplay;
+	Multiplay = pow(Num1, Num2);
+
+	return Multiplay;
+
+}
+
+void Num1_pow_Num2()
+{
+	int Num1, Num2;
+
+	Asking_for_two_Possitif_Number(Num1, Num2);
+
+	cout << "   The result is : " << Factorial_operation_Between_Num1_Num2(Num1, Num2);
+
+
+}
+
+int main()
+{
+
+	Num1_pow_Num2();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#   37 :  write a program to read numbers from use and sum them , kepp reading until the user enters -99 the print the Sum on screen
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void Sum_Numbers_intel_Mines_99()
+{
+
+	int Sum=0, Num=0;
+
+	while (Num != (-99))
+	{
+
+		cout << "   Please enter a Number her : ";
+		cin >> Num;
+
+		Sum += Num;
+
+	}
+
+	cout << "       The Sum of the all Numbers that you enterd is : " << Sum+99 << endl << endl;
+
+}
+
+int main()
+{
+
+	Sum_Numbers_intel_Mines_99();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#   46 :        write a program to print all letters from A to Z 
+
+
+
+
+#include <iostream>
+using namespace std;
+
+void Printing_From_A_To_Z()
+{
+
+	char i = 65;
+
+	while (i <= 90)
+	{
+
+		cout << i << endl;
+		i++;
+
+	}
+
+}
+
+int main()
+{
+
+	Printing_From_A_To_Z();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#   50 : read the ATM PIN code from the user ,then check if the pin = ? , then show the balance to user, otherwise : Wrong + enter PIN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

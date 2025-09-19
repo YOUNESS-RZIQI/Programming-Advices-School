@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+void Save_Vector_to_File(const vector <string>& v_something, const string& File)
+{
+
+	fstream MyFile;
+	MyFile.open(File, ios::out);
+
+	if (MyFile.is_open())
+	{
+
+		for (const string & Line : v_something)
+		{
+
+			if (Line != "")
+			{
+				MyFile << Line;
+			}
+
+		}
+		
+
+		MyFile.close();
+	}
+
+}
+
+int main()
+{
+
+	vector <string>  v_something = { "YOUNESS\n","HIBA\n","AMIN\n" };
+
+
+	Save_Vector_to_File(v_something, "MyFile.txt");
+
+	return 0;
+}

@@ -1,0 +1,36 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int Read_H_Number(string);
+ 
+
+
+int main()
+{
+
+
+	
+	cout << Read_H_Number("Hi : ") << endl;
+
+	return 0;
+}
+
+
+
+int Read_H_Number(string Message)
+{
+	int Number;
+	cout << Message << endl;
+	cin >> Number;
+	while (cin.fail())
+	{
+		// user didn't input a number
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "Invalid Number, Enter a valid one :" << endl;
+		cin >> Number;
+	}
+	return Number;
+}

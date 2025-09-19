@@ -1,0 +1,51 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+short Count_Word_in_String(string S1)
+{
+
+	string delim = " ";
+	short Counter = 0;
+	short pos = 0;
+	string Word;
+
+	while ((pos = S1.find(delim)) != std::string::npos)
+	{
+
+		Word = S1.substr(0, pos);
+
+		if (Word != "")
+		{
+			Counter++;
+		}
+
+		S1.erase(0, pos + delim.length());
+
+	}
+
+	if (S1 != "")
+	{
+		Counter++;
+	}
+
+
+	return Counter;
+}
+
+
+int main()
+{
+
+	string s = Input_Lib::Ask_for_string("Please Enter The String : ");
+	cout << "\n\nThere is " << Count_Word_in_String(s) << " Word in The String\n\n";
+	
+	
+	return 0;
+}
+

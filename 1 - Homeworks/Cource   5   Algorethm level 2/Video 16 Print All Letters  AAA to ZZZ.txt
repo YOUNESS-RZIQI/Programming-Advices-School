@@ -1,0 +1,50 @@
+
+#include <iostream>
+using namespace std;
+
+
+void Print_AAA___ZZZ()
+{
+
+	string Word = "";
+
+	for (char i = 65; i <= 90; i++)
+	{
+
+
+		for (char j = 65; j <= 90; j++)
+		{
+
+
+			for (char h = 65; h <= 90; h++)
+			{
+
+				Word += i;
+				Word += j;
+				Word += h;
+				
+				cout << Word << endl;
+
+				Word = "";
+
+
+			}
+
+		}
+
+
+	}
+
+
+
+
+}
+
+
+int main()
+{
+
+	Print_AAA___ZZZ();
+
+	return 0;
+}

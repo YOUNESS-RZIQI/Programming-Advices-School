@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+
+
+int main()
+{
+
+
+	vector <int> v_Number;
+
+	v_Number.push_back(10);
+	v_Number.push_back(20);
+	v_Number.push_back(30);
+	v_Number.push_back(40);
+	v_Number.push_back(50);
+
+	cout << "Vector size : " << v_Number.size() << endl;
+
+	/*
+
+	
+
+	v_Number.pop_back();
+	v_Number.pop_back();
+	v_Number.pop_back();
+	v_Number.pop_back();
+	
+	if(!v_Number.empty())
+		v_Number.pop_back();
+
+
+
+	*/
+
+
+	v_Number.clear();
+
+
+	cout << "Vector size : " << v_Number.size() << endl;
+
+	for (int& N : v_Number)
+	{
+		cout << N << endl;
+	}
+
+
+	cout << "\n\n";
+
+	return 0;
+}

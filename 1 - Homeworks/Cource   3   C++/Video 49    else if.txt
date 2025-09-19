@@ -1,0 +1,532 @@
+The one of the Teacher : 
+
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+	float Time;
+
+	cout << "   What time is it Now?? \n                    ";
+	cin >> Time;
+
+	Time = abs(Time);
+
+	if (Time < 10 && Time > 0)
+	{
+
+		cout << "		*******************************************\n";
+		cout << "		*               Good Morning  :)          *\n";
+		cout << "		*******************************************\n";
+	}
+	else if (Time < 20 && Time > 0)
+	{
+
+		cout << "		*******************************************\n";
+		cout << "		*               Good Day  :)              *\n";
+		cout << "		*******************************************\n";
+
+
+	}
+	else if (Time <= 24 && Time > 0)
+	{
+
+		cout << "		*******************************************\n";
+		cout << "		*               Good Evening  :)          *\n";
+		cout << "		*******************************************\n";
+
+	}
+	else
+	{
+
+		cout << "		*******************************************\n";
+		cout << "		*               Wrong Value  :)           *\n";
+		cout << "		*******************************************\n";
+
+	}
+
+
+	return 0;
+}
+
+Home worek : 
+
+
+# 33 : 
+
+#include <iostream>
+using namespace std;
+
+
+void Enter_Mark(float& Mark)
+{
+
+	cout << "Pleae enter your Mark her --> ";
+	cin >> Mark;
+
+}
+void Mark_Result(float Mark)
+{
+
+	if (Mark <= 100 && Mark > 90)
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your result is --> A          *\n";
+		cout << "*******************************************\n";
+
+	}
+	else if (Mark <= 89 && Mark > 80)
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your result is --> B          *\n";
+		cout << "*******************************************\n";
+
+	}
+	else if (Mark <= 79 && Mark > 70)
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your result is --> C          *\n";
+		cout << "*******************************************\n";
+
+	}
+	else if (Mark <= 69 && Mark > 60)
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your result is --> D          *\n";
+		cout << "*******************************************\n";
+
+	}
+	else if (Mark <= 59 && Mark > 50)
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your result is --> E          *\n";
+		cout << "*******************************************\n";
+
+	}
+	else if (Mark <= 49 && Mark >= 0)
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your result is --> F          *\n";
+		cout << "*******************************************\n";
+
+	}
+	else 
+	{
+
+		cout << "*******************************************\n";
+		cout << "*           Your Value is uncorrect       *\n";
+		cout << "*******************************************\n";
+
+	}
+
+}
+
+int main()
+{
+
+	float Mark;
+
+	Enter_Mark(Mark);
+	Mark_Result(Mark);
+
+
+	return 0;
+}
+
+
+# 34 : 
+
+# include <iostream>
+using namespace std;
+
+
+void Total_Sales_Percentage(double & Input)
+{
+	cout << "Pleas enter your Total Sales here --> ";
+	cin >> Input;
+
+	cout << " Your percentage will coust :\n";
+	
+
+}
+double Input_Result(double &Input)
+{
+
+	if (Input > 1000000)
+	{
+		long double  Result;
+		Result = Input * 0.01;
+
+		return Result;
+	}
+	else if (Input <= 1000000 && Input >= 500000)
+	{
+
+		long double  Result;
+		Result = Input * 0.02;
+
+		return Result;
+
+	}
+	else if (Input <= 500000 && Input >= 100000)
+	{
+
+		long double  Result;
+		Result = Input * 0.03;
+
+		return Result;
+
+	}
+	else if (Input <= 100000 && Input >= 50000)
+	{
+
+		long double  Result;
+		Result = Input * 0.02;
+
+		return Result;
+
+	}
+	else
+	{
+
+		long double		 Result;
+		Result = Input * 0;
+
+		return Result;
+
+	}
+
+
+}
+
+
+int main()
+{
+	
+	double Input;
+
+	Total_Sales_Percentage(Input);
+	cout << "                ! " << Input_Result(Input) << " ! DH \n\n";
+
+	return 0;
+}
+
+# 36 : 
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+void Operation_between_two_Num(float& Number1, float& Number2, string& Operation)
+{
+
+	cout << "Please enter Num1 then Num2 : \n";
+	cin >> Number1;
+	
+
+	cout << " Now please enter the Operation typ --> : ";
+	cin >> Operation;
+
+	cout << "Please enter Num2 : \n";
+	cin >> Number2;
+
+}
+
+void Operation_Result(string& Operation, float& Number1, float& Number2)
+{
+
+	if (Operation == "+")
+	{
+
+		cout << "       The Result is : " << Number1 + Number2 << " \n\n";
+
+
+	}
+	else if (Operation == "-")
+	{
+
+		cout << "       The Result is : " << Number1 - Number2 << " \n\n";
+
+
+	}
+	else if (Operation == "*")
+	{
+
+		cout << "       The Result is : " << Number1 * Number2 << " \n\n";
+
+
+	}
+	else if (Operation == "/")
+	{
+
+		cout << "       The Result is : " << Number1 / Number2 << " \n\n";
+
+
+	}
+	else
+	{
+
+		cout << " The Operation is Wrong, Please try to use Just one of those Operations : \'+\' \'-\' \'*\' \'/\'" << endl << endl;
+
+	}
+
+
+
+
+
+}
+
+
+
+int main()
+{
+
+	float Number1, Number2;
+	string Operation;
+
+
+	Operation_between_two_Num(Number1, Number2, Operation);
+	Operation_Result(Operation, Number1, Number2);
+
+	return 0;
+}
+
+# 44 : 
+
+#include <iostream>
+using namespace std;
+
+
+void If_statment_of_which_day(float& Day)
+{
+
+	Day = floor(Day);
+
+	Day = abs(Day);
+
+
+	if (Day == 1)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Sunday\'";
+
+	}
+	else if (Day == 2)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Monday\'";
+
+	}
+	else if (Day == 3)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Tuesday\'";
+
+	}
+	else if (Day == 4)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Wednesday\'";
+
+	}
+	else if (Day == 5)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Thursday\'";
+
+	}
+	else if (Day == 6)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Friday\'";
+
+	}
+	else if (Day == 7)
+	{
+
+		cout << "   The Meaning Of The Number Is : \'Saturday\'";
+
+	}
+	else
+	{
+
+		cout << "     Wrong Value !!#$!#";
+
+	}
+
+
+
+
+
+}
+void Whiche_Day(float& Day)
+{
+
+	cout << "Choose a Number fro ? : 1,2,3,4,5,6,7 \n";
+	cin >> Day;
+
+	If_statment_of_which_day(Day);
+
+
+}
+
+
+int main()
+{
+
+	float Day;
+
+	Whiche_Day(Day);
+
+
+
+	return 0;
+}
+
+
+
+
+# 45 : 
+
+
+#include <iostream>
+using namespace std;
+
+void If_Statement_of_Months(float Month)
+{
+
+	if (Month == 1)
+	{
+
+		cout << "The Meaning of the Number is : Junuary\n\n";
+
+	}
+	else if(Month == 2)
+	{
+
+		cout << "The Meaning of the Number is : February\n\n";
+
+	}
+	else if (Month == 3)
+	{
+
+		cout << "The Meaning of the Number is : March\n\n";
+
+	}
+	else if (Month == 4)
+	{
+
+		cout << "The Meaning of the Number is : April\n\n";
+
+	}
+	else if (Month == 5)
+	{
+
+		cout << "The Meaning of the Number is : May\n\n";
+
+	}
+	else if (Month == 6)
+	{
+
+		cout << "The Meaning of the Number is : June\n\n";
+
+	}
+	else if (Month == 7)
+	{
+
+		cout << "The Meaning of the Number is : July\n\n";
+
+	}
+	else if (Month == 8)
+	{
+
+		cout << "The Meaning of the Number is : August\n\n";
+
+	}
+	else if (Month == 9)
+	{
+
+		cout << "The Meaning of the Number is : September\n\n";
+
+	}
+	else if (Month == 10)
+	{
+
+		cout << "The Meaning of the Number is : October\n\n";
+
+	}
+	else if (Month == 11)
+	{
+
+		cout << "The Meaning of the Number is : November\n\n";
+
+	}
+	else if (Month == 12)
+	{
+
+		cout << "The Meaning of the Number is : December\n\n";
+
+	}
+	else 
+	{
+
+		cout << "        !!1@!#$@       Wrong Number    ??@#$#$\n\n";
+
+	}
+
+
+
+}
+
+void Which_Month(float &Month)
+{
+
+	cout << "Choose a Number : 1,2,3,4,5,6,7,8,9,10,11,12 \n";
+	cin >> Month;
+
+	Month = floor(Month);
+	Month = abs(Month);
+
+	If_Statement_of_Months(Month);
+
+
+}
+
+int main()
+{
+
+	float Month;
+
+	Which_Month(Month);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

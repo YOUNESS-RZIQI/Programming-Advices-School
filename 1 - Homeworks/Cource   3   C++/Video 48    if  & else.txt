@@ -1,0 +1,406 @@
+My virsoin : 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int x;
+
+	cout << "Please enter the Pass word : ";
+	cin >> x;
+
+	if (x == 4002)
+	{
+
+		cout << "You must be the best slave of Allah , you most be !\n";
+
+	}
+	else
+	{
+
+		cout << "\a !! The Pass word is wrong !!\n";
+
+	}
+
+
+
+	return 0;
+}
+
+
+
+The 1 one : 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int x = 10;
+
+	if (x >= 5 || x <= 8 )
+	{
+		
+		cout << "The code of \'if body\' has excuted. \n";
+
+	}
+
+	cout << "The code after \'if body\' always excuted.\n";
+
+
+
+	return 0;
+}
+
+
+
+The 2 one : 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int x;
+
+	cout << "Is the input Number grator or less than 5 ? \n";
+	cin >> x;
+
+	if (x > 5 )
+	{
+
+		cout << "Yes, " << x << " is grator than 5 \n";
+
+	}
+	if (x == 5)
+	{
+
+		cout  << x << "  equals  5 \n";
+
+	}
+	else
+	{
+
+		cout << "No, " << x << " is less than 5 \n";
+
+
+	}
+
+	cout << "\nThe code after the \'if Body\' always excuted.\n";
+
+
+
+	return 0;
+}
+
+
+
+
+# 4 : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	string License_answer;
+	double Age;
+
+	cout << "Do you have a license ? : ";
+	cin >> License_answer;
+
+	cout << "Your Age ?              : ";
+	cin >> Age;
+
+	cout << "The result is : \n\n\n";
+
+	if ( ( License_answer == "yes" || License_answer == "Yes" || License_answer == "y" || License_answer == "Y" ) && Age > 21)
+	{
+
+		cout << "		Congratulations , You have been Hired :) \n\n";
+
+	}
+	else
+	{
+
+		cout << "		Sorry ,  You have been Rejected  \n";
+		cout << "		Because of :   \n";
+
+
+	}
+
+	if (License_answer == "n" && Age < 21)
+	{
+
+		cout << "		Your Age is less then 21 , and you do not have a license \n\n";
+
+	}
+
+	if (License_answer == "n" && Age > 21)
+	{
+
+		cout << "		You do not have a license \n\n";
+
+	}
+
+	if (License_answer == "y" && Age < 21)
+	{
+
+		cout << "		Your Age is less then 21 \n\n";
+
+	}
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+# 8 : 
+
+
+#include <iostream>
+using namespace std;
+
+void Exam_Rsult(float &Mark)
+{
+
+	
+
+	cout << "Please enter the your Mark ? ";
+	cin >> Mark;
+	cout << endl;
+
+	if (Mark >= 50 && Mark >=0 && Mark <= 100 )
+	{
+
+		cout << "	You Passed the Exame :) \n" << endl;
+
+	}
+	if (Mark <  50 && Mark >= 0 && Mark <= 100)
+	{
+
+		cout << "	You Failed in the Exame :( \n" << endl;
+	}
+	if ( Mark <= 0 || Mark >= 100)
+	{
+
+		cout << "Invalid input! Please enter a  value between 0 and 100 . \n\n";
+	}
+
+	
+}
+
+int main()
+{
+
+	float Mark;
+
+	Exam_Rsult( Mark );
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+# 11 : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+
+void Asking_to_enter_3_Marks(float Mark[3])
+{
+
+	cout << "Please enter the first Mark   : ";
+	cin >> Mark[0];
+
+	cout << "Please enter the seconed Mark : ";
+	cin >> Mark[1];
+
+	cout << "Please enter the theerd Mark  : ";
+	cin >> Mark[2];
+
+
+}	
+
+float Mark_Average(float Mark[3])
+{
+
+	float Average = (Mark[0] + Mark[1] + Mark[2]) / 3;
+	return Average;
+
+}
+
+void Display_Result(float Average) {
+	cout << "\nThe average mark is: " << Average << endl;
+
+	if (Average < 50)
+	{
+		cout << "You Failed in the exam!!!\n\n";
+	}
+	else 
+	{
+		cout << "You Passed the exam :)\n\n";
+	}
+}
+
+int main()
+{
+
+	float Mark[3];
+
+	Asking_to_enter_3_Marks(Mark);
+	float Average = Mark_Average(Mark);
+	Display_Result( Average );
+	
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+# 24 : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Asking_for_Age(int &Age)
+{
+
+	cout << "Please enter your Age : ";
+	cin >> Age;
+
+
+}
+
+void Result_of_Age(int Age)
+{
+
+	if (Age > 18 && Age < 45)
+	{
+
+		cout << "\n		Valid Age " << endl << endl;
+
+	}
+	if ((Age > 0 && Age < 18 ) || (Age > 45 && Age < 150))
+	{
+
+		cout << "\n		Invalid Age " << endl << endl;
+
+	}
+	if (Age <= 0 || Age > 150) 
+	{
+
+		cout << "		Please enter a correct value !! \n";
+
+	}
+
+	
+}
+
+int main()
+{
+	int Age;
+	Asking_for_Age(Age);
+	Result_of_Age(Age);
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 49 : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+void Input_ATM_Code(short &ATM_Code)
+{
+
+	cout << "Please enter Your ATM Code to see your Balance : \n";
+	cin >> ATM_Code;
+
+}
+
+void Result_of_ATM_Code( short ATM_Code)
+{
+
+	if ((ATM_Code > 1000 && ATM_Code < 9999) && ( ATM_Code ==  4002  ))
+	{
+
+		cout << "		Your Balance is :  40 DH \n\n" << endl;
+
+	}
+	else
+	{
+
+		cout << "		Incorrect Pass word ! Please try in another time :( \n\n" << endl;
+
+	}
+}
+
+int main()
+{
+
+	short ATM_Code;
+
+	Input_ATM_Code(ATM_Code);
+	Result_of_ATM_Code(ATM_Code);
+
+
+	return 0;
+}
+
+
+

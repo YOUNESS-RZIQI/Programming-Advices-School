@@ -1,0 +1,115 @@
+The 1 one :  asking for 10 students markes 
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int Students_Markes[10] ;
+
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[0];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[1];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[2];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[3];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[4];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[5];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[6];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[7];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[8];
+	cout << "Pleas enter your Mark : \n";
+	cin >> Students_Markes[9];
+
+
+	cout << "The resultes is : \n";
+	cout << "   Student 1  mark : " << Students_Markes[0] << "\n";
+	cout << "   Student 2  mark : " << Students_Markes[1] << "\n";
+	cout << "   Student 3  mark : " << Students_Markes[2] << "\n";
+	cout << "   Student 4  mark : " << Students_Markes[3] << "\n";
+	cout << "   Student 5  mark : " << Students_Markes[4] << "\n";
+	cout << "   Student 6  mark : " << Students_Markes[5] << "\n";
+	cout << "   Student 7  mark : " << Students_Markes[6] << "\n";
+	cout << "   Student 8  mark : " << Students_Markes[7] << "\n";
+	cout << "   Student 9  mark : " << Students_Markes[8] << "\n";
+	cout << "   Student 10 mark : " << Students_Markes[9] << "\n";
+
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 2 one :        it is about calculate the average of 3 Grades 
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+
+
+int main()
+{
+
+	float Grade[3] ;
+
+	cout << "Pleas enter your 1 Grade ?\n";
+	cin >> Grade[0];
+	cout << "Pleas enter your 2 Grade ?\n";
+	cin >> Grade[1];
+	cout << "Pleas enter your 3 Grade ?\n";
+	cin >> Grade[2];
+
+	
+
+	float Average = (Grade[0] + Grade[1] + Grade[2]) / 3;
+
+	cout << "********************************\n";
+	cout << "The average of grades is : " << fixed << setprecision(4) << Average << endl;
+	
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

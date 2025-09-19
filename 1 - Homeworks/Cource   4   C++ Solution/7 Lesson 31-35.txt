@@ -1,0 +1,393 @@
+The 31 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Num()
+{
+
+	float Num = 0;
+
+	cout << "Enter a Number : ";
+	cin >> Num;
+
+	return Num;
+}
+
+
+void Power_of_Num_2_3_4(float Num)
+{
+
+	for (int i = 2; i <= 4; i++)
+	{
+
+		cout << "    " << Num << " Pow " << i << " = " << pow(Num, i) << "\n";
+
+	}
+
+	cout << "\n\n\n";
+
+}
+
+
+
+int main()
+{
+
+
+	Power_of_Num_2_3_4(Enter_Num());
+
+	return 0;
+}
+
+
+
+
+
+The 32 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+void Enter_Num_and_Pow(float &Num,float &Pow)
+{
+
+	
+
+	cout << "Enter a Number : ";
+	cin >> Num;
+
+	cout << "Enter a Power : ";
+	cin >> Pow;
+
+	
+}
+
+
+void Power_of_Num(float Num , float Pow)
+{
+
+	cout << "    " << Num << " Pow " << Pow << " = " << pow(Num, Pow) << "\n" << "\n\n\n" ;
+
+}
+
+
+
+int main()
+{
+	float Num = 0, Pow = 0;
+	Enter_Num_and_Pow(Num,Pow);
+	Power_of_Num(Num,Pow);
+
+	return 0;
+}
+
+
+The 32' one : 
+
+#include <iostream>
+using namespace std;
+
+
+float  Enter_Num_and_Number()
+{
+	float Num=0 ;
+	
+
+	cout << "Enter a Number : ";
+	cin >> Num;
+
+	
+	return Num;
+	
+}
+
+float  Enter_Num_and_Pow()
+{
+	float Pow = 0;
+
+
+	cout << "Enter a Power  : ";
+	cin >> Pow;
+
+
+	return Pow;
+
+}
+
+float  Power_of_Num(float Num , float Pow)
+{
+
+	if (Pow == 0)
+		return 1;
+	else
+		return pow(Num, Pow) ;
+	
+}
+
+
+int main()
+{
+	
+	cout << "       The result is : " << Power_of_Num(Enter_Num_and_Pow(), Enter_Num_and_Number());
+
+	return 0;
+}
+
+
+
+
+
+The 33 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Mark_In_Range(float From , float To)
+{
+	
+	float Mark = 0;
+	do
+	{ 
+		cout << " Please Enter Your Mark (0-100) : ";
+		cin >> Mark;
+
+
+	} while (Mark<From || Mark>To);
+
+
+	return Mark;
+}
+
+char Print_Mark_Letter(float Mark)
+{
+
+	if (100 >= Mark >= 90)
+		return 'A';
+	else if (89 >= Mark >= 80)
+		return 'B';
+	else if (79 >= Mark >= 70)
+		return 'C';
+	else if (69 >= Mark >= 60)
+		return 'D';
+	else if (59 >= Mark >= 50)
+		return 'E';
+	else if (50 > Mark)
+		return 'F';
+	
+
+}
+
+
+int main()
+{
+
+	cout << "   The Result is : " << Print_Mark_Letter(Enter_Mark_In_Range(0, 100));
+
+	return 0;
+}
+
+
+
+
+
+
+The 34 one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Total_Sales_Amounth(float From , float To)
+{
+	
+	float Sales = 0;
+	do
+	{ 
+		cout << " Please Enter Your Sales (0-100) : ";
+		cin >> Sales;
+
+
+	} while (Sales<From || Sales>To);
+
+
+	return Sales;
+}
+
+char Print_Commission_Percenteg(float Sales)
+{
+
+	if (Sales >= 1000000)
+		return '5';
+	else if (1000000 >= Sales && Sales >= 500000)
+		return '4';
+	else if (500000 >= Sales  && Sales >= 100000)
+		return '3';
+	else if (100000 >= Sales  && Sales >= 50000)
+		return '2';
+	else if (50000 > Sales)
+		return '0';
+	
+	
+
+}
+
+
+int main()
+{
+
+	cout << "   The Commission is : " << Print_Commission_Percenteg(Enter_Total_Sales_Amounth(0, 1000000000)) << "%\n\n";
+
+	return 0;
+}
+
+
+
+
+
+The 34' one :
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Total_Sales_Amounth()
+{
+	
+	float Sales = 0;
+	 
+		cout << " Please Enter Your Sales (0-100) : ";
+		cin >> Sales;
+
+
+	return Sales;
+}
+
+float Get_Commission_Percenteg(float Total_Sales)
+{
+
+	if (Total_Sales >= 1000000)
+		return 0.01;
+	else if (Total_Sales >= 500000)
+		return 0.02;
+	else if (Total_Sales >= 100000)
+		return 0.03;
+	else if (Total_Sales >= 50000)
+		return 0.05;
+	else 
+		return 0;
+	
+	
+
+}
+
+float Commission_Result(float Total_Sales)
+{
+
+	return Get_Commission_Percenteg(Total_Sales) * Total_Sales;
+		
+}
+
+int main()
+{
+
+	float Total_Sales = Enter_Total_Sales_Amounth();
+
+
+	cout << "  The Commission Percenteg is : " << Get_Commission_Percenteg(Total_Sales) * 100 << "%\n";
+	cout << "   The Commission is :	" << Commission_Result(Total_Sales) << "$\n\n";
+
+
+	return 0;
+}
+
+
+
+
+
+
+The 35 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+struct stCoin
+{
+	float Penny, Nickel, Dime, Quarter, Dollar;
+};
+
+void Enter_Coins(stCoin &Coin)
+{
+
+	cout << "Please Enter Pennys  : ";
+	cin >> Coin.Penny;
+
+	cout << "Please Enter Nickel  : ";
+	cin >> Coin.Nickel;
+
+	cout << "Please Enter Dime    : ";
+	cin >> Coin.Dime;
+
+	cout << "Please Enter Quarter : ";
+	cin >> Coin.Quarter;
+
+	cout << "Please Enter Dollar  : ";
+	cin >> Coin.Dollar;
+
+}
+
+float Change_All_Coins_To_Penny(stCoin Coin)
+{
+
+	float Change = 0;
+
+	Change = (Coin.Penny * 1) + (Coin.Nickel * 5) + (Coin.Dime * 10) + (Coin.Quarter * 25) + (Coin.Dollar * 100);
+
+	return Change;
+
+}
+
+float Change_All_From_Penny_To_Dollar(stCoin Coin)
+{
+
+	float Change = 0;
+
+	Change = Change_All_Coins_To_Penny(Coin) / 100;
+
+	return Change;
+
+}
+
+
+
+int main()
+{
+
+	stCoin Coin;
+
+	Enter_Coins(Coin);
+
+	cout << "\n\nTotal Pennys  : " << Change_All_Coins_To_Penny(Coin) << endl ;
+	cout << "Total Dollars : " << Change_All_From_Penny_To_Dollar(Coin) << endl << "\n\n";
+
+
+
+	return 0;
+}
+
+
+
+

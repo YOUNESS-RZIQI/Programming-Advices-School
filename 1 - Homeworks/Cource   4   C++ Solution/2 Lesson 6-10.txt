@@ -1,0 +1,506 @@
+The 6 one : 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct stInfo
+{
+	string First_Name;
+	string Last_Name;
+};
+
+stInfo Enter_Full_Name()
+{
+	stInfo Full_Name;
+
+	cout << "Please enter your First Name : ";
+	getline(cin, Full_Name.First_Name);
+
+	cout << "Please enter your Last Name : ";
+	getline(cin, Full_Name.Last_Name);
+
+	return Full_Name;
+
+}
+
+string Full_Name(stInfo Full_Name)
+{
+	return  Full_Name.First_Name + " " + Full_Name.Last_Name + " ";
+}
+
+void Pringt_Full_Name(string Full_Name)
+{
+
+	cout << "\n\n   Your Full Name is : " << Full_Name << endl << endl;
+
+}
+
+
+int main()
+{
+
+	Pringt_Full_Name(Full_Name(Enter_Full_Name()));
+
+	return 0;
+}
+
+
+
+
+The 7 one : 
+
+// Half of Number
+
+
+#include <iostream>
+using namespace std;
+
+float Enter_Number()
+{
+
+	float Number;
+
+	cout << "Please enter a number : ";
+	cin >> Number;
+
+
+	return  Number ;
+}
+
+
+float Half_Number_Operation(float Number)
+{
+
+	float Result;
+
+	Result = Number / 2;
+
+	return Result;
+}
+
+void Print_Half_Number_Result(float Result)
+{
+
+	cout << " The half of number is : " << Result << endl;
+
+}
+
+
+int main()
+{
+
+	Print_Half_Number_Result(Half_Number_Operation(Enter_Number()));
+
+	return 0;
+}
+
+
+The 7' one : 
+
+
+// Half of Number
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+float Enter_Number()
+{
+
+	float Number;
+
+	cout << "Please enter a number : ";
+	cin >> Number;
+
+
+	return  Number;
+}
+
+float Half_Number_Operation(float Number)
+{
+
+	float Result;
+
+	Result = Number / 2;
+
+	return Result;
+
+}
+
+
+void Print_Half_Number_Result(float Number)
+{
+
+	
+
+	string result;
+
+	result = "\n\n   The half of " + to_string(Number) + " is : " + to_string(Half_Number_Operation( Number)) + "\n\n";
+
+		 
+
+
+	cout << result << endl;
+
+}
+
+
+int main()
+{
+
+	Print_Half_Number_Result(Enter_Number());
+
+	return 0;
+}
+
+
+
+
+
+The 8 one : 
+
+// Pass of Fail
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+enum enPass_or_Fail{ Pass , Fail };
+
+
+float Enter_Mark()
+{
+
+	float Mark;
+
+	cout << "Please enter the Mark : ";
+	cin >> Mark;
+
+
+	return  Mark;
+}
+
+enPass_or_Fail Is_Pass_of_Fail(float Mark)
+{
+
+	if (Mark < 50)
+		return enPass_or_Fail::Fail;
+	else
+		return enPass_or_Fail::Pass;
+
+	
+
+}
+
+void Print_Half_Number_Result(enPass_or_Fail Result )
+{
+
+	if (Result == enPass_or_Fail::Fail)
+		cout << "\n\n   Fail \n\n ";
+	else
+		cout << "\n\n   Pass \n\n";
+
+}
+
+
+int main()
+{
+
+	Print_Half_Number_Result(Is_Pass_of_Fail(Enter_Mark()));
+
+	return 0;
+}
+
+
+
+The 9 one : 
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Three_Numbers()
+{
+
+	float Number[3], Sum=0;
+
+	cout << "   Please Enter 3 Number to Sum Them :\n\n";
+
+	for (int i = 0; i <= 3 - 1; i++)
+	{
+
+		cout << "Enter Number [" << i + 1 << "] here : ";
+		cin >> Number[i];
+		cout << "\n";
+
+		Sum += Number[i];
+
+	}
+
+	return Sum;
+
+}
+
+
+void Print_There_Sum(float Sum)
+{
+
+	cout << "\n\n\n   The Sum of Numbers is : " << Sum << "\n\n";
+
+
+}
+
+
+
+int main()
+{
+
+	Print_There_Sum(Enter_Three_Numbers());
+
+	return 0;
+}
+
+
+
+The 9' one : 
+
+#include <iostream>
+using namespace std;
+
+void Enter_3_Numbers(float& Number1, float& Number2, float& Number3)
+{
+
+	cout << "      Please Enter 3 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Number1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Number2;
+
+	cout << "Please enter Number 3 : ";
+	cin >> Number3;
+
+
+}
+
+float Calculation_of_3_Numbers(float Number1, float Number2, float Number3)
+{
+
+	float Sum = 0;
+
+	Sum = Number1 + Number2 + Number3;
+
+	return Sum;
+
+}
+
+void Printe_The_Sum_of_3_Numbers(float Number1, float Number2, float Number3)
+{
+
+	cout << "   The sum of : " << Number1 << "+" << Number2 << "+" << Number3 << " = " << Calculation_of_3_Numbers(Number1, Number2, Number3) << "\n\n";
+
+}
+
+
+
+int main()
+{
+
+	float Number1, Number2, Number3;
+
+	Enter_3_Numbers(Number1, Number2, Number3);
+	Printe_The_Sum_of_3_Numbers(Number1, Number2, Number3);
+
+
+	return 0;
+}
+
+
+
+The 9" one : 
+
+
+#include <iostream>
+using namespace std;
+
+void Enter_3_Numbers(float& Number1, float& Number2, float& Number3)
+{
+
+	cout << "      Please Enter 3 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Number1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Number2;
+
+	cout << "Please enter Number 3 : ";
+	cin >> Number3;
+
+
+}
+
+float Calculation_of_3_Numbers(float Number1, float Number2, float Number3)
+{
+
+	float Sum = 0;
+
+	Sum = Number1 + Number2 + Number3;
+
+	return Sum;
+
+}
+
+void Printe_The_Sum_of_3_Numbers(float Sum)
+{
+
+	cout << "   The sum is = " << Sum << "\n\n";
+
+}
+
+
+
+int main()
+{
+
+	float Number1, Number2, Number3;
+
+	Enter_3_Numbers(Number1, Number2, Number3);
+	Printe_The_Sum_of_3_Numbers(Calculation_of_3_Numbers(Number1, Number2, Number3));
+
+
+	return 0;
+}
+
+
+
+
+
+
+The 10 one : 
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Three_Marks()
+{
+
+	float Number[3], sum = 0 , Average = 0;
+
+	cout << "   Please Enter 3 Marks to Sum Them :\n\n";
+
+	for (int i = 0; i <= 3 - 1; i++)
+	{
+
+		cout << "Enter Mark [" << i + 1 << "] here : ";
+		cin >> Number[i];
+		cout << "\n";
+
+		sum += Number[i];
+
+	}
+	Average = (float)sum / 3;
+	return Average;
+
+}
+
+
+void Print_There_Average(float Average)
+{
+
+	cout << "\n\n\n   The Average of 3 Marks is : " << Average << "\n\n";
+
+
+}
+
+
+
+int main()
+{
+
+	Print_There_Average(Enter_Three_Marks());
+
+	return 0;
+}
+
+
+The 10' one : 
+
+#include <iostream>
+using namespace std;
+
+void Enter_3_Numbers(float& Mark1, float& Mark2, float& Mark3)
+{
+
+	cout << "      Please Enter 3 Marks : \n\n\n";
+
+	cout << "Please enter Mark 1 : ";
+	cin >> Mark1;
+
+	cout << "Please enter Mark 2 : ";
+	cin >> Mark2;
+
+	cout << "Please enter Mark 3 : ";
+	cin >> Mark3;
+
+
+}
+
+float Calculat_sum_of_3_Marks(float Mark1, float Mark2, float Mark3)
+{
+
+	float Sum = 0 , Average=0 ;
+
+	Sum = Mark1 + Mark2 + Mark3;
+
+	
+
+	return Sum;
+
+}
+
+float Calculat_Average_of_3_Marks(float& Mark1, float& Mark2, float& Mark3)
+{
+	float Average = 0;
+
+	Average = (float)Calculat_sum_of_3_Marks(Mark1, Mark2, Mark3) / 3;
+
+	return Average;
+
+}
+
+void Printe_The_Average_of_3_Marks(float Average)
+{
+
+	cout << "\n\n\n   The Average is = " << Average << "\n\n";
+
+}
+
+
+
+int main()
+{
+
+	float Mark1, Mark2, Mark3;
+
+	Enter_3_Numbers(Mark1, Mark2, Mark3);
+	Printe_The_Average_of_3_Marks(Calculat_Average_of_3_Marks(Mark1, Mark2, Mark3));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+

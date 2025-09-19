@@ -1,0 +1,304 @@
+The 46 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+void Print_Letter_A_to_Z()
+{
+
+	for (int i = 65; i <= 90; i++)
+	{
+
+		cout << char(i) << endl;
+
+	}
+
+}
+
+int main()
+{
+
+	Print_Letter_A_to_Z();
+	cout << endl;
+
+	return 0;
+}
+
+
+
+
+
+The 47 one : 
+
+
+#include <iostream>
+using namespace std;
+
+struct stLoan
+{
+
+	float Loan_Amount, Monthly_Payment;
+
+};
+
+float Enter_Positive_Number(string Massege)
+{
+
+	float Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+float Calculat_How_Many_Month_Youl_Take_to_Pay( stLoan Loan)
+{
+
+	return (float)Loan.Loan_Amount / Loan.Monthly_Payment;
+
+}
+
+stLoan Enter_Loan_Info()
+{
+	stLoan Loan;
+	Loan.Loan_Amount     = Enter_Positive_Number("How much do you need ?        : ");
+	Loan.Monthly_Payment = Enter_Positive_Number("How much you will pay Monthly : ");
+
+	return Loan;
+
+}
+
+void Print_Loan_result(stLoan Loan)
+{
+
+	cout << "\n**************************************\n";
+	cout << "    It Will Take " << Calculat_How_Many_Month_Youl_Take_to_Pay(Loan) << " Month to Pay the Loan\n\n";
+
+}
+
+int main()
+{
+
+	Print_Loan_result(Enter_Loan_Info());
+
+	return 0;
+}
+
+
+
+
+
+The 48 one : 
+
+
+#include <iostream>
+using namespace std;
+
+struct stLoan
+{
+
+	float Loan_Amount, Months;
+
+};
+
+float Enter_Positive_Number(string Massege)
+{
+
+	float Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+float Calculat_How_Much_to_Pay( stLoan Loan)
+{
+
+	return (float)Loan.Loan_Amount / Loan.Months;
+
+}
+
+stLoan Enter_Loan_Info()
+{
+	stLoan Loan;
+	Loan.Loan_Amount     = Enter_Positive_Number("How much do you need    ? : ");
+	Loan.Months          = Enter_Positive_Number("How Many Month you wnat ? : ");
+
+	return Loan;
+
+}
+
+void Print_Loan_result(stLoan Loan)
+{
+	float Payment = Calculat_How_Much_to_Pay(Loan);
+
+	cout << "\n**************************************\n";
+	cout << "    You will Pay " << Payment << "$ Monthly to Complit in " << Loan.Months << " Months\n\n";
+
+}
+
+int main()
+{
+
+	Print_Loan_result(Enter_Loan_Info());
+
+	return 0;
+}
+
+
+
+
+
+The 49 one : 
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Massege_To_Me()
+{
+
+	cout << "\n\n***************************************\n\n";
+	cout << "   You should be gratful to our Lord \n\n";
+
+}
+
+void Enter_Poss_Word()
+{
+
+	string  Pass_Word;
+
+	do
+	{
+
+		cout << " Enter Pass Word : ";
+		getline(cin, Pass_Word);
+
+
+		if (Pass_Word == "4002")
+		{
+
+			system("color 2F");
+
+			Massege_To_Me();
+
+		}
+		else
+		{
+
+			system("color 4F");
+
+			cout << "  ! Wrong ! \n\n";
+
+		}
+
+
+	} while (Pass_Word != "4002");
+	
+}
+
+
+
+int main()
+{
+
+	Enter_Poss_Word();
+
+	return 0;
+}
+
+
+
+
+
+
+The 50 one : 
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Massege_To_Me()
+{
+
+	cout << "\n\n***************************************\n\n";
+	cout << "   You should be gratful to our Lord \n\n";
+
+}
+
+void Enter_Poss_Word()
+{
+
+	string  Pass;
+	int Counter = 3;
+
+
+	do
+	{
+
+		Counter--;
+
+		cout << " Enter Pass Word : ";
+		getline(cin, Pass);
+
+
+		if (Pass == "4002")
+		{
+
+			system("color 2F");
+
+			Massege_To_Me();
+
+		}
+		else
+		{
+
+			system("color 4F");
+
+			cout << "  ! Wrong ! \n\n";
+			if(Counter != 0)
+			{
+				cout << "   You Still Have " << Counter << " Chance\n\n";
+			}
+
+		}
+		
+
+	} while (Pass != "4002" && Counter != 0);
+
+	if (Pass != "4002")
+		cout << "\n\n You Passed the limetes \n\n";
+
+
+}
+
+
+
+int main()
+{
+
+	Enter_Poss_Word();
+
+	return 0;
+}
+
+
+

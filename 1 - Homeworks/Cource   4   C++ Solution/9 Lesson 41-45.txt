@@ -1,0 +1,591 @@
+The 41 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Positive_Number(string Massege)
+{
+
+	float Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+float Change_Hours_to_Days(float Hours)
+{
+
+	float Change = (float)(Hours / 24);
+
+	return Change;
+}
+
+float Change_Days_to_Weeks( float Days)
+{
+
+	float Change = (float ) (Days /  7);
+
+	return Change;
+}
+
+
+
+int main()
+{
+
+
+	float Number_of_Hours = Enter_Positive_Number("Please Enter Hours Here : ");
+	float Number_of_Days = Change_Hours_to_Days(Number_of_Hours);
+	float Number_of_Weeks = Change_Days_to_Weeks(Number_of_Days);
+
+	cout << endl;
+	cout << "   Hours : " << Number_of_Hours << endl;
+	cout << "   Weeks : " << Number_of_Weeks << endl;
+	cout << "   Days  : " << Number_of_Days << endl;
+
+
+
+	return 0;
+}
+
+
+
+
+
+The 42 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+struct stTime
+{
+
+	int Days, Hours, Minutes, Seconds;
+
+};
+
+
+
+float Enter_Positive_Number(string Massege)
+{
+
+	float Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Days_To_Seconds(int Days)
+{
+	float Seconds = 0;
+
+	Seconds = Days * 24 * 60 * 60;
+
+	return Seconds;
+}
+
+int Hours_To_Seconds(int Hours)
+{
+	float Seconds = 0;
+
+	Seconds = Hours * 60 * 60;
+
+	return Seconds;
+}
+
+int Minutes_To_Seconds(int Minutes)
+{
+	float Seconds = 0;
+
+	Seconds = Minutes * 60;
+
+	return Seconds;
+}
+
+int Seconds(int seco)
+{
+	float Seconds = 0;
+
+	Seconds = seco;
+
+	return Seconds;
+}
+
+float Total_Seconds(stTime Time)
+{
+
+	float Total_Seconds = 0;
+
+	Total_Seconds = (float) (Days_To_Seconds(Time.Days) + Hours_To_Seconds(Time.Hours) + Minutes_To_Seconds(Time.Minutes) + Seconds(Time.Seconds));
+
+
+	return Total_Seconds;
+}
+
+void Input(stTime &Time)
+{
+
+	;
+
+	Time.Days = Enter_Positive_Number("Enter Days    : ");
+	Time.Hours = Enter_Positive_Number("Enter Hours   : ");
+	Time.Minutes = Enter_Positive_Number("Enter Minutes : ");
+	Time.Seconds = Enter_Positive_Number("Enter Seconds : ");
+
+	
+
+
+}
+
+void Output(stTime Time)
+{
+
+	cout << "\n\n";
+	cout << " So : Days/Hours/Minutes/Seconds \n";
+	cout << " So :  " << Time.Days << " /  " << Time.Hours << "   /  " << Time.Minutes << "   / " << Time.Seconds << "\n";
+
+
+	cout << "*****************************************\n\n";
+	cout << "   Change Totally To Seconds : " << Total_Seconds(Time) << endl;
+
+}
+
+
+int main()
+{
+
+	stTime Time;
+
+	Input(Time);
+	Output(Time);
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 43 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+struct stTime
+{
+
+	int Days, Hours, Minutes, Seconds ;
+
+};
+
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+stTime Read_Total_Time(int Total_Seconds)
+{
+	stTime Time;
+
+
+	int  Remainder = 0;
+
+	Time.Days = floor (Total_Seconds / (24 * 60 * 60));
+	Remainder = Total_Seconds % (24 * 60 * 60);
+
+	Time.Hours = floor (Remainder / (60 * 60));
+	Remainder = Remainder % ( 60 * 60);
+
+	Time.Minutes = floor (Remainder / (60));
+	Remainder = Remainder % (60);
+
+	Time.Seconds = Remainder;
+	
+
+	return Time;
+}
+
+void Print_Result(stTime Time)
+{
+
+	cout << "\n\n" << Time.Days << ":" << Time.Hours << ":" << Time.Minutes << ":" << Time.Seconds << "\n\n";
+
+}
+
+int main()
+{
+
+	int Total_Seconds = Enter_Positive_Number("Enter Seconds : ");
+	Print_Result(Read_Total_Time(Total_Seconds));
+
+	
+	return 0;
+}
+
+
+
+
+
+
+
+The 44 one : 
+
+#include <iostream>
+using namespace std;
+
+
+enum enDays 
+{
+    Sunday = 1,
+    Monday = 2,
+    Tuesday = 3,
+    Wednesday = 4,
+    Thursday = 5,
+    Friday = 6,
+    Saturday = 7
+};
+
+
+
+int Read_Number_In_Range(string Message, int From, int To)
+{
+
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+
+    } while (Number < From  || Number >To);
+
+    return Number;
+
+}
+
+
+int Read_Number(int &Number)
+{
+    cout << "    Choose one Day By Its Number :\n\n";
+    cout << "**************************************\n";
+    cout << "*            (1) Sunday              *\n";
+    cout << "*            (2) Monday              *\n";
+    cout << "*            (3) Tuesday             *\n";
+    cout << "*            (4) Wednesday           *\n";
+    cout << "*            (5) Thursday            *\n";
+    cout << "*            (6) Friday              *\n";
+    cout << "*            (7) Saturday            *\n";
+    cout << "**************************************\n\n\n";
+
+     Number = Read_Number_In_Range("   Choose The Day : " , 1 ,7 );
+
+    return Number;
+}
+
+
+void Print_Day(int DayNumber)
+{
+    enDays Day = (enDays)DayNumber;
+
+
+    switch (Day)
+    {
+    case Sunday:
+        cout << "You chosed: Sunday\n";
+        break;
+    case Monday:
+        cout << "You chosed: Monday\n";
+        break;
+    case Tuesday:
+        cout << "You chosed: Tuesday\n";
+        break;
+    case Wednesday:
+        cout << "You chosed: Wednesday\n";
+        break;
+    case Thursday:
+        cout << "You chosed: Thursday\n";
+        break;
+    case Friday:
+        cout << "You chosed: Friday\n";
+        break;
+    case Saturday:
+        cout << "You chosed: Saturday\n";
+        break;
+    default:
+        cout << "Invalid day number!\n";
+        break;
+    }
+
+    
+}
+
+int main()
+{
+    int Number = 0;
+    Print_Day(Read_Number(Number));
+
+    return 0;
+}
+
+
+The 44' one   of The Teacher  : 
+
+
+#include <iostream>
+using namespace std;
+
+
+enum enDays 
+{
+    Sunday = 1,
+    Monday = 2,
+    Tuesday = 3,
+    Wednesday = 4,
+    Thursday = 5,
+    Friday = 6,
+    Saturday = 7
+};
+
+
+
+int Read_Number_In_Range(string Message, int From, int To)
+{
+
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+
+    } while (Number < From  || Number >To);
+
+    return Number;
+
+}
+
+
+enDays Read_Number()
+{
+    
+
+    cout << "    Choose one Day By Its Number :\n\n";
+    cout << "**************************************\n";
+    cout << "*            (1) Sunday              *\n";
+    cout << "*            (2) Monday              *\n";
+    cout << "*            (3) Tuesday             *\n";
+    cout << "*            (4) Wednesday           *\n";
+    cout << "*            (5) Thursday            *\n";
+    cout << "*            (6) Friday              *\n";
+    cout << "*            (7) Saturday            *\n";
+    cout << "**************************************\n\n\n";
+
+
+
+
+    return (enDays)Read_Number_In_Range("   Choose The Day : ", 1, 7);
+   
+}
+
+
+string Print_Number(enDays   DayNumber)
+{
+    
+
+
+    switch (DayNumber)
+    {
+    case enDays::Sunday:
+        return "\nYou chosed: Sunday\n";
+        
+    case enDays::Monday:
+        return "\nYou chosed: Monday\n";
+        
+    case enDays::Tuesday:
+        return "\nYou chosed: Tuesday\n";
+        
+    case enDays::Wednesday:
+        return "\nYou chosed: Wednesday\n";
+        
+    case enDays::Thursday:
+        return"\nYou chosed: Thursday\n";
+        
+    case enDays::Friday:
+        return "\nYou chosed: Friday\n";
+        
+    case enDays::Saturday:
+        return "\nYou chosed: Saturday\n";
+       
+    default:
+        return "\nInvalid day number!\n";
+        
+    }
+
+    
+}
+
+int main()
+{
+    
+    cout << Print_Number(Read_Number()) << endl;
+
+    return 0;
+}
+
+
+
+
+The 45 one : 
+
+#include <iostream>
+using namespace std;
+
+
+enum enMonths
+{
+    January = 1,
+    February = 2,
+    March = 3,
+    April = 4,
+    May = 5,
+    June = 6,
+    July = 7,
+    August = 8,
+    September = 9,
+    October = 10,
+    November = 11,
+    December = 12
+};
+
+
+
+int Read_Number_In_Range(string Message, int From, int To)
+{
+
+    int Number = 0;
+
+    do
+    {
+        cout << Message;
+        cin >> Number;
+
+    } while (Number < From || Number >To);
+
+    return Number;
+
+}
+
+
+enMonths Read_Number()
+{
+
+
+    cout << "    Choose one Month By Its Number :\n\n";
+    cout << "**************************************\n";
+    cout << "*            (1) January             *\n";
+    cout << "*            (2) February            *\n";
+    cout << "*            (3) March               *\n";
+    cout << "*            (4) April               *\n";
+    cout << "*            (5) May                 *\n";
+    cout << "*            (6) June                *\n";
+    cout << "*            (7) July                *\n";
+    cout << "*            (8) August              *\n";
+    cout << "*            (9) September           *\n";
+    cout << "*            (10) October            *\n";
+    cout << "*            (11) November           *\n";
+    cout << "*            (12) December           *\n";
+    cout << "**************************************\n\n\n";
+
+
+
+
+
+    return (enMonths)Read_Number_In_Range("   Choose The Month : ", 1, 12);
+
+}
+
+
+string Print_Month(enMonths   MonthNumber)
+{
+
+
+    switch (MonthNumber)
+    {
+    case enMonths::January:
+        return "\n The Month You Choosed is : January";
+    case enMonths::February:
+        return "\n The Month You Choosed is : February";
+    case enMonths::March:
+        return "\n The Month You Choosed is : March";
+    case enMonths::April:
+        return "\n The Month You Choosed is : April";
+    case enMonths::May:
+        return "\n The Month You Choosed is : May";
+    case enMonths::June:
+        return "\n The Month You Choosed is : June";
+    case enMonths::July:
+        return "\n The Month You Choosed is : July";
+    case enMonths::August:
+        return "\n The Month You Choosed is : August";
+    case enMonths::September:
+        return "\n The Month You Choosed is : September";
+    case enMonths::October:
+        return "\n The Month You Choosed is : October";
+    case enMonths::November:
+        return "\n The Month You Choosed is : November";
+    case enMonths::December:
+        return "\n The Month You Choosed is : December";
+    default:
+        return "Invalid month!";
+    }
+}
+   
+
+
+
+
+int main()
+{
+
+    cout << Print_Month(Read_Number()) << endl;
+
+    return 0;
+}
+
+
+

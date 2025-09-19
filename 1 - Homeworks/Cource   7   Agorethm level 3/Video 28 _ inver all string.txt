@@ -1,0 +1,106 @@
+💁‍♂️  💁‍♂️  This one :  My Virsion
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+string Read_String(string Message)
+{
+
+	string Letter = "";
+	cout << Message  << endl;
+	getline(cin, Letter);
+
+	return Letter;
+}
+
+string Invert_All_Letters(string & Word)
+{
+	for (int i = 0; i < Word.length(); i++)
+	{
+
+		isupper(Word[i]) ? Word[i]=tolower(Word[i]) : Word[i] = toupper(Word[i]);
+
+	}
+
+	return Word;
+}
+
+int main()
+{
+
+	string S1 = Read_String("Please enter the String : ");
+	
+	cout << "\n\n";
+
+	S1 = Invert_All_Letters(S1);
+	cout << "After Converting : \n" << S1 << "\n\n";
+
+	
+
+
+	return 0;
+}
+
+💁‍♂️  💁‍♂️  This one :  Teacher Virsion 
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+string Read_String(string Message)
+{
+
+	string Letter = "";
+	cout << Message  << endl;
+	getline(cin, Letter);
+
+	return Letter;
+}
+
+char Invert_Letter(char  Letter)
+{
+
+	return isupper(Letter) ? tolower(Letter) : toupper(Letter);
+
+}
+
+string Invert_All_Letters(string & Word)
+{
+	for (int i = 0; i < Word.length(); i++)
+	{
+		Word[i] = Invert_Letter(Word[i]);
+	}
+
+	return Word;
+}
+
+int main()
+{
+
+	string S1 = Read_String("Please enter the String : ");
+	
+	cout << "\n\n";
+
+	S1 = Invert_All_Letters(S1);
+	cout << "After Converting : \n" << S1 << "\n\n";
+
+	
+
+
+	return 0;
+}
+

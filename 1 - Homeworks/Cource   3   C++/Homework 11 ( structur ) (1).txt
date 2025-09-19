@@ -1,0 +1,446 @@
+
+
+
+homework 1 : 
+
+
+
+#include <iostream>
+using namespace std;
+
+struct Salary
+{
+	string Monthely;
+	string Yearly;
+};
+
+
+struct User
+{
+	string Name;
+	short Age;
+	string City;
+	string Country;
+	Salary Salary;
+	string Gender;
+	string IsMarried;
+};
+
+int main()
+{
+	User user;
+
+	cout << "What is your Name ? \n";
+	cin >> user.Name;
+	cout << "What is your Age ? \n";
+	cin >> user.Age;
+	cout << "What is your City ?\n";
+	cin >> user.City;
+	cout << "what is your country ?\n";
+	cin >> user.Country;
+	cout << "What is your Monthly Salary ?\n";
+	cin >> user.Salary.Monthely;
+	cout << "What is your Yearly Salary ?\n";
+	cin >> user.Salary.Yearly;
+	cout << "What is your Gender ?\n";
+	cin >> user.Gender;
+	cout << "Are you married ?\n";
+	cin >> user.IsMarried;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+
+
+
+	cout << "******************************************\n";
+	cout << "Name           : " << user.Name << "\n";
+	cout << "Age            : " << user.Age << "\n";
+	cout << "city           : " << user.City << "\n";
+	cout << "Country        : " << user.Country << "\n";
+	cout << "Monthly salary : " << user.Salary.Monthely << "\n";
+	cout << "Yearly Salary  : " << user.Salary.Yearly << "\n";
+	cout << "Gender         : " << user.Gender << "\n";
+	cout << "Married        : " << user.IsMarried << "\n";
+	cout << "*******************************************\n\n\n\n";
+
+
+	return 0;
+}
+
+
+
+
+
+🚩 the first :
+                     " it is about bying a car "
+
+
+#include <iostream>
+using namespace std;
+
+
+
+struct car
+{
+	string Brand;
+	string Model;
+	int Year;
+};
+
+int main()
+{
+	car Car;
+	string Response;
+	string Confermation;
+
+	cout << "			Pleas enter the following information of the car that You whant to By ? \n\n";
+
+
+	cout << "		Brand : ";
+	cin >> Car.Brand;
+	cout << endl;
+	cout << "		Model : ";
+	cin >> Car.Model;
+	cout << endl;
+	cout << "		Year : ";
+	cin >> Car.Year;
+	cout << endl;
+	cout << endl;
+
+
+	cout << "			This is the Imformation that you entered : \n\n";
+
+	cout << "		Brand : " << Car.Brand << endl;
+	cout << endl;
+	cout << "		Model : " << Car.Model << endl;
+	cout << endl;
+	cout << "		Year  : " << Car.Year << endl;
+	cout << endl;
+
+	cout << "			Are you sure about the entered informations  :  \n";
+	cout << endl;
+
+
+	
+	cout << "					";
+	cin >> Response;
+	cout << endl;
+	cout << endl;
+
+	cout << "		write \'conferm\' to conferm your Order Pleas : ";
+	cin >> Confermation;
+	cout << endl;
+	cout << endl;
+	cout << "			Your final order is : \n" << "		car brand : " << Car.Brand << " \n		Model: " << Car.Model << " \n		Year : " << Car.Year << endl;
+	cout << endl; cout << endl;
+	cout << "			You well get your order as soun as it possible \n\n ";
+
+	return 0;
+}
+
+
+
+
+
+
+🚩 the second : 
+
+                   " it is about printing " 
+
+
+#include <iostream>
+using namespace std;
+
+struct Car
+{
+	string Brand;
+	string Model;
+	int year;
+
+};
+
+int main()
+{
+
+	Car MyCar1;
+
+	MyCar1.Brand = "BMW";
+	MyCar1.Model = "X5";
+	MyCar1.year = 2024;
+
+	cout << MyCar1.Brand << " " << MyCar1.Model << " " << MyCar1.year << "\n";
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+the therd one : 
+
+                      
+                   " it is about printing  "
+
+
+
+#include <iostream>
+using namespace std;
+
+struct Car
+{
+	string Brand;
+	string Model;
+	int year;
+
+};
+
+int main()
+{
+
+	Car MyCar1, MyCar2;
+
+	MyCar1.Brand = "BMW";
+	MyCar1.Model = "X5";
+	MyCar1.year = 2024;
+
+	MyCar2.Brand = "Nisan";
+	MyCar2.Model = "jagaur";
+	MyCar2.year = 2022;
+
+	cout << MyCar1.Brand << " " << MyCar1.Model << " " << MyCar1.year << "\n";
+	cout << MyCar2.Brand << " " << MyCar2.Model << " " << MyCar2.year << "\n";
+
+
+
+
+	return 0;
+}
+
+
+
+
+🚩 the 4 one : 
+             
+             " it is about  "
+
+
+#include <iostream>
+using namespace std;
+
+struct model
+{
+	string X5;
+	string Q8;
+
+};
+struct Year
+{
+	int Year2002;
+	int Year2024;
+
+};
+struct brand
+{
+	string BMW;
+	string Nisan;
+
+};
+struct Car
+{
+	
+	model Model;
+	Year year;
+	brand Brand;
+
+};
+
+int main()
+{
+
+	Car MyCar;
+
+	MyCar.Brand.BMW = "BMW";
+	MyCar.Model.X5 = "X5";
+	MyCar.year.Year2024 = 2024;
+
+	MyCar.Brand.Nisan = "Nisan";
+	MyCar.Model.Q8 = "Q8";
+	MyCar.year.Year2002 = 2002;
+
+	cout << MyCar.Brand.BMW<< " " << MyCar.Model.Q8 << " " << MyCar.year.Year2024 << "\n";
+	cout << MyCar.Brand.Nisan << " " << MyCar.Model.X5 << " " << MyCar.year.Year2002 << "\n";
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+🚩 the 5 one : 
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+struct car
+{
+
+	string Model;
+	short int year;
+	string Brand;
+
+};
+
+int main()
+{
+
+	car The_1_Car, The_2_Car;
+	string Answer_1 , Answer_2, Answer_3;
+
+	cout << "Do you want to by a Car ? ";
+	cin >> Answer_1;
+	cout << endl;
+	cout  << "'" << Answer_1 << "'" << " You came to the righte Pleas \n\n";
+
+	cout << "Pleas enter the car \' BRAND \' that you like : \n";
+	cin >> The_1_Car.Brand;
+	cout << endl;
+	cout << "Pleas enter the car \' MODEL \' that you like : \n";
+	cin >> The_1_Car.Model;
+	cout << endl;
+	cout << "Pleas enter the car \' YEAR \' that you like  : \n";
+	cin >> The_1_Car.year;
+	cout << endl;
+	cout << "The information of the Car : " << The_1_Car.Brand << " - " << The_1_Car.Model << " - " << The_1_Car.year << "\n\n";
+	cout << "do you like to do An athor Order \n";
+	cin >> Answer_2;
+	cout << endl;
+	cout << "'" << Answer_2 << "'" << " Okay then what is the car \' BRAND \' that you like : \n";
+	cin >> The_2_Car.Brand;
+	cout << endl;
+	cout << "Pleas enter the car \' MODEL \' that you like : \n";
+	cin >> The_2_Car.Model;
+	cout << endl;
+	cout << "Pleas enter the car \' YEAR \' that you like : \n";
+	cin >> The_2_Car.year;
+	cout << endl;
+
+	cout << "The information of the second Car : " << The_2_Car.Brand << " - " << The_2_Car.Model << " - " << The_2_Car.year << "\n\n";
+	cout << "do you like to do An athor Order for you ? \n\n";
+	cin >> Answer_3;
+	cout << endl;
+	cout << "'" << Answer_3 << "'" << " Thanks for taking the oreder from awere store  \' You will get your order as soun as posible \'\n\n";
+	cout << "Your first order is : " << The_1_Car.Brand << " - " << The_1_Car.Model << " - " << The_1_Car.year << "\n\n";
+	cout << "And the second one is : " << The_2_Car.Brand << " - " << The_2_Car.Model << " - " << The_2_Car.year << "\n\n";
+	cout << "						Thank and have a god day Sir ";
+
+	return 0;
+}
+
+ 
+
+
+
+🚩 the 6 one : 
+
+
+#include <iostream>
+using namespace std;
+
+struct Address
+{
+	string streat1;
+	string POBOX;
+
+};
+
+
+struct Owner
+{
+	string FullName;
+	string Phone;
+	Address Address;
+
+};
+
+struct car
+{
+	string Brand;
+	string Model;
+	short int Year;
+	Owner Owner;
+	
+};
+
+int main()
+{
+
+	car MyCar1;
+
+	MyCar1.Brand = "BMW";
+	MyCar1.Model = "X5";
+	MyCar1.Year = 2024;
+	MyCar1.Owner.FullName = "Youness";
+	MyCar1.Owner.Phone = "656546546";
+	MyCar1.Owner.Address.streat1 = "darb tobis ";
+	MyCar1.Owner.Address.POBOX = "POBOX";
+
+
+	cout << MyCar1.Brand << " " << MyCar1.Model << " " << MyCar1.Year << "\n";
+	cout << MyCar1.Owner.FullName << " " << MyCar1.Owner.Address.streat1 << " "  << MyCar1.Owner.Address.POBOX << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

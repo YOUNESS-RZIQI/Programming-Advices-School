@@ -1,0 +1,53 @@
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+// Overload :  it helps you to name alot of Function by the same name that make work easy
+
+
+int MySum(int a, int b)
+{
+
+	return (a + b);
+
+}
+
+float MySum(float a, float b)
+{
+
+	return (a + b );
+
+}
+
+int MySum(int a, int b, int c)
+{
+
+	return (a + b + c );
+
+}
+
+float MySum(float a, float b, float c)
+{
+
+	return (a + b + c );
+
+}
+
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+	cout << MySum(1, 2) << endl;
+	cout << MySum(1.1f, 2.2f ) << endl;
+	cout << MySum(1, 2 , 3 ) << endl;
+	cout << MySum(1.1f, 2.1f, 3.1f ) << endl;
+
+	return 0;
+}
+

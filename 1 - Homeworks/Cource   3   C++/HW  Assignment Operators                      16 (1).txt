@@ -1,0 +1,34 @@
+the 1 one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int A = 10, B = 20;
+
+	A += B; // A=A+B
+	cout << A << endl;
+
+	A -= B; // A= A-B
+	cout << A << endl;
+
+	A *= B; // A= A*B
+	cout << A << endl;
+
+	A /= B; // A= A/B
+	cout << A << endl;
+
+	A %= B; // A= A%B
+	cout << A << endl;
+
+
+
+
+	return 0;
+}
+
+

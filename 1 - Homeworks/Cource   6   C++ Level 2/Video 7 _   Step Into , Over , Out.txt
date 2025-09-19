@@ -1,0 +1,5 @@
+Step Into : F11 : it do line by line , and it go to the Functions and Procedurals.
+
+Step Over : F10 : it do Just line by line not going to the Functions and Procedurals.
+
+Step Out : shift + F11 : it help's you to came out if you entered to a Function or Procedural by fault.  

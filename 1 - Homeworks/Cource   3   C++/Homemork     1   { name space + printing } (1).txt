@@ -1,0 +1,153 @@
+the first  part of homework :
+
+#include <iostream>
+using namespace std;
+
+struct UserID
+{
+	string Name, City, Country;
+	int Age;
+
+};
+
+int main()
+
+{
+
+	UserID UserID;
+	UserID.Name = "YOUNESS RZIQI";
+	UserID.Age = 20;
+	UserID.City = "Agadir";
+	UserID.Country = "Morocco";
+
+	
+
+	cout << " ********************************\n" ;
+	cout << " Name: " << UserID.Name << ". \n";
+	cout << " Age : "<< UserID.Age << " years. \n" ;
+	cout << " City : " << UserID.City << ".\n";
+	cout << " Country: "<< UserID.Country << ".\n";
+	cout << " ********************************" << endl << endl;
+
+
+	return 0;
+
+}
+
+
+the second part :
+
+#include <iostream>
+using namespace std;
+
+struct stars
+{
+	string triangle;
+	string squar;
+};
+
+int main()
+
+{
+
+	stars stars;
+
+
+	stars.triangle = "*******************\n*******************\n*******************\n*******************\n";
+
+
+	cout << stars.triangle;
+
+
+	return 0;
+
+}
+
+
+The third one :
+
+
+
+#include <iostream>
+using namespace std;
+
+struct Line
+{
+	string Line1;
+	string Line2;
+	string Line3;
+	string Line4;
+	string Line5;
+};
+
+int main()
+
+{
+
+	Line line;
+
+	line.Line1 = " I love Programming";
+	line.Line2 = " I promise to be the best developer ever!";
+	line.Line3 = " I know it will take some time to practice, but I will achieve my goal.";
+	line.Line4 = " Best Regards,";
+	line.Line5 = " Mohammed Abu-Hadhoud.";
+
+
+
+
+	cout << line.Line1 << "\n";
+	cout << line.Line2 << "\n";
+	cout << line.Line3 << "\n";
+	cout << line.Line4 << "\n";
+	cout << line.Line5 << "\n";
+
+
+	return 0;
+
+}
+
+
+
+The  last one :
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+struct Hstars
+{
+
+	string _1;
+	string _2;
+	string _3;
+	string _4;
+	string _5;
+
+};
+
+int main()
+
+{
+	Hstars line;
+
+	line._1 = " *       *\n";
+	line._2 = " *       *\n";
+	line._3 = " *********\n";
+	line._4 = " *       *\n";
+	line._5 = " *       *\n";
+
+
+
+	cout << line._1 << "\n";
+	cout << line._2 << "\n";
+	cout << line._3 << "\n";
+	cout << line._4 << "\n";
+	cout << line._5 << "\n";
+
+
+	return 0;
+
+}

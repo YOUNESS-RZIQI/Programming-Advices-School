@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+char Read_Letter(string Message)
+{
+
+	char Letter = 'd';
+	cout << Message ;
+	cin >> Letter;
+
+	return Letter;
+}
+
+char Invert_Letter(char  Letter)
+{
+
+	return isupper(Letter) ? tolower(Letter) : toupper(Letter);
+
+}
+
+int main()
+{
+
+	char Letter = 'a';
+
+	Letter = Read_Letter("Letter : ");
+	cout << "\n\n";
+
+
+	Letter = Invert_Letter(Letter);
+	cout << "Letter : " << Letter << "\n\n";
+
+	
+
+
+	return 0;
+}

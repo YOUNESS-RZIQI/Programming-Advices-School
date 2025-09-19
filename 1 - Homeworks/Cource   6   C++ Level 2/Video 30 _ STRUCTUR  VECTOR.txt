@@ -1,0 +1,177 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+struct st_Empluyee
+{
+
+	string First_Name;
+	string Last_Name;
+	int Salary;
+
+};
+
+float Read_Number(string Message)
+{
+	float Number;
+	cout << Message;
+	cin >> Number;
+	while (cin.fail())
+	{
+		// user didn't input a number
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "Invalid Number, Enter a valid one :";
+		cin >> Number;
+	}
+	return Number;
+}
+
+string Read_Tesxt(string Message)
+{
+
+	string mes;
+	cout << Message;
+	cin >> mes;
+	while (cin.fail())
+	{
+		// user didn't input a number
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "Invalid Input  :";
+		cin >> mes;
+
+ 	}
+	return mes;
+
+}
+
+void Ask_User_for_Num(vector <st_Empluyee>& V_Employee)
+{
+
+	char IsAgain = 'y';
+
+	st_Empluyee temp_Employee;
+
+	cout << "\n\n\t\t\t+++   E M P L O Y E E   I N F O   +++\n\n\n";
+
+	do
+	{
+		
+		temp_Employee.First_Name = (Read_Tesxt("\n\nPlease Enter First Name : "));
+		temp_Employee.Last_Name = (Read_Tesxt("Please Enter last Name : "));
+		temp_Employee.Salary = (Read_Number("Please Enter Salary : "));
+		V_Employee.push_back(temp_Employee);
+
+
+		cout << "\n\nDo you want to add more Number ?   Y / N : ";
+		cin >> IsAgain;
+
+	} while (IsAgain == 'Y' || IsAgain == 'y');
+
+
+}
+
+void Print_Result(const vector <st_Empluyee>& V_Numbers)
+{
+
+	cout << "\n\n" << endl;
+
+	for (const st_Empluyee & INfo : V_Numbers)
+	{
+
+		cout << "Name   : " << INfo.First_Name << endl;
+		cout << "Last   : " << INfo.Last_Name << endl;
+		cout << "Salary : " << INfo.Salary << "\n\n" << endl;
+
+
+	}
+
+	cout << endl;
+
+}
+
+int main()
+{
+
+	vector <st_Empluyee> V_Employee;
+
+	Ask_User_for_Num(V_Employee);
+	Print_Result(V_Employee);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+struct st_Empluyee
+{
+
+	string First_Name;
+	string Last_Name;
+	int Salary;
+
+};
+
+
+int main()
+{
+
+	vector <st_Empluyee> V_Employee;
+
+	st_Empluyee temp_Employee;
+
+	temp_Employee.First_Name = "Youness";
+	temp_Employee.Last_Name  = "Rziqi";
+	temp_Employee.Salary     = 5000;
+	V_Employee.push_back(temp_Employee);
+
+	temp_Employee.First_Name = "hi";
+	temp_Employee.Last_Name  = "ha";
+	temp_Employee.Salary     = 3923;
+	V_Employee.push_back(temp_Employee);
+
+	temp_Employee.First_Name = "titi";
+	temp_Employee.Last_Name  = "rowi";
+	temp_Employee.Salary     = 10010;
+	V_Employee.push_back(temp_Employee);
+
+
+	for ( st_Empluyee & INfo : V_Employee)
+	{
+		cout << "Name   : " << INfo.First_Name << endl;
+		cout << "Last   : " << INfo.Last_Name  << endl;
+		cout << "Salary : " << INfo.Salary     << "\n\n" << endl;
+	}
+
+	cout << "\n\n";
+
+	return 0;
+}

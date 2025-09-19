@@ -1,0 +1,50 @@
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cctype>
+
+using namespace std;
+
+string Read_String()
+{
+	string String = "";
+	cout << "Please Enter you String ? \n";
+	getline(cin, String);
+
+	return String;
+
+}
+
+string Lower_First_Letter_of_Each_Word(string  Word)
+{
+
+	bool is_First_letter = true;
+
+	for (int i = 0; i < Word.length(); i++)
+	{
+
+		if (Word[i] != ' ' && is_First_letter)
+		{
+			Word[i] = tolower(Word[i]);
+		}
+
+		is_First_letter = (Word[i] == ' ' ? true : false);
+
+	}
+
+	return Word;
+}
+
+int main()
+{
+	string Word = Read_String();
+
+	Word = Lower_First_Letter_of_Each_Word(Word);
+
+	cout << "\n\nThe String after Converting is : \n";
+	cout << Word << "\n\n";
+
+
+	return 0;
+}

@@ -1,0 +1,638 @@
+
+The 26 one :   From 1 to N
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_N()
+{
+
+	float N;
+
+	cout << "      Please Enter N That will go to 1 : ";
+	cin >> N;
+
+	return N;
+}
+
+
+void Print_From_1_To_N_For(float N)
+{
+
+	cout << "\n\n   For :\n";
+
+	for (int i = 1; N >= i; i++)
+	{
+
+		cout << i << endl;
+
+	}
+
+}
+
+void Print_From_1_To_N_While(float N)
+{
+
+	cout << "\n\n   While :\n";
+
+	int i = 1;
+
+	while (N >= i)
+	{
+		
+		cout  << i << endl;
+		i++;
+
+	}
+
+}
+
+void Print_From_1_To_N_Do_While(float N)
+{
+
+	cout << "\n\n   Do While :\n";
+
+	int i = 1;
+
+	do
+	{
+		
+		cout  << i << endl;
+		i++;
+
+	} while (N >= i);
+
+}
+
+int main()
+{
+
+	int N = Enter_N();
+	Print_From_1_To_N_For(N);
+	Print_From_1_To_N_While(N);
+	Print_From_1_To_N_Do_While(N);
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The 27 one :          From N to 1
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_N()
+{
+
+	float N;
+
+	cout << "      Please Enter N That will go to 1 : ";
+	cin >> N;
+
+	return N;
+}
+
+
+void Print_From_N_To_1_For(float N)
+{
+
+	cout << "\n\n   For :\n";
+
+	for (int i = 1; N >= i; N--)
+	{
+
+		cout << N << endl;
+
+	}
+
+}
+
+void Print_From_N_To_1_While(float N)
+{
+
+	cout << "\n\n   While :\n";
+
+	while (N >= 1)
+	{
+
+		cout  << N << endl;
+		N--;
+
+	}
+
+}
+
+void Print_From_N_To_1_Do_While(float N)
+{
+
+	cout << "\n\n   Do While :\n";
+
+	do
+	{
+
+		cout  << N << endl;
+		N--;
+
+	} while (N >= 1);
+
+}
+
+int main()
+{
+
+	int N = Enter_N();
+	Print_From_N_To_1_For(N);
+	Print_From_N_To_1_While(N);
+	Print_From_N_To_1_Do_While(N);
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 28 one : 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float Enter_Number()
+{
+
+	float Num;
+
+	cout << "Please Enter a Number : ";
+	cin >> Num;
+
+	return Num;
+
+}
+
+
+
+void Print_Result_By_For(int Num)
+{
+	
+	
+	float Counter = 0;
+
+	cout << "   By Do While :\n";
+
+		for (int i = 1; i <= Num; i = i + 2)
+		{
+
+			cout << i << endl;
+			Counter += i;
+
+		}
+			cout << "The Sum of All Odd Numbers is : " << Counter << endl;
+
+}
+
+
+void Print_Result_By_Do_While(int Num)
+{
+
+	float Counter = 0;
+	int i = 1;
+
+	cout << "   By Do While :\n";
+
+	
+		do
+		{
+
+			cout << i << endl;
+			Counter += i;
+			
+			i=i+2;
+
+		} while (i <= Num);
+
+		cout << "The Sum of All Odd Numbers is : " << Counter << endl;
+
+}
+
+
+
+
+void Print_Result_By_While(int Num)
+{
+
+
+	float Counter = 0;
+	int i = 1;
+
+	cout << "   By While :\n";
+
+
+	while (i <= Num)
+	{
+
+		cout << i << endl;
+		Counter += i;
+
+		i = i + 2;
+
+	}
+
+	cout << "The Sum of All Odd Numbers is : " << Counter << endl << "\n\n\n";
+
+
+
+}
+
+
+int main()
+{
+
+	float Num = Enter_Number();
+
+	Print_Result_By_For(Num);
+	Print_Result_By_Do_While(Num);
+	Print_Result_By_While(Num);
+
+	return 0;
+}
+
+
+The 28' one : 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+enum enOdd_Or_Even { Odd , Even };
+
+float Enter_Number()
+{
+
+	float Num;
+
+	cout << "Please Enter a Number : ";
+	cin >> Num;
+
+	return Num;
+
+}
+
+enOdd_Or_Even Check_if_Odd_of_Even( int N )
+{
+
+	if (N % 2 == 0)
+		return enOdd_Or_Even::Even;
+	else
+		return enOdd_Or_Even::Odd;
+
+}
+
+void Print_Result_By_For(int Num)
+{
+	
+	
+	float Sum = 0;
+
+	cout << "   By For :\n";
+
+		for (int i = 1; i <= Num; i ++)
+		{
+
+			if (Check_if_Odd_of_Even(i) == enOdd_Or_Even::Odd)
+			{
+				cout << i << endl;
+				Sum += i;
+			}
+
+		}
+			cout << "The Sum of All Odd Numbers is : " << Sum << endl << "\n\n\n";
+
+}
+
+void Print_Result_By_Do_While(int Num)
+{
+
+	float Sum = 0;
+	int i = 1;
+
+	cout << "   By Do While :\n";
+
+	
+		do
+		{
+
+			if (Check_if_Odd_of_Even(i) == enOdd_Or_Even::Odd)
+			{
+				cout << i << endl;
+				Sum += i;
+			}
+
+			i++;
+
+		} while (i <= Num);
+
+		cout << "The Sum of All Odd Numbers is : " << Sum << endl << "\n\n\n";
+
+}
+
+void Print_Result_By_While(int Num)
+{
+
+
+	float Sum = 0;
+	int i = 1;
+
+	cout << "   By While :\n";
+
+
+	while (i <= Num)
+	{
+
+		if (Check_if_Odd_of_Even(i) == enOdd_Or_Even::Odd)
+		{
+			cout << i << endl;
+			Sum += i;
+		}
+
+		i++;
+
+	}
+
+	cout << "The Sum of All Odd Numbers is : " << Sum << endl << "\n\n\n";
+
+
+
+}
+
+
+int main()
+{
+
+	float Num = Enter_Number();
+
+	Print_Result_By_For(Num);
+	Print_Result_By_Do_While(Num);
+	Print_Result_By_While(Num);
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 29 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+enum enOdd_Or_Even { Odd , Even };
+
+float Enter_Number()
+{
+
+	float Num;
+
+	cout << "Please Enter a Number : ";
+	cin >> Num;
+
+	return Num;
+
+}
+
+enOdd_Or_Even Check_if_Odd_of_Even( int N )
+{
+
+	if (N % 2 == 0)
+		return enOdd_Or_Even::Even;
+	else
+		return enOdd_Or_Even::Odd;
+
+}
+
+void Print_Result_By_For(int Num)
+{
+	
+	
+	float Sum = 0;
+
+	cout << "   By For :\n";
+
+		for (int i = 2; i <= Num; i ++)
+		{
+
+			if (Check_if_Odd_of_Even(i) == enOdd_Or_Even::Even)
+			{
+				cout << i << endl;
+				Sum += i;
+			}
+
+		}
+			cout << "The Sum of All Even Numbers is : " << Sum << endl << "\n\n\n";
+
+}
+
+void Print_Result_By_Do_While(int Num)
+{
+
+	float Sum = 0;
+	int i = 2;
+
+	cout << "   By Do While :\n";
+
+	
+		do
+		{
+
+			if (Check_if_Odd_of_Even(i) == enOdd_Or_Even::Even)
+			{
+				cout << i << endl;
+				Sum += i;
+			}
+
+			i++;
+
+		} while (i <= Num);
+
+		cout << "The Sum of All Even Numbers is : " << Sum << endl << "\n\n\n";
+
+}
+
+void Print_Result_By_While(int Num)
+{
+
+
+	float Sum = 0;
+	int i = 2;
+
+	cout << "   By While :\n";
+
+
+	while (i <= Num)
+	{
+
+		if (Check_if_Odd_of_Even(i) == enOdd_Or_Even::Even)
+		{
+			cout << i << endl;
+			Sum += i;
+		}
+
+		i++;
+
+	}
+
+	cout << "The Sum of All Even Numbers is : " << Sum << endl << "\n\n\n";
+
+
+
+}
+
+
+int main()
+{
+
+	float Num = Enter_Number();
+
+	Print_Result_By_For(Num);
+	Print_Result_By_Do_While(Num);
+	Print_Result_By_While(Num);
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 30 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+float Enter_Possitive_Number( string Message )
+{
+
+	float Num;
+	do {
+		cout << Message;
+		cin >> Num;
+
+	} while (Num < 0);
+	
+
+	return Num;
+
+}
+
+
+void Print_Result_By_For(int Num)
+{
+	
+	
+	float Sum = 1;
+
+	cout << "   By For :\n";
+
+		for (int i = 1; i <= Num; Num --)
+		{
+
+			
+				cout << Num << endl;
+				Sum = Sum*Num;
+			
+
+		}
+			cout << "The Factorial is : " << Sum << endl << "\n\n\n";
+
+}
+
+void Print_Result_By_Do_While(int Num)
+{
+
+	float Sum = 1;
+	int i = 1;
+
+	cout << "   By Do While :\n";
+
+	
+		do
+		{
+
+			
+				cout << Num << endl;
+				Sum = Sum * Num;
+			
+
+			Num--;
+
+		} while (i <= Num);
+
+		cout << "The Factorial is : " << Sum << endl << "\n\n\n";
+
+}
+
+void Print_Result_By_While(int Num)
+{
+
+
+	float Sum = 1;
+	int i = 1;
+
+	cout << "   By While :\n";
+
+
+	while (i <= Num)
+	{
+
+		
+			cout << Num << endl;
+			Sum = Sum * Num;
+		
+
+		Num--;
+
+	}
+
+	cout << "The Factorial is : " << Sum << endl << "\n\n\n";
+
+
+
+}
+
+
+int main()
+{
+
+	
+
+	Print_Result_By_For(Enter_Possitive_Number("Please Enter A Possitive Number : "));
+	Print_Result_By_Do_While(Enter_Possitive_Number("Please Enter A Possitive Number : "));
+	Print_Result_By_While(Enter_Possitive_Number("Please Enter A Possitive Number : "));
+
+	return 0;
+}
+
+

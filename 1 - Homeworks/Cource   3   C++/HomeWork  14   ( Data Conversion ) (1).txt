@@ -1,0 +1,210 @@
+The 1 one : 
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int Number1 = 10;
+	long double Number2 = 1.123456789;
+	float Number3 = 1.123456789;
+	char Number4 = 'A';
+	long long Number5 = 900000056415341321;
+	short Number6 = 32000;
+
+	string conversion;
+
+	conversion = to_string(Number1);
+
+	cout << Number1 << "\n";
+	
+
+	conversion = to_string(Number2);
+
+	cout << Number2 << "\n";
+
+	conversion = to_string(Number3);
+
+	cout << Number3 << "\n";
+
+
+	conversion = to_string(Number4);
+
+	cout << Number4 << "\n";
+
+	conversion = to_string(Number5);
+
+	cout << Number5 << "\n";
+
+	conversion = to_string(Number6);
+
+	cout << Number6 << "\n";
+
+
+
+	return 0;
+}
+
+
+
+
+
+The 2 one : 
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+
+	char FirstName = 'A';
+	int NameConversion;
+
+	NameConversion = FirstName;
+
+	cout << NameConversion << endl;
+
+
+	return 0;
+}
+
+
+
+The 3 one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int Num1, Num3, Num4;
+	double Num2 = 18.99;
+
+	Num1 = Num2;          //  implicit conversion
+	
+	cout << Num1 << endl ;
+
+
+
+	 Num3 = (int)Num2;     //Explicit conversion : c-style
+	   cout << Num1 << endl;
+
+
+
+
+	  Num4 = int (Num2);    // Explicit conversion : Function-style
+	   cout << Num1 << endl;
+	
+	
+	
+
+	return 0;
+}
+
+
+
+The 4 one : 
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+	string str = "123.456";
+
+	//conversion string to integer
+	int Num_int = stoi(str);
+
+	//conversion string to double
+	double Num_double = stod(str);
+
+	//conversion strin to float 
+	float Num_float = stof(str);
+
+
+	cout << Num_int << endl;
+	cout << Num_double << endl;
+	cout << Num_float << endl;
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+vector <string> Split_String( string s, string delim)
+{
+
+	vector <string> vNames;
+
+	short pos = 0;
+	string Word;
+
+	while ((pos = s.find(delim)) != std::string::npos)
+	{
+
+		Word = s.substr(0, pos);
+
+		if (Word != "")
+		{
+			vNames.push_back(Word);
+		}
+
+		s.erase(0, pos + delim.length());
+
+	}
+
+	if (s != "")
+	{
+		vNames.push_back(s);
+	}
+	
+
+	return vNames;
+}
+
+int main()
+{
+
+	vector <string> vNames;
+
+	vNames = Split_String( Input_Lib::Ask_for_string("Enter The Names Please : \n") , " ");
+
+	cout << "\n\nToken = " << vNames.size() << endl;
+
+	for (string & N : vNames)
+	{
+		cout << N << endl;
+	}
+
+	cout << "\n\n";
+
+
+	return 0;
+}

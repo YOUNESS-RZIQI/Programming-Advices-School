@@ -1,0 +1,147 @@
+My Code : 
+
+
+
+//
+//input: 5
+//
+//output :
+//
+//	1
+//	22
+//	333
+//	4444
+//      55555
+
+
+#include <iostream>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+void Print_Number_Pattern(int Number)
+{
+
+	for (int j = 1; j <= Number; j++)
+	{
+
+		for (int i = 1; j >= i; i++)
+		{
+
+			cout << char(j+64);
+
+		}
+
+		cout << endl;
+
+
+	}
+
+}
+
+
+int main()
+{
+
+	Print_Number_Pattern(Enter_Positive_Number("Please enter a positive Number : "));
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+Teacher Code : 
+
+
+
+
+
+
+//
+//input: 5
+//
+//output :
+//
+//	A
+//	BB
+//	CCC
+//	DDDD
+//      EEEEE
+
+#include <iostream>
+using namespace std;
+
+
+
+int Read_Number_In_Range(string Message, int From, int To)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> Number;
+		cout << endl;
+
+	} while (Number > From && Number > To);
+
+	return Number;
+
+}
+
+void Print_Letter_Pattern(int Number)
+{
+
+
+
+	for (int i = 65; i <= 65 + Number - 1; i++)
+	{
+
+		for (int j = 1; j <= i - 65 + 1; j++)
+		{
+
+			cout << char(i);
+
+		}
+
+
+
+		cout << endl;
+
+	}
+
+}
+
+
+int main()
+{
+
+	Print_Letter_Pattern(Read_Number_In_Range("Please enter Number (1-25): ", 1, 25));
+
+	return 0;
+}

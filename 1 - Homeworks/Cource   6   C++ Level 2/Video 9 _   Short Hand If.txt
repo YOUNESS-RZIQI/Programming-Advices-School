@@ -1,0 +1,92 @@
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+using namespace std;
+
+
+int main()
+{
+	int Mark = 90;
+	string Result = " ";
+
+	if (Mark >= 50)
+		Result = "Pass";
+	else
+		Result = "Fail";
+
+	cout << Result << endl;
+
+
+	Result = (Mark >= 50) ? "Pass" : "Fail";
+
+	cout << Result << endl;
+	
+
+
+	return 0;
+
+
+
+
+💁‍♂️  💁‍♂️  This one :   Positive Number or Nigative ?
+
+
+ 
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+int main()
+{
+	
+	Screen_Lib::Blue_Text();
+
+	int Number = Input_Lib::Read_Number();
+
+	string Result = " ";
+	
+	Result = (Number >= 0) ? "Positive" : "Nigative";
+
+	cout << endl << Result << endl;
+
+	return 0;
+}
+
+
+
+💁‍♂️  💁‍♂️  This one :    is the number 0 or Positive || Nigative ?
+
+
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+int main()
+{
+	
+	Screen_Lib::Blue_Text();
+
+	int Number = Input_Lib::Read_Number();
+
+	string Result = " ";
+	
+	Result = (Number == 0) ? " Zero " : ( (Number > 0) ? "Grader then 0" : "Les then 0" );
+
+
+	cout << "The Number is " << Result << endl;
+
+	return 0;
+}
+
+
+
+

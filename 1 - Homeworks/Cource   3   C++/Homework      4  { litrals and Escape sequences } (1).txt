@@ -1,0 +1,50 @@
+The first :
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+	cout << " \a ";
+	return 0;
+
+}
+
+
+
+The seconde :
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+
+	cout << "Dear Sir\\Madam,\n\n";
+	cout << "How are you?\n\n";
+	cout << "My name is \"Youness\" , nice to meet you. \n";
+
+	return 0;
+
+}
+
+
+The third one :
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	cout << "Ali\tAhmed\tLina \n";
+	cout << "Fadi\tZain \tMona \n";
+
+	return 0;
+
+
+}

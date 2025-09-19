@@ -1,0 +1,96 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+enum en_What_to_Count {Capital , Small , All};
+
+short Count_Letters(const string& Word, en_What_to_Count What_to_Count = en_What_to_Count::All)
+{
+
+	if (What_to_Count == en_What_to_Count::All)
+		return Word.length();
+
+	short Counter = 0;
+
+	for (short i = 0; i < Word.length(); i++)
+	{
+		if (What_to_Count == en_What_to_Count::Capital)
+		{
+			if (isupper(Word[i]))
+				Counter++;
+		}
+		else if (What_to_Count == en_What_to_Count::Small)
+		{
+			if (islower(Word[i]))
+				Counter++;
+		}
+		
+	}
+
+	return Counter;
+}
+
+string Read_String(string Message)
+{
+
+	string Word = " ";
+	cout << Message;
+	getline(cin, Word);
+
+	return Word;
+}
+
+short Count_Capital_Letters(const string& Word)
+{
+	short Counter = 0;
+
+	for (short i = 0; i < Word.length(); i++)
+	{
+		if (isupper(Word[i]))
+			Counter++;
+	}
+
+	return Counter;
+}
+
+short Count_Small_Letters(const string& Word)
+{
+	short Counter = 0;
+
+	for (short i = 0; i < Word.length(); i++)
+	{
+		if (islower(Word[i]))
+			Counter++;
+	}
+
+	return Counter;
+}
+
+int main()
+{
+	string Word = Read_String("Enter your String her : ");
+
+
+	cout << "\n\nThe Length of the String : " << Word.length() << "\n\n";
+	cout << "Capital Letters : " << Count_Capital_Letters(Word) << "\n\n";
+	cout << "Smale   Letters : " << Count_Small_Letters(Word) << "\n\n";
+
+
+
+	
+	cout << "\n\nThe Length of the String : " << Count_Letters(Word) << "\n\n";
+	cout << "Capital Letters : " << Count_Letters(Word, en_What_to_Count::Capital) << "\n\n";
+	cout << "Smale   Letters : " << Count_Letters(Word, en_What_to_Count::Small) << "\n\n";
+
+
+
+
+
+
+
+	return 0;
+}

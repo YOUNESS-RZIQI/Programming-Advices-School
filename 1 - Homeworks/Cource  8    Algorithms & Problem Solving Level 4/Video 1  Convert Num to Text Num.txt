@@ -1,0 +1,101 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+string Convert_Num_to_Text(long long int Number)
+{
+	if (Number == 0)
+	{
+		return "";
+	}
+
+	if (Number >= 1 && Number <= 19)
+	{
+		string arr[] =
+		{ "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+		 "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+		 "Seventeen", "Eighteen", "Nineteen"
+		};
+
+		return (arr[Number] + " ");
+	}
+
+	if (Number >= 20 && Number <= 99)
+	{
+		string arr[] = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+		
+		return arr[Number / 10] + " " + Convert_Num_to_Text(Number % 10);
+	}
+
+	
+	if (Number >= 100 && Number <= 199) // from 1H to 2H
+	{
+		return Convert_Num_to_Text(Number / 100) + "Hundre " + Convert_Num_to_Text(Number % 100);
+	}
+
+	if (Number >= 200 && Number <= 999) // from 2H to 9H
+	{
+		return Convert_Num_to_Text(Number / 100) + "Hundres " + Convert_Num_to_Text(Number % 100);
+	}
+
+	if (Number >= 1000 && Number <= 1999) // from 1K to 2K
+	{
+		return Convert_Num_to_Text(Number / 1000) + "Thousand " + Convert_Num_to_Text(Number % 1000);
+	}
+
+	//  here 
+
+	if (Number >= 2000 && Number <= 999999) // from 2K to 999K
+	{
+		return Convert_Num_to_Text(Number / 1000) + "Thousands " + Convert_Num_to_Text(Number % 1000);
+	}
+
+	if (Number >= 1000000 && Number <= 1999999) // From 1M to 2M 
+	{
+		return Convert_Num_to_Text(Number / 1000000) + "Million " + Convert_Num_to_Text(Number % 1000000);
+	}
+
+	if (Number >= 2000000 && Number <= 999999999) // from 2M to 999M
+	{
+		return Convert_Num_to_Text(Number / 1000000) + "Millions " + Convert_Num_to_Text(Number % 1000000);
+	}
+
+	if (Number >= 1000000000 && Number <= 1999999999) // from 1B to 2B
+	{
+		return "One Billion " + Convert_Num_to_Text(Number %1000000000);
+	}
+	else // form 2B to 999B
+	{
+		return Convert_Num_to_Text(Number / 1000000000) + "Billions " + Convert_Num_to_Text(Number % 1000000000);
+	}
+
+}
+
+long long int Read_Positive_Number(string Message)
+{
+	long long int Number;
+	do
+	{
+		cout << Message;
+		cin >> Number;
+	} while (Number < 0);
+	return Number;
+}
+
+
+int main()
+{
+
+	long long int Number = Read_Positive_Number("Please enter Number : ");
+
+	cout << Convert_Num_to_Text(Number);
+
+
+	system("pause>0");
+
+}

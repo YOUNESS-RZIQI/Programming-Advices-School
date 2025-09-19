@@ -1,0 +1,91 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+void Fill_Matrix_W_Randum_Number(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Arr[i][j] = Randam_Number_In_Range(1, 10);
+		}
+
+	}
+
+
+}
+
+void Print_Matrix(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			printf("%0*d\t",2, Arr[i][j]);
+			//cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+short Count_Number_in_Matrix(int Matrix[3][3],const short & Rows , const short & Colms, const short& Number_to_Check)
+{
+
+	short Number_Repition = 0;
+
+	for (int i = 0; i < Rows; i++)
+	{
+		for (int j = 0; j < Colms; j++)
+		{
+			if (Matrix[i][j] == Number_to_Check)
+				Number_Repition++;
+		}
+	}
+
+	return Number_Repition;
+}
+
+
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	int Matrix[3][3];
+
+	Fill_Matrix_W_Randum_Number(Matrix, 3, 3);
+	Print_Matrix(Matrix, 3, 3);
+
+	short Number_to_Check;
+	cout << "\n\nEnter the Number you want to Count in Matrix ? ";
+	cin >> Number_to_Check;
+
+	cout << "\n\nThe result is : " << Count_Number_in_Matrix(Matrix, 3, 3, Number_to_Check);
+
+	cout << "\n\n" << endl;
+
+
+	return 0;
+}

@@ -1,0 +1,85 @@
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <vector>
+#include <fstream>
+#include "Screen_Lib.h"
+#include "Input_Lib.h"
+using namespace std;
+
+void Save_Line_of_data_in_File(const string & File_Name , const string & Line)
+{
+
+	fstream MyFile;
+
+	MyFile.open(File_Name, ios::out | ios::app);
+
+	if (MyFile.is_open())
+	{
+
+		MyFile << Line << endl;
+
+
+		MyFile.close();
+
+	}
+	
+}
+
+
+string Convert_Record_to_Line(const st_Client_Info& Client_Info, const string& delim = "#//#")
+{
+
+	string Client_Record = "";
+
+	Client_Record += Client_Info.Account_Number + delim;
+	Client_Record += Client_Info.Pin_Code + delim;
+	Client_Record += Client_Info.Full_Name + delim;
+	Client_Record += Client_Info.Phone_Number + delim;
+	Client_Record += to_string(Client_Info.Account_Balance);
+
+
+	return Client_Record;
+}
+
+st_Client_Info Read_New_Client_Record()
+{
+
+	st_Client_Info Client_Info;
+
+	cout << "\n                          B A N Q U E\n\n\n";
+	
+	Client_Info.Account_Number = Input_Lib::Ask_for_string("Account Number  : ");
+	Client_Info.Pin_Code = Input_Lib::Ask_for_string("Pin Code        : ");
+	Client_Info.Full_Name = Input_Lib::Ask_for_string("Full Name       : ");
+	Client_Info.Phone_Number = Input_Lib::Ask_for_string("Phone Number    : ");
+	Client_Info.Account_Balance = Input_Lib::Ask_for_string("Account Balance : ");
+
+
+	return Client_Info;
+
+}
+
+
+int main()
+{
+	
+	string Answer = "n";
+	
+	do
+	{
+		Screen_Lib::Reset_Screen();
+
+		st_Client_Info Clien_Record = Read_New_Client_Record();
+
+		Save_Line_of_data_in_File("MyFile.txt", Convert_Record_to_Line(Clien_Record));
+
+		cout << "\nClient Record Added seccesfoly. Do You Want To Add New Client ? : ";
+		getline(cin, Answer);
+
+	} while (Answer == "y" || Answer == "Y");
+
+
+	return 0;
+}

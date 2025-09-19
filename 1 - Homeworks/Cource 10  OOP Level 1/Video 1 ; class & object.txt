@@ -1,0 +1,49 @@
+What is a Class ? 
+
+	it is like the string it is a place where you can put the functions that is connect with each other like
+dalile alhatif hhh  so that why we need the class , and class came from classification so you classificate the Methods and the Members se you want . So the code well be more structured and more easy , and the only way to access the Class is by the Object it is like the int you can not access to it by it self but you do a variable of type int 
+that is the same for Class you do a type of it and that type we call it Object , Object of the Class ?
+
+And when we want to name a class we do Before his name 'cls' like the structure we do 'st' or the Enum we do 'en'
+
+
+In Class : 
+
+	* by default it is Private
+	* it contain Methods (functions) and Members (variables)
+
+
+Code : 
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class clsPersson
+{
+private:
+	int x, y, z;
+
+public:
+	string FirstName;
+	string LastName;
+
+	string FullName()
+	{
+		return (FirstName + " " + LastName);
+	}
+};
+
+int main(void)
+{
+	clsPersson P;
+
+	P.FirstName = "Youness";
+	P.LastName = "Rziqi";
+
+	cout << P.FullName() << endl;
+
+	return 0;
+}

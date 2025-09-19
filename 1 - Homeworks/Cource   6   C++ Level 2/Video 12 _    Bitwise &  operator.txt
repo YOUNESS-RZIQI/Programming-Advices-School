@@ -1,0 +1,36 @@
+it Named Bitwise because it check bit by bit  :
+
+
+   0001000110
+&
+   0111000101
+_____________
+   0001000100
+
+
+
+
+
+
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+// Do a program that read only Num whit Fraction , float 
+
+
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+	
+	cout << "Result : " << (12 & 25) << endl;
+
+	return 0;
+}

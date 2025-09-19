@@ -1,0 +1,32 @@
+the 1 one : 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int A = 10;
+	int B = A++;  // B will take the old value of A , then A will increase by 1
+
+	cout << A << "\n";  // A=11
+	cout << B << "\n";  // B=10
+
+	 B = ++A;  // A will increase by 1, then Bwill take the new value 
+	
+	cout << A << "\n";  // A=12
+	cout << B << "\n";  // B=12
+
+
+
+	return 0;
+}
+
+
+
+the 2 one : 
+
+
+
+
+

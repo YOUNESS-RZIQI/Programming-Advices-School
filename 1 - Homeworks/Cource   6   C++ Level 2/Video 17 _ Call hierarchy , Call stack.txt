@@ -1,0 +1,45 @@
+you can know how called the function by using :  ctrl + K + T
+
+
+
+
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+void Function4()
+{
+	cout << "Hi I am Function 4 \n\n";
+}
+
+void Function3()
+{
+	Function4();
+}
+
+void Function2()
+{
+	Function3();
+}
+
+void Function1()
+{
+	Function2();
+	Function4();
+}
+
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+
+	Function1();
+
+
+	return 0;
+}

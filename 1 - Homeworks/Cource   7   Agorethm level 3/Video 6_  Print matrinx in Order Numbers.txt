@@ -1,0 +1,57 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+void Fill_2_D_Arr_W_order_Numbers(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	short Count = 0;
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Count++;
+			Arr[i][j] = Count;
+		}
+
+	}
+
+
+}
+
+void Print_Matrix(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			//printf("%d\t", Arr[i][j]);
+			cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+
+int main()
+{
+
+	int Arr[3][3];
+
+	Fill_2_D_Arr_W_order_Numbers(Arr, 3, 3);
+	Print_Matrix(Arr, 3, 3);
+
+	system("pause>0");
+}

@@ -1,0 +1,113 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+#include "Check_Lib.h"  // is leap year
+
+using namespace std;
+
+struct s_Date
+{
+	short Year, Month, Day;
+};
+
+int NumberOfDaysInAMonth(short Year, short Month)
+{
+	if (Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+
+}
+
+short Days_from_begining_of_Year(const short& Year, const short& Month, const short& Day)
+{
+
+	short Counter_of_Days = 0;
+
+	for (short i = 1; i < Month; i++)
+	{
+		Counter_of_Days += NumberOfDaysInAMonth(Year, i);
+	}
+	return Counter_of_Days + Day;
+}
+
+s_Date Change_Num_of_D_from_b_to_Y_M_D(const int& Day_from_bi, const short& year)
+{
+	s_Date Date;
+
+	short Remaining = Day_from_bi;
+	int Month_Days = 0;
+
+	Date.Month = 1;
+	Date.Year = year;
+
+
+	while (true)
+	{
+		Month_Days = NumberOfDaysInAMonth(Date.Year, Date.Month);
+
+		if (Remaining >= Month_Days)
+		{
+			Remaining -= Month_Days;
+
+			Date.Month++;
+
+			if (Date.Month > 12)
+			{
+				Date.Month = 1;
+				Date.Year ++;
+			}
+		}
+		else
+		{
+			Date.Day = Remaining;
+			break;
+		}
+
+	}
+	
+
+	return Date;
+}
+
+s_Date Read_info()
+{
+	s_Date Date;
+	Date.Day = Input_Lib::Read_Positive_Number("Day   : ");
+	Date.Month = Input_Lib::Read_Positive_Number("Month : ");
+	Date.Year = Input_Lib::Read_Positive_Number("Year  : ");
+	return Date;
+}
+
+bool is_Date_1_Equal_then_Date_2(const s_Date& Date_1, const s_Date& Date_2)
+{
+	return   (Date_1.Year == Date_2.Year) ? ((Date_1.Month == Date_2.Month) ? ((Date_1.Day == Date_2.Day) ? true : false) : false) : false;
+}
+
+int main()
+{
+
+	printf("\n\nEnter the Date\n\n");
+	s_Date Date_1 = Read_info();
+	printf("\n\nNow the next Date\n\n");
+	s_Date Date_2 = Read_info();
+	
+	if (is_Date_1_Equal_then_Date_2(Date_1, Date_2))
+	{
+		printf("\n\nYES , Date 1 is Equal to Date 2\n\n");
+	}
+	else
+	{
+		printf("\n\nNO , Date 1 is Not Equal to Date 2\n\n");
+	}
+
+
+	system("pause>0");
+	return 0;
+}

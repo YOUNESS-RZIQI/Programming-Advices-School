@@ -1,0 +1,7 @@
+In the past in C++ used to have some thing named by 'Register Variable'  , as we know that the variable take space in the RAM and also , the sloes place to the CPU is : Register --> Cash --> RAM --> Hard Drive .
+
+so to make the program run faster in the past in C++ you can use this syntax to sand the variable directly to the register instit of RAM , to make the program run faster : 
+
+         Example:
+
+                 Register int Num = 0;

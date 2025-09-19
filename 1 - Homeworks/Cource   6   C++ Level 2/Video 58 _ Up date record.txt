@@ -1,0 +1,126 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "File.h";
+using namespace std;
+
+
+
+void Fill_Vector_With_File_Content(const string& FileName, vector <string>& Vector)
+{
+
+	fstream File;
+	File.open(FileName, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+
+			Vector.push_back(Line);
+
+		}
+
+		File.close();
+	}
+
+}
+
+void Save_Vector_to_File(const vector <string>& v_something, const string& File )
+{
+
+	fstream MyFile;
+	MyFile.open(File, ios::out);
+
+	if (MyFile.is_open())
+	{
+
+		for (const string& Line : v_something)
+		{
+
+			if (Line != "" )
+			{
+				MyFile << Line << endl;
+			}
+
+		}
+
+
+		MyFile.close();
+	}
+
+}
+
+void Update_Record_from_File(const string & File_Name , const string & record, const string & Up_date_to)
+{
+
+	vector <string> v_Vector;
+
+	Fill_Vector_With_File_Content(File_Name, v_Vector);
+
+	for (string & i : v_Vector)
+	{
+
+		if (i == record)
+			i = Up_date_to;
+
+	}
+
+	Save_Vector_to_File(v_Vector, File_Name);
+
+
+}
+
+void Print_File_Content(const string & File_Name)
+{
+
+	fstream File;
+	File.open(File_Name, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+			cout << Line << endl;
+		}
+
+		File.close();
+	}
+
+}
+
+
+
+int main()
+{
+
+	cout << "File contant before the changes : \n\n";
+	Print_File_Content("MyFile.txt");
+
+	cout << "\n\nWhat do you whant to change ? : ";
+	string record = "";
+	cin >> record;
+
+	cout << "\n\nChage to what ? : ";
+	string Up_date_to = "";
+	cin >> Up_date_to;
+
+	Update_Record_from_File("MyFile.txt", record, Up_date_to);
+
+	cout << "\n\nFile contant after the changes : \n\n";
+	Print_File_Content("MyFile.txt");
+
+
+
+
+	return 0;
+}

@@ -1,0 +1,167 @@
+The 1 one : 
+
+#include <iostream>
+using namespace std;
+
+void MyFunction()
+{
+
+	cout << "Hello world!\n";
+
+
+}
+
+
+int main()
+{
+
+
+
+	MyFunction();
+
+
+
+	return 0;
+}
+
+
+
+
+The 2 one : 
+
+
+#include <iostream>
+
+using namespace std;
+
+void My_First_Name()
+{
+
+	cout << "YOUNESS ";
+
+}
+
+
+void My_Last_Name()
+{
+
+	cout << "RZIQI  \n";
+
+}
+
+
+int main()
+{
+
+	My_First_Name();
+	My_Last_Name();
+
+	// or :   My_First_Name(), My_Last_Name();
+
+
+	return 0;
+}
+
+
+The 3 one : 
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+struct stMY_Card_Info
+{
+	string Full_Name;
+	short Age;
+	string City;
+	string Country;
+
+};
+void Desplay_My_Cart_Info()
+{
+
+	stMY_Card_Info My_Card_Info;
+
+	cout << "Pleas enter your Full Name : ";
+	getline(cin, My_Card_Info.Full_Name);
+	cout << "Plesa enter your Age : ";
+	cin >> My_Card_Info.Age;
+	
+
+
+	cout << "Pleas enter your City Name : ";
+	cin.ignore(1,'\n');
+	getline(cin, My_Card_Info.City);
+
+
+	cout << "Pleas enter your Country Name : ";
+	getline(cin, My_Card_Info.Country);
+	cout << "\n\n\n";
+
+
+
+
+	cout << "		*********************************\n";
+	cout << "		Name    : " << My_Card_Info.Full_Name << ".\n";
+	cout << "		Age     : " << My_Card_Info.Age << " Years.\n";
+	cout << "		City    : " << My_Card_Info.City << ".\n";
+	cout << "		Country : " << My_Card_Info.Country << ".\n";
+	cout << "		*********************************\n";
+
+}
+
+
+void Stars()
+{
+
+	cout << "		***************\n";
+	cout << "		***************\n";
+	cout << "		***************\n";
+	cout << "		***************\n";
+
+}
+
+
+void I_Love_Programming()
+{
+
+	cout << "		ILove Programming!\n";
+	cout << "		I promise to be the best developer ever!\n";
+	cout << "		I know it will take some time to practice, but I\n";
+	cout << "		will achieve my goal.\n";
+	cout << "		Best Regards,\n";
+	cout << "		Mohammed Abu-Hadhoud.\n";
+
+}
+
+
+void  H_Of_Stars()
+{
+
+	cout << "		*   *\n";
+	cout << "		*   *\n";
+	cout << "		*****\n";
+	cout << "		*   *\n";
+	cout << "		*   *\n";
+
+}
+
+
+int main()
+{
+
+	Desplay_My_Cart_Info();
+	cout << "\n\n\n";
+	Stars();
+	cout << "\n\n\n";
+	I_Love_Programming();
+	cout << "\n\n\n";
+	H_Of_Stars();
+
+
+
+	return 0;
+}

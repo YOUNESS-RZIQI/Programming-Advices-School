@@ -1,0 +1,28 @@
+code : 
+
+
+#include <iostream>
+using namespace std;
+
+class clsTst
+{
+
+private:
+	int _Private; // Accessible only in the class
+
+protected:
+	int _Protected; // Accessible by : Class & Inheritance
+
+public:
+	int _Public;   // Accessible by every one
+
+};
+
+void main(void)
+{
+
+	clsTst p;
+
+	
+	
+}

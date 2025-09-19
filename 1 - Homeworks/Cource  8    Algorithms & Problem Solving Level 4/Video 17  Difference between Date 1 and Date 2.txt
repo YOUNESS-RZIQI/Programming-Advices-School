@@ -1,0 +1,121 @@
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <cmath>
+#include <fstream>
+#include "Input_Lib.h"
+#include "Check_Lib.h"  // is leap year
+
+using namespace std;
+
+struct s_Date
+{
+	short Year, Month, Day;
+};
+
+int NumberOfDaysInAMonth(short Year, short Month)
+{
+	if (Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+
+}
+
+short Days_from_begining_of_Year(const short& Year, const short& Month, const short& Day)
+{
+
+	short Counter_of_Days = 0;
+
+	for (short i = 1; i < Month; i++)
+	{
+		Counter_of_Days += NumberOfDaysInAMonth(Year, i);
+	}
+	return Counter_of_Days + Day;
+}
+
+bool is_Last_Day(const short& Year, const short& Month, const short& Days)
+{
+	return Days == NumberOfDaysInAMonth(Year, Month);
+}
+
+bool is_Last_Month(const short& Month)
+{
+	return Month == 12;
+}
+
+s_Date Increas_Date_by_one_Day(s_Date Date)
+{
+
+	if (is_Last_Day(Date.Year, Date.Month, Date.Day))
+	{
+		if (is_Last_Month(Date.Month))
+		{
+			Date.Day = 1;
+			Date.Month = 1;
+			Date.Year++;
+			return Date;
+
+		}
+
+		Date.Day = 1;
+		Date.Month++;
+		return Date;
+	}
+
+	Date.Day++;
+
+	return Date;
+}
+
+bool is_Date_1_Less_then_Date_2(const s_Date& Date_1, const s_Date& Date_2)
+{
+	return   (Date_1.Year < Date_2.Year) ? true :
+
+		(Date_1.Month < Date_2.Month) ? true :
+
+		(Date_1.Day < Date_2.Day) ? true : false;
+}
+
+short  Differences_Day(s_Date Date_1 , s_Date Date_2 , bool Include = false)
+{
+	
+	int Days = 0;
+	while (is_Date_1_Less_then_Date_2(Date_1, Date_2))
+	{
+		Days++;
+		Date_1 = Increas_Date_by_one_Day(Date_1);
+	}
+	return Include ? ++Days : Days;
+}
+
+s_Date Read_info()
+{
+	s_Date Date;
+	Date.Day = Input_Lib::Read_Positive_Number("Day   : ");
+	Date.Month = Input_Lib::Read_Positive_Number("Month : ");
+	Date.Year = Input_Lib::Read_Positive_Number("Year  : ");
+	return Date;
+}
+
+int main()
+{
+
+	s_Date Date1 = Read_info();
+	cout << "\nSecond : \n\n";
+	s_Date Date2 = Read_info();
+
+
+	
+
+	printf("\n\nDate Difference is : %d\n\n", Differences_Day(Date1,Date2));
+	printf("\n\nDate Difference (Includeing end day) is : %d\n\n", Differences_Day(Date1,Date2 ,true));
+
+
+	system("pause>0");
+	return 0;
+}
+

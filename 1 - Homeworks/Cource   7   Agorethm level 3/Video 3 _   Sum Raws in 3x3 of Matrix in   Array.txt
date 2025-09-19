@@ -1,0 +1,213 @@
+💁‍♂️  💁‍♂️  This one :  My Selution : 
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+void Fill_Two_Dimensional_Arrays(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Arr[i][j] = Randam_Number_In_Range(1, 100);
+		}
+
+	}
+
+
+}
+
+void Print_Two_Dimensional_Arrays(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			//printf("%d\t", Arr[i][j]);
+			cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+
+int Fill_Arr_W_Sum_Row_of_Matrix(int Arr[3][3], const short& Row_Number, const short& Coloms, int Arr_R_S[3])
+{
+
+	Arr_R_S[Row_Number] = 0;
+
+	for (int j = 0; j < Coloms; j++)
+	{
+		Arr_R_S[Row_Number] += Arr[Row_Number][j];
+	}
+
+	return Arr_R_S[Row_Number];
+}
+
+void Print_Rows_sum_of_Matrix(int Arr[3][3], const short& Rows, const short& Coloms , int Arr_R_S[3])
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+		cout << "Sum of Raw [" << i + 1 << "] is : " << Fill_Arr_W_Sum_Row_of_Matrix(Arr, i, 3 , Arr_R_S) << "\n";
+	}
+
+}
+
+
+
+
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	int arr[3][3] , Arr_R_S[3];
+	Fill_Two_Dimensional_Arrays(arr, 3, 3);
+
+
+	cout << "The 3x3 array result : \n\n";
+	Print_Two_Dimensional_Arrays(arr, 3, 3);
+	cout << "\n\n" << endl;
+
+	Print_Rows_sum_of_Matrix(arr, 3, 3, Arr_R_S);
+
+
+	cout << "\n\n" << endl;
+
+
+
+	return 0;
+}
+
+
+
+💁‍♂️  💁‍♂️  This one :  Teacher Selution : 	
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+void Fill_Two_Dimensional_Arrays(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Arr[i][j] = Randam_Number_In_Range(1, 100);
+		}
+
+	}
+
+
+}
+
+int Sum_Row_of_Matrix(int Arr[3][3], const short& Row_Number, const short& Coloms)
+{
+
+	int sum = 0;
+	for (int j = 0; j < Coloms; j++)
+	{
+		sum += Arr[Row_Number][j];
+	}
+
+	return sum;
+}
+
+void Fill_Rows_sum_of_Arr(int Arr[3][3], const short& Rows, const short& Coloms , int Arr_R_s[3])
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+		Arr_R_s[i] = Sum_Row_of_Matrix(Arr, i, 3);
+	}
+
+}
+
+void Print_Two_Dimensional_Arrays(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			//printf("%d\t", Arr[i][j]);
+			cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+void Print_Array(const int Arr[3], const short& Rows)
+{
+	for (int i = 0 ; i < Rows ; i++)
+	{
+		cout << "Sum of Raw [" << i + 1 << "] is : " << Arr[i] << endl;
+	}
+
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	int arr[3][3], Arr[3];
+	Fill_Two_Dimensional_Arrays(arr, 3, 3);
+	cout << "The 3x3 array result : \n\n";
+	Print_Two_Dimensional_Arrays(arr, 3, 3);
+	cout << "\n\n" << endl;
+
+
+	Fill_Rows_sum_of_Arr(arr, 3, 3 , Arr);
+	Print_Array(Arr, 3);
+	cout << "\n\n" << endl;
+
+
+
+	return 0;
+}
+

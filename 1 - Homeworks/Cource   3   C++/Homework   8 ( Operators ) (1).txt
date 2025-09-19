@@ -1,0 +1,800 @@
+the first :
+
+it is about operations of : 9 and 2
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	short int NumberA;
+	short int NumberB;
+
+	cout << "Pleas rnter the first Number A? \n";
+	cin >> NumberA;
+
+	cout << "Pleas enter the second Number B? \n";
+	cin >> NumberB;
+	cout << endl;
+	cout << NumberA << " + " << NumberB << " = " << NumberA + NumberB << "\n";
+	cout << NumberA << " - " << NumberB << " = " << NumberA - NumberB << "\n";
+	cout << NumberA << " * " << NumberB << " = " << NumberA * NumberB << "\n";
+	cout << NumberA << " / " << NumberB << " = " << NumberA / NumberB << "\n";
+	cout << NumberA << " % " << NumberB << " = " << NumberA % NumberB << "\n";
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+the #7 :
+
+it is about calculation
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	short Number;
+
+	cout << "Pleas enter the Number : \n";
+	cin >> Number;
+
+
+	cout << "Half of " << Number << " is " << Number / 2 << endl;
+
+
+	return 0;
+}
+
+
+the #9 :
+it is about add numbers
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	short Number1, Number2, Number3;
+
+	cout << "Pleas enter the first Number ?\n";
+	cin >> Number1;
+
+	cout << "Pleas enter the secong Number ?\n";
+	cin >> Number2;
+
+	cout << "Pleas enter the thord Number ?\n";
+	cin >> Number3;
+
+	cout << endl << endl;
+
+	cout << "The result is : " << Number1 + Number2 + Number3 << "\n\n";
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+the #10 :
+
+it is about Average of entered marks
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+
+	float Mark1, Mark2, Mark3;
+
+	cout << "Pleas enter the first Mark ? \n";
+	cin >> Mark1;
+
+	cout << "Pleas enter the second Mark ? \n";
+	cin >> Mark2;
+
+	cout << "Pleas enter the thord Mark ? \n";
+	cin >> Mark3;
+
+	short result = (Mark1 + Mark2 + Mark3) / 3;
+
+	cout << "The Average of entered Maeks is : " << result << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+the #14 :
+
+it is about Swap
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+
+	float Number1, Number2;
+
+	cout << "Pleas enter the first Number : ";
+	cin >> Number1;
+
+
+	cout << "Plweas enter the second Number : ";
+	cin >> Number2;
+	cout << endl;
+
+	cout << "Swap is : \n\n";
+	cout << Number1 << "\n" << Number2 << "\n" << "\n" << Number2 << "\n" << Number1 << "\n";
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #15 :
+
+it is about rectangel Area
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float a, b;
+
+	cout << "Pleas enter the a of the rectangel : ";
+	cin >> a;
+
+	cout << "Pleas enter the b of the rectangel : ";
+	cin >> b;
+	cout << endl;
+
+	short rectangelArea = a * b;
+
+	cout << "the rectangel area is : " << rectangelArea << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #17 :
+
+Triangel Area
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float a, h;
+
+	cout << "Pleas enter the a : ";
+	cin >> a;
+
+	cout << "Pleas enter the h : ";
+	cin >> h;
+	cout << endl;
+
+	float triangelArea = (a * 1 / 2) * h;
+
+	cout << "The result of triangel Area is : " << triangelArea << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #19 :
+
+
+it is about the circle area
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float D;
+	const float PI = 3.14;
+
+
+	cout << "Pleas enter D of  the circle : ";
+	cin >> D;
+	cout << endl;
+
+	float CircleArea = (D * D * PI) / 4;
+
+	cout << "The circle area is : " << CircleArea << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+the #20 :
+
+it is about the circle area by inscribed in a square
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	const float PI = 3.14;
+	float  a;
+
+
+	cout << "Pleas enter the A of the square cirsle area : ";
+	cin >> a;
+	cout << endl;
+
+	float Area = (PI * a * a) / 4;
+
+	cout << "Circle area inscribed in a square is : " << Area << endl << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+the #21 :
+
+
+it is about the circle area long the circumference
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float L;
+	float PI = 3.14;
+
+	cout << "Pleas enter the circumgerence her : ";
+	cin >> L;
+
+	float Area = (L * L) / (4 * PI);
+
+	cout << "The circle area is : " << Area << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+the #22 :
+
+
+it is about circle area inscribed in an isosceles triangle
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float a, b;
+	float PI = 3.14;
+
+	cout << "Pleas enter the a  of the Isosceles teiangle her : ";
+	cin >> a;
+
+	cout << "Pleas enter the b  of the Isosceles teiangle her : ";
+	cin >> b;
+
+
+	float Area = PI * ((b * b) / 4) * ((2 * a - b) / (2 * a + b));
+
+
+	cout << "The circle area is : " << Area << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+the #31 :
+
+it is about Power(pow(a, b))
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float Number;
+
+	cout << "Pleas enter the Number that you want to pawer it her : ";
+	cin >> Number;
+
+	cout << pow(Number, 2) << "\n" << pow(Number, 3) << "\n" << pow(Number, 4) << endl;
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #35 :
+
+it is about mouney changes
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float Pennies;
+	float Nickels;
+	float Dimes;
+	float Quaters;
+	float Dollars;
+
+
+	cout << "Pleas enter the Pennies : ";
+	cin >> Pennies;
+	cout << "Pleas enter the Nickels : ";
+	cin >> Nickels;
+	cout << "Pleas enter the Dimes   : ";
+	cin >> Dimes;
+	cout << "Pleas enter the Quaters : ";
+	cin >> Quaters;
+	cout << "Pleas enter the Dollars : ";
+	cin >> Dollars;
+
+	Nickels = Nickels * 5;
+	Dimes = Dimes * 10;
+	Quaters = Quaters * 25;
+	Dollars = Dollars * 100;
+
+	float TotalPennies = Nickels + Dimes + Quaters + Dollars + Pennies;
+	float TotalDollars = pennies / 100;
+
+
+	cout << "\n" << TotalPennies << " Pennies" << "\n" << TotalDollars << " Dollars" << endl;
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+the #39 :
+
+it is about cash paid
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float TotalBill, CashPaid;
+
+	cout << "Pleas enter the total bill : ";
+	cin >> TotalBill;
+
+	cout << "Pleas enter the cash Paid  : ";
+	cin >> CashPaid;
+
+
+	float remainder = CashPaid - TotalBill;
+
+	cout << remainder << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #40 :
+
+
+it is about service fee and sales tax
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float TotalBill, ServiceFee = 1.1, SalesTax = 1.16;
+
+	cout << "Pleas enter the total bill : ";
+	cin >> TotalBill;
+
+	float result = TotalBill * ServiceFee * SalesTax;
+
+	cout << "\nYour total bill after the service fee and sales tax is : " << result << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #42 :
+
+
+it is about the total in seconds
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	short Seconds, Minutes, Hours, Days;
+
+	cout << "Pleas enter the number of Days : ";
+	cin >> Days;
+	cout << "Pleas enter the number of Hours : ";
+	cin >> Hours;
+	cout << "Pleas enter the number of Minutes : ";
+	cin >> Minutes;
+	cout << "Pleas enter the number of Seconds : ";
+	cin >> Seconds;
+
+	float TotalSeconds = Seconds + (Minutes * 60) + (Hours * 60 * 60) + (Days * 24 * 60 * 60);
+
+	cout << "The result in seconds is : " << TotalSeconds << " Seconds\n";
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the #43  :
+
+it is about to change seconds to : days - hours - minutes - secondes
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int SecondsPerDay = 24 * 60 * 60, SecondsPerHour = 60 * 60, SecondsPerMinute = 60, TotalSeconds;
+
+	cout << "Pleas enter the totalseconds that you want to change : ";
+	cin >> TotalSeconds;
+
+	int NumberOfDays = TotalSeconds / SecondsPerDay;
+	int remainder1 = TotalSeconds % SecondsPerDay;
+
+	int NumberOfHours = remainder1 / SecondsPerHour;
+	int remainder2 = remainder1 % SecondsPerHour;
+
+	int NumberOfMinutes = remainder2 / SecondsPerMinute;
+	int NumberOfSeconds = remainder2 % SecondsPerMinute;
+
+
+	cout << NumberOfDays << ":" << NumberOfHours << ":" << NumberOfMinutes << ":" << NumberOfSeconds << endl;
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+the #47 :
+
+it is about Monthly Payment of the loan
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float LoanAmount, MonthlyPayment;
+
+	cout << "Pleas   enter   the Loan Amount : ";
+	cin >> LoanAmount;
+	cout << "Pleas enter the Monthly Payment : ";
+	cin >> MonthlyPayment;
+	cout << endl;
+	float MonthsYouNeedSettleTheLoan = LoanAmount / MonthlyPayment;
+
+	cout << MonthsYouNeedSettleTheLoan << " Months " << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+the #48 :
+
+
+it is about knowing how much mouney to pey in a mouth
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float LoanAmount, Month;
+
+	cout << "Pleas enter the Loan Amount : ";
+	cin >> LoanAmount;
+
+	cout << "Pleas enter the Number of Month that YOU WANT to pay on it : ";
+	cin >> Month;
+	cout << endl;
+
+	float MonthlyPayment = LoanAmount / Month;
+
+	cout << "The monthly installment amount is : " << MonthlyPayment << endl;
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

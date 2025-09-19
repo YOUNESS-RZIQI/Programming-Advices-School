@@ -1,0 +1,13 @@
+in automatic Variables you do not need to idintifie the category of the variable ( int , float , short , string ... ) , You just
+do like the following : 
+
+
+
+syntax : 
+
+
+     int Num = 0          ---->   auto Num = 0
+
+     float Num = 1.1      ---->   auto Num = 1.1
+
+     string Word = "Hi"   ---->   auto Word = "Hi"

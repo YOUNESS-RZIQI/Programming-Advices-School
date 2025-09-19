@@ -1,0 +1,390 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+struct stHow_much_test
+{
+	int How_much_test_in_Math;
+	int How_much_test_in_Physics;
+	int How_much_test_in_svt;
+	int How_much_test_in_English;
+	int How_much_test_in_French;
+	int How_much_test_in_Arabic;
+	int How_much_test_in_Filosofy;
+	int How_much_test_in_Sport;
+	int How_much_test_in_Islamic;
+	int How_much_test_in_Administration;
+
+
+
+
+};
+
+
+struct stLanguageTotalMarks
+{
+	float Math_Total_Mark;
+	float Sport_Total_Mark;
+	float Physics_Total_Mark;
+	float Filosofy_Total_Mark;
+	float Arabic_Total_Mark;
+	float Islamic_Total_Mark;
+	float French_Total_Mark;
+	float English_Total_Mark;
+	float svt_Total_Mark;
+	float Administration_Total_Mark;
+
+};
+
+
+struct stMark
+{
+	float Mark_1;
+	float Mark_2;
+	float Mark_3;
+	float Mark_4;
+	float Partisipation_Mark;
+
+};
+
+
+struct stLanguge_Marks
+{
+	stMark Math;
+	stMark Sport;
+	stMark Physics;
+	stMark Filosofy;
+	stMark Arabic;
+	stMark Islamic;
+	stMark French;
+	stMark English;
+	stMark svt;
+	stMark Administration;
+
+};
+
+
+struct stCoefficient
+{
+	float Coefficient_Of_Math;
+	float Coefficient_Of_Physics;
+	float Coefficient_Of_svt;
+	float Coefficient_Of_English;
+	float Coefficient_Of_French;
+	float Coefficient_Of_Arabic;
+	float Coefficient_Of_Filosofy;
+	float Coefficient_Of_Sport;
+	float Coefficient_Of_Islamic;
+	float Coefficient_Of_Administration;
+
+};
+
+
+
+struct stStudent
+{
+
+	stCoefficient Coefficient;
+	stLanguge_Marks Language_Marks;
+	stLanguageTotalMarks Language_Total_Mark;
+	stHow_much_test How_much_test;
+};
+
+int main()
+{
+	stStudent Student;
+
+
+
+
+	cout << "			Welcom to :		  CALCULEZ  VOS  BULLETIN  \n\n";
+
+	cout << "Let's get started    ( !! NOTION !! : if you have less then 4 test in a Languge just put \'0\' in the mark )\n\n\n";
+
+
+
+	cout << "Now we will start with \'Administration\'\n";
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Administration.Mark_1;
+
+	cout << "       What is the coefficient of Administration  : ";
+	cin >> Student.Coefficient.Coefficient_Of_Administration;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Administration_Total_Mark = Student.Language_Marks.Administration.Mark_1;
+
+
+
+
+
+	cout << "Now we will start with \'PHYSICS\'\n";
+	cout << "       Pleas enter how much test in \'PHYSICS\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_Physics;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Physics.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.Physics.Mark_2;
+	cout << "                       mark3 : ";
+	cin >> Student.Language_Marks.Physics.Mark_3;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.Physics.Partisipation_Mark;
+	cout << "       What is the coefficient of PHYSICS :  ";
+	cin >> Student.Coefficient.Coefficient_Of_Physics;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Physics_Total_Mark = (((Student.Language_Marks.Physics.Mark_1 + Student.Language_Marks.Physics.Mark_2 + Student.Language_Marks.Physics.Mark_3) / Student.How_much_test.How_much_test_in_Physics) * 0.75) + (Student.Language_Marks.Physics.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'MATH\'\n";
+	cout << "       Pleas enter how much test in \'MATH\' : ";
+	cin >> Student.How_much_test.How_much_test_in_Math;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Math.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.Math.Mark_2;
+	cout << "                       mark3 : ";
+	cin >> Student.Language_Marks.Math.Mark_3;
+	cout << "       What is the coefficient of Math ?  ";
+	cin >> Student.Coefficient.Coefficient_Of_Math;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Math_Total_Mark = ((Student.Language_Marks.Math.Mark_1 + Student.Language_Marks.Math.Mark_2 + Student.Language_Marks.Math.Mark_3) / Student.How_much_test.How_much_test_in_Math);
+
+
+
+	cout << "Now we will start with \'SVT\'\n";
+	cout << "       Pleas enter how much test in \'SVT\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_svt;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.svt.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.svt.Mark_2;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.svt.Partisipation_Mark;
+	cout << "       What is the coefficient of SVT  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_svt;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.svt_Total_Mark = (((Student.Language_Marks.svt.Mark_1 + Student.Language_Marks.svt.Mark_2) / Student.How_much_test.How_much_test_in_svt) * 0.75) + (Student.Language_Marks.svt.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'FILOSOFY\'\n";
+	cout << "       Pleas enter how much test in \'FILOSOFY\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_Filosofy;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Filosofy.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.Filosofy.Mark_2;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.Filosofy.Partisipation_Mark;
+	cout << "       What is the coefficient of FILOSOFY  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_Filosofy;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Filosofy_Total_Mark = (((Student.Language_Marks.Filosofy.Mark_1 + Student.Language_Marks.Filosofy.Mark_2) / Student.How_much_test.How_much_test_in_Filosofy) * 0.75) + (Student.Language_Marks.Filosofy.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'ARABIC\'\n";
+	cout << "       Pleas enter how much test in \'ARABIC\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_Arabic;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Arabic.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.Arabic.Mark_2;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.Arabic.Partisipation_Mark;
+	cout << "       What is the coefficient of ARABIC  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_Arabic;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Arabic_Total_Mark = (((Student.Language_Marks.Arabic.Mark_1 + Student.Language_Marks.Arabic.Mark_2) / Student.How_much_test.How_much_test_in_Arabic) * 0.75) + (Student.Language_Marks.Arabic.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'ENGLISH\'\n";
+	cout << "       Pleas enter how much test in \'ENGLISH\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_English;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.English.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.English.Mark_2;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.English.Partisipation_Mark;
+	cout << "       What is the coefficient of ENGLISH  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_English;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.English_Total_Mark = (((Student.Language_Marks.English.Mark_1 + Student.Language_Marks.English.Mark_2) / Student.How_much_test.How_much_test_in_English) * 0.75) + (Student.Language_Marks.English.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'FRENCH\'\n";
+	cout << "       Pleas enter how much test in \'FRENCH\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_French;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.French.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.French.Mark_2;
+	cout << "                       mark3 : ";
+	cin >> Student.Language_Marks.French.Mark_3;
+	cout << "                       mark4 : ";
+	cin >> Student.Language_Marks.French.Mark_4;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.French.Partisipation_Mark;
+	cout << "       What is the coefficient of FRENCH  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_French;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.French_Total_Mark = (((Student.Language_Marks.French.Mark_1 + Student.Language_Marks.French.Mark_2 + Student.Language_Marks.French.Mark_3 + Student.Language_Marks.French.Mark_4) / Student.How_much_test.How_much_test_in_French) * 0.75) + (Student.Language_Marks.French.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'ISLAMIC\'\n";
+	cout << "       Pleas enter how much test in \'ISLAMIC\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_Islamic;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Islamic.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.Islamic.Mark_2;
+	cout << "       Pleas enter the partisipation mark : ";
+	cin >> Student.Language_Marks.Islamic.Partisipation_Mark;
+	cout << "       What is the coefficient of ISLAMIC  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_Islamic;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Islamic_Total_Mark = (((Student.Language_Marks.Islamic.Mark_1 + Student.Language_Marks.Islamic.Mark_2) / Student.How_much_test.How_much_test_in_Islamic) * 0.75) + (Student.Language_Marks.Islamic.Partisipation_Mark * 0.25);
+
+
+
+	cout << "Now we will start with \'SPORT\'\n";
+	cout << "       Pleas enter how much test in \'SPORT\'  : ";
+	cin >> Student.How_much_test.How_much_test_in_Sport;
+	cout << "		Pleas enter the marks of exams : \n";
+	cout << "                       mark1 : ";
+	cin >> Student.Language_Marks.Sport.Mark_1;
+	cout << "                       mark2 : ";
+	cin >> Student.Language_Marks.Sport.Mark_2;
+	cout << "                       mark3 : ";
+	cin >> Student.Language_Marks.Sport.Mark_3;
+	cout << "       What is the coefficient of SPORT  :  ";
+	cin >> Student.Coefficient.Coefficient_Of_Sport;
+	cout << "\n\n" << endl;
+
+	Student.Language_Total_Mark.Sport_Total_Mark = ((Student.Language_Marks.Sport.Mark_1 + Student.Language_Marks.Sport.Mark_2 + Student.Language_Marks.Sport.Mark_3) / Student.How_much_test.How_much_test_in_Sport);
+
+
+
+	float Resulta_Final = (Student.Language_Total_Mark.Administration_Total_Mark * 1 + Student.Language_Total_Mark.Arabic_Total_Mark * 2 + Student.Language_Total_Mark.English_Total_Mark * 2 + Student.Language_Total_Mark.Filosofy_Total_Mark * 2 + Student.Language_Total_Mark.French_Total_Mark * 4 + Student.Language_Total_Mark.Islamic_Total_Mark * 2 + Student.Language_Total_Mark.Math_Total_Mark * 7 + Student.Language_Total_Mark.Physics_Total_Mark * 7 + Student.Language_Total_Mark.Sport_Total_Mark * 4 + Student.Language_Total_Mark.svt_Total_Mark * 5) / (Student.Coefficient.Coefficient_Of_Administration + Student.Coefficient.Coefficient_Of_Arabic + Student.Coefficient.Coefficient_Of_English + Student.Coefficient.Coefficient_Of_Filosofy + Student.Coefficient.Coefficient_Of_French + Student.Coefficient.Coefficient_Of_Islamic + Student.Coefficient.Coefficient_Of_Math + Student.Coefficient.Coefficient_Of_Physics + Student.Coefficient.Coefficient_Of_Sport + Student.Coefficient.Coefficient_Of_svt);
+
+
+	
+	 float   Ad_T = (Student.Language_Total_Mark.Administration_Total_Mark);
+	 float   Ar_T = (Student.Language_Total_Mark.Arabic_Total_Mark);
+	 float   En_T = (Student.Language_Total_Mark.English_Total_Mark);
+	 float   Fi_T = (Student.Language_Total_Mark.Filosofy_Total_Mark);
+	 float   Fr_T = (Student.Language_Total_Mark.French_Total_Mark);
+	 float   Is_T = (Student.Language_Total_Mark.Islamic_Total_Mark);
+	 float   Mh_T = (Student.Language_Total_Mark.Math_Total_Mark);
+	 float   Ph_T = (Student.Language_Total_Mark.Physics_Total_Mark);
+	 float   Sp_T = (Student.Language_Total_Mark.Sport_Total_Mark);
+	 float   sv_T = (Student.Language_Total_Mark.svt_Total_Mark);
+
+
+
+	float   Ad_C = (Student.Coefficient.Coefficient_Of_Administration);
+	float	Ar_C = (Student.Coefficient.Coefficient_Of_Arabic);
+	float 	En_C = (Student.Coefficient.Coefficient_Of_English);
+	float	Fi_C = (Student.Coefficient.Coefficient_Of_Filosofy);
+	float	Fr_C = (Student.Coefficient.Coefficient_Of_French);
+	float	Is_C = (Student.Coefficient.Coefficient_Of_Islamic);
+	float	Mh_C = (Student.Coefficient.Coefficient_Of_Math);
+	float	Ph_C = (Student.Coefficient.Coefficient_Of_Physics);
+	float	Sp_C = (Student.Coefficient.Coefficient_Of_Sport);
+	float	sv_C = (Student.Coefficient.Coefficient_Of_svt);
+
+
+
+
+
+
+
+
+
+
+
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";
+	cout << "				|                                       |                                       |                                        |\n";
+	cout << "				|                 Lenguage                                 Result               |              Coifficient               |\n";
+	cout << "				|                                       |                                       |                                        |\n";
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";
+	cout << "				|                                       |                                       |                                        |\n";
+	cout << "				               Administration                               " << Ad_T << "                                      " << Ad_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				------------------------------------------------------------------------------------------------------------------------\n";   
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                   Arabic                                   " << Ar_T << "                                      " << Ar_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                  English                                   " << En_T << "                                      " << En_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                  Filosoty                                  " << Fi_T << "                                      " << Fi_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                   French                                   " << Fr_T << "                                      " << Fr_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                   Islamic                                  " << Is_T << "                                      " << Is_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                    Math                                    " << Mh_T << "                                      " << Mh_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                   Physics                                  " << Ph_T << "                                      " << Ph_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                    sport                                   " << Sp_T << "                                      " << Sp_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";  
+	cout << "				|                                       |                                       |                                        |\n"; 
+	cout << "				                    SVT                                     " << sv_T << "                                      " << sv_C << " \n";
+	cout << "				|                                       |                                       |                                        |\n";
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";
+	cout << "				|                                                                                                                        |\n";
+	cout << "				                               " << "The class Result : " << Resulta_Final << "                                          \n";
+	cout << "				|                                                                                                                        |\n";
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";
+	cout << "				|                                                                                                                        |\n";
+	cout << "				                               " << "National         : 00.00" << "                                                      \n";
+	cout << "				|                                                                                                                        |\n";
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";
+	cout << "				|                                                                                                                        |\n";
+	cout << "				                               " << "Total Result     : 10.02 \n";
+	cout << "				|                                                                                                                        |\n";
+	cout << "				-------------------------------------------------------------------------------------------------------------------------\n";
+	cout << endl;
+
+
+
+
+	return 0;
+}

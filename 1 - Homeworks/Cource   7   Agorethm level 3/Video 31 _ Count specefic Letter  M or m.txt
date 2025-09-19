@@ -1,0 +1,67 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+string Read_String(string Message)
+{
+
+	string Word = " ";
+	cout << Message;
+	getline(cin, Word);
+
+	return Word;
+}
+
+char Invert_Letter(char  Letter)
+{
+
+	return isupper(Letter) ? tolower(Letter) : toupper(Letter);
+
+}
+
+char Read_char(string Message)
+{
+
+	char Word = 'a';
+	cout << Message;
+	cin >> Word;
+
+	return Word;
+}
+
+short Count_Character(const string& Word, const char& Character, bool  Matche = true)
+{
+
+	short Count = 0;
+
+	for (short i = 0; i < Word.length(); i++)
+	{
+		if (Matche)
+		{
+			if (Word[i] == Character)
+				Count++;
+		}
+		else if (toupper(Word[i]) == toupper(Character))
+			Count++;
+
+	}
+
+	return Count;
+}
+
+int main()
+{
+
+	string Word = Read_String("Enter your String her : ");
+	char Character = Read_char("Enter you Character to check : ");
+
+	cout << "\n\nThe Character " << Character << " exist : " << Count_Character(Word, Character) << " Time(s)\n\n";
+	cout << "\n\nThe Character " << Character << " or " << Invert_Letter (Character) << " exist : " << Count_Character(Word, Character, false) << " Time(s)\n\n";
+
+
+	return 0;
+}
