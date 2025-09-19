@@ -1,0 +1,96 @@
+Descreption : 
+
+In C++ there is a class that helppe you if you do no want to call set & get each time you need them , in this calls you do like an Automation that if you clled the object and you did : 
+
+	p.First_Name = "youness";
+
+it understan that you call a Set property;
+
+and if you did : 
+
+	cout << p.First_Name << endl;
+
+it understan that you call a Get property;
+
+so it hellp to reduce the time of typing and thinking :)
+
+
+
+
+Code : 
+
+
+#include <iostream>
+using namespace std;
+
+class clsPersson
+{
+	string _First_Name, _Last_Name;
+
+public:
+
+	void Set_First_Name(string FirstName)
+	{
+		_First_Name = FirstName;
+	}
+	
+	string First_Name()
+	{
+		return _First_Name;
+	}
+
+
+
+
+	// The syntax of calling the calls of the Automation : 
+	// F = Function             F.Name of Get    F.Name of Set
+	__declspec(property (get = First_Name, put = Set_First_Name)) string FirstName;
+
+
+
+
+
+	void Set_Last_Name(string Last_Name)
+	{
+		_Last_Name = Last_Name;
+	}
+	
+	string Last_Name()
+	{
+		return _Last_Name;
+	}
+
+	__declspec(property (get = Last_Name, put = Set_Last_Name)) string LastName;
+
+
+
+};
+
+void main(void)
+{
+
+	clsPersson p;
+
+	// First Name :
+	p.Set_First_Name("youness\n\n");
+
+	cout << "By Set/Get :\n\n\t" << p.First_Name() << endl;
+
+	p.FirstName = "youness\n\n";
+
+	cout << "By Automation :\n\n\t" << p.First_Name() << endl;
+
+	// Last Name :
+
+	p.Set_Last_Name("rziqi\n\n");
+
+
+	cout << "By Set/Get :\n\n\t" << p.Last_Name() << endl;
+
+	p.LastName = "rziqi\n\n";
+
+	cout << "By Automation :\n\n\t" << p.Last_Name() << endl;
+
+
+	
+}
