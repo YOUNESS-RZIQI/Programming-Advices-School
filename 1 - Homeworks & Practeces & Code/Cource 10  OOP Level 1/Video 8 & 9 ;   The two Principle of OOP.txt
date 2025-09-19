@@ -1,0 +1,7 @@
+The two Principles of OOP Encapsulation and Abstraction : 
+
+
+	* Encapsulation : to put all related functions and variables in one class , this is the Encapsulation concept . And you can access does Functions and Variables just by the Object of the Class.
+
+
+	* Abstraction : In simple term , abstraction "displays" the only thigs that you want to chow to ho will use your class or to "hide" it .
