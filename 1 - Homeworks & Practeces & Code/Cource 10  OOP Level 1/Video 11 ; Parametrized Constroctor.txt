@@ -1,0 +1,105 @@
+/*
+				Title :    Parametrized Constructors
+ 
+	What a Constructor Jog is ?
+
+	 1 - Firts it's wrong to Not initialize an Object like the Variables also .So this is Constructor Job,to Forces you
+
+	 to initialize the Class or you can not use .
+	
+	 2 - Eventually it is a Data type , So he needs a initialization That is why .
+
+	 3 - The constroctor is alwayse called by the class even if you did not call it , He automatically set some initial 
+	 values like the string he gave hem the empth string value "" ... , and because he runs before the class code 
+	 we can use it to load the use data from a data base or do initialize to the data that exist in class in our case
+	 and alot of thinks .
+
+	 4 - And when you do a constroctor you overwrite the default constroctor that automatecally done by the compiler.
+
+	 5 - And the Constroctor does have the same Name of the class and he should not return any Value .
+
+	 6 - Default Constructor : A constructor with no parameters is known as a default constructor.
+
+	 7 - Parameterized Constructor: a constructor with parameters is known as a parameterized constructor.
+	 This is the preferred method to initialize data members .
+
+
+
+	* So the constroctor does not lette you to do an Object without initializing the Class .
+
+	* So until now i know that there is some rules that i need to follow in the Class creation : 
+
+		1) If you want to change the Members inside the class do not make the public ,do Set/Get Methods instead .
+
+		2) Call the class that do the Automation for the Set/Get Methods using " = " or "Print" , instead of calling 
+		   eache Methods by it's Name .
+
+		3) Now the 3 Reul is to Not lette the Class without initializing , so we need the Constructor .
+
+
+*/
+
+/*
+
+	1 - Set/Get  +   __declsep(...)
+	2 - Members :  _Age,  _Value;
+	3 - Initializing the Class
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+
+class clsPerson
+{
+	int _Age, _Pass_Word;
+
+public:
+
+	clsPerson(int Age, int Pass_Word)
+	{
+		_Age = Age;
+		_Pass_Word = Pass_Word;
+	}
+
+	void Set_Age(int Age)
+	{
+		_Age = Age;
+	}
+
+	int Get_Age()
+	{
+		return _Age;
+	}
+
+	__declspec(property(get = Get_Age, put = Set_Age)) int Age;
+
+	void Set_Pass_Word(int Pass)
+	{
+		_Pass_Word = Pass;
+	}
+
+	int Get_Pass_Word()
+	{
+		return _Pass_Word;
+	}
+
+	__declspec(property(get = Get_Pass_Word, put = Set_Pass_Word)) int Pass_Word;
+
+};
+
+int main(void)
+{
+	clsPerson person(22,4002);
+
+
+	cout << person.Age << endl;
+
+	cout << person.Pass_Word << endl;
+
+
+	return 0;
+}
+
