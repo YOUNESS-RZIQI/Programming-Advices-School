@@ -1,0 +1,76 @@
+/*
+
+
+
+						Title :  Destructo
+
+
+
+	1) Destructor is an instance member function which is invoked automatically whenever an object is going to be destroyed.
+	
+	2) Inshort Destructor is the last function that is going to be called before an object is destroyed.
+
+	3) Destructor has the same name as their class name preceded by a tilde (~) symbol.
+
+	4) It is not possible to define more than one destructor.
+
+	5) The destructor is only one way to destroy the object create by constructor.
+		Hence destructor can-not be overloaded.
+
+	6) Destructor does not handel any argements or return any Values.
+
+	7) It is automatically called when object goes out of scope.
+
+
+*/
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+class clsPerson
+{
+	string Full_Name;
+
+public:
+
+	clsPerson()
+	{
+		Full_Name = "Youness Rziqi";
+		cout << "Hi , I am Constructor\n";
+	}
+
+	~clsPerson()
+	{
+		cout << "By , I am Desstructor\n";
+	}
+
+};
+
+void F1()
+{
+	clsPerson p1 ;
+}
+
+void F2()
+{
+	clsPerson * p1 = new clsPerson;
+	delete(p1);
+}
+
+
+int main(void)
+{
+
+	F1();
+	F2();
+
+	clsPerson Person1;
+
+
+
+	return 0;
+}
