@@ -1,4 +1,4 @@
-The 1 one : 
+The First one : 
 
 #include <iostream>
 using namespace std;
@@ -27,7 +27,7 @@ int main()
 
 
 
-The 2 one : 
+The Second one : 
 
 
 #include <iostream>
