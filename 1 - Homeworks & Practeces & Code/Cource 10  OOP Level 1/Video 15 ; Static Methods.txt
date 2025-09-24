@@ -1,0 +1,66 @@
+/*
+
+
+                                Title :  Static Method
+
+
+
+    1) The static Method you can access to it without creating Object , Just write the name of the class followed by
+        tow '::', like this :  clsA::Function1;
+
+
+*/
+
+
+// ProgrammingAdvices.com© Copyright 2022 Static Members
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clsA
+{
+public:
+    static int Number;
+    clsA()
+    {
+        cout << "Hi, I am Constructro\n\n";
+    }
+
+    static string Function1()
+    {
+        return "I am Static Function you can call me from the Object or without it just using the Name of the class followed by '::' that is it :0\n\n";
+    }
+
+    string Function2()
+    {
+        return "I am Static Function you can call me from the Object or without it just using the Name of the class followed by '::' that is it :0\n\n";
+    }
+
+};
+
+// Static variable initialization outside the class
+int clsA::Number = 2004;
+
+int main()
+{
+    cout << clsA::Function1();
+
+    // cout << clsA::Function2(); you can not do this because the Function2 need an Object or just make it static to be able to do it .
+
+    cout << clsA::Number << endl;
+
+    clsA Object1;
+
+    cout << Object1.Function1() << endl;
+
+    cout << Object1.Function2() << endl;
+
+    cout << Object1.Number << endl;
+
+
+
+    
+
+    return 0;
+}
+
