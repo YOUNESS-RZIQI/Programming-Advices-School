@@ -1,19 +1,22 @@
 /*
 
 
-								Title :  Static Members
+                                Title :  Static Members
 
 
-	1) If we do a static variable his life will stick until the all programme finished even if he was in a Function
-	   and hes period was done he still will be in the memory.
+    1) If we do a static variable his life will stick until the all programme finished even if he was in a Function
+       and hes period was done he still will be in the memory.
 
-	2) If the variable is static inside the class that means he is sheared to all the object , the object do not 
-		creat a New Variable to each object . When a static variable (sheared) created he's sheared to all objects.
+    2) If the variable is static inside the class that means he is sheared to all the object , the object do not
+        creat a New Variable to each object . When a static variable (sheared) created he's sheared to all objects.
 
-	3) However Static Member is a sheared vareable to all the objects , you can say like he is a globalle variable 
-		to all the objects of the class
+    3) However Static Member is a sheared vareable to all the objects , you can say like he is a globalle variable
+        to all the objects of the class
 
     4) you can Initialize the static variable out side the class not inside the class .
+
+    5) The static Variable you can access to it without creating Object just write the name of the class followed by
+        tow '::' like this :  clsA::l;
 
 
 */
@@ -29,7 +32,7 @@ class clsA
 public:
     int var;
     static int counter;
-
+    static short l;
     clsA()
     {
         counter++;
@@ -44,9 +47,13 @@ public:
 
 // Static variable initialization outside the class
 int clsA::counter = 0;
+short clsA::l = 20;
 
 int main()
 {
+
+    cout << clsA::l << endl;
+
     clsA A1, A2, A3;
 
     A1.var = 10;
