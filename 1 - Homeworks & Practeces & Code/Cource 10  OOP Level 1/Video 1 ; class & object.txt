@@ -1,4 +1,4 @@
-What is a Class ? 
+ 			What is a Class ? 
 
 	it is like the string it is a place where you can put the functions that is connect with each other like
 dalile alhatif hhh  so that why we need the class , and class came from classification so you classificate the Methods and the Members se you want . So the code well be more structured and more easy , and the only way to access the Class is by the Object it is like the int you can not access to it by it self but you do a variable of type int 
