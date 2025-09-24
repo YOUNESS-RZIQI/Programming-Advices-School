@@ -8,6 +8,12 @@
     1) The static Method you can access to it without creating Object , Just write the name of the class followed by
         tow '::', like this :  clsA::Function1;
 
+    2) Static Functions can be called at class level without a need to have an object.
+   
+    3) Static Functions can be called through any object as well as through the class itself.
+
+  
+
 
 */
 
