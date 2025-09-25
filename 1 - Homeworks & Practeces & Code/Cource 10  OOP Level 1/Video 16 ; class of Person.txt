@@ -1,0 +1,152 @@
+/*
+
+								Title : Person class - Requirements
+
+
+	1) Info card , First Method Name   ( Print )    : 
+
+			* Do Set/Get Property to eache Member of the card Info .
+			* There is : ID , FirstName , LastName , FullName , Email , PhoneNumber
+			* Parametrized constructor ( FirstName , LastName , FullName , Email , PhoneNumber )
+
+	2) Send Email : 
+
+			* first line : "This Message Sent Successfully to email : " + Person Email
+			* Parametrized Constructor : ( Subject , Body )
+						
+								Subject : ??
+								Body    : ??
+	
+	
+	3) Send SMS : 
+
+			*Fist line : "The Following SMS Sent Successfully to phone : " + Person Phone
+			* Parometrized Constructor : ( SMS )
+							printing the SMS.
+
+
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clsPerson
+{
+	short _ID = 10;
+	string _First_Name, _Last_Name, _Full_Name, _Email, _Phone_Number;
+
+public:
+
+	clsPerson(string First_Name, string Last_Name, string Full_Name, string Email, string Phone_Number)
+	{
+		_First_Name = First_Name;
+		_Last_Name = Last_Name;
+		_Full_Name = Full_Name;
+		_Email = Email;
+		_Phone_Number = Phone_Number;
+	}
+
+	void Print()
+	{
+		cout << "--------------------------------------------\n";
+		cout << "ID           : " << _ID << endl;
+		cout << "First Name   : " << _First_Name << endl;
+		cout << "Last  Name   : " << _Last_Name << endl;
+		cout << "Full  Name   : " << _Full_Name << endl;
+		cout << "Email        : " << _Email << endl;
+		cout << "Phone Number : " << _Phone_Number << endl;
+		cout << "--------------------------------------------\n\n";
+
+	}
+
+
+	short Get_ID()
+	{
+		return _ID;
+	}
+
+	void Set_First_Name(string First_Name)
+	{
+		_First_Name = First_Name;
+	}
+	string Get_First_Name()
+	{
+		return _First_Name;
+	}
+	__declspec(property(get = Get_First_Name, put = Set_First_Name)) string First_Name;
+
+
+	void Set_Last_Name(string Last_Name)
+	{
+		_Last_Name = Last_Name;
+	}
+	string Get_Last_Name()
+	{
+		return _Last_Name;
+	}
+	__declspec(property(get = Get_Last_Name, put = Set_Last_Name)) string Last_Name;
+
+
+	void Set_Full_Name(string Full_Name)
+	{
+		_Full_Name = Full_Name;
+	}
+	string Get_Full_Name()
+	{
+		return _Full_Name;
+	}
+	__declspec(property(get = Get_Full_Name, put = Set_Full_Name)) string Full_Name;
+
+
+	void Set_Email(string Email)
+	{
+		_Email = Email;
+	}
+	string Get_Email()
+	{
+		return _Email;
+	}
+	__declspec(property(get = Get_Email, put = Set_Email)) string Email;
+
+
+	void Set_Phone_Number(string PhoneNumber)
+	{
+		_Phone_Number = PhoneNumber;
+	}
+	string Get_Phone_Number()
+	{
+		return _Phone_Number;
+	}
+	__declspec(property(get = Get_Phone_Number, put = Set_Phone_Number)) string Phone_Number;
+
+	void Sent_Email(string Subject, string Body)
+	{
+		cout << "This Message Sent Successfully to email : " + _Email << endl;
+		cout << "Subject : " + Subject << endl;
+		cout << "Body    : " + Body << endl;
+	}
+
+	void Sent_SMS(string Body)
+	{
+		cout << "The Following SMS Sent Successfully to phone : " + _Phone_Number  << endl;
+		cout << Body << endl;
+	}
+
+};
+
+int main()
+{
+	
+	clsPerson Person("YOUNESS", "RZIQI", "YOUNESS RZIQI", "rziqiyouness@gmail.com", "0694367478");
+
+	Person.Print();
+
+	Person.Sent_Email("Hi", "My Name is youness\n\n\n");
+	Person.Sent_SMS("Hi , how are you ?\n\n");
+
+
+	system("pause>0");
+	return 0;
+}
+
