@@ -12,7 +12,7 @@
 	2) Send Email : 
 
 			* first line : "This Message Sent Successfully to email : " + Person Email
-			* Parametrized Constructor : ( Subject , Body )
+			* Parameterze of the Method : ( Subject , Body )
 						
 								Subject : ??
 								Body    : ??
@@ -21,7 +21,7 @@
 	3) Send SMS : 
 
 			*Fist line : "The Following SMS Sent Successfully to phone : " + Person Phone
-			* Parometrized Constructor : ( SMS )
+			* Parameterze of the Method : ( SMS )
 							printing the SMS.
 
 
@@ -33,27 +33,32 @@ using namespace std;
 
 class clsPerson
 {
-	short _ID = 10;
-	string _First_Name, _Last_Name, _Full_Name, _Email, _Phone_Number;
+	short _ID ;
+	string _First_Name, _Last_Name, _Email, _Phone_Number;
 
 public:
 
-	clsPerson(string First_Name, string Last_Name, string Full_Name, string Email, string Phone_Number)
+	clsPerson(string First_Name, string Last_Name, short ID, string Email, string Phone_Number)
 	{
+		_ID = ID;
 		_First_Name = First_Name;
 		_Last_Name = Last_Name;
-		_Full_Name = Full_Name;
 		_Email = Email;
 		_Phone_Number = Phone_Number;
 	}
 
+	string FullName()
+	{
+		return  _First_Name + " " + _Last_Name;
+	}
+
 	void Print()
 	{
-		cout << "--------------------------------------------\n";
+		cout << "Info : \n\n--------------------------------------------\n";
 		cout << "ID           : " << _ID << endl;
 		cout << "First Name   : " << _First_Name << endl;
 		cout << "Last  Name   : " << _Last_Name << endl;
-		cout << "Full  Name   : " << _Full_Name << endl;
+		cout << "Full  Name   : " << FullName() << endl;
 		cout << "Email        : " << _Email << endl;
 		cout << "Phone Number : " << _Phone_Number << endl;
 		cout << "--------------------------------------------\n\n";
@@ -88,17 +93,6 @@ public:
 	__declspec(property(get = Get_Last_Name, put = Set_Last_Name)) string Last_Name;
 
 
-	void Set_Full_Name(string Full_Name)
-	{
-		_Full_Name = Full_Name;
-	}
-	string Get_Full_Name()
-	{
-		return _Full_Name;
-	}
-	__declspec(property(get = Get_Full_Name, put = Set_Full_Name)) string Full_Name;
-
-
 	void Set_Email(string Email)
 	{
 		_Email = Email;
@@ -127,10 +121,10 @@ public:
 		cout << "Body    : " + Body << endl;
 	}
 
-	void Sent_SMS(string Body)
+	void Sent_SMS(string Text)
 	{
 		cout << "The Following SMS Sent Successfully to phone : " + _Phone_Number  << endl;
-		cout << Body << endl;
+		cout << Text << endl;
 	}
 
 };
@@ -138,7 +132,7 @@ public:
 int main()
 {
 	
-	clsPerson Person("YOUNESS", "RZIQI", "YOUNESS RZIQI", "rziqiyouness@gmail.com", "0694367478");
+	clsPerson Person("YOUNESS", "RZIQI", 10, "rziqiyouness@gmail.com", "0694367478");
 
 	Person.Print();
 
