@@ -1,0 +1,193 @@
+/*
+
+							Title :   Parameterized Constructor of the Base Class
+
+
+	we need to fix the problem of Parametrized Consroctor in Inheritance , because if we Inheritce clsPerson in clsEmployee
+	we will have the problem of that the clsPerson expect some Parameterze for the Constuctor.
+
+	so That what we did in the line 130 , it is easy to lear the concept of it.
+		
+
+
+
+*/
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clsPerson
+{
+	short _ID;
+	string _First_Name, _Last_Name, _Email, _Phone_Number;
+
+public:
+
+
+	clsPerson(string First_Name, string Last_Name, short ID, string Email, string Phone_Number)
+	{
+		_ID = ID;
+		_First_Name = First_Name;
+		_Last_Name = Last_Name;
+		_Email = Email;
+		_Phone_Number = Phone_Number;
+	}
+
+	string FullName()
+	{
+		return  _First_Name + " " + _Last_Name;
+	}
+
+	void Print()
+	{
+		cout << "Info : \n\n--------------------------------------------\n";
+		cout << "ID           : " << _ID << endl;
+		cout << "First Name   : " << _First_Name << endl;
+		cout << "Last  Name   : " << _Last_Name << endl;
+		cout << "Full  Name   : " << FullName() << endl;
+		cout << "Email        : " << _Email << endl;
+		cout << "Phone Number : " << _Phone_Number << endl;
+		cout << "--------------------------------------------\n\n";
+
+	}
+
+
+	short Get_ID()
+	{
+		return _ID;
+	}
+
+	void Set_First_Name(string First_Name)
+	{
+		_First_Name = First_Name;
+	}
+	string Get_First_Name()
+	{
+		return _First_Name;
+	}
+	__declspec(property(get = Get_First_Name, put = Set_First_Name)) string First_Name;
+
+
+	void Set_Last_Name(string Last_Name)
+	{
+		_Last_Name = Last_Name;
+	}
+	string Get_Last_Name()
+	{
+		return _Last_Name;
+	}
+	__declspec(property(get = Get_Last_Name, put = Set_Last_Name)) string Last_Name;
+
+
+	void Set_Email(string Email)
+	{
+		_Email = Email;
+	}
+	string Get_Email()
+	{
+		return _Email;
+	}
+	__declspec(property(get = Get_Email, put = Set_Email)) string Email;
+
+
+	void Set_Phone_Number(string PhoneNumber)
+	{
+		_Phone_Number = PhoneNumber;
+	}
+	string Get_Phone_Number()
+	{
+		return _Phone_Number;
+	}
+	__declspec(property(get = Get_Phone_Number, put = Set_Phone_Number)) string Phone_Number;
+
+	void Sent_Email(string Subject, string Body)
+	{
+		cout << "This Message Sent Successfully to email : " + _Email << endl;
+		cout << "Subject : " + Subject << endl;
+		cout << "Body    : " + Body << endl;
+	}
+
+	void Sent_SMS(string Text)
+	{
+		cout << "The Following SMS Sent Successfully to phone : " + _Phone_Number << endl;
+		cout << Text << endl;
+	}
+
+};
+
+class clsEmployee : public clsPerson
+{
+
+private:
+	string _Title;
+	string _Department;
+	float _Salary;
+
+public:
+
+	clsEmployee(string First_Name, string Last_Name, short ID, string Email, string Phone_Number, string Title, string Department, float Salary)
+		: clsPerson(First_Name, Last_Name, ID, Email, Phone_Number)
+	{
+		_Title = Title;
+		_Department = Department;
+		_Salary = Salary;
+	}
+
+	// Property Set
+	void setTitle(string Title)
+	{
+		_Title = Title;
+	}
+
+	// Property Get
+	string Title()
+	{
+		return _Title;
+	}
+
+	// Property Set
+	void setDepartment(string Department)
+	{
+		_Department = Department;
+	}
+
+	// Property Get
+	string Department()
+	{
+		return _Department;
+	}
+
+	// Property Set
+	void setSalary(float Salary)
+	{
+		_Salary = Salary;
+	}
+
+	// Property Get
+	float Salary()
+	{
+		return _Salary;
+	}
+
+
+};
+
+int main()
+{
+
+	clsEmployee Employee1("YOUNESS", "Rziqi", 2004, "rziqiyouness@gmail.com", "23498", "CEO", "Programming School", 5000.1);
+
+	 /*Now Employee1 has the all needed Parameterz for the clsEmployee & clsPerson , and inside the clsEmployee it send
+	 the parameterze to clsPersong from clsEmployee.*/
+
+	Employee1.Print();
+
+
+
+
+	system("pause>0");
+	return 0;
+}
+
