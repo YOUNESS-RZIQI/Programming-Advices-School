@@ -1,0 +1,216 @@
+/*
+
+							Title :   Function Overriding
+
+
+	If you have the same Fuction Name in the Base class and the Sub class if you call it from the Base class the Function
+	of Base class hos going to work the same for the Subclass if you do the same for it . But if you call the Function 
+	from the Sub class and he is not in it he goes and check the Base class if he found it he will emplement it .
+
+							Just like that easy : ) ; )
+		
+
+
+
+*/
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clsPerson
+{
+	short _ID;
+	string _First_Name, _Last_Name, _Email, _Phone_Number;
+
+public:
+
+
+	clsPerson(string First_Name, string Last_Name, short ID, string Email, string Phone_Number)
+	{
+		_ID = ID;
+		_First_Name = First_Name;
+		_Last_Name = Last_Name;
+		_Email = Email;
+		_Phone_Number = Phone_Number;
+	}
+
+	string FullName()
+	{
+		return  _First_Name + " " + _Last_Name;
+	}
+
+	void Print()
+	{
+		cout << "Info : \n\n--------------------------------------------\n";
+		cout << "ID           : " << _ID << endl;
+		cout << "First Name   : " << _First_Name << endl;
+		cout << "Last  Name   : " << _Last_Name << endl;
+		cout << "Full  Name   : " << FullName() << endl;
+		cout << "Email        : " << _Email << endl;
+		cout << "Phone Number : " << _Phone_Number << endl;
+		cout << "--------------------------------------------\n\n";
+
+	}
+
+
+	short Get_ID()
+	{
+		return _ID;
+	}
+
+	void Set_First_Name(string First_Name)
+	{
+		_First_Name = First_Name;
+	}
+	string Get_First_Name()
+	{
+		return _First_Name;
+	}
+	__declspec(property(get = Get_First_Name, put = Set_First_Name)) string First_Name;
+
+
+	void Set_Last_Name(string Last_Name)
+	{
+		_Last_Name = Last_Name;
+	}
+	string Get_Last_Name()
+	{
+		return _Last_Name;
+	}
+	__declspec(property(get = Get_Last_Name, put = Set_Last_Name)) string Last_Name;
+
+
+	void Set_Email(string Email)
+	{
+		_Email = Email;
+	}
+	string Get_Email()
+	{
+		return _Email;
+	}
+	__declspec(property(get = Get_Email, put = Set_Email)) string Email;
+
+
+	void Set_Phone_Number(string PhoneNumber)
+	{
+		_Phone_Number = PhoneNumber;
+	}
+	string Get_Phone_Number()
+	{
+		return _Phone_Number;
+	}
+	__declspec(property(get = Get_Phone_Number, put = Set_Phone_Number)) string Phone_Number;
+
+	void Sent_Email(string Subject, string Body)
+	{
+		cout << "This Message Sent Successfully to email : " + _Email << endl;
+		cout << "Subject : " + Subject << endl;
+		cout << "Body    : " + Body << endl;
+	}
+
+	void Sent_SMS(string Text)
+	{
+		cout << "The Following SMS Sent Successfully to phone : " + _Phone_Number << endl;
+		cout << Text << endl;
+	}
+
+};
+
+class clsEmployee : public clsPerson
+{
+
+private:
+	string _Title;
+	string _Department;
+	float _Salary;
+
+public:
+
+	clsEmployee(string First_Name, string Last_Name, short ID, string Email, string Phone_Number, string Title, string Department, float Salary)
+		: clsPerson(First_Name, Last_Name, ID, Email, Phone_Number)
+	{
+		_Title = Title;
+		_Department = Department;
+		_Salary = Salary;
+	}
+
+
+
+
+	// Using Over Wriding
+
+	void Print()
+	{
+		cout << "Info : \n\n--------------------------------------------\n";
+		cout << "ID           : " << Get_ID() << endl;
+		cout << "First Name   : " << First_Name << endl;
+		cout << "Last  Name   : " << Last_Name << endl;
+		cout << "Full  Name   : " << FullName() << endl;
+		cout << "Email        : " << Email << endl;
+		cout << "Phone Number : " << Phone_Number << endl;
+		cout << "Title        : " << _Title << endl;
+		cout << "Departement  : " << _Department << endl;
+		cout << "Salary       : " << _Salary << endl;
+		cout << "--------------------------------------------\n\n";
+
+	}
+
+
+
+
+	// Property Set
+	void setTitle(string Title)
+	{
+		_Title = Title;
+	}
+
+	// Property Get
+	string Title()
+	{
+		return _Title;
+	}
+
+	// Property Set
+	void setDepartment(string Department)
+	{
+		_Department = Department;
+	}
+
+	// Property Get
+	string Department()
+	{
+		return _Department;
+	}
+
+	// Property Set
+	void setSalary(float Salary)
+	{
+		_Salary = Salary;
+	}
+
+	// Property Get
+	float Salary()
+	{
+		return _Salary;
+	}
+
+
+};
+
+int main()
+{
+
+	clsEmployee Employee1("YOUNESS", "Rziqi", 2004, "rziqiyouness@gmail.com", "23498", "CEO", "Programming School", 5000.1);
+
+
+	Employee1.Print();
+
+
+
+
+	system("pause>0");
+	return 0;
+}
+
