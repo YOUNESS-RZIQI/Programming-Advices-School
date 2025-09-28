@@ -1,0 +1,74 @@
+/*
+
+							Title : Access Specifiers
+
+
+		 1) How the Access Specifiers Works :
+
+				* Protected
+				* Public
+				* Private
+				 
+				 
+  * InSide the class everything is Public for the class Members/Methods even if the Specifier : Private or Proteceted
+  * In the main Function you can only see the Public Members & Methods
+  * The Protected Specifier is public for the Subclass.
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+
+class cls_1
+{
+
+
+private:
+
+	void Private_Function_cls_1()
+	{}
+
+protected:
+
+    int Protected_Function_cls_1()
+	{
+		return 1;
+	}
+
+public:
+
+	void Public_Function_cls_1()
+	{
+	}
+
+};
+
+class cls_2 : public cls_1
+{
+
+
+public:
+	
+
+	void Public_Function_cls_2()
+	{
+		cout << cls_1::Protected_Function_cls_1() << endl;
+
+	}
+
+};
+
+
+int main(void)
+{
+
+
+	cls_2 Object1;
+
+	Object1.Public_Function_cls_2();
+
+	return 0;
+}
