@@ -1,0 +1,61 @@
+/*
+
+							Title : Visiblity Modes
+
+
+		 There is 3 Visibility Modes in Inheritance "public, protected, private", like this syntax : 
+
+			
+			1* class cls_2 : private cls_1 : it will be Inherited Just once , it will be able to showed in main .
+			2* class cls_2 : public cls_1  : it will be Inherited Just always , it will be able to showed in main .
+			3)* class cls_2 : protected cls_1 : it will be Inherited it will never be showed in int main  .
+
+
+
+
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+
+class cls_1
+{
+
+
+public:
+
+	int a ;
+
+	void Public_Function_cls_1()
+	{
+	}
+
+};
+
+class cls_2 : private cls_1  // class cls_2 : public cls_1  or   //  class cls_2 : protected cls_1
+{
+
+
+public:
+	
+
+	void Public_Function_cls_2()
+	{
+		cout << cls_1::Protected_Function_cls_1() << endl;
+
+	}
+
+};
+
+
+int main(void)
+{
+
+	
+
+	return 0;
+}
