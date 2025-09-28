@@ -257,7 +257,7 @@ public :
 int main()
 {
 
-	clsDevloper Dev("YOUNESS", "Rziqi", 2004, "rziqiyouness@gmail.com", "23498", "CEO", "Programming School", 5000.1,"Entry Level");
+	clsDevloper Dev("YOUNESS", "Rziqi", 2004, "rziqiyouness@gmail.com", "23498", "CEO", "Programming School", 5000.1,"C++");
 
 
 	Dev.Print(); 
