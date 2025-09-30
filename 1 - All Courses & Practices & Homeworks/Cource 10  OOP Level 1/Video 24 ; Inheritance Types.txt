@@ -1,21 +1,25 @@
 /*
 
 
-	The must commun use Inheritance types : 
+	* The must commun use Inheritance types : 
 
 
 		1) Single Inheritance ,  Ex : when class A Inherited just by one other class like B for example
 		2) Multi Level Inheritance , Ex : when class A Inherited by class B and class B from class C ...
 		3) Hierarchal Inheritance : Ex : when class A Inherited by class B and from class C also ...
 
-	This two is dengeroce it egsist just in c++ : 
+	* This two is dengeroce it egsist just in c++ : 
 	
 		4) Multiple Inheritance : Ex : class C Inheretce from tow class's in the same time .
 		5) Hybreid Inheritance .
 
 
 
-	The majorty use just the first 3 types , The 4 and 5 if you are not look good at your code you will git a error.
+	* The majorty use just the first 3 types , The 4 and 5 if you are not look good at your code you will git a error.
+
+
+	* Multiple inheritance are not supported by modern languages such as JAVA and C#
+
 
 
 */
