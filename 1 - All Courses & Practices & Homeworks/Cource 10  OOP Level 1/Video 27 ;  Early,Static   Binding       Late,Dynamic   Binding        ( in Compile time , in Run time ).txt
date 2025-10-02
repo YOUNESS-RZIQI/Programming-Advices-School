@@ -1,0 +1,96 @@
+/*
+
+						Title : Early/static Binding  vs   Late/dynamic Gindign
+                       
+
+        * Compile time : This is the phase when the compiler translates your code into machine code
+                         (before the program runs).
+
+        * Run time : This is when the compiled program is executed by the CPU.
+
+There is no just Compile , Run time : 
+
+	* Preprocessing time → expands macros/includes.
+
+	* Compile time → checks code & generates object files.
+
+	* Link time → combines files & libraries.
+
+	* Load time → OS loads program.
+
+	* Run time → program actually executes.
+
+
+
+
+	   1) Early Binding : To see what to do in the compile time . simple way : Knowing the results before that the
+                          program runs.
+
+       2) Late  Binging : To see what to do in the run time . simple way : Knowing the results when the 
+                          program runs.
+
+
+
+*/
+
+
+#include <iostream>
+
+using namespace std;
+
+class clsPerson
+{
+
+public:
+
+    // we did the Virtual her just in case if we did a pointer bu Upcast.
+
+    virtual void Print()
+    {
+        cout << "Hi, i'm a person!\n";
+
+    }
+
+};
+
+class clsEmployee : public clsPerson
+{
+public:
+     void Print()
+    {
+        cout << "Hi, I'm an Employee\n";
+    }
+};
+
+class clsStudent : public clsPerson
+{
+public:
+     void Print()
+    {
+        cout << "Hi, I'm a student\n";
+    }
+};
+
+
+int main()
+
+{
+
+    clsEmployee Employee1;
+    clsStudent  Student1;
+
+    // Early/Static Binding (before run time)
+    Employee1.Print();
+    Student1.Print();
+    
+
+    // Late/Dynamik Binding (in run time)
+    clsPerson* Person1 = &Employee1;
+    clsPerson* Person2 = &Student1;
+
+    Person1->Print();
+    Person2->Print();
+
+
+    return 0;
+}
