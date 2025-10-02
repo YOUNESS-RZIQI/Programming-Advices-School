@@ -13,6 +13,8 @@
        the compiler only sees the base version unless you mark the function virtual.
 
        That is way we need the Virtual Function.
+		* Basically, a virtual function is used in the base class in order to ensure that the function is overridden. This especially applies to cases where a pointer of base class points to an object of a derived class.
+
 
 
 */
