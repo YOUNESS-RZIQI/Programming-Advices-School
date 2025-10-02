@@ -1,0 +1,27 @@
+/*
+
+						Title : Polymorphism
+
+
+        * Polymorphism is a thing that hase many forms .
+        * Polymorphism allows us to create consistent code.
+        * Polymorphism is one of the important features/principles/concepts of OOP, word Ploy means "Many" and 
+            word Morphism means "Form" so it means "Many Forms", the ability to take more than one form.
+
+
+        * And Polymorphism can be done by : 
+         
+                    1) Function Overloading : 
+                         For exmp " int Sum(int N1 , int N2) " and also we do have " int Sum(int N1 , int N2 , int N3) "
+                         same Function Name but different Paramiterz, this is Overloading.
+                    2) Function Overriding :
+                        the Same Function name in the Base and Sub class , so the Function is Polimorphisme.
+
+                    3) Operator Overloading : 
+                        the '+' when there is Number it do the Sum , and if is two trings it do concatenate them , so
+                        the '+' Operatorn is Polymorphism.
+
+                    4) Virtual Function : 
+                        It is a Run time polymorphism.
+
+*/
