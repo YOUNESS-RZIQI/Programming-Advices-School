@@ -1,0 +1,94 @@
+/*
+
+						Title : Virtual Functions 
+
+
+	   * The compiler know the Overriding Functions in Class's Using Objects , but when we use Pointers that handul
+       Up casting the Compiler do not understand the Overriding until if you tolled hem by saying to him to creat a 
+       table where he can put the address of the function to check hem if he Overided .
+
+       So : 
+
+               *  When you upcast (base pointer → derived object),
+       the compiler only sees the base version unless you mark the function virtual.
+
+       That is way we need the Virtual Function.
+
+
+*/
+
+
+#include <iostream>
+
+using namespace std;
+
+class clsPerson
+{
+
+public:
+
+    // we did the Virtual her just in case if we did a pointer bu Upcast.
+
+    virtual void Print()
+    {
+        cout << "Hi, i'm a person!\n ";
+
+    }
+
+};
+
+class clsEmployee : public clsPerson
+{
+public:
+     void Print()
+    {
+        cout << "Hi, I'm an Employee\n";
+    }
+};
+
+class clsStudent : public clsPerson
+{
+public:
+     void Print()
+    {
+        cout << "Hi, I'm a student\n";
+    }
+};
+
+
+int main()
+
+{
+
+    clsEmployee Employee1;
+    clsStudent  Student1;
+
+    /*
+    Employee1.Print();
+    Student1.Print();
+    */
+
+
+    // Now because of the Upcast the pointer see just the Methods of class Person no the class Employee or Student.
+    // as I sed the reason for all this is the Up cating make the pointer Inable to see the Methods after casting .
+    clsPerson* Person1 = &Employee1;
+    // or this one it is the same : clsPerson * Person1 = (clsPerson*)&Employee1;
+    clsPerson* Person2 = &Student1;
+
+    cout << "\nWhith the Upcast we use the Virtual : \n\n";
+    Person1->Print();
+    Person2->Print();
+
+
+    // Now no need for virtual because ther is no Upcats.
+    clsEmployee* Person1 = &Employee1;
+    clsStudent* Person2 = &Student1;
+
+    cout << "\n\nHer No need for the Virtual because there is no Upcast :\n\n";
+    Person1->Print();
+    Person2->Print();
+
+
+    system("pause>0");
+    return 0;
+}
