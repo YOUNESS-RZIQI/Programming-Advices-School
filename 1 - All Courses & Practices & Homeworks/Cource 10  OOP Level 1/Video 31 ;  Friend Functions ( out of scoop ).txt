@@ -1,0 +1,97 @@
+/*
+
+					Title  :   Friend Functions
+
+
+	1) It is possible for a Function out of scoop to be a friend to a class . he will access to all the Data Members
+		And Methods also of the class .
+
+	2) It must be a function out of the scope of any class , the function should be out side of everything 
+		to be a friend class
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+
+class clsA
+{
+
+private:
+
+	int Var1;
+
+	void Hi1
+	()
+	{
+		cout << "\nHi\n";
+	}
+
+
+protected:
+
+	int Var2;
+
+	void Hi2()
+	{
+		cout << "\nHi\n";
+	}
+
+
+public:
+
+	clsA()
+	{
+		Var1 = 10;
+		Var2 = 20;
+		Var3 = 30;
+	}
+
+	int Var3;
+
+	void Hi3()
+	{
+		cout << "\nHi\n";
+	}
+
+	friend int MySum(clsA A);
+};
+
+// It must be a function out of the scope of any class , the function should be out side of everything to be a friend
+// class
+
+//class clsB
+//{
+//public:
+//
+//	int MySum(clsA A)
+//	{
+//		A.Hi1();
+//		A.Hi2();
+//		A.Hi3();
+//
+//		return A.Var1 + A.Var2 + A.Var3;
+//	}
+//
+//};
+
+int MySum(clsA A)
+{
+		A.Hi1();
+		A.Hi2();
+		A.Hi3();
+
+		return A.Var1 + A.Var2 + A.Var3;
+}
+
+int main(void)
+{
+	clsA A;
+
+	cout << MySum(A) << endl;
+
+	return 0;
+}
