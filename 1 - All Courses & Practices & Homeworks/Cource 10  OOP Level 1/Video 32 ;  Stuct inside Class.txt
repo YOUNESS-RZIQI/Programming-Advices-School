@@ -1,4 +1,4 @@
- /*
+/*
 
 
 								Title :   Struct Inside Class ?
