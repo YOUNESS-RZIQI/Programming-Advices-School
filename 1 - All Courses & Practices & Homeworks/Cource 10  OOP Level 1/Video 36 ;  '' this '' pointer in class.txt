@@ -30,6 +30,7 @@ public:
 	}
 
 
+	// Using Over Wriding
 
 	void Print()
 	{
@@ -44,7 +45,41 @@ public:
 
 
 
+	// Property Set
+	void setTitle(string Title)
+	{
+		this->Title= Title;
+	}
 
+	// Property Get
+	string Title()
+	{
+		return this->Title;
+	}
+
+	// Property Set
+	void setDepartment(string Department)
+	{
+		this->Department = Department;
+	}
+
+	// Property Get
+	string Department()
+	{
+		return this->Department;
+	}
+
+	// Property Set
+	void setSalary(float Salary)
+	{
+		this->Salary = Salary;
+	}
+
+	// Property Get
+	float Salary()
+	{
+		return this->Salary;
+	}
 
 
 };
@@ -56,6 +91,7 @@ int main()
 	clsEmployee Employee1("Full stack Dveloper", "Programming", 5000);
 
 	Employee1.Print();
+	Employee1.Function2();
 
 	return 0;
 }
