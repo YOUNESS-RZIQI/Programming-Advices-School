@@ -1,0 +1,61 @@
+#include <iostream>
+
+using namespace std;
+
+class clsEmployee
+{
+
+private:
+	string Title;
+	string Department;
+	float Salary;
+
+public:
+
+	clsEmployee(string Title, string Department, float Salary)
+	{
+		this->Title = Title; // now he know wich is the argement and the class object or member.
+		this->Department = Department;
+		this->Salary = Salary;
+	}
+
+	void Functio1(clsEmployee Employee)
+	{
+		Employee.Print();
+	}
+
+	void Function2()
+	{
+		Functio1(*this);
+	}
+
+
+
+	void Print()
+	{
+		cout << "Info : \n\n--------------------------------------------\n";
+		cout << "Title        : " << this->Title << endl;
+		cout << "Departement  : " << this->Department << endl;
+		cout << "Salary       : " << this->Salary << endl;
+		cout << "--------------------------------------------\n\n";
+
+	}
+
+
+
+
+
+
+
+};
+
+
+int main()
+{
+
+	clsEmployee Employee1("Full stack Dveloper", "Programming", 5000);
+
+	Employee1.Print();
+
+	return 0;
+}
