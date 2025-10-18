@@ -1,3 +1,28 @@
+/*
+
+									Title : this pointer in c++
+
+
+
+		1) the ckey work "this" inside the class mean that this is the object that you on now.
+
+		2) you can use "this" pointer just inside the class.
+
+		3) why we need the "this" pointer , to lett the compiler know wich is the object's of the class and the argements
+			if they have the same name (the example in the parametrized constroctur in line 33).
+
+		4) in "Function1" we have a argement of data type clsEmployee wiht his object and we did not need to gave hem the
+		parameterz for the constructor, so we just need that is we are out side of the class.
+
+		5) and in "Function2" we sent "*this" because the "Function1" expect a object not an address so we need "*this" not "this" onlye
+
+		6) When calling Function1, you just pass an object like Function1(Employee1) or, in my case, Function1(*this).
+
+		7) Employee1.Functio1(Employee1) = Function1(*this)
+
+*/
+
+
 #include <iostream>
 
 using namespace std;
