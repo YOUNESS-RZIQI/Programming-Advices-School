@@ -2,11 +2,11 @@
 #include <string>
 using namespace std;
 
-enum en_Winner {User,Computer};
+enum en_Winner { User, Computer };
 
 void Print_or_ReNew_Schudul(string arr[3][3])
 {
-	
+
 	printf("\n\n\t\t ----------- \n");
 	cout << "\t\t|           |\n";
 	cout << "\t\t| " << arr[0][0] << " | " << arr[0][1] << " | " << arr[0][2] << " |\n";
@@ -33,7 +33,7 @@ void First_Schudule(string arr[3][3])
 	Print_or_ReNew_Schudul(arr);
 }
 
-void Add_user_choice_to_Schudule(string & Again , short User_Choice ,string arr[3][3])
+void Add_user_choice_to_Schudule(string& Again, short User_Choice, string arr[3][3])
 {
 
 	Again = "s";
@@ -54,7 +54,7 @@ void Add_user_choice_to_Schudule(string & Again , short User_Choice ,string arr[
 			Again = "A";
 
 	}
-	
+
 	else if (User_Choice == 3)
 	{
 		if (arr[0][2] == " ")
@@ -68,33 +68,38 @@ void Add_user_choice_to_Schudule(string & Again , short User_Choice ,string arr[
 			arr[1][0] = "X";
 		else
 			Again = "A";
-	}else if (User_Choice == 5)
+	}
+	else if (User_Choice == 5)
 	{
 		if (arr[1][1] == " ")
 			arr[1][1] = "X";
 		else
 			Again = "A";
-	}else if (User_Choice == 6)
+	}
+	else if (User_Choice == 6)
 	{
 		if (arr[1][2] == " ")
 			arr[1][2] = "X";
 		else
 			Again = "A";
-	}else if (User_Choice == 7)
+	}
+	else if (User_Choice == 7)
 	{
 		if (arr[2][0] == " ")
 			arr[2][0] = "X";
 		else
 			Again = "A";
 
-	}else if (User_Choice == 8)
+	}
+	else if (User_Choice == 8)
 	{
 		if (arr[2][1] == " ")
 			arr[2][1] = "X";
 		else
 			Again = "A";
 
-	}else if (User_Choice == 9)
+	}
+	else if (User_Choice == 9)
 	{
 		if (arr[2][2] == " ")
 			arr[2][2] = "X";
@@ -103,17 +108,17 @@ void Add_user_choice_to_Schudule(string & Again , short User_Choice ,string arr[
 
 	}
 
-	
+
 }
 
-void Ask_User_Choice(string & Again ,string arr[3][3])
+void Ask_User_Choice(string& Again, string arr[3][3])
 {
 
 	cout << "\n\n\n   Your Choice : ";
 	short user_choice = 0;
 	cin >> user_choice;
 
-	Add_user_choice_to_Schudule(Again ,user_choice , arr);
+	Add_user_choice_to_Schudule(Again, user_choice, arr);
 
 }
 
@@ -135,7 +140,7 @@ void Computer_Wonne()
 
 }
 
-bool is_Winne(string arr[3][3] , en_Winner & Winner)
+bool is_Winne(string arr[3][3], en_Winner& Winner)
 {
 
 	if (arr[0][0] == "X" && arr[0][1] == "X" && arr[0][2] == "X")
@@ -223,7 +228,7 @@ bool is_Winne(string arr[3][3] , en_Winner & Winner)
 		Winner = en_Winner::Computer;
 		return true;
 	}
-	
+
 
 	return false;
 }
@@ -243,19 +248,16 @@ void Copmputer_Choice(string arr[3][3])
 	{
 		arr[i][j] = "O";
 	}
-	else 
+	else
 	{
 		Copmputer_Choice(arr);
 	}
 
 }
 
-int main()
+void fun()
 {
-
-	srand((unsigned)time(NULL));
-
-	string arr[3][3]; en_Winner Winner; string Again ;
+	string arr[3][3]; en_Winner Winner; string Again;
 
 	First_Schudule(arr);
 
@@ -265,7 +267,7 @@ int main()
 		Again = "A";
 		while (Again == "A")
 		{
-			Ask_User_Choice(Again,arr);
+			Ask_User_Choice(Again, arr);
 		}
 		Clear_Screen();
 		Print_or_ReNew_Schudul(arr);
@@ -292,8 +294,19 @@ int main()
 
 	} while (!is_Winne(arr, Winner));
 
+}
 
-	
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	while (1)
+	{
+		fun();
+	}
+
+
 	system("pause>0");
 
 }
