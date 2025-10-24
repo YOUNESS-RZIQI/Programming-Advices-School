@@ -1,0 +1,68 @@
+/*
+
+							Title : class & vectors
+
+		we can use class in vector . WHY ? , Because class is a date type so if we can do int's with vector the same
+												for class .
+
+
+*/
+
+
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class clsA
+{
+	
+	
+public:
+
+	int a ;
+	clsA(int a)
+	{
+		this->a = a;
+	}
+
+	void Print()
+	{
+		cout << this->a;
+	}
+};
+
+
+int main(void)
+{
+	
+	vector <clsA> Num;
+	int i = 10;
+	while (i < 40)
+	{
+		Num.push_back(clsA(i));
+
+		i+= 10;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		Num[i].Print();
+		cout << endl;
+		i++;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		Num.pop_back();
+
+		i++;
+	}
+
+	
+
+
+	return 0;
+}
