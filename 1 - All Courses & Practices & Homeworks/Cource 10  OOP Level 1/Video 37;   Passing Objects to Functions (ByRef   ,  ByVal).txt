@@ -1,0 +1,52 @@
+/*	
+					Title : By  Ref/Val  in class type
+
+
+		Objects can be treated like any data type such as int, bool, string ...etc,
+		They can be passed to functions as parameters either by reference or by value
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+class clsA
+{
+	int a = 0;
+	
+public:
+
+	void By_Ref(clsA& O)
+	{
+		O.a = 100;
+	}
+	void By_Val(clsA O)
+	{
+		O.a = 200;
+	}
+
+	void Print()
+	{
+		cout << this->a;
+	}
+};
+
+
+int main(void)
+{
+	clsA o1;
+
+
+	o1.By_Val(o1);
+	cout << "By Val : a stel  , a = "; o1.Print(); cout << endl; cout << endl;
+	
+
+	o1.By_Ref(o1);
+	cout << "By Ref : a becam , a = "; o1.Print(); cout << endl; cout << endl;
+	
+
+
+	return 0;
+}
