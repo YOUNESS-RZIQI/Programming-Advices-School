@@ -1,0 +1,71 @@
+/*
+                                                                            Objects and Dynamic Array
+
+                                                                       Title :  New and Delete in C++
+
+                           1)  After each New must be followed by a Delete ,  That is the rule of New  &  Delete.
+
+                           2)  The pointer of New should be the same data type like the New that he will point to.
+
+                           3)  In the class should contain the both of Constructors the automatic Constructor and the Parameterized Constructor .
+
+
+*/
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class clsA
+{
+  public:
+  
+  int _a;
+  clsA(){}
+  clsA(int a)
+  {
+      _a = a;
+  }
+  
+  void print_int()
+  {
+      cout << _a << endl ;
+  }
+  
+  
+};
+
+
+int main()
+{
+   // alocation for two (we can do more as mush we want ) places in memory
+   clsA *arr = new clsA[2];   
+   
+   arr[0] = clsA(2);
+   arr[1] = clsA(12);
+
+    arr[0].print_int();
+    arr[1].print_int();
+   
+   delete[]arr;
+
+    return 0;
+}
+
+
+int main()
+{
+
+    // allocation of one in the memory
+   
+   clsA *arr = new clsA(10);
+   
+
+    arr->print_int();
+
+   delete(arr);
+
+    return 0;
+}
