@@ -1,0 +1,29 @@
+C ++ :
+
+
+#include "clsString.h"
+
+static void Lower_first_leter(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+            s[i] = tolower(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+
+int main(void)
+{
+
+string s = "You Ness Rzi Qi";
+
+Lower_first_leter(s);
+
+cout << s << endl;
+
+    return 0;
+}
