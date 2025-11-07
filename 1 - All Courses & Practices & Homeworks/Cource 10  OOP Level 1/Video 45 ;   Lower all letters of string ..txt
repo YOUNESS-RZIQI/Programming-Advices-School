@@ -1,0 +1,33 @@
+C ++ : 
+
+/*
+                        Title : Lower all letters of string .
+*/
+
+
+#include "clsString.h"
+
+static void Lower_all_leters(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(isupper(s[i]))
+            s[i] = tolower(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+
+int main(void)
+{
+
+        string s = "YOU NESS RZI QI";
+
+        Lower_all_leters(s);
+
+        cout << s << endl;
+
+    return 0;
+}
