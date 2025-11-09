@@ -13,6 +13,7 @@ C++ :
 
 #include "clsString.h"
 
+
 enum en_What_to_count { Small, Capital, All};
 
 
