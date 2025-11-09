@@ -1,0 +1,48 @@
+C++ : 
+
+
+
+
+
+
+/*
+                       Title : Count Small/Capital letters .
+*/
+
+
+#include "clsString.h"
+
+enum en_What_to_count { Small, Capital, All};
+
+
+int Count_Smale_Capital_letters(string s,en_What_to_count choice)
+{
+    int Small_counter = 0;
+    int Capital_counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if (isupper(s[i]))
+            Capital_counter++;
+        if (islower(s[i]))
+            Small_counter++;
+    }
+
+    return (choice == en_What_to_count::All ? (Capital_counter + Small_counter) : 
+            choice == en_What_to_count::Capital ? Capital_counter : Small_counter);
+}
+
+int main(void)
+{
+
+   
+    cout << Count_Smale_Capital_letters("AA bbb",en_What_to_count::All);
+    cout << endl;
+    cout << Count_Smale_Capital_letters("AA bbb",en_What_to_count::Capital);
+    cout << endl;
+    cout << Count_Smale_Capital_letters("AA bbb",en_What_to_count::Small);
+
+    
+
+    return 0;
+}
