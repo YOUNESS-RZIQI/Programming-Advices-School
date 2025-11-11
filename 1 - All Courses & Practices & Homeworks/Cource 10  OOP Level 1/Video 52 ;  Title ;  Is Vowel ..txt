@@ -1,0 +1,33 @@
+C++ : 
+
+
+
+
+
+/*
+                       Title : Is Vowel .
+*/
+
+
+#include "clsString.h"
+
+
+
+static bool IsVowel(char Ch1) 
+{
+    Ch1 = tolower(Ch1); 
+    return ((Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1== 'o') || (Ch1 == 'u'));
+}
+
+
+int main(void)
+{
+
+   
+    cout << "A : " << IsVowel(65);
+    cout << endl;
+    cout << "B : " << IsVowel(66);
+    cout << endl;
+
+    return 0;
+}
