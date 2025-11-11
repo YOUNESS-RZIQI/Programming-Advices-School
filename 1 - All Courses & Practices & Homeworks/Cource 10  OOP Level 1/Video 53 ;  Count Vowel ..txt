@@ -1,0 +1,47 @@
+C++ : 
+
+
+
+
+/*
+                       Title : Count Vowel .
+*/
+
+
+#include "clsString.h"
+#include <iostream>
+using namespace std;
+
+
+
+static bool IsVowel(char Ch1) 
+{
+    Ch1 = tolower(Ch1); 
+    return ((Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1== 'o') || (Ch1 == 'u'));
+}
+
+int Count_vawel(string s)
+{
+    int Counter;
+
+    Counter = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (IsVowel(s[i]))
+            Counter++;
+    }
+    return (Counter);
+}
+
+
+int main(void)
+{
+
+   
+    cout << "Number of Vowls in (youness riziqi) is : " << Count_vawel( "youness riziqi" );
+    cout << endl;
+
+
+    return 0;
+}
+k
