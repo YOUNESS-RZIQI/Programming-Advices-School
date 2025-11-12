@@ -1,0 +1,40 @@
+C++ : 
+
+
+
+/*
+                       Title : Print Vowels .
+*/
+
+
+#include "clsString.h"
+#include <iostream>
+using namespace std;
+
+
+
+static bool IsVowel(char Ch1) 
+{
+    Ch1 = tolower(Ch1); 
+    return ((Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1== 'o') || (Ch1 == 'u'));
+}
+
+
+void Print_all_Voles_in_str(string s)
+{
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (IsVowel(s[i]))
+            cout << s[i];
+    }
+}
+
+int main(void)
+{
+
+   
+    cout << "all Vowls in (youness rziqi) is : " ; Print_all_Voles_in_str( "youness riziqi" );
+    cout << endl;
+
+    return 0;
+}
