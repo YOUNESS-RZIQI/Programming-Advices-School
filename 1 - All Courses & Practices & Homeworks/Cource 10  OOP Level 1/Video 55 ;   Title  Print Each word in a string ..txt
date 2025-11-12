@@ -1,0 +1,36 @@
+/*
+                       Title : Print Each word in a string .
+*/
+
+
+#include "clsString.h"
+#include <iostream>
+using namespace std;
+
+
+static void Print_Each_word_in_string(string s)
+{
+    short is_first_letter = true;
+
+    for (size_t i = 0; i < s.length(); i++)
+    {
+        if (s[i] == ' ' )
+        {
+            if ( i > 0)
+                cout << endl;
+            while (i + 1 < s.length() && s[i + 1] == ' ')
+                i++;
+        }
+        else
+            cout << s[i];
+    }
+}
+
+
+int main(void)
+{
+
+    Print_Each_word_in_string("    youness      rziqi     &   sdfdsf");
+
+    return 0;
+}
