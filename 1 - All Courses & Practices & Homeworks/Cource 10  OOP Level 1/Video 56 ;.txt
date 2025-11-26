@@ -1,0 +1,41 @@
+
+C++:
+
+
+
+
+/*
+                       Title : Count each word in string .
+*/
+
+
+#include "clsString.h"
+#include <iostream>
+using namespace std;
+
+static int Count_each_woed_in_string(string s)
+{
+    short is_first_letter = true;
+    int word_counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if ( s[i] > 32  && is_first_letter)
+            word_counter++;
+        (s[i] <= 32 ) ? is_first_letter = 1 :  is_first_letter = 0;
+    }
+    return (word_counter);
+}
+
+
+
+int main(void)
+{
+    int Words = Count_each_woed_in_string("  Youness rz    izi sasd wrwer 6 \t \a \f \n");
+
+    cout << "Number of Words is : " << Words << endl;
+
+
+    return 0;
+}
+
