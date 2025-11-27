@@ -1,0 +1,74 @@
+🇨 🇵 🇵 
+
+/*
+                       Title : Split function .
+
+                He take the string & the number of tokens in it (words), and her return vector.
+
+
+
+
+        Input expactations ? :
+
+            1)  string s = "youness rziki hi i am "
+            2)  string s = "youness rziki hi i am"
+            3)  string s = " youness rziki hi i am "
+            4)  string s = "       youness      rziki     hi    i    am "
+            5)  string s = ""
+            6)  string s = NULL
+            7)  string s = "##youness##rziki##hi##i##am##"
+
+
+
+
+*/
+
+
+#include <vector>
+#include <iostream>
+#include <string>
+using namespace std;
+
+vector <string> Split(string s,string delemeter)
+{
+    vector <string> spleted;
+    int d_pos = 0;
+    string new_word;
+  
+    while ((d_pos = s.find(delemeter)) != std::string::npos)
+    {
+        new_word = s.substr(0,d_pos);
+        if (new_word != "")
+            spleted.push_back(new_word);
+
+        s.erase(0, d_pos + delemeter.length());
+    }
+    if (s != "")
+        spleted.push_back(s);
+    
+    return (spleted);
+}
+
+
+int main(void)
+{
+    string s;
+    cout << "enter your S : ";
+    getline(cin, s); cout << "\n\nResult is :\n";
+
+    vector <string> spleted = Split( s , " " );
+
+    for (int i = 0; i < spleted.size() ; i++)
+    {
+        cout << spleted[i] << endl;
+    }
+
+    cout << "\nTokens : " << spleted.size() << "\n\n";
+  
+    
+    return 0;
+}
+
+
+
+👍
