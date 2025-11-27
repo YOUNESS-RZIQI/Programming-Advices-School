@@ -1,0 +1,77 @@
+🇨 🇵 🇵 
+
+
+/*
+                       Title : Split function .
+
+                He take the string & the number of tokens in it (words), and her return vector.
+
+
+
+
+        Input expactations ? :
+
+            1)  string s = "youness rziki hi i am "
+            2)  string s = "youness rziki hi i am"
+            3)  string s = " youness rziki hi i am "
+            4)  string s = "       youness      rziki     hi    i    am "
+            5)  string s = ""
+            6)  string s = NULL
+            7)  string s = "##youness##rziki##hi##i##am##"
+
+
+
+
+*/
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+vector <string> Split(string s, int tokens)
+{
+    vector <string> spleted;
+    string temp ;
+    int s_pos = 0;
+  
+    for (int i = 0; i < tokens ; i++)
+    {
+            temp = "";
+            for (s_pos; s[s_pos] == ' ' && s_pos < s.size() ; s_pos++);
+            for (s_pos; s[s_pos] != ' ' && s_pos < s.size() ; s_pos++)
+                temp += s[s_pos]; 
+
+
+        spleted.push_back(temp);
+    }
+    return (spleted);
+}
+
+int main(void)
+{
+    string s = "youness rziki hi i am ";
+
+    vector <string> spleted = Split("youness rziki hi i am ", 5 );// the spleted take the return value of the Split , and they sould be the same data type
+
+
+    for (const string &word : spleted)// first way to print a vector 
+    {
+        cout << word << endl;
+    }
+
+    cout << endl << endl << endl;
+
+    for (int i = 0; i < spleted.size() ; i++)// Second way to print a vector 
+    {
+        cout << spleted[i] << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+✅
