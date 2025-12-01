@@ -1,0 +1,65 @@
+/*
+                    Title : Join String (Overloading) 
+
+
+    Input cases : 
+
+            1) string Words = {"youness" , "rziki" , "2004" ,  "22" , "ans"};
+
+                output :  "youness(plus seprator)rziki(plus seprator)2004(plus seprator)22";
+            
+
+    Trim Prototype : 
+
+        string JoinString(string arrString[],short Length, string Delim) 
+
+*/
+// #include "clsString.h"
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+string JoinString(vector<string> vString, string Delim)
+{
+    string S;
+    int i = 0;
+    for(string &word :vString)
+    {
+        S += word;
+        i++;
+        if ( i < vString.size())
+            S += Delim;
+    }
+
+    return (S);
+}
+
+string JoinString(string arrString[],short Length, string Delim)
+{
+    string S;
+    int i = 0;
+
+    for(i; i < Length ; i++)
+    {
+        S += arrString[i];
+        if ( i < Length - 1)
+            S += Delim;
+    }
+
+    return (S);
+}
+
+int main(void)
+{
+
+string words[] = {"youness" , "rziki" , "2004" ,  "22" , "ans"};
+vector <string> vString = {"youness" , "rziki" , "2004" ,  "22" , "ans"};
+
+cout << JoinString(words , 5 , "#//#");
+cout << "<--" << endl << endl;
+cout << JoinString(vString , "#//#");
+cout << "<--" << endl;
+
+    return (0);
+}
