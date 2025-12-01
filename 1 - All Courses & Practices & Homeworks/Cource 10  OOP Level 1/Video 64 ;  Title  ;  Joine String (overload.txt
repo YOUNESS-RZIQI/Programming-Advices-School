@@ -14,7 +14,6 @@
         string JoinString(string arrString[],short Length, string Delim) 
 
 */
-// #include "clsString.h"
 #include <iostream>
 #include <vector>
 using namespace std;
