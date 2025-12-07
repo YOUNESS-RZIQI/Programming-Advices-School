@@ -1,0 +1,35 @@
+/*
+                    Title : Replace Word In String Using Built In Function
+
+
+    Input cases : 
+
+            1) string Word = "youness riziki\n";
+                Replace : riziki --> rziqi
+                output :  "youness riziki\n";
+            
+
+    Trim Prototype : 
+
+                string ReplaceWordInStringUsingBuiltInFunction(string S1, string StringToReplace, string sRepalceTo);
+
+
+
+*/
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+string ReplaceWordInStringUsingBuiltInFunction(string S1, string StringToReplace, string sRepalceTo)
+{
+    short pos = S1.find(StringToReplace);
+
+    while (pos != std::string::npos)
+    {
+        S1 = S1.replace(pos, StringToReplace.length(), sRepalceTo);
+        pos = S1.find(StringToReplace);//find next
+    }
+
+    return S1;
+}
