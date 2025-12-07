@@ -33,3 +33,12 @@ string ReplaceWordInStringUsingBuiltInFunction(string S1, string StringToReplace
 
     return S1;
 }
+
+
+int main(void)
+{
+
+    cout << ReplaceWordInStringUsingBuiltInFunction("youness riziki\n", "riziki" , "rziqi");
+
+    return (0);
+}
