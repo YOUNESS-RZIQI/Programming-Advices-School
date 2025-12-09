@@ -1,0 +1,117 @@
+/*
+                    Title : Replace Word In String Using My origin Function
+
+
+    Input cases : 
+
+            1) string Word = "youness riziki\n";
+            match case :
+                Replace : riziki --> rziqi
+                output :  "youness rziqi\n";
+            
+            Non match case :
+                Replace : Riziki --> rziqi
+                output :  "youness rziqi\n";
+            
+    Function Prototype : 
+
+            string ReplaceWordInStringUsingSplit(string S1, string StringToReplace, string sRepalceTo, bool MatchCase = true)
+
+
+
+*/
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector <string> Split(string s,string delemeter)
+{
+    vector <string> spleted;
+    int d_pos = 0;
+    string new_word;
+  
+    while ((d_pos = s.find(delemeter)) != std::string::npos)
+    {
+        new_word = s.substr(0,d_pos);
+        if (new_word != "")
+            spleted.push_back(new_word);
+
+        s.erase(0, d_pos + delemeter.length());
+    }
+    if (s != "")
+        spleted.push_back(s);
+    
+    return (spleted);
+}
+
+
+string JoinString(vector<string> vString, string Delim)
+{
+    string S;
+    int i = 0;
+    for(string &word :vString)
+    {
+        S += word;
+        i++;
+        if ( i < vString.size())
+            S += Delim;
+    }
+
+    return (S);
+}
+
+string Lower_all_S(string s)
+{
+    for (int i = 0; s[i] ; i++)
+    {
+        s[i] = tolower(s[i]);
+    }
+    return s;
+}
+
+string Replace_Word_In_String_Using_Split(string S1, string StringToReplace, string sRepalceTo, bool MatchCase = true)
+{
+    vector <string> S_spleted = Split(S1 , " ");
+
+    if (MatchCase)
+    {
+        for ( int i = 0; i < S_spleted.size() ; i++)
+        {
+            if ( S_spleted[i] == StringToReplace)
+                S_spleted[i] = sRepalceTo;
+        }
+
+        return (JoinString(S_spleted, " "));
+    }
+    else
+    {
+
+        for ( int i = 0; i < S_spleted.size() ; i++)
+        {
+            if ( Lower_all_S(S_spleted[i]) == Lower_all_S(StringToReplace))
+                S_spleted[i] = sRepalceTo;
+        }
+
+        return (JoinString(S_spleted, " "));
+    }
+    return ("");
+}
+
+
+int main(void)
+{
+
+
+    cout << "Whit Match case : ";
+    cout << Replace_Word_In_String_Using_Split("Youness rziki S","s", "22" , true) << endl;
+    
+    cout << "NO   Match case : ";
+    cout << Replace_Word_In_String_Using_Split("Youness rziki S","s", "22" , false) << endl;
+
+
+
+    return (0);
+}
