@@ -112,6 +112,5 @@ int main(void)
     cout << Replace_Word_In_String_Using_Split("Youness rziki S","s", "22" , false) << endl;
 
 
-
     return (0);
 }
