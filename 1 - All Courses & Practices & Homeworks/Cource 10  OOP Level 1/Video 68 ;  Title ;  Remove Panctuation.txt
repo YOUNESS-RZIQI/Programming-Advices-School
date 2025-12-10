@@ -1,0 +1,51 @@
+/*
+                    Title : Remove Punctuations From String
+
+
+    Input cases : 
+
+            1) string Word = "youness, rziqi,,,'''' sdsdf!@#$%^&*" ;
+            
+    Output return : 
+
+                youness rziqi sdsdf
+            
+            
+    Function Prototype : 
+
+            string Remove_Punctuations_From_String(string S1) 
+
+
+
+*/
+
+
+#include "clsString.h"
+#include <iostream>
+#include <vector>
+using namespace std;
+
+
+
+
+string Remove_Punctuations_From_String(string S1) 
+{
+    string s = "";
+    
+    for (int i = 0; i < S1.length() ; i++)
+    {
+        if (!ispunct(S1[i]))
+            s += S1[i];
+    }
+    return s;
+}
+
+
+int main(void)
+{
+
+
+    cout << Remove_Punctuations_From_String("youness, rziqi,,,'''' sdsdf!@#$%^&*");
+
+    return (0);
+}
