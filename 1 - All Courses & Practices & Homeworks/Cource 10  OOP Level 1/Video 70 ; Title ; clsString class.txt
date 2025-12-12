@@ -577,6 +577,7 @@ static int Length(string s1)
     return i;
 }
 
+
 int Length()
 {
     return Length(_value);
