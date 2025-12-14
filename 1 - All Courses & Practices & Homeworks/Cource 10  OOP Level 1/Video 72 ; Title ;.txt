@@ -54,7 +54,6 @@ int main(void)
     cout << CheckType(y) << endl;
     cout << CheckType(f) << endl;
 
-
     cout << CheckType(j) << endl;
     cout << CheckType(h) << endl;
     cout << CheckType(i) << endl;
