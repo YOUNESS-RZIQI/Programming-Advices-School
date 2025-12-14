@@ -1,0 +1,66 @@
+/*
+
+            Title :  Variable type ?
+
+        I Created a Functoin that return string of the data type name .
+
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+string CheckType(int a) { return "int";}
+string CheckType(char a) { return "char";}
+string CheckType(short a) { return "short";}
+string CheckType(bool a) { return "bool";}
+string CheckType(float a) { return "float";}
+string CheckType(double a) { return "double";}
+string CheckType(char * a) { return "char p";}
+string CheckType(bool * a) { return "bool p";}
+string CheckType(short * a) { return "short p";}
+string CheckType(int * a) { return "int p";}
+string CheckType(float * a) { return "float p";}
+string CheckType(double * a) { return "double p";}
+string CheckType(string a) { return "string";}
+
+
+
+
+int main(void)
+{
+
+    bool    a;
+    short   b;
+    int     c;
+    float   d;
+    double  e;
+    string  f;
+    char  y;
+
+
+    bool  *  j;
+    short *  h;
+    int   *  i;
+    float *  g;
+    double*  k;
+    char  *  l;
+
+    
+    cout << CheckType(a) << endl;
+    cout << CheckType(b) << endl;
+    cout << CheckType(c) << endl;
+    cout << CheckType(d) << endl;
+    cout << CheckType(e) << endl;
+    cout << CheckType(y) << endl;
+    cout << CheckType(f) << endl;
+
+
+    cout << CheckType(j) << endl;
+    cout << CheckType(h) << endl;
+    cout << CheckType(i) << endl;
+    cout << CheckType(g) << endl;
+    cout << CheckType(k) << endl;
+    cout << CheckType(l) << endl;
+
+    return 0;
+}
