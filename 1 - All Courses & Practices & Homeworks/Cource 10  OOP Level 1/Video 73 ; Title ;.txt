@@ -1,0 +1,242 @@
+/*
+    1. is number between ? int double float short (number , between , to between)   👌
+    2. is Date between ?   (clsDate Date , clsDate Date_from , clsDate Date_to ) , check if the from and to is oposit handl it .  👌
+
+
+    3. RadIntegerNumber return the number if invalid number  print a message,  RadIntegerNumber("invalidnumber,ente agin :\n")
+    4. RaddoubleNumber return the number if invalid number  print a message,  RaddoubleNumber("invalidnumber,ente agin :\n")
+    5. readIntBetween  (from,to,error Masseg)
+    6. readdoubleBetween  (from,to,error Masseg)
+    7. IsValideDat 
+
+
+
+*/
+
+#include "clsDate.h"
+#include "clsUtil.h"
+#include <iostream>
+using namespace std;
+
+class clsInputValdate
+{
+
+
+    public:
+
+    static bool IsNumBetween(int a, int from , int to)
+    {
+        if ( from > to)
+            clsUtil::Swap(from , to);
+        return (a >= from && a <= to);
+    }
+
+    static bool IsNumBetween(short a, short from , short to)
+    {
+        if ( from > to)
+            clsUtil::Swap(from , to);
+        return (a >= from && a <= to);
+    }
+
+    static bool IsNumBetween(float a, float from , float to)
+    {
+        if ( from > to)
+            clsUtil::Swap(from , to);
+        return (a >= from && a <= to);
+    }
+
+    static bool IsNumBetween(double a, double from , double to)
+    {
+        if ( from > to)
+            clsUtil::Swap(from , to);
+        return (a >= from && a <= to);
+    }
+
+    static bool IsDateBetween(clsDate date , clsDate from , clsDate To)
+    {
+
+        if ( clsDate::IsDate1BeforeDate2(To,from))
+                clsDate::SwapDates(from,To);
+        
+        return (clsDate::IsDate1AfterDate2(date,from) && clsDate::IsDate1BeforeDate2(date,To) );
+
+    }
+
+    static int Read_Int( string Message)
+    {
+        long Num = 0;
+
+        cout << Message ;
+        cin >> Num;
+
+        while (Num > 2147483647 || Num < -2147483648|| cin.fail() )
+        {
+            cin.clear();             
+            cin.ignore(10000, '\n');  
+
+            cout << "\n   !!! Error !!!\n";
+            cout << Message ;
+            cin >> Num;
+
+        }
+    
+        return ((int)Num);
+    }
+
+    static float Read_Float( string Message)
+    {
+        float Num = 0;
+
+        cout << Message ;
+        cin >> Num;
+
+        while ( cin.fail() )
+        {
+            cin.clear();             
+            cin.ignore(10000, '\n');  
+
+            cout << "\n   !!! Error !!!\n";
+            cout << Message ;
+            cin >> Num;
+
+        }
+    
+        return (Num);
+    }
+
+    static double Read_Double( string Message)
+    {
+        double Num = 0;
+
+        cout << Message ;
+        cin >> Num;
+
+        while ( cin.fail() )
+        {
+            cin.clear();             
+            cin.ignore(10000, '\n');  
+
+            cout << "\n   !!! Error !!!\n";
+            cout << Message ;
+            cin >> Num;
+
+        }
+    
+        return (Num);
+    }
+
+    static short Read_Short( string Message)
+    {
+        long Num = 0;
+
+        cout << Message ;
+        cin >> Num;
+
+        while ( (Num > 32767 || Num < -32768) || cin.fail() )
+        {
+            cin.clear();             
+            cin.ignore(10000, '\n');  
+
+            cout << "\n   !!! Error !!!\n";
+            cout << Message ;
+            cin >> Num;
+
+        }
+    
+        return ((short)Num);
+    }
+
+    static bool Read_Bool( string Message)
+    {
+        long Num = 0;
+
+        cout << Message ;
+        cin >> Num;
+
+        while ( (Num > 1 || Num < 0) || cin.fail() )
+        {
+            cin.clear();             
+            cin.ignore(10000, '\n');  
+
+            cout << "\n   !!! Error !!!\n";
+            cout << Message ;
+            cin >> Num;
+
+        }
+    
+        return ((bool)Num);
+    }
+
+    static bool Is_Valid_Date(clsDate Date)
+    {
+        return clsDate::IsValidDate(Date);
+    }
+
+    static int Read_Int_Between(string Message , int from  , int to)
+    {
+        int a = Read_Int(Message);
+
+        while (!IsNumBetween(a, from, to))
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            a = Read_Int(Message);
+        }
+        return  a;
+    }
+
+    static short Read_Short_Between(string Message , short from  , short to)
+    {
+        short a = Read_Short(Message);
+
+        while (!IsNumBetween(a, from, to))
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            a = Read_Short(Message);
+        }
+        return  a;
+    }
+
+    static float Read_Float_Between(string Message , float from  , float to)
+    {
+        float a = Read_Float(Message);
+
+        while (!IsNumBetween(a, from, to))
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            a = Read_Float(Message);
+        }
+        return  a;
+    }
+
+    static double Read_Double_Between(string Message , double from  , double to)
+    {
+        double a = Read_Double(Message);
+
+        while (!IsNumBetween(a, from, to))
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            a = Read_Double(Message);
+        }
+        return  a;
+    }
+
+    static bool Read_Bool_Between(string Message , bool from  , bool to)
+    {
+        bool a = Read_Bool(Message);
+
+        while (!IsNumBetween(a, from, to))
+        {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            a = Read_Bool(Message);
+        }
+        return  a;
+    }
+
+
+
+};  
