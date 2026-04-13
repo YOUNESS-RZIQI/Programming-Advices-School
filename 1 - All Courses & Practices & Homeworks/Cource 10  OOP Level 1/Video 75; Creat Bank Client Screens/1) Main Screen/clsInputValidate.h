@@ -10,7 +10,6 @@
 class clsInputValidate
 {
 
-	
 public:
 
 	static bool IsNumberBetween(int Number, int From, int To)
