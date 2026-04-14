@@ -1,0 +1,290 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+enum en_Level { Easy = 1, Medium = 2, Hard = 3, Mix_Level = 4 };
+
+enum en_Opration_Type { Add = 1, Sub = 2, Multp = 3, Dvide = 4, Mix_Operation = 5 };
+
+struct st_Round_Info
+{
+
+	int Num1, Num2, Questions_Number, Use_Answer, Real_Answer;
+	en_Level Level;
+	en_Opration_Type Op_Type;
+	int Correct_Answer_Num = 0, Wrong_Answer_Num = 0;
+
+};
+
+int Randum_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+int Read_Question_Number()
+{
+
+	short Number = 0;
+
+	cout << "How many Question Do you want ? : ";
+	cin >> Number;
+
+	return Number;
+}
+
+en_Level Read_Level()
+{
+
+	short Number = 0;
+	while (Number < 1 || Number > 4)
+	{
+		cout << "Which Level You wnat   [1] Eays   |   [2] Medium   |   [3] Hard   |   [4] Mix   ? : ";
+		cin >> Number;
+	}
+
+	return (en_Level)Number;
+}
+
+en_Opration_Type Read_Opration_Type()
+{
+
+	short Number = 0;
+	while (Number < 1 || Number > 5)
+	{
+		cout << "Which Op Type You wnat   [1] Add   |   [2] Sub   |   [3] Multp   |   [4] Dvide   |   [5] Mix   ? : ";
+		cin >> Number;
+	}
+
+	return (en_Opration_Type)Number;
+}
+
+st_Round_Info Get_Num1_and_Num2(st_Round_Info& Level)
+{
+	if (Level.Level == en_Level::Easy)
+	{
+		Level.Num1 = Randum_Number_In_Range(0, 10);
+		Level.Num2 = Randum_Number_In_Range(0, 10);
+	}
+
+	else if (Level.Level == en_Level::Medium)
+	{
+		Level.Num1 = Randum_Number_In_Range(10, 50);
+		Level.Num2 = Randum_Number_In_Range(10, 50);
+	}
+
+	else if (Level.Level == en_Level::Hard)
+	{
+		Level.Num1 = Randum_Number_In_Range(50, 100);
+		Level.Num2 = Randum_Number_In_Range(50, 100);
+	}
+
+	else if (Level.Level == en_Level::Mix_Level)
+	{
+		Level.Num1 = Randum_Number_In_Range(0, 100);
+		Level.Num2 = Randum_Number_In_Range(0, 100);
+	}
+
+
+	return (st_Round_Info)Level;
+
+}
+
+st_Round_Info Get_Question_And_User_Answer_And_Real_Answer(st_Round_Info& Round_Info)
+{
+
+	en_Opration_Type Op = Round_Info.Op_Type;
+
+	if (Op == en_Opration_Type::Mix_Operation)
+		Op = (en_Opration_Type)Randum_Number_In_Range(1, 4);
+
+
+	if (Op == en_Opration_Type::Add)
+	{
+
+		cout << "\n" << Round_Info.Num1 << "\n" << Round_Info.Num2 << " + \n____________\n";
+		cin >> Round_Info.Use_Answer;
+		Round_Info.Real_Answer = Round_Info.Num1 + Round_Info.Num2;
+		return Round_Info;
+
+	}
+
+
+	else if (Op == en_Opration_Type::Sub)
+	{
+
+		cout << "\n" << Round_Info.Num1 << "\n" << Round_Info.Num2 << " - \n____________\n";
+		cin >> Round_Info.Use_Answer;
+		Round_Info.Real_Answer = Round_Info.Num1 - Round_Info.Num2;
+		return Round_Info;
+
+	}
+
+
+
+	else if (Op == en_Opration_Type::Multp)
+	{
+
+		cout << "\n" << Round_Info.Num1 << "\n" << Round_Info.Num2 << " * \n____________\n";
+		cin >> Round_Info.Use_Answer;
+		Round_Info.Real_Answer = Round_Info.Num1 * Round_Info.Num2;
+		return Round_Info;
+
+	}
+
+
+
+	else if (Op == en_Opration_Type::Dvide)
+	{
+
+		cout << "\n" << Round_Info.Num1 << "\n" << Round_Info.Num2 << " / \n____________\n";
+		cin >> Round_Info.Use_Answer;
+		Round_Info.Real_Answer = Round_Info.Num1 / Round_Info.Num2;
+		return Round_Info;
+
+	}
+
+
+
+
+
+}
+
+bool Check_Answer(st_Round_Info Round_Info)
+{
+
+	if (Round_Info.Real_Answer == Round_Info.Use_Answer)
+	{
+
+		system("color 2F"); //turn screen to Green
+		cout << "\n Correct Answer :)\n";
+
+		return true;
+	}
+
+	system("color 4F"); //turn screen to Red
+	cout << "\a";
+	cout << "\n Wrong Answer :(    Correct Asnwer is : " << Round_Info.Real_Answer << endl;
+
+	return false;
+
+}
+
+st_Round_Info Math_Game()
+{
+	st_Round_Info Round_Info;
+
+	Round_Info.Questions_Number = Read_Question_Number();
+	Round_Info.Level = Read_Level();
+	Round_Info.Op_Type = Read_Opration_Type();
+
+	short Correct_Answer_Num = 0, Wrong_Answer_Num = 0;
+
+
+	for (int Round_Number = 1; Round_Number <= Round_Info.Questions_Number; Round_Number++)
+	{
+
+		cout << "\n\t\t Question [" << Round_Number << "/" << Round_Info.Questions_Number << "] : \n\n";
+
+		Get_Num1_and_Num2(Round_Info);
+
+		Get_Question_And_User_Answer_And_Real_Answer(Round_Info);
+
+		if (Check_Answer(Round_Info))
+			Correct_Answer_Num++;
+		else
+			Wrong_Answer_Num++;
+
+
+	}
+
+
+	Round_Info.Correct_Answer_Num = Correct_Answer_Num;
+	Round_Info.Wrong_Answer_Num = Wrong_Answer_Num;
+
+	return (st_Round_Info)Round_Info;
+
+}
+
+void ResetScreen()
+{
+	system("cls");
+	system("color 0F");
+}
+
+void Show_Final_Result(st_Round_Info Round_Info)
+{
+
+	cout << "----------------------------------------------------------\n\n";
+	cout << "        F I N A L   R E S U L T   I S   ";
+	if (Round_Info.Wrong_Answer_Num > Round_Info.Correct_Answer_Num)
+		cout << "F A I L \n";
+	else
+		cout << "P A S S \n";
+	cout << "----------------------------------------------------------\n\n";
+
+
+}
+
+string Opration_Choice(en_Opration_Type Op)
+{
+
+	string Arr_Op_Type[5] = { "Add" , "Substraction" , "Multiplication" , "Dvide" , "Mix" };
+	return Arr_Op_Type[Op - 1];
+
+}
+
+string Level_Choice(en_Level Level)
+{
+
+	string Arr_Level[4] = { "Easy" , "Medium" , "Hard" , "Mix" };
+	return Arr_Level[Level - 1];
+
+}
+
+void Final_Game_Result(st_Round_Info Round_Info)
+{
+
+	cout << "\nNumber of Questions     : " << Round_Info.Questions_Number << endl;
+	cout << "Question Level            : " << Level_Choice(Round_Info.Level) << endl;
+	cout << "Operation Type            : " << Opration_Choice(Round_Info.Op_Type) << endl;
+	cout << "Number of Correct Answers : " << Round_Info.Correct_Answer_Num << endl;
+	cout << "Number of Wrong Answers   : " << Round_Info.Wrong_Answer_Num << endl << endl;
+
+}
+
+void Start_Game()
+{
+
+	char Again = 'Y';
+
+	do
+	{
+		ResetScreen();
+		st_Round_Info Round_Info = Math_Game();
+		Show_Final_Result(Round_Info);
+		Final_Game_Result(Round_Info);
+
+		cout << "\nDo you want to play Again ?    Y / N  : ";
+		cin >> Again;
+
+	} while (Again == 'Y' || Again == 'y');
+
+
+
+}
+
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	Start_Game();
+
+	return 0;
+}

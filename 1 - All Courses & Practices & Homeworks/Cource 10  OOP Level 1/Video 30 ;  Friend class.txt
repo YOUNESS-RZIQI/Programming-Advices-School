@@ -1,0 +1,69 @@
+/*
+
+							Title : Friends classes 
+
+
+
+	1) We know that the privet Methods/Members can not be accessed just by the class that contain it only
+		but wiht the Friends classes concept that ruel vanish , but that happen just in Inheritance not in the Objects
+		in the int main .
+
+
+
+*/
+
+#include <iostream>
+using namespace std;
+
+class clsBase
+{
+private:
+
+	int _Variable1;
+
+protected:
+
+	int _Variable2;
+
+public :
+	 
+	int _Variable3;
+
+	clsBase()
+	{
+		_Variable1 = 10;
+		_Variable2 = 20;
+		_Variable3 = 30;
+	}
+
+	friend class clsDrived; // This is like Bribe to became friends 
+
+};
+
+class clsDrived : clsBase
+{
+public : 
+
+	void Print(clsBase B)
+	{
+
+		cout << "Variable 1 = " << B._Variable1 << endl;
+		cout << "Variable 2 = " << B._Variable2 << endl;
+		cout << "Variable 3 = " << B._Variable3 << endl;
+	}
+
+
+};
+
+
+int main(void)
+{
+	clsBase B;
+	clsDrived D;
+
+	D.Print(B);
+
+
+
+	return 0;
+}

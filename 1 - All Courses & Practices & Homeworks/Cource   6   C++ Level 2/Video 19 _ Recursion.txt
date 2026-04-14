@@ -1,0 +1,72 @@
+It is Call the same function in the same function like a for Loop : 
+
+
+#include <iostream>
+#include "InputLib.h";
+using namespace std;
+
+
+void PrintFromNtoM(long N, long M)
+{
+
+	if (N <= M)
+	{
+
+		cout << N << "\t";
+
+		PrintFromNtoM(N + 1, M);
+
+	}
+
+}
+
+void PrintFromMtoN(long N, long M)
+{
+
+	if (N <= M)
+	{
+
+		cout << M << "\t";
+
+		PrintFromMtoN(N , M - 1);
+
+	}
+
+}
+
+int Print_Power_From_N_to_M(long Base, long Power )
+{
+
+	if (Power == 0)
+	{
+		return 1;
+	}
+	else 
+	{
+		return  Base * Print_Power_From_N_to_M(Base, Power - 1);
+	}
+
+
+
+}
+
+
+int main()
+{
+	long N = 0, M = 0 ;
+
+	N = Input_Lib::Read_Number("Pringt From : ");
+	M = Input_Lib::Read_Number("To          : ");
+	cout << endl;
+	PrintFromNtoM(N, M);
+	cout << "\n\n";
+	PrintFromMtoN(N, M);
+	cout << "\n\n";
+	cout << " " << N << "^" << M << " = " << Print_Power_From_N_to_M(N, M);
+
+
+
+	cout << "\n\n";
+
+	return 0;
+}

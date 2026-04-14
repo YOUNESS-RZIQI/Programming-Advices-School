@@ -1,0 +1,79 @@
+/*
+				Title :    copy constructor
+ 
+	What a " Copy constructor " Jog is ?
+
+	1) A class is a Data type , So if : 
+
+		 int b = 22;
+		 int a = b ; // so  now a = b = 22 The same for the class we can do :
+
+		 clsPerson p1; // Now we load some data in p1, like for example int Age = 22 , Then we do : 
+
+		 clsPerson p2 = p1; // Now p2 has what p1 Data memeber has , So the Age in p2 also is 22.
+
+	* The compiler handel the copying of the data from the first constructor to the second one .
+
+*/
+
+/*
+
+	1 - Set/Get  +   __declsep(...)
+	2 - Members :  _Age,  _Value;
+	3 - Initializing the Class
+
+*/
+
+#include <iostream>
+using namespace std;
+
+class clsPerson
+{
+	int _Age;
+
+public:
+
+	clsPerson(int Age)
+	{
+		_Age = Age;
+	}
+
+	/*
+
+This is the copy constructor syntax,you can do it bay coding it or just do p1 = p2 so that the compiler do it for you
+
+	clsPerson(clsPerson & p) // by refrence it is like alias , so her we passin the last class all info and Data .
+	{
+		_Age = p.Age;
+	}
+	
+	*/
+
+	void Set_Age(int Age)
+	{
+		_Age = Age;
+	}
+
+	int Get_Age()
+	{
+		return _Age;
+	}
+
+	__declspec(property(get = Get_Age, put = Set_Age)) int Age;
+
+};
+
+int main(void)
+{
+	clsPerson Person1 (22);
+
+
+	cout << "Person 1 Age : " << Person1.Age << endl;
+
+	clsPerson Person2 = Person1;
+
+	cout << "Person 2 Age is a Copy from Person 1 Age : " << Person2.Age << endl;
+
+
+	return 0;
+}

@@ -1,0 +1,243 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+enum enOptoins { Paper = 1, Stone = 2, Scissor = 3, I_Win, C_Win, No_Win };
+
+struct stCounter
+{
+
+	short I_Win , Computer_Win  , NO_Winer ;
+
+};
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Read_Number_In_Range(string Message, int From, int To)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> Number;
+
+
+	} while (Number < From || Number > To);
+
+
+
+	return Number;
+
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+string P_S_SC_I_CP_No(enOptoins choice)
+{
+
+	if (choice == enOptoins::Paper)
+		return " Paper ";
+	else if (choice == enOptoins::Scissor)
+		return " Scissor ";
+	else if (choice == enOptoins::Stone)
+		return " Stone ";
+	else if (choice == enOptoins::I_Win)
+		return  " [You Win] ";
+	else if (choice == enOptoins::C_Win)
+		return " [Coumputer Win] ";
+
+	else if (choice == enOptoins::No_Win)
+		return " [No Winer] ";
+
+
+
+
+
+}
+
+void Round_Menu(enOptoins Me, enOptoins Computer, enOptoins Result, short round , stCounter &Count)
+{
+
+	
+
+
+	if (Result == enOptoins::C_Win)
+	{
+		system("color 4F");
+		cout << "\a";
+		Count.Computer_Win++;
+	}
+
+	else if (Result == enOptoins::I_Win)
+	{
+		system("color 2F");
+		Count.I_Win++;
+	}
+
+	else if (Result == enOptoins::No_Win)
+	{
+		system("color 6F");
+		Count.NO_Winer++;
+	}
+
+
+	cout << "\n_______________Round" << round << "_______________\n";
+	cout << " Player  choice : " << P_S_SC_I_CP_No(Me) << endl;
+	cout << " Coputer choice : " << P_S_SC_I_CP_No(Computer) << endl;
+	cout << " Round Winer    : " << P_S_SC_I_CP_No(Result) << endl;
+	cout << "______________________________________\n\n";
+
+
+}
+
+void Finale_Menu(stCounter Count , short round)
+{
+
+	cout << "\n\t\t____________________________________________________\n";
+	cout << "\t\t                 +++ G a m e  O v e r +++           \n";
+	cout << "\t\t____________________________________________________\n";
+	cout << "\t\t                     [ Game Results ]                        \n";
+	cout << "\t\t____________________________________________________\n\n";
+
+	cout << "\t\t  Game Rounds       : " << round << "\n";
+	cout << "\t\t  Player1 won times : " << Count.I_Win << "\n";
+	cout << "\t\t  Computer won times: " << Count.Computer_Win << "\n";
+	cout << "\t\t  Draw times        : " << Count.NO_Winer << "\n";
+
+	if (Count.I_Win > Count.Computer_Win)
+		cout << "\t\t  Final Winner      :  +++   You   +++\n";
+	else if (Count.Computer_Win > Count.I_Win)
+		cout << "\t\t  Final Winner      :  +++   Computer   +++\n";
+	else if(Count.I_Win == Count.Computer_Win)
+		cout << "\t\t  Final Winner      :  !!!   No One It is Draw   !!!n";
+
+
+
+	cout << "\t\t____________________________________________________\n\n";
+
+}
+
+void Game(short i , stCounter &Count)
+{
+
+
+	short My_choice = Read_Number_In_Range("Your Choice  [1] Paper  [2] Stone   [3] Scissor ? :	", 1, 3);
+	short Coputer_choice = Randam_Number_In_Range(1, 3);
+
+	if (My_choice == enOptoins::Paper)
+	{
+
+		if (Coputer_choice == enOptoins::Paper)
+
+			return Round_Menu(enOptoins::Paper, enOptoins::Paper, enOptoins::No_Win, i, Count);
+
+		else if (Coputer_choice == enOptoins::Scissor)
+
+			return Round_Menu(enOptoins::Paper, enOptoins::Scissor, enOptoins::C_Win, i, Count);
+
+		else if (Coputer_choice == enOptoins::Stone)
+
+			return Round_Menu(enOptoins::Paper, enOptoins::Stone, enOptoins::I_Win, i, Count);
+
+	}
+
+	else if (My_choice == enOptoins::Stone)
+	{
+
+		if (Coputer_choice == enOptoins::Stone)
+
+			return Round_Menu(enOptoins::Stone, enOptoins::Stone, enOptoins::No_Win, i, Count);
+
+		else if (Coputer_choice == enOptoins::Scissor)
+
+			return Round_Menu(enOptoins::Stone, enOptoins::Scissor, enOptoins::I_Win, i, Count);
+
+		else if (Coputer_choice == enOptoins::Paper)
+
+			return Round_Menu(enOptoins::Stone, enOptoins::Paper, enOptoins::C_Win, i, Count);
+
+	}
+
+	else if (My_choice == enOptoins::Scissor)
+	{
+
+		if (Coputer_choice == enOptoins::Stone)
+
+			return Round_Menu(enOptoins::Scissor, enOptoins::Stone, enOptoins::C_Win, i, Count);
+
+		else if (Coputer_choice == enOptoins::Scissor)
+
+			return Round_Menu(enOptoins::Scissor, enOptoins::Scissor, enOptoins::No_Win, i, Count);
+
+		else if (Coputer_choice == enOptoins::Paper)
+
+			return Round_Menu(enOptoins::Scissor, enOptoins::Paper, enOptoins::I_Win, i, Count);
+
+	}
+
+
+
+
+
+
+}
+
+void Start_The_Game()
+{
+	stCounter Count;
+
+	bool Again_or_no = 1;
+	do
+	{
+		system("cls"); // Clear the console before restarting the game
+
+		Count = { 0, 0, 0 }; // Reset the game counters to zero
+
+		short round = Enter_Positive_Number("\n How many rounds do you want to play? ");
+
+		for (short i = 1; i <= round; i++)
+		{
+			Game(i, Count);
+		}
+
+		Finale_Menu(Count, round);
+
+		Again_or_no = Read_Number_In_Range("\n\nDo you want to play again?    [1] Yes  /  [0] No: ", 0, 1);
+
+	} while (Again_or_no);
+}
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+
+	Start_The_Game();
+
+	return 0;
+}

@@ -1,0 +1,137 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+
+int Enter_Positive_Number()
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << "Please enter the Number you Want to add to Array : ";
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void Print_Array(int Arr_Source[100], short Arr_Source_Length)
+{
+
+
+	for (int i = 0; i < Arr_Source_Length; i++)
+	{
+
+		cout << Arr_Source[i] << "  ";
+
+	}
+
+	cout << endl;
+
+
+}
+
+
+
+void Fill_Array_with_N_Randum_Number(int Arr_Source[100], short& Arr_Source_Length)
+{
+
+	Arr_Source_Length = Enter_Positive_Number();
+
+
+	for (int i = 0; i < Arr_Source_Length; i++)
+	{
+
+		Arr_Source[i] = Randam_Number_In_Range(-100, 100);
+
+	}
+
+}
+
+void Add_Array_Element(int UserNumber, int Arr_Source[100], int& Arr_Source_Length)
+{
+
+	Arr_Source_Length++;
+
+	Arr_Source[Arr_Source_Length - 1] = UserNumber;
+
+}
+
+void Copye_if_Odd_Number(int Arr_Source[100], int Arr_Copye[100], int Arr_Source_Length, int& Arr_Coype_Length)
+{
+
+	for (int i = 0; i < Arr_Source_Length; i++)
+	{
+		if (Arr_Source[i] % 2 != 0)
+		{
+			Add_Array_Element(Arr_Source[i], Arr_Copye, Arr_Coype_Length);
+		}
+
+	}
+
+}
+
+bool Check_if_odd_Number(int Number)
+{
+
+	if (Number % 2 != 0)
+		return true;
+	else
+		false;
+}
+
+int Nigative_counte_Array(int Arr[100], short ArrLength)
+{
+
+	int Nigative_Counter = 0;
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		if (Arr[i] < 0)
+			Nigative_Counter++;
+
+	}
+	
+	return Nigative_Counter;
+}
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Arr[100];
+	short ArrLength = 0;
+
+
+	Fill_Array_with_N_Randum_Number(Arr, ArrLength);
+	cout << endl;
+
+
+	cout << " Array 1 : ";
+	Print_Array(Arr, ArrLength);
+	cout << endl;
+
+
+	cout << "Nigative Numbers in Array 1 is : " << Nigative_counte_Array(Arr, ArrLength);
+
+	cout << "\n\n";
+
+
+	
+	return 0;
+}

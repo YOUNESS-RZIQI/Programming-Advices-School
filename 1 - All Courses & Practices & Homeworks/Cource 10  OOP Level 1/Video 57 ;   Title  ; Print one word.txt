@@ -1,0 +1,29 @@
+🇨 🇵 🇵  : 
+
+
+
+
+
+int main(void)
+{
+
+    /*
+        Print one word.
+    */
+    
+    string s = "     youness  sdf";
+    string temp;
+    int j = 0;
+    int i_temp = 0;
+    
+    for (j; s[j] == ' ' && j < s.size() ; j++); // this one skeep the spaces 😉
+
+    for ( j ; s[j] != ' ' && j < s.size()  ; j++)// this one fill the temp with the string charcters 😉
+    {
+        temp += s[j]; // append character to temp
+    }
+
+    cout << temp << endl;// print the full string 
+
+    return 0;
+}

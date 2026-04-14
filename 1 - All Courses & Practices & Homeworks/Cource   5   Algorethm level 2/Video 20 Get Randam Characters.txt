@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+enum enChar_Type
+{ 
+	 Small_Letter, Capital_Letter, Spicioal_Character, Number
+};
+
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+
+char Print_Randam_stuf(enChar_Type Char_Type)
+{
+	
+	switch (Char_Type)
+	{
+	case Small_Letter:
+
+		return char(Randam_Number_In_Range(97, 122));
+		
+	case Capital_Letter:
+
+		return char(Randam_Number_In_Range(65, 90));
+		
+	case Spicioal_Character:
+
+		return  char(Randam_Number_In_Range(32, 47));
+
+	case Number:
+
+		return char(Randam_Number_In_Range(48, 57));
+
+	default:
+		break;
+	}
+	
+	
+
+
+}
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	cout << Print_Randam_stuf(enChar_Type::Small_Letter) << endl ;
+	cout << Print_Randam_stuf(enChar_Type::Capital_Letter) << endl;
+	cout << Print_Randam_stuf(enChar_Type::Spicioal_Character) << endl;
+	cout << Print_Randam_stuf(enChar_Type::Number) << endl;
+
+
+	return 0;
+}

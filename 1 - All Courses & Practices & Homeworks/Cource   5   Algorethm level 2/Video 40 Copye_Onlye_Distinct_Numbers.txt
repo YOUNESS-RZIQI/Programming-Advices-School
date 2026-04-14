@@ -1,0 +1,214 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+
+int Enter_Positive_Number()
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << "Please enter the Number you Want to add to Array : ";
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void Print_Array(int Arr_Source[100], int Arr_Source_Length)
+{
+
+
+	for (int i = 0; i < Arr_Source_Length; i++)
+	{
+
+		cout << Arr_Source[i] << " ";
+
+	}
+
+	cout << endl;
+
+
+}
+
+
+
+enum en_Prime_of_Not { Prime, Not_Prime };
+
+en_Prime_of_Not Check_if_Prime(int Num)
+{
+
+	int M = round(Num / 2);
+
+	for (int Counter = 2; Counter <= M; Counter++)
+	{
+
+		if (Num % Counter == 0)
+		{
+			return en_Prime_of_Not::Not_Prime;
+		}
+
+	}
+
+	return en_Prime_of_Not::Prime;
+
+}
+
+
+
+
+void Fill_Array_with_N_Randum_Number(int Arr_Source[100], int& Arr_Source_Length)
+{
+
+	Arr_Source_Length = Enter_Positive_Number();
+
+
+	for (int i = 0; i < Arr_Source_Length; i++)
+	{
+
+		Arr_Source[i] = Randam_Number_In_Range(1, 100);
+
+	}
+
+}
+
+void Add_Array_Element(int UserNumber, int Arr_Source[100], int& Arr_Source_Length)
+{
+
+	Arr_Source_Length++;
+	
+	Arr_Source[Arr_Source_Length - 1] = UserNumber;
+
+}
+
+void Hard_code( int Arr_Source[100],int &Arr_Source_Length )
+{
+
+	for ( int i = 0 ; i <= 2; i++)
+	{
+		
+		Add_Array_Element(10, Arr_Source, Arr_Source_Length);
+
+	}
+
+	for (int i = 3; i <= 4; i++)
+	{
+
+		Add_Array_Element(50, Arr_Source, Arr_Source_Length);
+
+	}
+
+	for (int i = 5; i <= 8; i++)
+	{
+
+		Add_Array_Element(70, Arr_Source, Arr_Source_Length);
+
+	}
+
+	for (int i = 9; i < 10; i++)
+	{
+
+		Add_Array_Element(90, Arr_Source, Arr_Source_Length);
+
+	}
+
+}
+
+int Number_Repition(int Num_to_Check, int Arr[30], int length)
+{
+
+	int Counter = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+
+		if (Num_to_Check == Arr[i])
+		{
+			Counter++;
+		}
+
+	}
+
+	return Counter;
+}
+
+short Number_Position(int Arr[100], int ArrLength, int Num_to_Search)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+		if (Arr[i] == Num_to_Search)
+		{
+
+			return i;
+
+		}
+
+	}
+
+	return -1;
+
+}
+
+
+bool Is_Number_Exist_in_Array( int Num_to_Search, int Arr[100] , int ArrLength)
+{
+	return Number_Position(Arr, ArrLength, Num_to_Search) != -1;
+}
+
+void Copye_Onlye_Distinct_Numbers(int Arr_Source[100], int Arr_Source_Length, int Arr_Copye[100], int& Arr_Copye_Length)
+{
+
+	for (int i = 0; i < Arr_Source_Length; i++)
+	{
+
+		if (!Is_Number_Exist_in_Array(Arr_Source[i], Arr_Copye , Arr_Source_Length))
+			Add_Array_Element(Arr_Source[i], Arr_Copye, Arr_Copye_Length);
+
+	}
+
+}
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Arr[100] ;
+	int ArrLength = 0;
+	
+	Hard_code(Arr, ArrLength);
+	cout << endl;
+
+
+	cout << " Array 1 : \n";
+	Print_Array(Arr, ArrLength);
+	cout << endl;
+
+
+	int Arr2[100];
+	int Arr2Length = 0 ;
+
+	Copye_Onlye_Distinct_Numbers(Arr, ArrLength, Arr2, Arr2Length);
+
+	cout << " Array 2 Distinct Numbers Onlye  : \n";
+	Print_Array(Arr2, Arr2Length);
+	cout << endl;
+
+	return 0;
+}

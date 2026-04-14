@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+float Number_Enter()
+{
+	float Num = 0;
+
+	cout << "Please enter The Number : ";
+	cin >> Num;
+
+	return Num;
+}
+
+float Get_Fraction(float Number)
+{
+	return Number - int(Number);
+}
+
+float My_floor(float Number)
+{
+	if (abs(Get_Fraction(Number)) > 0)
+		if (Number > 0)
+			return int(Number);
+		else
+			return int(Number) - 1;
+	else
+		return Number;
+}
+
+
+int main()
+{
+
+	float Number = Number_Enter();
+
+	cout << "\nMy floor  : " << My_floor(Number);
+	cout << "\nC++ floor : " << floor(Number) << endl;
+
+	return 0;
+}

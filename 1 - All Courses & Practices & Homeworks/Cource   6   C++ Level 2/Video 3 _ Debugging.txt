@@ -1,0 +1,7 @@
+you can move the to the line that you want to move to by using the mouse ;
+
+you can use more than one Break Debugging ;
+
+and you can run the debugging between two debugging if you sur that the code is right by using F5;
+
+you can disable and enable the Debugging buttons and Delete them by using the menu of Debugging in the tup ;

@@ -1,0 +1,111 @@
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+vector <string> Split_String(string& s, const string& delim)
+{
+
+	vector <string> vNames;
+
+	short pos = 0;
+	string Word;
+
+	while ((pos = s.find(delim)) != std::string::npos)
+	{
+
+		Word = s.substr(0, pos);
+
+		if (Word != "")
+		{
+			vNames.push_back(Word);
+		}
+
+		s.erase(0, pos + delim.length());
+
+	}
+
+	if (s != "")
+	{
+		vNames.push_back(s);
+	}
+
+
+	return vNames;
+}
+
+string Join_String(vector <string>& vNames, const string& delim)
+{
+
+	string S1 = "";
+
+	for (string& s : vNames)
+	{
+		S1 = S1 + s + delim;
+	}
+
+	return S1.substr(0, S1.length() - delim.length());
+}
+
+string ToLower(string s)
+{
+	for (char & c : s)
+	{
+		c = tolower(c);
+	}
+
+	return s;
+}
+
+string Replace_word(string& s, const string& Replace_this, const string& Replace_with, const bool & Match_Case = true )
+{
+
+	vector <string> vNames;
+
+	vNames = Split_String(s, " ");
+
+	for (string & s : vNames)
+	{
+		if(Match_Case)
+		{
+			if (s == Replace_this)
+			{
+				s = Replace_with;
+			}
+		}
+		else
+		{
+			if (ToLower(s) == ToLower(Replace_this) )
+			{
+				s = Replace_with;
+			}
+		}
+
+	}
+
+	return Join_String(vNames, " ");
+}
+
+
+int main()
+{
+
+
+	string s = Input_Lib::Ask_for_string("Enter The string Please : \n");
+
+	string Replace_this = Input_Lib::Ask_for_string("Enter The Word you want to change Please : \n");
+	string Replace_with = Input_Lib::Ask_for_string("with what ? \n");
+
+	cout << "\n\nNo , Sinsitive : \n\n" << Replace_word(s, Replace_this, Replace_with);
+	cout << "\n\nYes ,  Sinsitive : \n\n" << Replace_word(s, Replace_this, Replace_with , false);
+
+	cout << "\n\n";
+
+
+	system("pause>0");
+}
+
+

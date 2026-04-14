@@ -1,0 +1,107 @@
+My Code : 
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string Enter_Positive_Number(string Massege)
+{
+
+	string Number;
+
+	cout << Massege;
+	getline(cin,Number);
+
+
+	return Number;
+}
+
+void Reverse_Digits(string Number)
+{
+
+	int i = Number.length();
+
+	for (int j = 0; i >= j; i--)
+	{
+
+		cout << Number[i] << endl;
+
+	}
+
+}
+
+
+int main() 
+{
+   
+	Reverse_Digits(Enter_Positive_Number("Please enter the Number : "));
+
+    return 0;
+}
+
+
+
+
+
+The teacher Code :
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+void Reverse_Digits(int Number)
+{
+
+	
+	int Remainder = 0;
+
+	while (Number > 0)
+	{
+
+		Remainder = Number % 10;
+		Number = Number / 10;
+
+		cout << Remainder << endl;
+
+	}
+
+
+}
+
+
+int main() 
+{
+   
+	Reverse_Digits(Enter_Positive_Number("Please enter the Number : "));
+
+    return 0;
+}
+
+
+
+
+

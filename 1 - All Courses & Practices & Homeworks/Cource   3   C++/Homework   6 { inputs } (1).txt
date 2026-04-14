@@ -1,0 +1,148 @@
+P1: This program ask the user to enter the name, Age, ... and prin it on the screen
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	string Name;
+	unsigned short int Age;
+	string City;
+	string Country;
+	float MonthlySalary;
+	float YearlySalary;
+	char Gender;
+	bool Married;
+
+	cout << " What is your Name ? " << endl;
+	cin >> Name;
+
+	cout << "What is your Age ?" << endl;
+	cin >> Age;
+
+	cout << "What is your City ? " << endl;
+	cin >> City;
+
+	cout << "What is your Country ?	" << endl;
+	cin >> Country;
+
+	cout << "Enter your MonthlySalary ?	" << endl;
+	cin >> MonthlySalary;
+
+	cout << "Enter your YearlySalary ?" << endl;
+	cin >> YearlySalary;
+
+	cout << "What is your Gender ?" << endl;
+	cin >> Gender;
+
+	cout << " Are you Married ?" << endl;
+	cin >> Married;
+	cout << endl << endl << endl << endl;
+
+
+
+	cout << "*******************************************************\n";
+	cout << "Name: " << Name << ".\n";
+	cout << "Age : " << Age << " Years.\n ";
+	cout << "city : " << City << ".\n";
+	cout << "Country: " << Country << ".\n";
+	cout << "Montyly Salary : " << MonthlySalary << endl;
+	cout << "Yearly Salary : " << YearlySalary << endl;
+	cout << "Gender: " << Gender << endl;
+	cout << "Married : " << Married << endl;
+	cout << "*******************************************************\n\n\n\n\n\n";
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+P2: this programe do a + calculation
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	float Number1;
+	float Number2;
+	float Number3;
+
+	cout << "Enter the first Number ?" << endl;
+	cin >> Number1;
+
+	cout << "\nEnter the second Number ? " << endl;
+	cin >> Number2;
+
+	cout << "\nEnter the therd Number ? " << endl;
+	cin >> Number3;
+
+	float sum = Number1 + Number2 + Number3;
+
+	cout << endl << endl << endl << Number1 << "+\n";
+	cout << Number2 << "+\n";
+	cout << Number3 << "\n\n";
+	cout << "---------------------------------------------- \n";
+	cout << sum << endl << endl;
+
+	return 0;
+}
+
+
+
+
+
+
+
+P3: this program add 5 years to your Age
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+
+	unsigned short int Age;
+
+	cout << "Evter your Age ? \n";
+	cin >> Age;
+
+	float YourAgeAfter5Years = Age + 5;
+	cout << "After 5 years you will be " << YourAgeAfter5Years << " years old.\n\n";
+
+
+
+
+
+
+	return 0;
+}
+
+
+
+
+

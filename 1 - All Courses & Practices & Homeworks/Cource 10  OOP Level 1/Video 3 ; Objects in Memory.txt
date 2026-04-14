@@ -1,0 +1,47 @@
+Objects in Memory : 
+
+Each object has it is own space in the memory for the Data than need to hold , but the Functions are sheared because they do not hold any data , you gave them the data from the Data members (variables).
+
+
+Code : 
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class clsPersson
+{
+private:
+	int x, y, z; // Property : controlled access to a variable
+
+public:
+	string FirstName; //   Data Member , or just Member
+	string LastName;  //   Data Member , or just Member
+
+	string FullName()  //     Method
+	{
+		return (FirstName + " " + LastName);
+	}
+};
+
+int main(void)
+{
+
+	clsPersson p1, p2;
+
+	p1.FirstName = "youness";  // Data Member has it's own place in the memory
+	p1.LastName  = "rziqi";  // Data Member has it's own place in the memory
+	
+	p2.FirstName = "Hiba";  // Data Member has it's own place in the memory
+	p2.LastName  = "Roame";  // Data Member has it's own place in the memory
+
+
+	cout << p1.FullName() << endl;// Function has one place and he shear it with the all objects p1,p2,p3...
+	cout << p2.FullName() << endl;
+
+
+	return 0;
+}
+

@@ -1,0 +1,61 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Sum_Digits(int Number)
+{
+
+
+	int Remainder = 0 , Sum = 0;
+
+	while (Number > 0)
+	{
+
+		Remainder = Number % 10;
+		Number = Number / 10;
+
+		Sum += Remainder;
+
+	}
+
+	return Sum;
+
+}
+
+void Print_Sum_Digits(int Sum)
+{
+
+	cout << "\n\n    The sum of Digits is : " << Sum << "\n\n" << endl;
+
+}
+
+int main()
+{
+
+	Print_Sum_Digits(Sum_Digits(Enter_Positive_Number("Please enter the Number : ")));
+
+	return 0;
+}
+
+
+
+

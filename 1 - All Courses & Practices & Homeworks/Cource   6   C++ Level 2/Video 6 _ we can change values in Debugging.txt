@@ -1,0 +1,2 @@
+yes we can change values in Debugging with : Autos , or by pointing the mouse in the variable and click on the value and change it 
+to wat you want and price enter . and voila :-) 

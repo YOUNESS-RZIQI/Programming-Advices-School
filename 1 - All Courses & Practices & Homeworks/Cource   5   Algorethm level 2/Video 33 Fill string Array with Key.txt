@@ -1,0 +1,158 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+enum enChar_Type
+{
+	Small_Letter, Capital_Letter, Spicial_Character, Number
+};
+
+
+int Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+char Randam_Char(enChar_Type Char_Type)
+{
+
+	switch (Char_Type)
+	{
+	case Small_Letter:
+
+		return char(Randam_Number_In_Range(97, 122));
+
+	case Capital_Letter:
+
+		return char(Randam_Number_In_Range(65, 90));
+
+	case Spicial_Character:
+
+		return  char(Randam_Number_In_Range(32, 47));
+
+	case Number:
+
+		return char(Randam_Number_In_Range(48, 57));
+
+	default:
+		break;
+	}
+
+
+
+
+}
+
+string Rand_Word(short How_Many_Char)
+{
+
+	string Word = "";
+
+	for (int i = 1; i <= How_Many_Char; i++)
+	{
+
+		Word += Randam_Char(enChar_Type::Capital_Letter);
+
+	}
+
+	return Word;
+}
+
+string Genrate_Key()
+{
+
+	string Word = "";
+
+	Word += Rand_Word(4) + "-";
+	Word += Rand_Word(4) + "-";
+	Word += Rand_Word(4) + "-";
+	Word += Rand_Word(4);
+
+	return Word;
+}
+
+void Genrat_Keys(int User_Num_Key)
+{
+
+	for (int i = 1; i <= User_Num_Key; i++)
+	{
+
+		cout << "Key[" << i << "] : ";
+
+		cout << Genrate_Key() << endl;
+
+	}
+
+}
+
+void Fill_Arr_with_Keys(string Arr[100], int Length)
+{
+
+	for (int i = 0; i < Length; i++)
+	{
+
+		Arr[i] = Genrate_Key();
+
+	}
+
+
+}
+
+void Print_string_Array(string Arr[100], int length)
+{
+
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << "\nArr [" << i+1 << "] : " << Arr[i] << " ";
+
+	}
+
+
+}
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+	string Arr[100];
+	int Length = Positive_Number("Please Enter How many Keys to Generate ? : ");
+
+	
+	Fill_Arr_with_Keys(Arr, Length);
+
+	cout << endl;
+
+	Print_string_Array(Arr, Length);
+
+	cout << "\n\n";
+
+
+
+	return 0;
+}

@@ -1,0 +1,222 @@
+
+
+
+Teacher Version :
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+#include "Check_Lib.h"  // is leap year
+
+using namespace std;
+
+struct s_Date
+{
+	short Year, Month, Day;
+};
+
+int NumberOfDaysInAMonth(short Year, short Month)
+{
+	if (Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+
+}
+
+short Days_from_begining_of_Year(const short& Year, const short& Month, const short& Day)
+{
+
+	short Counter_of_Days = 0;
+
+	for (short i = 1; i < Month; i++)
+	{
+		Counter_of_Days += NumberOfDaysInAMonth(Year, i);
+	}
+	return Counter_of_Days + Day;
+}
+
+bool is_Last_Day(const short& Year, const short& Month, const short& Days)
+{
+	return Days == NumberOfDaysInAMonth(Year, Month);
+}
+
+bool is_Last_Month(const short& Month)
+{
+	return Month == 12;
+}
+
+s_Date Increas_Date_by_one_Day(s_Date Date)
+{
+	
+	if (is_Last_Day(Date.Year, Date.Month, Date.Day))
+	{
+		if (is_Last_Month(Date.Month))
+		{
+			Date.Day = 1;
+			Date.Month = 1;
+			Date.Year++;
+			return Date;
+
+		}
+
+		Date.Day = 1;
+		Date.Month++;
+		return Date;
+	}
+
+	Date.Day++;
+
+	return Date;
+}
+
+s_Date Read_info()
+{
+	s_Date Date;
+	Date.Day = Input_Lib::Read_Positive_Number("Day   : ");
+	Date.Month = Input_Lib::Read_Positive_Number("Month : ");
+	Date.Year = Input_Lib::Read_Positive_Number("Year  : ");
+	return Date;
+}
+
+int main()
+{
+
+	s_Date Date = Read_info();
+
+
+	short Total = Days_from_begining_of_Year(Date.Year, Date.Month, Date.Day);
+
+	Date = Increas_Date_by_one_Day(Date);
+
+	printf("\n\nDate increes by  [%d] is : %d/%d/%d\n\n", 1 , Date.Day, Date.Month, Date.Year);
+
+
+	system("pause>0");
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+My Version : 
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+#include "Check_Lib.h"  // is leap year
+
+using namespace std;
+
+struct s_Date
+{
+	short Year, Month, Day;
+};
+
+int NumberOfDaysInAMonth(short Year, short Month)
+{
+	if (Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+
+}
+
+short Days_from_begining_of_Year(const short& Year, const short& Month, const short& Day)
+{
+
+	short Counter_of_Days = 0;
+
+	for (short i = 1; i < Month; i++)
+	{
+		Counter_of_Days += NumberOfDaysInAMonth(Year, i);
+	}
+	return Counter_of_Days + Day;
+}
+
+s_Date Increas_Date_by_one_Day(const int& Day_from_bi, const short& year)
+{
+	s_Date Date;
+
+	short Remaining = (Day_from_bi)+1;
+	int Month_Days = 0;
+
+	Date.Month = 1;
+	Date.Year = year;
+
+
+	while (true)
+	{
+		Month_Days = NumberOfDaysInAMonth(Date.Year, Date.Month);
+
+		if (Remaining >= Month_Days)
+		{
+			Remaining -= Month_Days;
+
+			Date.Month++;
+
+			if (Date.Month > 12)
+			{
+				Date.Month = 1;
+				Date.Year++;
+			}
+		}
+		else
+		{
+			Date.Day = Remaining;
+			break;
+		}
+
+	}
+
+
+	return Date;
+}
+
+s_Date Read_info()
+{
+	s_Date Date;
+	Date.Day = Input_Lib::Read_Positive_Number("Day   : ");
+	Date.Month = Input_Lib::Read_Positive_Number("Month : ");
+	Date.Year = Input_Lib::Read_Positive_Number("Year  : ");
+	return Date;
+}
+
+int main()
+{
+
+	s_Date Date = Read_info();
+
+
+	short Total = Days_from_begining_of_Year(Date.Year, Date.Month, Date.Day);
+
+	Date = Increas_Date_by_one_Day(Total, Date.Year);
+
+	printf("\n\nDate increes by  [%d] is : %d/%d/%d\n\n", 1 , Date.Day, Date.Month, Date.Year);
+
+
+	system("pause>0");
+	return 0;
+}
+

@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+string Delete_Punctuations( string  s)
+{
+     string s2 = "";
+
+    for (short i = 0 ; i < s.length() ; i++ )
+    {
+
+
+        /* if (ispunct(s[i]))
+        {
+            s.erase(i, 1);
+        } */ 
+
+        if (!ispunct(s[i]))
+        {
+            s2 += s[i];
+        }
+
+    }
+
+    return s2;
+}
+
+int main()
+{
+
+    string s = Input_Lib::Ask_for_string("Enter : ");
+
+    cout << "Result : \n\n" << Delete_Punctuations(s) << "\n\n";
+
+
+	return 0;
+}

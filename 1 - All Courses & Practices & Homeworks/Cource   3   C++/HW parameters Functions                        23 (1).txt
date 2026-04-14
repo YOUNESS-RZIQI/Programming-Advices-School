@@ -1,0 +1,816 @@
+The 1 one : 
+
+
+#include <iostream>
+using namespace std;
+
+int MySumFunction(int Number1, int Number2)
+{
+
+	
+
+	return  Number1 + Number2;
+
+
+}
+
+int main()
+{
+
+	int Number1, Number2;
+
+	cout << " Number1 ? \n";
+	cin >> Number1;
+
+	cout << " Number2 ? \n";
+	cin >> Number2;
+
+	cout << "****************\n";
+	
+	cout << "the result is : ";
+	cout << MySumFunction(Number1,Number2) << endl;
+	
+
+	return 0;
+}
+
+
+
+The  #14 :       it is about Swaping two Numbers
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+
+
+
+
+
+
+
+void  swaping_two_Numbers()
+{
+
+	int Number1, Number2;
+
+	cout << "Pleas enter the Number1 ? \n";
+	cin >> Number1;
+
+	cout << "Pleas enter the Number2 ? \n";
+	cin >> Number2;
+
+	cout << "\n\nYour result is : \n";
+
+	cout << Number1 << "\n";
+	cout << Number2 << "\n\n\n";
+
+	cout << "the swap is : \n";
+
+	int f;
+	f = Number1;
+	Number1 = Number2;
+	Number2 = f;
+
+
+	cout << Number1 << endl;
+	cout << Number2 << endl;
+
+}
+
+
+int main()
+{
+
+	swaping_two_Numbers();
+
+
+	return 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The  # 15 :        Rectangle Area using the Procedural and the Function
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+short  Rectangle_Area_Calculation(short a, short b)
+{
+
+	return a * b;
+
+}
+
+
+void Reques_Rectangle_Area_From_User()
+{
+
+	short a, b;
+
+	cout << "Pleas enter the \'a\' of the rectangle : ";
+	cin >> a;
+
+	cout << "Pleas enter the \'b\' of the rectangle : ";
+	cin >> b;
+	cout << endl;
+
+	cout << "The result is : ";
+
+	cout << Rectangle_Area_Calculation(a, b) << endl;
+
+}
+
+
+
+int main()
+{
+
+	Reques_Rectangle_Area_From_User();
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The  # 16 :     it is about calculate rectangle area through diagonal and side
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+float Result_Of_Culculate_rectangle_Area_Through_Diagonal_and_side(float a, float d)
+{
+
+	return a * sqrt(pow(d, 2) - pow(a, 2));
+
+
+}
+
+
+
+void Culculate_rectangle_Area_Through_Diagonal_and_side()
+{
+
+	float a, d;
+
+	cout << "Pleas enter the side \'a\' her : ";
+	cin >> a;
+
+	cout << "Pleas enter the diagonal \'d\' her : ";
+	cin >> d;
+
+	cout << Result_Of_Culculate_rectangle_Area_Through_Diagonal_and_side(a,d) << endl;
+
+}
+
+
+
+int main()
+{
+
+
+	Culculate_rectangle_Area_Through_Diagonal_and_side();
+
+
+	return 0;
+}
+
+
+
+
+
+The  # 18 :
+
+
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+
+
+
+float Rsult_of_circle_Area_by_Redius(float r)
+{
+	const float PI = 3.14159265359;
+
+	return PI * pow(r, 2);
+
+}
+
+
+
+void Circle_Area()
+{
+
+	float r;
+
+
+	cout << "Pleas enter Radius \'r\' of the circle : ";
+	cin >> r;
+
+	cout << "The result is : " << fixed << setprecision(2) << Rsult_of_circle_Area_by_Redius(r) << endl;
+	
+
+}
+
+
+int main()
+{
+
+
+	Circle_Area();
+
+
+	return 0;
+}
+
+
+The  # 19 :         it is about to calculate circle area by diameter 
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+float Result_of_Circle_Area_By_Diameter(float D)
+{
+	const float PI = 3.14159265359;
+
+
+
+	return (PI * pow(D, 2) ) / 4 ;
+}
+
+void Circle_Area_By_Diameter()
+{
+	float D;
+
+	cout << "Pleas enter the diameter \'D\' of the circle : ";
+	cin >> D;
+
+	cout << "The result is : " << fixed << setprecision(2) << Result_of_Circle_Area_By_Diameter(D) << endl;
+
+
+
+
+}
+
+
+int main()
+{
+
+	Circle_Area_By_Diameter();
+
+	return 0;
+}
+
+
+
+
+
+
+
+The  # 20 :
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+float Result_of_Circle_Area_By_Diameter(float A)
+{
+	const float PI = 3.14159265359;
+
+
+
+	return PI * (pow(A / 2, 2));
+}
+
+void Circle_Area_By_inscribed_square()
+{
+	float A;
+
+	cout << "Pleas enter the inscribed square  \'A\' of the circle : ";
+	cin >> A;
+
+	cout << "The result is : " << fixed << setprecision(2) << Result_of_Circle_Area_By_Diameter(A) << endl;
+
+
+
+
+}
+
+
+int main()
+{
+
+	Circle_Area_By_inscribed_square();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The  # 21 :           it is about : calculate circle area along the circumference  محيط
+ 
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+
+float Result___calculation_circle_area_along_the_circumference(float L)
+{
+	const float PI = 3.14159265359;
+
+	return pow(L, 2) / (4 * PI);
+}
+
+void calculation_circle_area_along_the_circumference()
+{
+
+	float L;
+
+	cout << "Pleas enter the circumference \'L\' : ";
+	cin >> L;
+
+	cout << "	The result is : " << fixed << setprecision(3) << Result___calculation_circle_area_along_the_circumference(L) << endl;
+
+}
+
+
+int main()
+{
+
+	calculation_circle_area_along_the_circumference();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The  # 22 :       it is about : calculate circle area inscribed in an isoscel triangle 
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+float Result___calculate_circle_area_Inscribed_in_an_Isosceles_Triangle(float a, float b)
+{
+	const double PI = 3.14159265359;
+
+	return PI * (pow(b, 2) / 4) * ((2 * a - b) / (2 * a + b));
+
+}
+
+void calculate_circle_area_Inscribed_in_an_Isosceles_Triangle()
+{
+
+	float a, b;
+
+	cout << "Pleas enter the side of  the   isosceles   Triangle \'a\' : ";
+	cin >> a;
+
+	cout << "Pleas enter the side down of the isosceles Triangle \'b\' : ";
+	cin >> b;
+
+	cout << "		The result is : " << fixed << setprecision(3) << Result___calculate_circle_area_Inscribed_in_an_Isosceles_Triangle(a, b) << endl;
+
+}
+
+
+int main()
+{
+
+	calculate_circle_area_Inscribed_in_an_Isosceles_Triangle();
+
+	return 0;
+}
+
+
+
+
+
+
+
+The  # 23 :       it is about calculate circle area circle described around an arbitrary triangle
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+
+float Result_circle_area_described_around_an_arbitrary_triangle(float a, float b, float c)
+{
+	const double PI = 3.14159265359;
+	float p = (a + b + c) / 2;
+
+	float A = (a * b * c) / (   4 * sqrt(  p * (p - a) * (p - b) * (p - c) )    );
+	
+
+	return PI * pow(A, 2);
+
+}
+
+void circle_area_described_around_an_arbitrary_triangle()
+{
+
+	float a, b, c;
+
+	cout << "Pleas enter the \'a\' of the arbitrary triangle : \n";
+	cin >> a;
+
+	cout << "Pleas enter the \'b\' of the arbitrary triangle : \n";
+	cin >> b;
+
+	cout << "Pleas enter the \'c\' of the arbitrary triangle : \n";
+	cin >> c;
+
+	cout << "The result is : " << fixed << setprecision(3) << Result_circle_area_described_around_an_arbitrary_triangle(a, b, c) << "\n";
+
+
+}
+
+
+
+int main()
+{
+
+	circle_area_described_around_an_arbitrary_triangle();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+The  # 31 :        it is about doing power to a number 3 taymes 
+
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+double Result___Number1_Pow4__3_Nembers_Pwor(double Number1)
+{
+
+	return pow(Number1, 4);
+
+}
+double Result___Number1_Pow3__3_Nembers_Pwor(double Number1)
+{
+
+	return pow(Number1, 3);
+
+}
+double Result___Number1_Pow2__3_Nembers_Pwor(double Number1)
+{
+
+	return pow(Number1, 2);
+
+}
+
+void _3_Nembers_Pwor()
+{
+	double Number1;
+
+	cout << "Pleas enter the Fist Number : \n";
+	cin >> Number1;
+	
+
+	
+
+
+	cout << "\nThe result is : \n";
+	
+	cout << Result___Number1_Pow2__3_Nembers_Pwor(Number1) << "\n";
+
+	cout << Result___Number1_Pow3__3_Nembers_Pwor(Number1) << "\n";
+
+	cout << Result___Number1_Pow4__3_Nembers_Pwor(Number1) << "\n";
+
+
+
+
+
+
+}
+
+
+
+int main()
+{
+
+
+	_3_Nembers_Pwor();
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+The  # 32 :   it is about to enter a Number and the Power that you want to do to it 
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+float Result___Power_of_a_Number(float Number, float Power)
+{
+
+	return pow(Number, Power);
+}
+
+void Power_of_a_Number()
+{
+
+	float Number, Power;
+
+	cout << "Pleas enter the Number : \n";
+	cin >> Number;
+
+	cout << "Pleas enter the Power  : \n";
+	cin >> Power;
+
+	cout << "\nThe result is : \n" << Result___Power_of_a_Number(Number, Power) << "\n";
+
+}
+
+
+
+
+int main()
+{
+
+	Power_of_a_Number();
+
+	return 0;
+}
+
+
+
+
+
+The  # 42 :   it is about Transfer from Days,Hours,Minutes,Second  to  Second 
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+struct stTransfer
+{
+
+	int from_Days_to_Seconds;
+	int from_Hours_to_Seconds;
+	int from_Minutes_to_Seconds;
+	int from_Seconds_to_Seconds;
+	
+};
+struct stTime_calculation
+{
+
+	int Number_of_Days;
+	int Number_of_Hours;
+	int Number_of_Minutes;
+	int Number_of_Seconds;
+	stTransfer Trensfer;
+
+};
+
+
+void Transfer_time_to_seconds()
+{
+
+	stTime_calculation Time_calculation ;
+
+	cout << "Pleas enter the Nuber of Days : \n";
+	cin >> Time_calculation.Number_of_Days;
+
+	Time_calculation.Trensfer.from_Days_to_Seconds = Time_calculation.Number_of_Days * 24 * 60 * 60;
+
+	cout << "Pleas enter the Nuber of Hours : \n";
+	cin >> Time_calculation.Number_of_Hours;
+
+	Time_calculation.Trensfer.from_Hours_to_Seconds = Time_calculation.Number_of_Hours * 60 * 60;
+
+	cout << "Pleas enter the Nuber of Minutes : \n";
+	cin >> Time_calculation.Number_of_Minutes;
+
+	Time_calculation.Trensfer.from_Minutes_to_Seconds = Time_calculation.Number_of_Minutes  * 60;
+
+	cout << "Pleas enter the Nuber of Seconds : \n";
+	cin >> Time_calculation.Number_of_Seconds;
+
+	Time_calculation.Trensfer.from_Seconds_to_Seconds = Time_calculation.Number_of_Seconds * 1 ;
+
+
+
+	int Result = Time_calculation.Trensfer.from_Days_to_Seconds + Time_calculation.Trensfer.from_Hours_to_Seconds + Time_calculation.Trensfer.from_Minutes_to_Seconds + Time_calculation.Trensfer.from_Seconds_to_Seconds;
+
+
+	cout << "The transfer from Days,Hours,Minutes,Second  to  Second is :   " << Result << endl;
+
+	
+	
+}
+
+
+
+
+int main()
+{
+
+	Transfer_time_to_seconds();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The  # 43 :     it is about transfer from seconds to   to_Day_Hours_Minutes_Seconds
+
+
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+void Time_from_seconds_to_Day_Hours_Minutes_Seconds()
+{
+
+	int Total_Seconds;
+
+	cout << "Pleas enter the Total Seconds that you want to change :		";
+	cin >> Total_Seconds;
+
+
+	int Seconds_Per_Day = 24 * 60 * 60;
+	int Seconds_Per_Hour = 60 * 60;
+	int Seconds_Per_Minute = 60;
+	
+
+	int Number_of_Days = floor(Total_Seconds / Seconds_Per_Day);
+	int Fruction_of_days = Total_Seconds % Seconds_Per_Day;
+
+	int Number_of_Hours = floor(Fruction_of_days / Seconds_Per_Hour);
+	int Fruction_of_Hours = Total_Seconds % Seconds_Per_Hour;
+
+	int Number_of_Minutes = floor(Fruction_of_Hours / Seconds_Per_Minute);
+	int Fruction_of_Minutes = Total_Seconds % Seconds_Per_Minute;
+
+	int Number_of_Seconds = Fruction_of_Minutes;
+
+
+	cout << "\nThe result is :		" << Number_of_Days << ":" << Number_of_Hours << ":" << Number_of_Minutes << ":" << Number_of_Seconds << "\n";
+
+}
+
+
+
+int main()
+{
+
+	Time_from_seconds_to_Day_Hours_Minutes_Seconds();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

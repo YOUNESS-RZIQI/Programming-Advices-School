@@ -1,0 +1,370 @@
+# 16 sqrt :
+            it is about " weite a protram to calculate rectangle area through diagonal and side  area of rectangle and print it on the screen. "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	float a, d;
+
+	cout << "Pleas enter side (a) : ";
+	cin >> a;
+	cout << "Pleas enter diagonal  (d) : ";
+	cin >> d;
+
+	float Area = a * sqrt(pow(d, 2) - pow(a, 2));
+
+	cout << "The rectangle area is : \n" << Area << endl;
+
+	return 0;
+}
+
+
+
+
+
+# 18 ceil :
+           it is about " write a program to calculate circle area then print it on the screen. "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	const float PI = 3.14;
+	float r;
+
+	cout << "Pleas enter the \"r\" of the circle : ";
+	cin >> r;
+
+	int Area = PI * pow(r, 2);
+
+	cout << "The result is :  " << ceil(Area) << endl;
+	
+
+	return 0;
+}
+
+
+
+# 19 ceil :
+
+        it is about " Write a program to calculate circle area through diameter, then print it on the screen "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	const float PI = 3.14;
+	float D;
+
+	cout << "Pleas enter the diameter \"D\" : ";
+	cin >> D;
+
+	float Area = (PI * pow(D, 2)) / 4;
+
+	cout << "The circle area though diameter is : " << ceil(Area) << endl;
+
+	return 0;
+}
+
+
+
+
+
+
+
+# 20 ceil :             
+
+             it is about " Write a program to calculate circle area inscribed in a squre, then print it  on the screen "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	const float PI = 3.14;
+	float A;
+
+	cout << "Pleas enter the square side \"A\" : ";
+	cin >> A;
+
+	float Area = PI * pow(A / 2, 2);
+
+	cout << "The circle Area is :	" << ceil(Area) << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+# 21 floor :
+
+                it is about " Write a program to calculate circle area along the circumference, then print it on the screen "
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	const float  PI = 3.14;
+	float L;
+
+	cout << "Pleas enter the circumference \"L\" : ";
+	cin >> L;
+
+	float Area = floor(pow(L, 2) / (4 * PI));
+
+	cout << "The circle area is : " << Area << endl;
+
+
+	return 0;
+}
+
+
+
+
+# 22 floor :
+
+                it is about " Write a program to calvulate circle area Inscribed in an Isosceles, then print it on the screen "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	float a, b;
+	const float PI = 3.14;
+
+	cout << "Pleas enter the \"a\" of the isosceles triangle : ";
+	cin >> a;
+
+	cout << "Pleas enter the \"b\" of the isosceles triangle : ";
+	cin >> b;
+
+	float Area = PI * (pow(b, 2) / 4) * ((2 * a - b) / (2 * a + b));
+
+	cout << "The result is : " << floor(Area) << "\n";
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+# 23 round :
+
+                     it is about " Write a program to calculate circle area circle described around an arbitrary triangle, then print it on the screen. "
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	float a, b, c;
+	
+	const float PI = 3.14;
+
+	cout << "Pleas enter the \"a\" side : ";
+	cin >> a;
+	cout << "Pleas enter the \"b\" side : ";
+	cin >> b;
+	cout << "Pleas enter the \"c\" side : ";
+	cin >> c;
+
+	const float p = (a + b + c) / 2;
+	float calculaion = (a * b * c) /  (  4 * sqrt( p * (p - a) * (p - b) * (p - c))   )  ;
+	float Area = PI * pow(calculaion, 2) ;
+
+	cout << "The result is : " << round(Area) << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+# 31 round :
+
+                 it is about  " Write a program to ask the rser to enter Number, Then Print the Number^2,Number^3,Number^4 "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	float Number;
+
+	cout << "Pleas enter the number her : ";
+	cin >> Number;
+
+	float N1 = pow(Number, 2), N2 = pow(Number, 3), N3 = pow(Number, 4);
+
+	cout << round(N1) << endl;
+	cout << round(N2) << endl;
+	cout << round(N3) << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+# 32 round :
+
+             it is about " Write a program to ask the user to enter Number,M . then print the Number^M "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	float Number, M;
+
+	cout << "Pleas enter the a Number : ";
+	cin >> Number;
+
+	cout << "Pleas enter the Power : ";
+	cin >> M;
+
+	float Result = pow(Number, M);
+
+	cout << "The result is : " << round(Result) << endl;
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+# 42 round :
+
+            " Write a program to calculate the task duration in seconds and print it on screen / Given the time furation of a task in the number of days, hours,munutes, and seconds, "
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+
+	int Days, Houres, Minutes, Seconds;
+
+	cout << "Pleas enter the Number of Days her : ";
+	cin >> Days;
+	cout << "Pleas enter the Number of Houres her : ";
+	cin >> Houres;
+	cout << "Pleas enter the Number of Minutes her : ";
+	cin >> Minutes;
+	cout << "Pleas enter the Number of Seconds her : ";
+	cin >> Seconds;
+
+
+	float TotalSeconds = (Days * 24 * 60 * 60) + (Houres * 60 * 60) + (Minutes * 60) + Seconds;
+	cout << "The result is :\n                 ";
+	cout << round(TotalSeconds) << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+# 43 round :
+
+        " Write a program the inputs the number of seconds and changes ot to days, hours,minutes, and seconds "
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	int NumberOfSeconds;
+
+	cout << "Pleas enter the number of seconds : ";
+	cin >> NumberOfSeconds;
+	cout << endl;
+
+
+	const int NumberOfSecondsPerDay = 24 * 60 * 60, NumberOfSecondsPerHour = 60 * 60, NumberOfSecondsPerMinute = 60;
+	
+	int NumberOfDays = NumberOfSeconds / NumberOfSecondsPerDay;
+	int Result1 = NumberOfSeconds % NumberOfSecondsPerDay ;
+	int NumberOfHours = Result1 / NumberOfSecondsPerHour;
+	int Result2 = Result1  % NumberOfSecondsPerHour;
+	int NumberOfMinutes = Result2 / NumberOfSecondsPerMinute;
+	int NumberofSeconds = Result2 % NumberOfSecondsPerMinute;
+
+
+	cout << round( NumberOfDays ) << ":" << round( NumberOfHours )<< ":" << round( NumberOfMinutes ) << ":" << round( NumberofSeconds ) << ":" ;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+

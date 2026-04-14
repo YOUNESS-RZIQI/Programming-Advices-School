@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+
+bool is_leap_Year(const int& Year)
+{
+	return (Year % 400 == 0) || ((Year % 4 == 0) && (Year % 100 != 0));
+}
+
+int main()
+{
+
+
+	int Year = Input_Lib::Read_Positive_Number("Enter Number : ");
+
+	if (is_leap_Year(Year))
+	{
+		cout << "\n\nYes leap Year\n\n";
+	}
+	else
+	{
+		cout << "\n\nNo Not a leap Year\n\n";
+	}
+
+	system("pause>0");
+	return 0;
+}

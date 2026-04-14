@@ -1,0 +1,124 @@
+
+
+
+My version : 
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+bool is_there_is_fraction(float Number)
+{
+
+	int Num1 = Number;
+	Number = Number - Num1;
+
+	if (Number > 0)
+		return true;
+	else
+		return false;
+
+}
+
+bool is_leap_Year(const float & Year)
+{
+
+	if (!is_there_is_fraction((Year / 400)))
+	{
+		return true;
+	}
+
+	if (!is_there_is_fraction((Year / 4)) && is_there_is_fraction((Year / 100)))
+	{
+			return true;
+	}
+
+	return false;
+}
+
+int main()
+{
+
+
+	int Year = Input_Lib::Read_Positive_Number("Enter Number : ");
+
+	if (is_leap_Year(Year))
+	{
+		cout << "\n\nYes leap Year\n\n";
+	}
+	else
+	{
+		cout << "\n\nNo Not a leap Year\n\n";
+	}
+
+	system("pause>0");
+	return 0;
+}
+
+
+
+
+
+
+Teacher version : 
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+
+bool is_leap_Year(const int & Year)
+{
+
+	if (Year % 400 == 0)
+	{
+		return true;
+	}
+
+	else if (Year % 100 == 0)
+	{
+		return false;
+	}
+
+	else if (Year % 4 == 0)
+		return true;
+
+	return false;
+}
+
+int main()
+{
+
+
+	int Year = Input_Lib::Read_Positive_Number("Enter Number : ");
+
+	if (is_leap_Year(Year))
+	{
+		cout << "\n\nYes leap Year\n\n";
+	}
+	else
+	{
+		cout << "\n\nNo Not a leap Year\n\n";
+	}
+
+	system("pause>0");
+	return 0;
+}

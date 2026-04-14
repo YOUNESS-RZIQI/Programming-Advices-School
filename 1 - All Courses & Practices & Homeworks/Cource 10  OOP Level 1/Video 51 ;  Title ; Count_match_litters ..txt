@@ -1,0 +1,56 @@
+C ++ : 
+
+
+
+
+
+
+
+
+/*
+                       Title : Count_match_litters .                    
+
+
+
+Description : This function counts how many times a given character
+                 appears in a string. It can perform a case-sensitive
+                 or case-insensitive comparison depending on the
+                 'match' parameter (1 = case-sensitive, 0 = case-insensitive).
+*/
+
+
+#include "clsString.h"
+
+
+
+static int Count_match_litters(string s,char letter , short match = true)
+{
+    int counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if (match)
+        {
+            if (s[i] == letter)
+                counter++;
+        }
+        else if (!match)
+        {
+            if(tolower(s[i]) == tolower(letter))
+                counter++;
+        }
+    }
+
+    return (counter);
+}
+
+
+int main(void)
+{
+
+   
+    cout << Count_match_litters("BB bbb",'b',0);
+    cout << endl;
+
+    return 0;
+}

@@ -1,0 +1,276 @@
+The 1 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+enum enWeekDay { Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7 };
+
+void ShowWeekDayMenue()
+{
+    cout << "************************" << endl;
+    cout << "       Week Days        " << endl;
+    cout << "************************" << endl;
+    cout << "1: Sunday" << endl;
+    cout << "2: Monday" << endl;
+    cout << "3: Tuesday" << endl;
+    cout << "4: Wednesday" << endl;
+    cout << "5: Thursday" << endl;
+    cout << "6: Friday" << endl;
+    cout << "7: Saturday" << endl;
+    cout << "************************" << endl;
+    cout << "Please enter the number of day?" << endl;
+
+
+}
+
+enWeekDay Asking_for_Day()
+{
+
+    int Wd;
+    cin >> Wd;
+    return (enWeekDay)Wd;
+
+}
+
+string Rsult_Of_Input_Day_Menue(enWeekDay wd)
+{
+
+    switch (wd)
+    {
+    case Sun:
+        return "  Sun  \n";
+        break;
+    case Mon:
+        return "  Mon  \n";
+        break;
+    case Tue:
+        return "  Tue  \n";
+        break;
+    case Wed:
+        return "  Wed  \n";
+        break;
+    case Thu:
+        return "  Thu  \n";
+        break;
+    case Fri:
+        return "  Fri  \n";
+        break;
+    case Sat:
+        return "  Sat  \n";
+        break;
+    default:
+        return "  Error  \n";
+        break;
+    }
+
+
+
+
+}
+
+int main()
+{
+
+    ShowWeekDayMenue();
+	
+                      /*                                     ?                              */
+    cout << " This is : " << Rsult_Of_Input_Day_Menue(Asking_for_Day());
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+The 2 one : 
+
+
+#include <iostream>
+using namespace std;
+
+enum EnMonth { January = 1, February = 2, March = 3, April = 4, May = 5, June = 6, July = 7, August = 8, September = 9, October = 10, November = 11, December = 12 };
+
+void Show_Menu()
+{
+
+	cout << "*********************************************************\n";
+	cout << "*           Choose the month :                          * \n";
+	cout << "*********************************************************\n";
+	cout << "                         (1)  January\n";
+	cout << "                         (2)  February\n";
+	cout << "                         (3)  March\n";
+	cout << "                         (4)  April\n";
+	cout << "                         (5)  May\n";
+	cout << "                         (6)  June\n";
+	cout << "                         (7)  July\n";
+	cout << "                         (8)  August\n";
+	cout << "                         (9)  September\n";
+	cout << "                         (10) October\n";
+	cout << "                         (11) November\n";
+	cout << "                         (12) December\n";
+	cout << "                         (13) Other\n";
+	cout << "*********************************************************\n";
+	cout << "       Choose your Month : ";
+
+}
+
+EnMonth Input_Month()
+{
+
+	int M;
+	cin >> M;
+	return (EnMonth)M;
+
+}
+
+string Output_Month(EnMonth M)
+{
+
+	switch (M)
+	{
+	case EnMonth::January:
+		return " January \n";
+		break;
+	case  EnMonth::February:
+		return " February \n";
+		break;
+	case  EnMonth::March:
+		return " March \n";
+		break;
+	case  EnMonth::April:
+		return " April \n";
+		break;
+	case  EnMonth::May:
+		return " May \n";
+		break;
+	case  EnMonth::June:
+		return " June \n";
+		break;
+	case  EnMonth::July:
+		return " July \n";
+		break;
+	case  EnMonth::August:
+		return " August \n";
+		break;
+	case  EnMonth::September:
+		return " September \n";
+		break;
+	case  EnMonth::October:
+		return " October \n";
+		break;
+	case  EnMonth::November:
+		return " November \n";
+		break;
+	case EnMonth::December:
+		return " December \n";
+		break;
+	default:
+		return " Error \n";
+		break;
+	}
+
+
+}
+
+int main()
+{
+
+	Show_Menu();
+
+	cout << " The Month that you choosed is : " << Output_Month(Input_Month());
+
+
+	return 0;
+}
+
+
+
+The 3 one : 
+
+
+#include <iostream>
+using namespace std;
+
+enum EnSystem_Color { Red = 1, Bleu = 2 , Yellow =3 , Green =4};
+
+void System_Color_Menu()
+{
+
+	cout << "*****************************************************\n";
+	cout << "*                    System Color                   *\n";
+	cout << "*****************************************************\n";
+	cout << "*                                                   *\n";
+	cout << "*       1: Red                                      *\n";
+	cout << "*       2: Bleu                                     *\n";
+	cout << "*       3: Yellow                                   *\n";
+	cout << "*       4: Green                                    *\n";
+	cout << "*                                                   *\n";
+	cout << "*****************************************************\n";
+	cout << endl;
+	cout << "           Choose one Color : ";
+
+
+}
+
+EnSystem_Color Asking_For_System_Color()
+{
+
+	int SC;
+	cin >> SC;
+	return (EnSystem_Color)SC;
+
+}
+
+int System_Result(EnSystem_Color v)
+{
+
+	switch (v)
+	{
+	case Red:
+		return system("color 4F ");
+		break;
+	case Bleu:
+		return system("color 1F");
+		break;
+	case Yellow:
+		return system("color 6F");
+		break;
+	case Green:
+		return system("color 2F");
+		break;
+	default:
+		return system("color F0");
+		break;
+	}
+
+}
+
+int main()
+{
+
+	System_Color_Menu();
+
+	cout << System_Result(Asking_For_System_Color());
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+

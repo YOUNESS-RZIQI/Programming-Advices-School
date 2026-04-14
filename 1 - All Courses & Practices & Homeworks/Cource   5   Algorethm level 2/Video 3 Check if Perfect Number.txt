@@ -1,0 +1,149 @@
+My Code : 
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+enum en_Perfect_Num_or_Not{ Perfect , Not_Perfect};
+
+int Enter_Positive_Number(string Message)
+{
+
+	int Num;
+
+	do
+	{
+
+		cout << Message;
+		cin >> Num;
+
+
+	} while (Num <= 0);
+
+
+	return Num;
+
+}
+
+en_Perfect_Num_or_Not Check_Perfect_Number_or_Not(int Num)
+{
+
+	int Sum = 0;
+
+	
+	for (int i = 1; i <= Num/2 ; i++)
+	{
+
+		if ( Num % i == 0 )
+		{
+			Sum += i;
+		}
+
+	}
+
+	if (Sum == Num)
+		return en_Perfect_Num_or_Not::Perfect ;
+	else
+		return en_Perfect_Num_or_Not::Not_Perfect ;
+
+	
+
+}
+
+void Print_If_Perfect_Number_or_Not_Result(int Num)
+{
+
+	if (Check_Perfect_Number_or_Not(Num) == en_Perfect_Num_or_Not::Perfect)
+		cout  << Num << " is Perfect Number\n\n";
+	else 
+		cout  << Num << " is Not Perfect Number\n\n";
+
+}
+
+int main()
+{
+
+	
+
+	Print_If_Perfect_Number_or_Not_Result(Enter_Positive_Number("Please enter a Number : "));
+
+	return 0;
+}
+
+
+
+
+The teacher Code : 👌👌👌
+
+
+
+
+#include <iostream>
+using namespace std;
+
+
+int Enter_Positive_Number(string Message)
+{
+
+	int Num;
+
+	do
+	{
+
+		cout << Message;
+		cin >> Num;
+
+
+	} while (Num <= 0);
+
+
+	return Num;
+
+}
+
+bool Check_Perfect_Number_or_Not(int Num)
+{
+
+	int Sum = 0;
+
+	
+	for (int i = 1; i <= Num/2 ; i++)
+	{
+
+		if ( Num % i == 0 )
+		{
+			Sum += i;
+		}
+
+	}
+
+	return Num == Sum;
+}
+
+void Print_If_Perfect_Number_or_Not_Result(int Num)
+{
+
+	if (Check_Perfect_Number_or_Not(Num))
+		cout  << Num << " is Perfect Number\n\n";
+	else 
+		cout  << Num << " is Not Perfect Number\n\n";
+
+}
+
+int main()
+{
+
+	
+
+	Print_If_Perfect_Number_or_Not_Result(Enter_Positive_Number("Please enter a Number : "));
+
+	return 0;
+}
+
+
+
+
+

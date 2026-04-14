@@ -1,0 +1,38 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <cctype>
+using namespace std;
+
+
+int main()
+{
+
+	char x , y;
+
+	x = toupper('A');
+	y = tolower('a');
+
+	cout << "to upper (A) : " << x << "\n\n";
+	cout << "to lower (a) : " << y << "\n\n";
+
+
+	x = toupper('a');
+	y = tolower('A');
+
+	cout << "to upper (a) : " << x << "\n\n";
+	cout << "to lower (A) : " << y << "\n\n";
+
+	cout << "isdigit (9) : " << isdigit('9') << endl;
+	cout << "isdigit (a) : " << isdigit('a') << endl;
+	cout << "is upper (A): " << isupper('A') << endl;
+	cout << "is upper (a): " << isupper('a') << endl;
+	cout << "is lower (a): " << islower('a') << endl;
+	cout << "is lower (A): " << islower('A') << endl;
+	cout << "is punctuation (@): " << ispunct('@') << endl;
+	cout << "is punctuation (a): " << ispunct('a') << endl;
+
+
+	return 0;
+}

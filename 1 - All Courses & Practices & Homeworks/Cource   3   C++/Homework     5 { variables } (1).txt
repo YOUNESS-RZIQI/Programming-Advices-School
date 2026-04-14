@@ -1,0 +1,108 @@
+code 1 :
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+
+{
+
+	string Name = "Youness RZIQI.";
+	unsigned short int Age = 45;
+	string City = "Amman.";
+	string Country = "Jordan.";
+	float  MonthlySalary = 5000;   //  float because it coulde be in the salary ممكن يكون فيه كسور  always do float for those who coulde be a float
+	float YearlySalary = MonthlySalary * 12;    //  float because it coulde be in the salary ممكن يكون فيه كسور  always do float for those who coulde be a float
+	char Gender = 'M';
+	bool isMarried = true;         // or 1 
+
+	cout << "**********************************\n";
+	cout << "Name: " << Name << endl;
+	cout << "Age : " << Age << "years.\n";
+	cout << "city : " << City << endl;
+	cout << "Country: " << Country << endl;
+	cout << "Monthly Salary : " << MonthlySalary << endl;
+	cout << "Yeraly salary : " << YearlySalary << endl;
+	cout << "Gender : " << Gender << endl;
+	cout << "Married : " << isMarried << endl;
+	cout << "**********************************\n" << endl << endl << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+code 2 :
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+
+	short int Numeber1 = 20;
+	short int Numeber2 = 30;
+	short int Numeber3 = 10;
+	short int Total = 60;
+
+	cout << Numeber1 << " +\n";
+	cout << Numeber2 << " +\n";
+	cout << Numeber3 << endl << endl;
+	cout << "---------------------------------------------\n\n";
+	cout << "Total = " << Total << endl;
+
+
+	return 0;
+}
+
+
+
+
+
+code 3 :
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+
+	unsigned short Age = 25, YourAgeAfter5Years = Age + 5;
+
+
+	cout << "After 5 years you will be  " << YourAgeAfter5Years << " years old.\n";
+
+
+
+
+
+
+	return 0;
+}
+
+

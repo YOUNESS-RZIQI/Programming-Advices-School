@@ -1,0 +1,102 @@
+#include <iostream>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+void Read_Array(int Arr[30], int& length)
+{
+
+	cout << "\n   Enter Arry Element : \n";
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << "\nElement [" << i + 1 << "] : ";
+		cin >> Arr[i];
+
+	}
+	
+}
+
+void Print_Original_Array(int Arr[30], int length)
+{
+
+	cout << "\nOriginal Array : ";
+
+	for (int i = 0; i < length; i++)
+	{
+
+		cout << Arr[i] << " ";
+
+	}
+
+
+}
+
+int Number_Repition(int Num_to_Check , int Arr[30] , int length	)
+{
+
+	int Counter = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+
+		if (Num_to_Check == Arr[i])
+		{
+			Counter++;
+		}
+
+	}
+
+	return Counter;
+}
+
+void Result()
+{
+
+	int Arr[30], Num_to_Check, length;
+
+	length = Enter_Positive_Number("Enter Num Array to generate : ");
+
+	Read_Array(Arr, length);
+
+	Num_to_Check = Enter_Positive_Number("\nEnter the Number you want to Check : ");
+
+	
+	cout << "***********************\n";
+
+	Print_Original_Array(Arr, length);
+	cout << endl;
+
+	cout << Num_to_Check << " is repeted "
+		<< Number_Repition(Num_to_Check, Arr, length) << " Time(s)\n\n";
+
+
+}
+
+int main()
+{
+
+	Result();
+
+
+	return 0;
+}

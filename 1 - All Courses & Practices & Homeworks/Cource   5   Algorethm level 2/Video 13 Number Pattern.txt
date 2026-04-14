@@ -1,0 +1,63 @@
+//
+//input: 5
+//
+//output :
+//
+//	1
+//	22
+//	333
+//	4444
+//      55555
+
+
+#include <iostream>
+	using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+void Print_Number_Pattern(int Number)
+{
+
+	for (int j = 1; j <= Number; j++)
+	{
+
+		for (int i = 1; j >= i; i++)
+		{
+
+			cout << j;
+
+		}
+
+		cout << endl;
+		
+
+	}
+
+}
+
+
+int main()
+{
+
+	Print_Number_Pattern(Enter_Positive_Number("Please enter a positive Number : "));
+
+	return 0;
+}

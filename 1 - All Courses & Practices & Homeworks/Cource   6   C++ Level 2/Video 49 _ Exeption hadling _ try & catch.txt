@@ -1,0 +1,31 @@
+you use it if you feel that the thing well crash my be
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	vector <int> Numbers = { 1,2,3 };
+
+
+	try
+	{
+		cout << Numbers.at(3) << endl;
+
+	}
+	catch (...)
+	{
+		cout << "!!!   Crach   !!!";
+	}
+	
+	cout << "\n\n\n";
+
+	return 0;
+}

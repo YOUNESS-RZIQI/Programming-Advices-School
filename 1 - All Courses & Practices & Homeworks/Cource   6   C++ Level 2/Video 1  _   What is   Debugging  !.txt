@@ -1,0 +1,1 @@
+Debugging is to trace the code line by line to see were the problem is line by line;

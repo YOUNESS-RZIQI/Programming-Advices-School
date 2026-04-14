@@ -1,0 +1,122 @@
+/*
+
+	Calculate Project  by C++ language , using class 'clsCalculator' and you can not access the Methods and Members
+	of the clsCalculator just by instantiate an Object from the class.
+
+	clsCalculator Requirements :
+
+		1) Results output : Result After ?(add,sub,dev,mul)?   ?(Number)?   is : ?(result)?
+
+		2) Handling the Division on 0 , Replace 0 with 1
+
+		3) clear() output : Result After clear   0   is : 0
+
+		4) F.C : P_result() , Add-Sub-Mul-Dev(result) , Clear()
+
+
+*/
+
+
+#include <iostream>
+#include <string>
+#include <cstdio>
+
+using namespace std;
+
+class clsCalculator
+{
+
+	float _Old_Result = 0, _Result = 0 , _Op_Number;
+	string _Op_type = "Clear";
+
+	// this initialasation is for : if the user do Print_Result() before any Operation , so the default is Clear , 0, 0
+
+public:
+
+	void Addition(float Number)
+	{
+		_Op_Number = Number;
+		_Old_Result = _Result;
+		_Op_type = "Adding";
+		_Result = (_Old_Result + _Op_Number);
+	}
+
+	void Subtraction(float Number)
+	{
+		_Op_Number = Number;
+		_Old_Result = _Result;
+		_Op_type = "Subtraction";
+		_Result = (_Old_Result - _Op_Number);
+	}
+
+	void Multiply(float Number)
+	{
+		_Op_Number = Number;
+		_Old_Result = _Result;
+		_Op_type = "Multiply";
+		_Result = (_Old_Result * _Op_Number);
+	}
+
+	void Cancel_last_Operation()
+	{
+		_Op_Number = 0;
+		_Op_type = "Cancelling Last Operation";
+		_Result = _Old_Result;
+	}
+	void Devide(float Number)
+	{
+		if (Number == 0)
+			Number = 1;
+		_Op_Number = Number;
+		_Old_Result = _Result;
+		_Op_type = "Devide";
+		_Result = (_Old_Result / _Op_Number);
+	}
+
+	void Clear()
+	{
+		_Op_Number = 0;
+		_Old_Result = 0;
+		_Op_type = "Clear";
+		_Result = 0;
+	}
+
+	void Print_Result()
+	{
+		cout << "Result After " << _Op_type << " " << _Op_Number << " is : " << _Result << endl;
+	}
+
+};
+
+
+int main(void)
+{
+	clsCalculator Calculator;
+
+	Calculator.Addition(10);
+	Calculator.Print_Result();
+
+	Calculator.Addition(100);
+	Calculator.Print_Result();
+
+	Calculator.Subtraction(20);
+	Calculator.Print_Result();
+
+	Calculator.Devide(0);
+	Calculator.Print_Result();
+
+	Calculator.Devide(2);
+	Calculator.Print_Result();
+
+	Calculator.Multiply(3);
+	Calculator.Print_Result();
+
+	Calculator.Cancel_last_Operation();
+	Calculator.Print_Result();
+
+	Calculator.Clear();
+	Calculator.Print_Result();
+
+
+	return 0;
+}

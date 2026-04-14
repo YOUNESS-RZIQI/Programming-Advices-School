@@ -1,0 +1,162 @@
+
+First Project :
+
+
+#include <iostream>
+using namespace std;
+
+enum Color { Red, Green, Yellow, Blue};
+
+int main()
+{
+	Color Mycolor;
+
+	Mycolor = Color::Yellow;
+
+	cout << "Color is : " << Mycolor << " it means Yellow" << endl;
+
+
+	return 0;
+}
+
+
+
+
+second Project :
+
+
+
+#include <iostream>
+using namespace std;
+
+enum Color { Red, Green, Yellow, Blue };
+enum Direction { North, South, East, West };
+enum Week { Sat, Sun, Mon, Tue, Wed, Fri };
+enum Gender { Male, Female };
+enum Status { Single, Married };
+
+
+
+
+// you use the enums to assign a value in it : you say if Red Print "Red"  it is more easy then saying if 0 Print "Red" 
+
+
+
+
+
+int main()
+{
+	Color Color;
+	Direction Direction;
+	Week Week;
+	Gender Gender;
+	Status Status;
+
+
+
+	Color = Color::Red;
+	Direction = Direction::North;
+	Week = Week::Sat;
+	Gender = Gender::Male;
+	Status = Status::Single;
+
+
+	cout << " O = " << Color << " \n";
+	cout << " O = " << Direction << " \n";
+	cout << " O = " << Week << " \n";
+	cout << " O = " << Gender << " \n";
+	cout << " O = " << Status << " \n";
+
+
+
+	return 0;
+}
+
+
+therd Project : 
+
+
+                          it is about userID
+
+
+#include <iostream>
+using namespace std;
+
+struct Salary
+{
+	short Monthly, Yearly;
+
+};
+
+
+struct UserID
+{
+	string Name;
+	int Age;
+	string City;
+	string Country;
+	Salary Salary;
+	string Gender;
+	string MaritalStatus;
+	string FavoritColor;
+	
+};
+
+enum Gender {  Female, Male };
+enum MaritalStatus { Married, single };
+enum MyFavoritColor { Red, Black , Yellow, Green };
+
+
+int main()
+{
+
+	UserID userid;
+	
+	
+
+	Gender = Gender::Male;
+	MaritalStatus = MaritalStatus::single;
+	MyFavoritColor = MyFavoritColor::Black;
+
+
+
+	cout << "Enter your Name : ";
+	cin >> userid.Name;
+	cout << "Enter your Age : ";
+	cin >> userid.Age;
+	cout << "Enter your City : ";
+	cin >> userid.City;
+	cout << "Enter your Country : ";
+	cin >> userid.Country;
+	cout << "Enter your Mothly Salary : ";
+	cin >> userid.Salary.Monthly;
+	cout << "Enter your Yearly Salary : ";
+	cin >> userid.Salary.Yearly;
+	cout << "What is your Gender ? : ";
+	cin >> userid.Gender;
+	cout << "What is your Marital Status ? : ";
+	cin >> userid.MaritalStatus;
+	cout << "What is your Favorit Color ? :";
+	cin >> userid.FavoritColor;
+	cout << "\n\n\n";
+
+
+	cout << "****************************************\n";
+	cout << "Name              : " << userid.Name << ".\n";
+	cout << "Age               : " << userid.Age << ".\n";
+	cout << "City              : " << userid.City << ".\n";
+	cout << "Country           : " << userid.Country << ".\n";
+	cout << "Monthly Salary    : " << userid.Salary.Monthly << ".\n";
+	cout << "Yearly  Salary    : " << userid.Salary.Yearly << ".\n";
+	cout << "Are you Male ?    : " << Gender << ".\n";
+	cout << "Are you Married ? : " << MaritalStatus << "\n";
+	cout << "Is Black your Favorit color ? : " << MyFavoritColor << "\n";
+	cout << "****************************************" << endl  << endl << endl << endl ;
+
+
+
+	return 0;
+
+}
+
+

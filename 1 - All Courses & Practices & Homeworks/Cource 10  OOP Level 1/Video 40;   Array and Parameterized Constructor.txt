@@ -1,0 +1,44 @@
+/*
+
+                                              Title :    array and Parameterized Constructor 
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+class clsA
+{
+  public:
+  
+  int _a;
+  clsA(){}
+  clsA(int a)
+  {
+      _a = a;
+  }
+  
+  void print_int()
+  {
+      cout << _a << endl ;
+  }
+  
+  
+};
+
+
+int main()
+{
+
+    // array and Class whit Parameterized constroctur
+   
+   clsA arr[] = { clsA(10) , clsA(100) , clsA(1000)};
+
+   for ( int i = 0 ; i < 3 ; i++)
+   {
+        arr[i].print_int();
+   }
+
+    return 0;
+}

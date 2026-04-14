@@ -1,0 +1,55 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+string Read_String(string Message)
+{
+
+	string Word = " ";
+	cout << Message;
+	getline(cin, Word);
+
+	return Word;
+}
+
+char Read_char(string Message)
+{
+
+	char Word = 'a';
+	cout << Message;
+	cin >> Word;
+
+	return Word;
+}
+
+short Count_Character(const string& Word , const char & Character)
+{
+
+	short Count = 0;
+
+	for (short i = 0; i < Word.length(); i++)
+	{
+
+		if (Word[i] == Character)
+			Count++;
+
+	}
+
+	return Count;
+}
+
+int main()
+{
+
+	string Word = Read_String("Enter your String her : ");
+	char Character = Read_char("Enter you Character to check : ");
+
+	cout << "\n\nThe Character " << Character << " in the String " << Count_Character(Word, Character) << " Time(s)\n\n";
+
+
+	return 0;
+}

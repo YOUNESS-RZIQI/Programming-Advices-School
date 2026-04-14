@@ -1,0 +1,29 @@
+Class Members : 
+
+	Data Member : it is the variable tha inside the class that can hold a data
+	Members Methods : they are the Functions & Procedures inside the Class
+
+
+Code : 
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class clsPersson
+{
+private:
+	int x, y, z; // Property : controlled access to a variable
+
+public:
+	string FirstName; //   Data Member , or just Member
+	string LastName;  //   Data Member , or just Member
+
+	string FullName()  //     Method
+	{
+		return (FirstName + " " + LastName);
+	}
+};
+

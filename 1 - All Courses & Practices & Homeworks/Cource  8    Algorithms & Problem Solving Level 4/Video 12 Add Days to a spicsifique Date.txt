@@ -1,0 +1,250 @@
+
+
+
+
+Teacher Version : 
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+#include "Check_Lib.h"  // is leap year
+
+using namespace std;
+
+struct s_Date
+{
+	short Year, Month, Day;
+};
+
+int NumberOfDaysInAMonth(short Year, short Month)
+{
+	if (Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+
+}
+
+short Days_from_begining_of_Year(const short& Year, const short& Month, const short& Day)
+{
+
+	short Counter_of_Days = 0;
+
+	for (short i = 1; i < Month; i++)
+	{
+		Counter_of_Days += NumberOfDaysInAMonth(Year, i);
+	}
+	return Counter_of_Days + Day;
+}
+
+s_Date Change_Num_of_D_from_b_to_Y_M_D(const int& Day_from_bi, const short& year)
+{
+	s_Date Date;
+
+	short Remaining = Day_from_bi;
+	int Month_Days = 0;
+
+	Date.Month = 1;
+	Date.Year = year;
+
+
+	while (true)
+	{
+		Month_Days = NumberOfDaysInAMonth(Date.Year, Date.Month);
+
+		if (Remaining >= Month_Days)
+		{
+			Remaining -= Month_Days;
+
+			Date.Month++;
+
+			if (Date.Month > 12)
+			{
+				Date.Month = 1;
+				Date.Year ++;
+			}
+		}
+		else
+		{
+			Date.Day = Remaining;
+			break;
+		}
+
+	}
+	
+
+	return Date;
+}
+
+s_Date Read_info()
+{
+	s_Date Date;
+	Date.Day = Input_Lib::Read_Positive_Number("Day   : ");
+	Date.Month = Input_Lib::Read_Positive_Number("Month : ");
+	Date.Year = Input_Lib::Read_Positive_Number("Year  : ");
+	return Date;
+}
+
+int main()
+{
+
+	s_Date Date = Read_info();
+	
+
+	short User_first_Days = Days_from_begining_of_Year(Date.Year, Date.Month, Date.Day);
+
+	short Days_to_add = Input_Lib::Read_Positive_Number("\nHow many day you want to add  : ");
+
+
+	
+	
+	short Total = (Days_to_add + User_first_Days);
+
+	Date = Change_Num_of_D_from_b_to_Y_M_D(Total, Date.Year);
+
+	printf("\n\nDate from days [%d] is : %d/%d/%d\n\n", Days_to_add, Date.Day, Date.Month, Date.Year);
+
+
+	system("pause>0");
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+My Version :
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+#include "Check_Lib.h"  // is leap year
+
+using namespace std;
+
+struct s_Date
+{
+	short Year, Month, Day;
+};
+
+int NumberOfDaysInAMonth(short Year, short Month)
+{
+	if (Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+
+}
+
+short Days_from_begining_of_Year(const short& Year, const short& Month, const short& Day)
+{
+
+	short Counter_of_Days = 0;
+
+	for (short i = 1; i < Month; i++)
+	{
+		Counter_of_Days += NumberOfDaysInAMonth(Year, i);
+	}
+	return Counter_of_Days + Day;
+}
+
+s_Date Change_Num_of_D_from_b_to_Y_M_D(const int& Day_from_bi, const short& year)
+{
+	s_Date Date;
+
+	short Remaining = Day_from_bi;
+	int Month_Days = 0;
+
+	Date.Month = 1;
+	Date.Year = year;
+
+
+	while (true)
+	{
+		Month_Days = NumberOfDaysInAMonth(Date.Year, Date.Month);
+
+		if (Remaining >= Month_Days)
+		{
+			Remaining -= Month_Days;
+
+			Date.Month++;
+
+			if (Date.Month > 12)
+			{
+				Date.Month = 1;
+				Date.Year ++;
+			}
+		}
+		else
+		{
+			Date.Day = Remaining;
+			break;
+		}
+
+	}
+	
+
+	return Date;
+}
+
+int main()
+{
+
+	short Day = Input_Lib::Read_Positive_Number("Day   : ");
+	short Month = Input_Lib::Read_Positive_Number("Month : ");
+	short Year = Input_Lib::Read_Positive_Number("Year  : ");
+
+	short User_first_Days = Days_from_begining_of_Year(Year, Month, Day);
+
+	short Days_to_add = Input_Lib::Read_Positive_Number("\nHow many day you want to add  : ");
+
+
+	
+	s_Date Date;
+	short Total = (Days_to_add + User_first_Days);
+
+	Date = Change_Num_of_D_from_b_to_Y_M_D(Total, Year);
+
+	printf("\n\nDate from days [%d] is : %d/%d/%d\n\n", Days_to_add, Date.Day, Date.Month, Date.Year);
+
+
+	system("pause>0");
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+

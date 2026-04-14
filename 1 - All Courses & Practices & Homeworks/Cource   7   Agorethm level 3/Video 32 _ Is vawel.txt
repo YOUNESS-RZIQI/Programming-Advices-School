@@ -1,0 +1,33 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+bool is_Vawel( char  Ch1)
+{
+
+	Ch1 = tolower(Ch1);
+
+	return ( (Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1 == 'o') || (Ch1 == 'u') );
+	
+}
+
+int main()
+{
+
+	cout << "Please enter a character : ";
+	char Ch1;
+	cin >> Ch1;
+
+	if (is_Vawel(Ch1))
+		cout << "\nThe Character \'" << Ch1 << "\' is Vawel \n\n";
+	else
+		cout << "\nThe Character \'" << Ch1 << "\' is Not a Vawel \n\n";
+
+
+
+	return 0;
+}

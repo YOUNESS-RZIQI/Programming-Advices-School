@@ -1,0 +1,88 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+int Randam_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+void Fill_Two_Dimensional_Arrays(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Arr[i][j] = Randam_Number_In_Range(1, 100);
+		}
+
+	}
+
+
+}
+
+void Print_Two_Dimensional_Arrays(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			//printf("%d\t", Arr[i][j]);
+			cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+bool is_3x3_Matrix_Palindarom(int Arr[3][3], const short& Rows, const short& Colms)
+{
+
+	for (short i = 0; i < Rows; i++)
+	{
+
+		for (short j = 0; j < Colms/2 ; j++)
+		{
+
+			if (Arr[i][j] != Arr[i][Colms - 1 - j])
+				return false;
+		}
+
+	}
+	return true;
+}
+
+int main()
+{
+	srand((unsigned)time(NULL));
+
+	int arr[3][3], Arr[3][3] = { {7,2,1},{1,2,1}, {1,2,1} };
+	Fill_Two_Dimensional_Arrays(arr, 3, 3);
+	cout << "The 3x3 array result : \n\n";
+
+	Print_Two_Dimensional_Arrays(Arr, 3, 3);
+	cout << "\n\n" << endl;
+
+	if (is_3x3_Matrix_Palindarom(Arr, 3, 3))
+		cout << "\n\nYes\n\n";
+	else
+		cout << "\n\nNo\n\n";
+
+
+	return 0;
+}

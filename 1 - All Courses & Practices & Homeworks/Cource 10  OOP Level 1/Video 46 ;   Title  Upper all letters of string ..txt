@@ -1,0 +1,34 @@
+C++ :
+
+
+/*
+                        Title : Upper all letters of string .
+*/
+
+
+#include "clsString.h"
+
+static void Upper_all_leters(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(islower(s[i]))
+            s[i] = toupper(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+
+int main(void)
+{
+
+        string s = "you ness rzi qi";
+
+        Upper_all_leters(s);
+
+        cout << s << endl;
+
+    return 0;
+}

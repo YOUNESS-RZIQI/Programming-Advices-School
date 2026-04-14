@@ -1,0 +1,28 @@
+#pragma warning(disable : 4996)
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <ctime>
+using namespace std;
+
+
+
+int main()
+{
+
+	time_t t = time(0);
+
+	char * T = ctime(&t);
+	cout << "Time in Morocoo : " << T << "\n\n";
+
+	tm* grt_T = gmtime(&t);
+	T = asctime(grt_T);
+	cout << "Time in GRNT : " << T << "\n\n";
+
+
+	return 0;
+}

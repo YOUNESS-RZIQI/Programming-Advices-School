@@ -1,0 +1,126 @@
+
+
+
+// Two Dimensional Arrays
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+void Fill_Two_Dimensional_Arrays(int Arr[10][10])
+{
+
+	for (int i = 0; i < 10; i++)
+	{
+
+		for (int j = 0; j < 10; j++)
+		{
+			Arr[i][j] = (i + 1) * (j + 1);
+		}
+
+	}
+
+
+}
+
+void Print_Two_Dimensional_Arrays(int Arr[10][10])
+{
+
+	for (int i = 0; i < 10; i++)
+	{
+
+		for (int j = 0; j < 10; j++)
+		{
+			printf("%02d   ",Arr[i][j]);
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+
+int main()
+{
+
+	//   [Rows/Lines][Clms]
+	int Arr[10][10];
+
+	Fill_Two_Dimensional_Arrays(Arr);
+	Print_Two_Dimensional_Arrays(Arr);
+
+	cout << endl;
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Two Dimensional Arrays
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main()
+{
+
+	//   [Rows/Lines][Clms]
+	int Arr[3][4] =
+	{
+		{1, 2, 3, 4},
+		{5, 6, 7, 8},
+		{9,10,11,12},
+	};
+
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << "|";
+
+		for (int j = 0; j < 4; j++)
+		{
+
+			
+			cout << setw(2) << Arr[i][j] << " | ";
+
+		}
+
+		cout << endl;
+	}
+
+
+	return 0;
+}

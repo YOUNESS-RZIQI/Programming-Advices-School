@@ -1,0 +1,49 @@
+
+
+
+//   the difference berween Reference (& x) and pointer (*P) is that : pointer has place in the memory but the 
+//   refrence is just another name for the same variable "isme dala3e" and if it gaving to some variable we
+//   can not gave it to an other one but the pointer we can do that in the run time    :-)
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	int a = 10;
+	int& x = a;
+
+	printf("Theis is a : %d  , and this is &x : %d \n\n", a, x);
+
+	x = 20;
+
+	cout << a << endl;
+
+	int* p = &a;
+
+	cout << p << endl;
+	cout << *p << endl;
+
+	*p = 30;
+
+	cout << a << endl;
+	cout << x << endl;
+	cout << *p << endl;
+
+	int b = 39;
+	p = &b;
+
+
+	cout << p << endl;
+	cout << *p << endl;
+
+
+
+	
+	return 0;
+}

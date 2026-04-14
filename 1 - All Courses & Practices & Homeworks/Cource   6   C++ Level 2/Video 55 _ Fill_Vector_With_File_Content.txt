@@ -1,0 +1,45 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+void Fill_Vector_With_File_Content(const string & FileName , vector <string> & Vector)
+{
+
+	fstream File;
+	File.open(FileName, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+
+			Vector.push_back(Line);
+
+		}
+
+		File.close();
+	}
+
+}
+
+
+int main()
+{
+	vector <string> Vector;
+
+	Fill_Vector_With_File_Content("MyFile.txt" , Vector);
+
+	for (string & i : Vector)
+	{
+		cout << i << endl;
+	}
+	
+	return 0;
+}

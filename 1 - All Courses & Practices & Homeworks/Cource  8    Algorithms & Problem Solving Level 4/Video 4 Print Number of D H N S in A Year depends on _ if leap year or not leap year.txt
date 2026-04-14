@@ -1,0 +1,149 @@
+
+
+
+my stupid Version 
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Check_Lib.h"
+#include "Input_Lib.h"
+#include "Screen_Lib.h"
+using namespace std;
+
+void Leap_Year_D_H_M_S(short Year)
+{
+	cout << "Number of Days     in Year [" << Year << "] is : 366\n";
+	cout << "Number of Hours    in Year [" << Year << "] is : 8784\n";
+	cout << "Number of Minutes  in Year [" << Year << "] is : 527040\n";
+	cout << "Number of Seconds  in Year [" << Year << "] is : 31622400\n";
+
+}
+
+void Not_Leap_Year_D_H_M_S(short Year)
+{
+	cout << "Number of Days     in Year [" << Year << "] is : 365\n";
+	cout << "Number of Hours    in Year [" << Year << "] is : 8760\n";
+	cout << "Number of Minutes  in Year [" << Year << "] is : 525600\n";
+	cout << "Number of Seconds  in Year [" << Year << "] is : 31536000\n";
+
+}
+
+void Print_if_Leap_or_Nor_Leap_Year_D_H_M_S(short Year)
+{
+	if (Check_Lib::is_leap_Year(Year))
+	{
+		Leap_Year_D_H_M_S(Year);
+	}
+	else
+	{
+		Not_Leap_Year_D_H_M_S(Year);
+	}
+}
+
+int main()
+{
+	Screen_Lib::Blue_Screen();
+	Screen_Lib::Blue_Text();
+
+	short Year = Input_Lib::Read_Positive_Number("Please enter the year : ");
+
+	Print_if_Leap_or_Nor_Leap_Year_D_H_M_S(Year);
+	
+
+	system("pause>0");
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+Teacher Version : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Check_Lib.h"
+#include "Input_Lib.h"
+#include "Screen_Lib.h"
+using namespace std;
+
+int NumberOfDaysInAYear(short Year)
+{
+	return Check_Lib::is_leap_Year(Year) ? 366 : 365;
+}
+
+int NumberOfHourssInAYear(short Year)
+{
+	return NumberOfDaysInAYear(Year) * 24;
+}
+
+int NumberOfMinutesInAYear(short Year)
+{
+	return NumberOfHourssInAYear(Year) * 60;
+}
+
+int NumberOfSecondsInAYear(short Year)
+{
+	return NumberOfMinutesInAYear(Year) * 60 ;
+}
+
+
+void Print_if_Leap_or_Nor_Leap_Year_D_H_M_S(short Year)
+{
+	cout << "Number of Days     in Year of [" << Year << "] is : " << NumberOfDaysInAYear(Year)    << endl;
+	cout << "Number of Hours    in Year of [" << Year << "] is : " << NumberOfHourssInAYear(Year)  << endl;
+	cout << "Number of Minutes  in Year of [" << Year << "] is : " << NumberOfMinutesInAYear(Year) << endl;
+	cout << "Number of Seconds  in Year of [" << Year << "] is : " << NumberOfSecondsInAYear(Year) << endl;
+
+}
+
+int main()
+{
+	Screen_Lib::Blue_Screen();
+	Screen_Lib::Blue_Text();
+
+	short Year = Input_Lib::Read_Positive_Number("Please enter the year : ");
+
+	Print_if_Leap_or_Nor_Leap_Year_D_H_M_S(Year);
+
+
+	system("pause>0");
+	return 0;
+}
+
+
+
+
+
+ 

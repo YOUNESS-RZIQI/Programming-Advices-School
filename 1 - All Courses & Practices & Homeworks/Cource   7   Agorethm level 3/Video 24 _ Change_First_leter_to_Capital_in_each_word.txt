@@ -1,0 +1,50 @@
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <cctype>
+
+using namespace std;
+
+string Read_String()
+{
+	string String = "";
+	cout << "Please Enter you String ? ";
+	getline(cin, String);
+
+	return String;
+
+}
+
+string Change_First_leter_to_Capital( string  Word)
+{
+
+	bool is_First_letter = true;
+
+	for (int i = 0; i < Word.length(); i++)
+	{
+
+		if (Word[i] != ' ' && is_First_letter)
+		{
+			Word[i] = toupper(Word[i]);
+		}
+
+		is_First_letter = (Word[i] == ' ' ? true : false);
+
+	}
+
+	return Word;
+}
+
+int main()
+{
+	string Word = Read_String();
+
+	Word = Change_First_leter_to_Capital(Word);
+
+	cout << "\n\nThe Result is : \n";
+	cout << Word << "\n\n";
+
+
+	return 0;
+}

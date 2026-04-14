@@ -1,0 +1,72 @@
+The 1 one : 
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+			// 1-to know how much char's in a string 2- to print one char from the char's of a string
+	string Name0,Name1;
+	string MyString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	cout << "The length of the Mystring is : " << MyString.length() << endl;
+	cout << MyString[10] << endl;
+
+
+			// Doing a concatenation (lik) between two strings
+	string S1 = "10", S2 = "20";
+	cout << S1 + S2 << endl;
+
+
+			// to tur a strin to a int
+	int Sum = stoi(S1) +stoi (S2);
+	cout << Sum << endl;
+
+
+			// to read the all line
+	getline(cin,Name0 );
+	cout << Name0 << endl;
+	cin >> Name1;
+	cout << Name1 << endl;
+
+
+	return 0;
+}
+
+
+
+The 2 one : 
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string MyString1, MyString2, MyString3;
+
+	cout << "Pleas enter String1 ?\n";
+	getline(cin, MyString1);
+	cout << endl;
+
+	cout << "Please enter String2 ?\n";
+	getline(cin, MyString2);
+
+	cout << endl;
+	cout << "Please enter String3 ? \n";
+	getline(cin, MyString3);
+
+	cout << "\n**********************************\n";
+	cout << "\nThe length of string1 is " << MyString1.length() << endl;
+	cout << "Characters at 0,2,4,7 are : " << MyString1[0] << " " << MyString1[2] << " " << MyString1[4] << " " << MyString1[7] << "\n";
+	cout << "Concatenating String2 and string3 = " << MyString2 + MyString3 << "\n";
+
+	int Result = stoi(MyString2) * stoi(MyString3);
+	cout << MyString2 << "*" << MyString3 << " = " << Result << endl;
+
+
+	return 0;
+}

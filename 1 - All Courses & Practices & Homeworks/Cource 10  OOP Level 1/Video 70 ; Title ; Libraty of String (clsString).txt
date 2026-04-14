@@ -1,0 +1,586 @@
+/*
+                Title: My Class of String Functions That I Made
+*/
+
+
+
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+enum en_What_to_count { Small, Capital, All };
+
+class clsString
+{
+    private:
+
+    string _value;
+
+    public:
+
+    clsString(){_value = "";}
+    
+    clsString(string s)
+    {
+        _value = s;
+    }
+
+    void Set_Value(string value)
+    {
+        this->_value = value;
+    }
+
+    string Get_Value()
+    {
+        return _value;
+    }
+
+// 1)
+
+static int count_words_in_string(string s)
+{
+    short is_first_letter = true;
+    int counter = 0;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+            counter++;
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+    return counter;
+}
+
+int count_words_in_string()
+{
+    return count_words_in_string(_value);
+}
+
+// 2)
+
+// static if you want to use it whiout the Object.
+static void Print_first_leter(string s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+            cout << s[i];
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+// thid function just for the internal Value.
+void Print_first_leter()
+{
+    Print_first_leter(_value);
+}
+
+// 3)
+
+static void Upper_first_leter(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+            s[i] = toupper(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+void Upper_first_leter()
+{
+    Upper_first_leter(_value);
+}
+    
+
+// 4)
+
+
+static void Lower_first_leter(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+            s[i] = tolower(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+void Lower_first_leter()
+{
+    Lower_first_leter(_value);
+}
+
+// 5)
+
+static void Lower_all_leters(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(isupper(s[i]))
+            s[i] = tolower(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+void Lower_all_leters()
+{
+    Lower_all_leters(_value);
+}
+
+// 6)
+
+static void Upper_all_leters(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(islower(s[i]))
+            s[i] = toupper(s[i]);
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+void Upper_all_leters()
+{
+    Upper_all_leters(_value);
+}
+
+// 7)
+
+static char Invert_letter_case(char c)
+{
+    return isupper(c) ? tolower(c) : toupper(c);
+}
+
+
+// 9)
+
+
+string Invert_all_letters_cases(string s)
+{
+    for (int i = 0; i < s.length(); i++)
+       s[i] =  Invert_letter_case(s[i]);
+    return (s);
+}
+
+// 10)
+
+static int Count_Smale_Capital_letters(string s,en_What_to_count choice)
+{
+    int Small_counter = 0;
+    int Capital_counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if (isupper(s[i]))
+            Capital_counter++;
+        if (islower(s[i]))
+            Small_counter++;
+    }
+
+    return (choice == en_What_to_count::All ? (Capital_counter + Small_counter) : 
+            choice == en_What_to_count::Capital ? Capital_counter : Small_counter);
+}
+
+// 11)
+
+
+static int Count_Spesifc_litter(string s,char letter)
+{
+    int counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if (s[i] == letter)
+            counter++;
+    }
+
+    return (counter);
+}
+
+// 12)
+
+
+static int Count_match_litters(string s,char letter , short match = true)
+{
+    int counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if (match)
+        {
+            if (s[i] == letter)
+                counter++;
+        }
+        else if (!match)
+        {
+            if(tolower(s[i]) == tolower(letter))
+                counter++;
+        }
+    }
+
+    return (counter);
+}
+
+// 13)
+
+static bool IsVowel(char Ch1) 
+{
+    Ch1 = tolower(Ch1); 
+    return ((Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1== 'o') || (Ch1 == 'u'));
+}
+
+// 14 
+
+static int Count_vawel(string s)
+{
+    int Counter;
+
+    Counter = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (IsVowel(s[i]))
+            Counter++;
+    }
+    return (Counter);
+}
+
+int Count_vawel()
+{
+    return (Count_vawel(_value));
+}
+
+// 15
+
+static void Print_all_Voles_in_str(string s)
+{
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (IsVowel(s[i]))
+            cout << s[i];
+    }
+}
+
+void Print_all_Voles_in_str()
+{
+    Print_all_Voles_in_str(_value);
+}
+
+// 16
+
+
+static void Print_Each_word_in_string(string s)
+{
+    short is_first_letter = true;
+
+    for (size_t i = 0; i < s.length(); i++)
+    {
+        if (s[i] == ' ' )
+        {
+            if ( i > 0)
+                cout << endl;
+            while (i + 1 < s.length() && s[i + 1] == ' ')
+                i++;
+        }
+        else
+            cout << s[i];
+    }
+}
+
+void Print_Each_word_in_string()
+{
+    Print_Each_word_in_string(_value);
+}
+
+// 17 
+
+
+static int Count_each_woed_in_string(string s)
+{
+    short is_first_letter = true;
+    int word_counter = 0;
+
+    for (int i = 0; i < s.length() ; i++)
+    {
+        if ( s[i] > 32  && is_first_letter)
+            word_counter++;
+        (s[i] <= 32 ) ? is_first_letter = 1 :  is_first_letter = 0;
+    }
+    return (word_counter);
+}
+
+int Count_each_woed_in_string()
+{
+    return Count_each_woed_in_string(_value);
+}
+
+// 18 
+
+static vector <string> Split_My(string s, int tokens)
+{
+    vector <string> spleted;
+    string temp ;
+    int s_pos = 0;
+  
+    for (int i = 0; i < tokens ; i++)
+    {
+            temp = "";
+            for (s_pos; s[s_pos] == ' ' && s_pos < s.size() ; s_pos++);
+            for (s_pos; s[s_pos] != ' ' && s_pos < s.size() ; s_pos++)
+                temp += s[s_pos]; 
+
+
+        spleted.push_back(temp);
+    }
+    return (spleted);
+}
+
+vector <string> Split_My(int tokens)
+{
+   return Split_My(_value, tokens);
+}
+
+
+ //  19  Split_teacher_virsion
+
+
+static vector <string> Split(string s,string delemeter)
+{
+    vector <string> spleted;
+    int d_pos = 0;
+    string new_word;
+  
+    while ((d_pos = s.find(delemeter)) != std::string::npos)
+    {
+        new_word = s.substr(0,d_pos);
+        if (new_word != "")
+            spleted.push_back(new_word);
+
+        s.erase(0, d_pos + delemeter.length());
+    }
+    if (s != "")
+        spleted.push_back(s);
+    
+    return (spleted);
+}
+
+vector <string> Split(string delemeter)
+{
+    return Split( _value , delemeter);
+}
+
+
+//  20 Trim
+
+
+static string Trim_Left_2(string S , char seprator)
+{
+    for (int i = 0; i < S.length() ; i++)
+    {
+        if ( S[i] != seprator)
+            return (S.substr(i,S.length() - i));
+    }
+    return "";
+}
+
+string Trim_Left_2(char seprator)
+{
+    return (Trim_Left_2(_value,  seprator)) ;
+}
+
+static string Trim_Rigth_2(string S , char seprator)
+{
+    for (int i = S.length(); i > 0 ; i--)// "y  "  3
+    {
+        if ( S[i - 1] != seprator)
+            return (S.substr( 0 , i ));
+    }
+    return "";
+}
+
+string Trim_Rigth_2(char seprator)
+{
+    return (Trim_Rigth_2(_value,  seprator)) ;
+}
+
+static string Trim_2(string S, char seprator)
+{
+    return (Trim_Left_2( Trim_Rigth_2(S,seprator) ,seprator));
+}
+
+string Trim_2(char seprator)
+{
+    return (Trim_2(_value,  seprator)) ;
+}
+
+// 21  Join vector
+
+
+static string JoinString(vector<string> vString, string Delim)
+{
+    string S;
+    int i = 0;
+    for(string &word :vString)
+    {
+        S += word;
+        i++;
+        if ( i < vString.size())
+            S += Delim;
+    }
+
+    return (S);
+}
+
+// 22  Join array
+
+static string JoinString(string arrString[],short Length, string Delim)
+{
+    string S;
+    int i = 0;
+
+    for(i; i < Length ; i++)
+    {
+        S += arrString[i];
+        if ( i < Length - 1)
+            S += Delim;
+    }
+
+    return (S);
+}
+
+
+// 23  Reverse Word
+
+static string ReverseWordsInString_My_Version(string S1)
+{
+    vector <string> S_Words = Split(S1, " ");
+    string New_S;
+
+
+    for (int i  = (S_Words.size() - 1); i >= 0  ; i--)
+    {
+        New_S += S_Words[i];
+        if ( i > 0 )
+        New_S += " ";
+
+    }
+    return (New_S);
+}
+
+string ReverseWordsInString_My_Version()
+{
+    return (ReverseWordsInString_My_Version(_value));
+
+}
+
+// 24 replace word built in 
+
+static string ReplaceWordInStringUsingBuiltInFunction(string S1, string StringToReplace, string sRepalceTo)
+{
+    short pos = S1.find(StringToReplace);
+
+    while (pos != std::string::npos)
+    {
+        S1 = S1.replace(pos, StringToReplace.length(), sRepalceTo);
+        pos = S1.find(StringToReplace);//find next
+    }
+
+    return S1;
+}
+
+string ReplaceWordInStringUsingBuiltInFunction(string StringToReplace, string sRepalceTo)
+{
+    return (ReplaceWordInStringUsingBuiltInFunction(_value , StringToReplace,  sRepalceTo));
+}
+
+
+//  25 replace word in string   My Function
+
+static string Lower_all_S(string s)
+{
+    for (int i = 0; s[i] ; i++)
+    {
+        s[i] = tolower(s[i]);
+    }
+    return s;
+}
+
+static string Replace_Word_In_String_Using_Split(string S1, string StringToReplace, string sRepalceTo, bool MatchCase = true)
+{
+    vector <string> S_spleted = Split(S1 , " ");
+
+    if (MatchCase)
+    {
+        for ( int i = 0; i < S_spleted.size() ; i++)
+        {
+            if ( S_spleted[i] == StringToReplace)
+                S_spleted[i] = sRepalceTo;
+        }
+
+        return (JoinString(S_spleted, " "));
+    }
+    else
+    {
+
+        for ( int i = 0; i < S_spleted.size() ; i++)
+        {
+            if ( Lower_all_S(S_spleted[i]) == Lower_all_S(StringToReplace))
+                S_spleted[i] = sRepalceTo;
+        }
+
+        return (JoinString(S_spleted, " "));
+    }
+    return ("");
+}
+
+string Replace_Word_In_String_Using_Split( string StringToReplace, string sRepalceTo, bool MatchCase )
+{
+    return (Replace_Word_In_String_Using_Split(_value,  StringToReplace,  sRepalceTo,  MatchCase ));
+}
+
+// 26  Remove Panctuations
+
+static string Remove_Punctuations_From_String(string S1) 
+{
+    string s = "";
+    
+    for (int i = 0; i < S1.length() ; i++)
+    {
+        if (!ispunct(S1[i]))
+            s += S1[i];
+    }
+    return s;
+}
+
+string Remove_Punctuations_From_String()
+{
+    return (Remove_Punctuations_From_String(_value));
+}
+
+static int Length(string s1)
+{
+    int i = 0;
+    for (; s1[i] ; i++);
+
+    return i;
+}
+
+
+int Length()
+{
+    return Length(_value);
+}
+
+};

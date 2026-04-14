@@ -1,0 +1,50 @@
+one of the class rules : Do not set the value of the variable or Print it's value outside the class using The variable by hem self NO NO NO , you should use the Get/Set Porperties to do that.
+
+
+You should to like what i did in my code take a look :)  
+
+#include <iostream>
+using namespace std;
+
+class clsPersson
+{
+	string _FirstName;
+	string _LastName;
+public:
+	void Set_First_Name(string FirstName)
+	{
+		_FirstName = FirstName;
+	}
+	string Get_First_Name()
+	{
+		return _FirstName;
+	}
+	void Set_Last_Name(string LastName)
+	{
+		_LastName = LastName;
+	}
+	string Get_Last_Name()
+	{
+		return _LastName;
+	}
+
+	string Full_Name(string F , string L)
+	{
+		return (F + " " + L);
+	}
+};
+
+
+void main(void)
+{
+	clsPersson p;
+
+	p.Set_First_Name("youness");
+	p.Set_Last_Name("Rziqi");
+
+	cout << p.Get_First_Name() << endl;
+	cout << p.Get_Last_Name() << endl;
+	cout << p.Full_Name(p.Get_First_Name(),p.Get_Last_Name()) << endl;
+
+
+}

@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	vector <int> Numbers;
+
+	Numbers.push_back(10);
+	Numbers.push_back(20);
+	Numbers.push_back(30);
+	Numbers.push_back(40);
+	Numbers.push_back(50);
+
+
+	cout << "\n\nThe First Way using  vector.at(i) : \n\n";
+
+	cout << "The Second Element is : " << Numbers.at(1) << endl;
+	cout << "The First  Element is : " << Numbers.at(0) << endl;
+	cout << "The Therd  Element is : " << Numbers.at(2) << endl;
+	cout << "The Fore   Element is : " << Numbers.at(3) << endl;
+	cout << "The Five   Element is : " << Numbers.at(4) << endl;
+
+	cout << "\n\nThe Second Way vector[i] : \n\n";
+
+	cout << "The Second Element is : " << Numbers[0] << endl;
+	cout << "The First  Element is : " << Numbers[1] << endl;
+	cout << "The Therd  Element is : " << Numbers[2] << endl;
+	cout << "The Fore   Element is : " << Numbers[3] << endl;
+	cout << "The Five   Element is : " << Numbers[4] << endl;
+
+
+	cout << "\n\n\n";
+
+
+
+	return 0;
+}

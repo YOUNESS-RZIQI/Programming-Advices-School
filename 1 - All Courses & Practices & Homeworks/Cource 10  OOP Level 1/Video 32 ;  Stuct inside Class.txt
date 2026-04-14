@@ -1,0 +1,61 @@
+/*
+
+
+								Title :   Struct Inside Class ?
+
+
+
+		1) Is it possible to have a stuct data type inside the class ?
+
+			Yes, it is possible because it is a date type like the other date types " int, float, char, void ..."
+			
+										
+										;-)
+
+
+
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+struct st_Info
+{
+	string Full_Name;
+	float  Age , Salary;
+};
+
+class clsPerson
+{
+	st_Info Info;
+public:
+
+	clsPerson()
+	{
+		Info.Age = 22;
+		Info.Full_Name = "YOUNESS RZIQI";
+		Info.Salary = 5000;
+	}
+
+	void Print()
+	{
+		cout << "Full Name : " << Info.Full_Name << endl;
+		cout << "Age       : " << Info.Age << endl;
+		cout << "Salary    : " << Info.Salary << endl;
+	}
+
+
+};
+
+int main(void)
+{
+
+	clsPerson Person1;
+
+	Person1.Print();
+
+
+	return 0;
+}

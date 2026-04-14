@@ -1,0 +1,100 @@
+/*
+
+
+							Title : Interfaces: Pure Virtual Functions and Abstract Classes
+
+
+											" Class Contract "
+
+		1) If a Function have one or more pure virtual Function , that class became "Abstract class , Contract , Interface"
+
+		2) The Pure Virtual Function has no Implementation ( No body , Just declaration followed by " = 0; ").
+
+		3) Abstract Class you can not do an Object of it , we use it just for Inheritance.
+
+		4) Abstraction is not Abstract Class , Abstraction is hiding some thing it is inside the class but you can not 
+		   access to by the object , and abstract class is a like contract that keep the work organized.
+
+
+*/
+
+#include <iostream>
+using namespace std;
+
+
+// Abstract class / Interface / Contract . can not get Object from this class , just Inherited only.
+class clsPerson
+{
+	virtual string Full_Name(string Firs_Name, string Last_Name) = 0;
+	virtual float Salary(float Salary) = 0;
+
+	// but still  you can do some other Functions that can be Inherited .
+public:
+
+	void Hi()
+	{
+		cout << "\nHI\n";
+	}
+
+};
+
+class clsStudent : public clsPerson  // Contract
+{
+
+public:
+
+	string Full_Name(string Firs_Name, string Last_Name)
+	{
+		return Firs_Name + " " + Last_Name;
+	};
+
+	float Salary(float Salary)
+	{
+		return 5000;
+	};
+
+
+	// And you can do as mush as you want of other Function no problem , just do the contract needs and if you add  
+	// some thing it is ok
+
+	string Phone_Number(string Phone)
+	{
+		return Phone;
+	};
+
+};
+
+class clsDeveloper : public clsPerson
+{
+
+};
+
+
+int main(void)
+{
+	/*
+	 we can not do like this because it is a Abstract Class
+
+	 clsPerson Person1;
+
+	 */
+
+
+	 // Now you are obligated to the contract that says you need to have two function "Full_Name & Salary" by the same name and 
+	 // parametres Not declaration but the same data type expected and Numbers of parametres
+
+	clsStudent Student1;
+
+	Student1.Hi();
+
+	/*
+	* 
+	 Can not do the Object, bcause the class clsDeveloper does not respect the contract instructions so he need to 
+	 do Emplimantation of the Contract instructions ( pure virtual Functions) .
+	
+	  clsDeveloper Devloper;
+
+	 */
+
+	return 0;
+}

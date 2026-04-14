@@ -1,0 +1,38 @@
+
+this mode delete every thing when it is called
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <fstream>
+using namespace std;
+
+
+int main()
+{
+	fstream MyFile;
+
+	MyFile.open("MyFile.txt", ios::out);
+
+	if (MyFile.is_open())
+	{
+
+		MyFile << "Hi my name is : ";
+		MyFile << "YOUNESS ";
+		MyFile << "RZIQI";
+
+		MyFile.close();
+
+	}
+
+
+	return 0;
+}

@@ -1,0 +1,33 @@
+#pragma warning(disable : 4996)
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <ctime>
+using namespace std;
+
+
+
+int main()
+{
+
+	time_t t = time(0);
+
+	tm * Now = localtime(&t);
+
+	cout << "Year   : " << Now->tm_year + 1900 << "\n\n";
+	cout << "Month  : " << Now->tm_mon + 1 << "\n\n";
+	cout << "Hour   : " << Now->tm_hour << "\n\n";
+	cout << "Minuts : " << Now->tm_min << "\n\n";
+	cout << "Socnds : " << Now->tm_sec << "\n\n";
+	cout << "M Day  : " << Now->tm_mday << "\n\n";
+	cout << "W Day  : " << Now->tm_wday << "\n\n";
+	cout << "Time diligation : " << Now->tm_isdst << "\n\n";
+	
+
+
+	return 0;
+}

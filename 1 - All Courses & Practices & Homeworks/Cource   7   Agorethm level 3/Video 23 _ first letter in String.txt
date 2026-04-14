@@ -1,0 +1,83 @@
+My Virsion :  
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Print_First_leter_in_String(const string & Word)
+{
+
+
+	cout << "\n\nThe First Letter in Each Word in String is : \n\n";
+	cout << Word[0] << endl;
+
+	for (int i = 1; i < Word.length() - 1; i++)
+	{
+
+		if (Word[i] == ' ' )
+			cout << Word[i + 1] << endl;
+
+	}
+
+}
+
+int main()
+{
+	string String = "";
+
+	cout << "Please Enter you String ? ";
+	getline(cin, String);
+
+	Print_First_leter_in_String(String);
+
+
+	return 0;
+}
+
+
+
+
+Teacher Version : 
+
+
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Print_First_leter_in_String(const string & Word)
+{
+
+	bool is_First_letter = true;
+
+	cout << "\n\nThe First Letter in Each Word in String is : \n\n";
+
+	for (int i = 0 ; i < Word.length() ; i++)
+	{
+
+		if (Word[i] != ' ' && is_First_letter)
+			cout << Word[i] << endl;
+
+		is_First_letter = (Word[i] == ' ' ? true : false);
+
+	}
+
+}
+
+int main()
+{
+	string String = "";
+
+	cout << "Please Enter you String ? ";
+	getline(cin, String);
+
+	Print_First_leter_in_String(String);
+
+
+	return 0;
+}

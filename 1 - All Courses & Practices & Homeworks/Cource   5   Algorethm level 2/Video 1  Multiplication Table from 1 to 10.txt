@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+void Table_Header()
+{
+
+	cout << "            \t\tMultiplication Table  from 1 to 10\n";
+	cout << "\n";
+	cout << "\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10    \n";
+	cout << "-----------------------------------------------------------------------------------\n";
+
+}
+
+string Colum_Sperator(int i)
+{
+	if (i < 10)
+		return "  |\t";
+	else
+		return " |\t";
+
+}
+
+void Rest_of_Table()
+{
+
+	for (int i = 1; i <= 10; i++)
+	{
+		
+		cout << " " << i << Colum_Sperator(i);
+		
+		for (int j = 1; j <= 10; j++)
+		{
+
+			cout << i * j << "\t";
+
+		}
+
+		cout << endl;
+
+	}
+
+}
+
+
+void Print_Multiplication_Table()
+{
+
+	Table_Header();
+	Rest_of_Table();
+
+}
+
+
+
+int main()
+{
+
+	Print_Multiplication_Table();
+
+	return 0;
+}

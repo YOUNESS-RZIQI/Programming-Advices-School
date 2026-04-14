@@ -1,0 +1,372 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+enum en_Question_Level{ Easy = 1 , Medium = 2 , Hard = 3 , Mix_Level = 4};
+
+enum en_Op_Type { Add = 1 , Sub = 2 , Mult = 3 , Div = 4 , Mix_Op_Type = 5 };
+
+struct st_Question
+{
+	
+	short Num1 = 0;
+	short Num2 = 0;
+	en_Question_Level Question_Level;
+	en_Op_Type Op_Type;
+	short Correct_Answer = 0;
+	short Player_Answer = 0;
+	bool Answer_Result = true;
+
+};
+
+struct st_Quizz
+{
+
+	st_Question Question_Liste[100];
+	short Number_of_Questions = 0;
+	en_Op_Type Question_Op_Type;
+	en_Question_Level Question_Level;
+	short Number_Of_Correct_Answers = 0;
+	short Number_Of_Wrong_Answers = 0;
+	bool is_Pass = false;
+
+};
+
+int Randum_Number_In_Range(int From, int To)
+{
+
+	int RandNum = rand() % (To - From + 1) + From;
+
+	return RandNum;
+}
+
+short Read_Question_Number()
+{
+
+	short Number = 0;
+	do
+	{
+		cout << "How many Question Do you want ?  (1-10) : ";
+		cin >> Number;
+	} while (Number < 0 || Number > 10);
+
+	return Number;
+}
+
+en_Question_Level Read_Question_Level()
+{
+
+	short Number = 0;
+	while (Number < 1 || Number > 4)
+	{
+		cout << "Which Level You wnat   [1] Eays   |   [2] Medium   |   [3] Hard   |   [4] Mix   ? : ";
+		cin >> Number;
+	}
+
+	return (en_Question_Level)Number;
+}
+
+en_Op_Type Read_Question_Opration_Type()
+{
+
+	short Number = 0;
+	while (Number < 1 || Number > 5)
+	{
+		cout << "Which Op Type You wnat   [1] Add   |   [2] Sub   |   [3] Multp   |   [4] Dvide   |   [5] Mix   ? : ";
+		cin >> Number;
+	}
+
+	return (en_Op_Type)Number;
+}
+
+int Simple_Calculater(short Num1, short Num2, en_Op_Type Op_Type)
+{
+
+	switch (Op_Type)
+	{
+	case Add:
+		return Num1 + Num2;
+
+	case Sub:
+		return Num1 - Num2;
+
+	case Mult:
+		return Num1 * Num2;
+
+	case Div:
+		return Num1 / Num2;
+
+	default:
+		break;
+	}
+
+}
+
+st_Question Generat_Question(en_Question_Level Question_Level, en_Op_Type Op_Type)
+{
+
+	st_Question Question;
+
+	if (Question_Level == en_Question_Level::Mix_Level)
+	{
+		Question_Level = (en_Question_Level)Randum_Number_In_Range(1, 3);
+	}
+
+	if (Op_Type == en_Op_Type::Mix_Op_Type)
+	{
+		Op_Type = (en_Op_Type)Randum_Number_In_Range(1, 4);
+	}
+
+	Question.Op_Type = Op_Type;
+
+	switch (Question_Level)
+	{
+	case Easy:
+
+		Question.Num1 = Randum_Number_In_Range(1, 10);
+		Question.Num2 = Randum_Number_In_Range(1, 10);
+
+		Question.Correct_Answer = Simple_Calculater(Question.Num1, Question.Num2, Question.Op_Type);
+		Question.Question_Level = Question_Level;
+
+		return Question;
+
+
+	case Medium:
+
+		Question.Num1 = Randum_Number_In_Range(10, 50);
+		Question.Num2 = Randum_Number_In_Range(10, 50);
+
+		Question.Correct_Answer = Simple_Calculater(Question.Num1, Question.Num2, Question.Op_Type);
+		Question.Question_Level = Question_Level;
+
+		return Question;
+
+
+	case Hard:
+
+		Question.Num1 = Randum_Number_In_Range(50, 100);
+		Question.Num2 = Randum_Number_In_Range(50, 100);
+
+		Question.Correct_Answer = Simple_Calculater(Question.Num1, Question.Num2, Question.Op_Type);
+		Question.Question_Level = Question_Level;
+
+		return Question;
+
+	}
+
+
+	return Question;
+
+}
+
+void Generat_Quizz_Questions(st_Quizz& Quizz)
+{
+
+	for (short Question = 0; Question < Quizz.Number_of_Questions; Question++)
+	{
+
+		Quizz.Question_Liste[Question] = Generat_Question(Quizz.Question_Level, Quizz.Question_Op_Type);
+
+	}
+
+}
+
+string Get_Op_Type_Symbol(en_Op_Type Op_Type)
+{
+
+	string Op_Type_Arr[4]{ "+" , "-", "*", "/" };
+	return Op_Type_Arr[Op_Type - 1];
+
+}
+
+int Read_Player_Answer()
+{
+
+	short Answer = 0;
+	cin >> Answer;
+	
+	return Answer;
+}
+
+void Print_Quizz_Question(st_Quizz Quizz, int Question_Number)
+{
+
+	cout << "\n";
+	cout << "Question[" << Question_Number + 1 << " / " << Quizz.Number_of_Questions << "]\n\n";
+	cout << Quizz.Question_Liste[Question_Number].Num1 << endl;
+	cout << Quizz.Question_Liste[Question_Number].Num2 << " ";
+	cout << Get_Op_Type_Symbol(Quizz.Question_Liste[Question_Number].Op_Type) << endl;
+	cout << "____________\n";
+	
+
+}
+
+void Set_Screen_Color(bool Answer_Result)
+{
+	if( Answer_Result)
+	{
+		system("color 2F"); //turn screen to Green
+	}
+	else
+	{
+		system("color 4F"); //turn screen to Red
+		cout << "\a";
+	}
+
+	
+
+}
+
+void Correct_The_Question_Answer(st_Quizz& Quizz, short Question_Number)
+{
+
+	if (Quizz.Question_Liste[Question_Number].Correct_Answer != Quizz.Question_Liste[Question_Number].Player_Answer)
+	{
+
+		Quizz.Question_Liste[Question_Number].Answer_Result = false;
+		Quizz.Number_Of_Wrong_Answers++;
+
+		cout << "Wrong Answer :-( \n";
+		cout << "The Right Answer is : ";
+		cout << Quizz.Question_Liste[Question_Number].Correct_Answer << endl;
+
+	}
+	else
+	{
+
+		Quizz.Question_Liste[Question_Number].Answer_Result = true;
+		Quizz.Number_Of_Correct_Answers++;
+
+		cout << "Good Answer :-) \n";
+		
+	}
+	cout << endl;
+
+	Set_Screen_Color(Quizz.Question_Liste[Question_Number].Answer_Result);
+
+}
+
+void Ask_and_Correct_Questions_List(st_Quizz& Quizz)
+{
+
+	for (int Question_Number = 0; Question_Number < Quizz.Number_of_Questions; Question_Number++)
+	{
+
+		Print_Quizz_Question(Quizz, Question_Number);
+		Quizz.Question_Liste[Question_Number].Player_Answer = Read_Player_Answer();
+		Correct_The_Question_Answer(Quizz, Question_Number);
+
+	}
+
+	Quizz.is_Pass = (Quizz.Number_Of_Correct_Answers >= Quizz.Number_Of_Wrong_Answers);
+
+}
+
+string Get_Final_Result_Text_Pass_of_Fail(bool Result)
+{
+
+	if (Result)
+		return "PASS :-)\n";
+	else
+		return "FAIL :-(\n";
+
+}
+
+string Get_Level_Symbol_Text(en_Question_Level Level)
+{
+
+	string Level_Arr[4]{ "Easy", "Medium", "Hard", "Mix" };
+	return Level_Arr[Level - 1];
+
+}
+
+string Get_Op_Type_Symbol_Text(en_Op_Type Op)
+{
+
+	switch (Op)
+	{
+	case Add:
+		return "+";
+	case Sub:
+		return "-";
+	case Mult:
+		return "*";
+	case Div:
+		return "/";
+	case Mix_Op_Type:
+		return "Mix";
+	default:
+		return "Mix";
+		
+	}
+
+}
+
+
+void Print_Quizz_Results(st_Quizz Quizz)
+{
+
+	cout << "\n-----------------------------------------\n\n";
+	cout << "     FINAL RESULT IS " << Get_Final_Result_Text_Pass_of_Fail(Quizz.is_Pass) << endl;
+	cout << "-----------------------------------------\n\n";
+	cout << "Number of Questions is    : " << Quizz.Number_of_Questions << endl;
+	cout << "Question Level            : " << Get_Level_Symbol_Text(Quizz.Question_Level) << endl;
+	cout << "Oprration Type            : " << Get_Op_Type_Symbol_Text(Quizz.Question_Op_Type) << endl;
+	cout << "Number of Correct Answers : " << Quizz.Number_Of_Correct_Answers << endl;
+	cout << "Number of Wrong Answers   : " << Quizz.Number_Of_Wrong_Answers << endl;
+	cout << "-----------------------------------------\n\n";
+
+}
+
+void Play_Math_Game()
+{
+
+	st_Quizz Quizz;
+
+	Quizz.Number_of_Questions = Read_Question_Number();
+	Quizz.Question_Level = Read_Question_Level();
+	Quizz.Question_Op_Type = Read_Question_Opration_Type();
+
+
+	Generat_Quizz_Questions(Quizz);
+	Ask_and_Correct_Questions_List(Quizz);
+	Print_Quizz_Results(Quizz);
+
+
+}
+
+void Reset_Screen()
+{
+	system("cls");
+	system("color 0F");
+}
+
+void Start_Game()
+{
+
+	char is_Play_Again = 'y';
+
+	do
+	{
+
+		Reset_Screen();
+		Play_Math_Game();
+
+		cout << "\nDo you Want to Play Again ?   Y/N  :	";
+		cin >> is_Play_Again;
+
+	} while (is_Play_Again == 'y' || is_Play_Again == 'Y');
+
+}
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	Start_Game();
+
+	return 0;
+}

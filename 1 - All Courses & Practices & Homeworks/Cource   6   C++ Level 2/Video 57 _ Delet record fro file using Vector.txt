@@ -1,0 +1,272 @@
+My Vertion 💁‍♂️  💁‍♂️: 
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "File.h";
+using namespace std;
+
+
+
+void Fill_Vector_With_File_Content(const string& FileName, vector <string>& Vector)
+{
+
+	fstream File;
+	File.open(FileName, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+
+			Vector.push_back(Line);
+
+		}
+
+		File.close();
+	}
+
+}
+
+void Delete_Record_from_File_using_Vector(const vector <string>& v_something, const string& File , const string & Record)
+{
+
+	fstream MyFile;
+	MyFile.open(File, ios::out);
+
+	if (MyFile.is_open())
+	{
+
+		for (const string& Line : v_something)
+		{
+
+			if (Line != "" && Line != Record)
+			{
+				MyFile << Line << endl;
+			}
+
+		}
+
+
+		MyFile.close();
+	}
+
+}
+
+void Delete_Record(const string & File_Name , const string & Record)
+{
+
+	vector <string> v_Vector;
+
+	Fill_Vector_With_File_Content(File_Name, v_Vector);
+
+	Delete_Record_from_File_using_Vector(v_Vector, File_Name, Record);
+
+
+}
+
+void Print_File_Content(const string & File_Name)
+{
+
+	fstream File;
+	File.open(File_Name, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+			cout << Line << endl;
+		}
+
+		File.close();
+	}
+
+}
+
+
+void Save_Vector_to_File(const vector <string> & v_something, const string & File)
+{
+
+	fstream MyFile;
+	MyFile.open(File, ios::out);
+
+	if (MyFile.is_open())
+	{
+
+		for (const string & Line : v_something)
+		{
+
+			if (Line != "")
+			{
+				MyFile << Line;
+			}
+
+		}
+		
+
+		MyFile.close();
+	}
+
+}
+
+int main()
+{
+
+	cout << "File contant before the changes : \n\n";
+	Print_File_Content("MyFile.txt");
+
+	Delete_Record("MyFile.txt", "YOUNESS");
+
+	cout << "\n\nFile contant After the changes : \n\n";
+	Print_File_Content("MyFile.txt");
+
+
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The teacher Vertion + smole idea of me  💁‍♂️ : 
+
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "File.h";
+using namespace std;
+
+
+
+void Fill_Vector_With_File_Content(const string& FileName, vector <string>& Vector)
+{
+
+	fstream File;
+	File.open(FileName, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+
+			Vector.push_back(Line);
+
+		}
+
+		File.close();
+	}
+
+}
+
+void Save_Vector_to_File(const vector <string>& v_something, const string& File )
+{
+
+	fstream MyFile;
+	MyFile.open(File, ios::out);
+
+	if (MyFile.is_open())
+	{
+
+		for (const string& Line : v_something)
+		{
+
+			if (Line != "" )
+			{
+				MyFile << Line << endl;
+			}
+
+		}
+
+
+		MyFile.close();
+	}
+
+}
+
+void Delete_Record_from_File(const string & File_Name , const string & Record)
+{
+
+	vector <string> v_Vector;
+
+	Fill_Vector_With_File_Content(File_Name, v_Vector);
+
+	for (string& i : v_Vector)
+	{
+
+		if (i == Record)
+			i = "";
+
+	}
+
+	Save_Vector_to_File(v_Vector, File_Name);
+
+
+}
+
+void Print_File_Content(const string & File_Name)
+{
+
+	fstream File;
+	File.open(File_Name, ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+		{
+			cout << Line << endl;
+		}
+
+		File.close();
+	}
+
+}
+
+
+
+int main()
+{
+
+	cout << "File contant before the changes : \n\n";
+	Print_File_Content("MyFile.txt");
+
+	cout << "\n\nWhat do you whant to delete ? : ";
+	string Delete = "";
+	cin >> Delete;
+
+	Delete_Record_from_File("MyFile.txt", Delete);
+
+	cout << "\n\nFile contant after the changes : \n\n";
+	Print_File_Content("MyFile.txt");
+
+
+
+
+	return 0;
+}

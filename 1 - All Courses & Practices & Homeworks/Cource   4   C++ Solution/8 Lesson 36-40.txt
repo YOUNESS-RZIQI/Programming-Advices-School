@@ -1,0 +1,382 @@
+The 36 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+void Enter_Info(float Number[2],string &Operation)
+{
+
+	cout << "Please Enter Number 1 : ";
+	cin >> Number[0];
+
+	cout << "Please Enter Number 2 : ";
+	cin >> Number[1];
+
+	do
+	{
+		cout << "Please Enter Operation : ";
+		cin >> Operation;
+	} while (Operation != "*" && Operation != "/" && Operation != "+" && Operation != "-");
+
+
+}
+
+void Print_Operation_Result(float Number[2], string Operation)
+{
+
+	if (Operation == "+")
+		cout << "The Result is : " << Number[0] + Number[1] << "\n\n";
+	else if (Operation == "-")
+		cout << "The Result is : " << Number[0] - Number[1] << "\n\n";
+	else if (Operation == "*")
+		cout << "The Result is : " << Number[0] * Number[1] << "\n\n";
+	else if (Operation == "/")
+		cout << "The Result is : " << Number[0] / Number[1] << "\n\n";
+
+}
+
+
+
+int main()
+{
+
+	float Number[2];
+	string Operation;
+
+	Enter_Info(Number, Operation);  cout << "\n\n";
+	Print_Operation_Result(Number, Operation);
+	
+
+	return 0;
+}
+
+
+
+The 36' one :
+
+
+#include <iostream>
+using namespace std;
+
+enum enOpType { Addition = '+' , Subtract = '-' , Multiply = '*' , Divide = '/' };
+
+float Enter_Number(string Message)
+{
+
+	float Number;
+
+	cout << Message << endl;
+	cin >> Number;
+
+	return Number;
+}
+
+enOpType Enter_Op_Type()
+{
+	char OpType;
+
+	OpType = '-';
+	do
+	{
+		cout << "Please Enter Operation Type ( * , - , + , / )? ";
+		cin >> OpType;
+	} while (OpType != '*' && OpType != '-' && OpType != '/' && OpType != '+');
+
+	return (enOpType)OpType;
+}
+
+
+float Calculate(float Number1, float Number2, enOpType OpType)
+{
+
+	switch (OpType)
+	{
+	case Addition:
+		return Number1 + Number2;
+
+	case Subtract:
+		return Number1 - Number2;
+
+	case Multiply:
+		return Number1 * Number2;
+
+	case Divide:
+		return Number1 / Number2;
+
+	default:
+		return Number1 + Number2;
+	}
+
+
+}
+
+
+int main()
+{
+
+	float Number1 = Enter_Number("Please Enter The First  Number : ");
+	float Number2 = Enter_Number("Please Enter The Second Number : ");
+
+	enOpType OpType = Enter_Op_Type();
+	
+	cout << "\n   The Result is : " << Calculate(Number1, Number2, OpType) << endl;
+
+
+	return 0;
+}
+
+
+
+
+The 37 one : 
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+float Enter_Number(string Message)
+{
+
+	float Num = 0;
+
+	cout << Message  << " : ";
+	cin >> Num;
+	cout << endl;
+
+	return Num;
+}
+
+float Print_Num_Intil_m99()
+{
+
+	float Num = 0, Sum = 0;
+	short Counter = 1;
+
+	do
+	{
+
+		 Num = Enter_Number( "Please Enter Number " + to_string(Counter) ) ;
+
+		if (Num == -99)
+		{
+			break;
+		}
+
+		Sum += Num;
+		Counter++;
+
+	} while (Num != -99);
+
+
+	return Sum;
+}
+
+
+int main() 
+{
+
+
+	cout << "\n\n      The Sum of All Numbers is : " << Print_Num_Intil_m99() << "\n\n" << endl;
+	
+
+
+	return 0;
+}
+
+
+
+
+
+The 38 one :        Prime Number
+
+
+#include <iostream>
+using namespace std;
+
+enum en_Prime_of_Not { Prime , Not_Prime };
+
+int Enter_Positive_Number(string Message)
+{
+
+	int Num;
+
+	do
+	{
+
+		cout << Message;
+		cin >> Num;
+
+
+	} while (Num <= 0);
+
+
+	return Num;
+
+}
+
+en_Prime_of_Not Check_if_Prime(int Num)
+{
+	
+	
+
+	int M = round(Num / 2);
+
+	for (int Counter = 2; Counter <= M; Counter++)
+	{
+
+		if (Num % Counter == 0)
+		{
+			return en_Prime_of_Not::Not_Prime;
+		}
+
+	}
+
+
+	 
+	return en_Prime_of_Not::Prime;
+
+}
+
+void Print_Number_if_Prime_or_Not(en_Prime_of_Not Num)
+{
+
+	switch (Num)
+	{
+	case Prime:
+		cout << "\n\n   The Number is a Prime Number\n\n";
+		break;
+	case Not_Prime:
+		cout << "\n\n   The Number is Not a Prime Number\n\n";
+		break;
+	default:
+		cout << "\n\n      !!  Errer !!\n\n";
+		break;
+	}
+
+
+}
+
+
+
+int main()
+{
+
+
+	Print_Number_if_Prime_or_Not(Check_if_Prime(Enter_Positive_Number("Please Enter a Positive Number : ")));
+
+
+	return 0;
+}
+
+
+
+
+
+
+The 39 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Positive_Number(string Massege)
+{
+
+	float Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	
+	return Number;
+}
+
+float Calculate_Remaider( float Cash_Paid , float Total_Bill)
+{
+
+	return  Cash_Paid - Total_Bill;
+
+}
+
+int main()
+{
+
+	float Total_Bill = Enter_Positive_Number("Enter Total Bill here : ");
+	float Cash_Paid  = Enter_Positive_Number("Enter Cash Paid here : ");
+	
+	cout << endl;
+	cout << "  Total Bill is : " << Total_Bill << endl;
+	cout << "  Cash Paid  is : " << Cash_Paid  << endl;
+	cout << "***************************\n";
+	cout << "   Remainder : " << Calculate_Remaider (Cash_Paid , Total_Bill)<< "\n\n";
+
+
+
+	
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 40 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+float Enter_Positive_Number(string Massege)
+{
+
+	float Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+
+	} while (Number <= 0);
+
+	
+	return Number;
+}
+
+float Camculate_Full_Taxs( float Total_Bill )
+{
+
+	Total_Bill *= 1.1;
+	Total_Bill *= 1.16;
+	 
+
+	 return  Total_Bill ;
+}
+
+int main()
+{
+
+	float Total_Bill = Enter_Positive_Number ("Enter Total Bill  here : ");
+	
+
+	cout << endl;
+	cout << "  Total Bill is : " << Total_Bill << endl;
+	cout << "************************************************\n";
+	cout << "    Total Bill After Tax's it will be : " << Camculate_Full_Taxs(Total_Bill) << endl;
+
+
+	return 0;
+}
+
+

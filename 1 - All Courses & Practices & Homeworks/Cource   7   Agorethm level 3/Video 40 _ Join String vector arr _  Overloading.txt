@@ -1,0 +1,62 @@
+Overloading : using the same name of Function but the parameters are different
+
+
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+
+string Join_String(vector <string>& vNames, const string& delim)
+{
+
+	string S1 = "";
+
+	for (string& s : vNames)
+	{
+		S1 = S1 + s + delim;
+	}
+
+	return S1.substr(0, S1.length() - delim.length());
+}
+
+
+string Join_String( string Names[] , short Arr_Length, const string & delim)
+{
+
+	string S1 = "";
+
+	for (int i = 0 ; i < Arr_Length ; i++)
+	{
+		S1 = S1 + Names[i] + delim;
+	}
+
+	return S1.substr( 0, S1.length() - delim.length());
+}
+
+int main()
+{
+
+	string Names[] = {"Ali","Maher","Fadi","Saqre"};
+	vector <string> vNames = { "hi","ha","ho","hin" };
+
+	
+
+	cout << "Arr  Join : \n\n";
+	cout << Join_String (Names,4," ") << endl;
+	cout << "\nVector  Join : \n\n";
+	cout << Join_String (vNames," ") << endl;
+
+	
+
+	cout << "\n\n";
+
+
+	system("pause>0");
+} 

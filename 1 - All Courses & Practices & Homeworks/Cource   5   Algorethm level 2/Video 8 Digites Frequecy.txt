@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int How_Many_Digits_Frequency(int Digites , short Number)
+{
+
+	 int Remainder = 0 , Frequency_Counter = 0;
+
+	while (Digites > 0)
+	{
+
+		Remainder = Digites % 10;
+		Digites = Digites / 10;
+
+		if (Number == Remainder)
+		{
+			Frequency_Counter++;
+		}
+	}
+
+	return Frequency_Counter;
+}
+
+void Print_Number_of_Digites(short Number , int Digits_Number)
+{
+
+	cout << " Digit " << Number << " Frequency is : " << Digits_Number << " Time(s)\n\n" << endl;
+
+}
+
+int main()
+{
+
+	int Digetes = Enter_Positive_Number("Please enter the Number : ");
+	short Number = Enter_Positive_Number("\n   Frequency  : ");
+
+	Print_Number_of_Digites(      Number  ,  How_Many_Digits_Frequency(Digetes, Number )     );
+
+	return 0;
+}
+

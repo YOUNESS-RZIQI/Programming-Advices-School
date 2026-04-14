@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+
+struct Numbers
+{
+	short _10;
+	short _1012;
+
+};
+
+using namespace std;
+
+int main()
+
+{
+	Numbers calculation;
+
+	calculation._10 = 10;
+	calculation._1012 = 1012;
+
+
+	cout << "10 + 1012 = " << calculation._10 + calculation._1012 << "\n";
+
+
+
+	return 0;
+
+}

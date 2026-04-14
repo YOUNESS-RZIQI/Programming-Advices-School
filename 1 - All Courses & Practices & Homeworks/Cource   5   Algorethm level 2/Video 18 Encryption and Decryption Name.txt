@@ -1,0 +1,220 @@
+My code : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+string Enter_Your_Name()
+{
+
+	string Name = "";
+
+	cout << "Please Enter Your Name : ";
+	cin >> Name;
+
+	return Name;
+
+}
+
+string Encryption_Name(string &Name, int Encryption_Key)
+{
+
+	int Digits_Number = Name.length();
+
+	for (int i = 0; i < Digits_Number; i++)
+	{
+
+		Name[i] += Encryption_Key;
+
+	}
+
+	return  Name ;
+
+}
+								   
+string Decryption_Name(string &Name, int Encryption_Key)
+{
+
+	int Digits_Number = Name.length();
+
+	for (int i = 0; i < Digits_Number; i++)
+	{
+
+		Name[i] -= Encryption_Key;
+
+	}
+
+	return  Name;
+
+}
+								   
+
+int main()
+{
+
+	int Encryption_Key = 2;
+	string Name = Enter_Your_Name();
+
+	cout << "\n\n";
+	cout << "Before Encryption : " << Name << endl;
+	cout << "After  Encryption : " << Encryption_Name( Name , Encryption_Key) << endl;
+	cout << "After  Encryption : " << Decryption_Name( Name, Encryption_Key) << endl;
+
+
+	return 0;
+}
+
+
+
+Teacher Code & My Second Code : 
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+string Enter_Your_Name()
+{
+
+	string Text = "";
+
+	cout << "Please Enter Your Name : ";
+	getline(cin, Text);
+
+	return Text;
+
+}
+
+string Encryption_Name(string Text, short Encryption_Key)
+{
+
+	int Digits_Number = Text.length();
+
+	for (int i = 0; i < Digits_Number; i++)
+	{
+
+		Text[i] = char( (int)Text[i] + Encryption_Key);
+
+	}
+
+	return  Text;
+
+}
+								   	
+string Decryption_Name(string Text, short Encryption_Key)
+{
+
+
+	int Digits_Number = Text.length();
+
+	for (int i = 0; i < Digits_Number; i++)
+	{
+
+		Text[i] = char((int)Text[i] - Encryption_Key);
+
+	}
+
+	return  Text;
+
+}
+								   
+
+int main()
+{
+
+	short Encryption_Key = 2;
+	string Text = Enter_Your_Name();
+
+	string Text_After_Encryption = Encryption_Name(Text, Encryption_Key);
+	string Text_After_Decryption = Decryption_Name(Text_After_Encryption, Encryption_Key);
+
+	cout << "\n\n";
+	cout << "Before Encryption : " << Text << endl;
+	cout << "After  Encryption : " << Text_After_Encryption << endl;
+	cout << "After  Encryption : " << Text_After_Decryption << endl;
+
+
+	return 0;
+}
+
+/*
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+string Enter_Your_Name()
+{
+
+	string Text = "";
+
+	cout << "Please Enter Your Name : ";
+	getline(cin, Text);
+
+	return Text;
+
+}
+
+string Encryption_Name(string Text, short Encryption_Key)
+{
+
+	int Digits_Number = Text.length();
+
+	for (int i = 0; i < Digits_Number; i++)
+	{
+
+		Text[i] += Encryption_Key;
+
+	}
+
+	return  Text;
+
+}
+
+string Decryption_Name(string Text, short Encryption_Key)
+{
+
+	int Digits_Number = Text.length();
+
+	for (int i = 0; i < Digits_Number; i++)
+	{
+
+		Text[i] -= Encryption_Key;
+
+	}
+
+	return  Text;
+
+}
+
+
+int main()
+{
+
+	short Encryption_Key = 2;
+	string Text = Enter_Your_Name();
+
+	string Text_After_Encryption = Encryption_Name(Text, Encryption_Key);
+	string Text_After_Decryption = Decryption_Name(Text_After_Encryption, Encryption_Key);
+
+	cout << "\n\n";
+	cout << "Before Encryption : " << Text << endl;
+	cout << "After  Encryption : " << Text_After_Encryption << endl;
+	cout << "After  Encryption : " << Text_After_Decryption << endl;
+
+
+	return 0;
+}
+
+
+*/
+
+
+
+
+

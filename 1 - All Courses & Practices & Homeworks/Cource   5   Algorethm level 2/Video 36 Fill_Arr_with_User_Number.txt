@@ -1,0 +1,171 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+int Read_Number_In_Range(string Message, int From, int To)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Message;
+		cin >> Number;
+
+	} while (Number > From && Number > To);
+
+	return Number;
+
+}
+
+int Enter_Positive_Number()
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << "Please enter the Number you Want to add to Array : ";
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+/*void Fill_N_Array_with_Randum_Number(int Arr[100], int& ArrLength)
+{
+
+	ArrLength = Enter_Positive_Number("\nPlease enter a Number   : ");
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		Arr[i] = Randam_Number_In_Range(1, 100);
+
+	}
+
+}*/
+
+void Print_Array(int Arr[100], int ArrLength)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		cout << Arr[i] << " ";
+
+	}
+
+	cout << endl;
+
+
+}
+
+void Copy_Array(int Arr_Origin[100], int Arr_copy[100], int ArrLength)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		Arr_copy[i] = Arr_Origin[i];
+
+	}
+
+
+
+}
+
+short Number_Position(int Arr[100], int ArrLength, int Num_to_Search)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+		if (Arr[i] == Num_to_Search)
+		{
+
+			return i;
+
+		}
+
+	}
+
+	return -1;
+
+}
+
+bool Is_Number_Exist_in_Array(int Arr[100], int ArrLength, int Num_to_Search)
+{
+		return Number_Position( Arr,  ArrLength,  Num_to_Search) != -1 ;
+}
+
+
+
+
+
+
+void Fill_Arr_with_User_Number(short User_Num_to_Stok, int Arr[100], short& ArrLength)
+{
+	
+
+	ArrLength++;
+
+	Arr[ArrLength - 1] = User_Num_to_Stok;
+
+
+}
+
+void Ask_user_Number_and_Add_it_to_Array(int Arr[100], short &ArrLength)
+{
+
+
+	bool  Again_or_No = 1;
+
+	do
+	{
+
+		Fill_Arr_with_User_Number(Enter_Positive_Number(),Arr, ArrLength);
+
+
+		Again_or_No = Read_Number_In_Range("Do you want to add more Numbers ? (0) NO /  (1) Yes : ", 0, 1);
+		cout << endl;
+
+	} while (Again_or_No);
+
+
+}
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Arr[100];
+
+	short ArrLength = 0; 
+	
+	Ask_user_Number_and_Add_it_to_Array(Arr, ArrLength);
+
+	cout << "Array Length   : " << ArrLength << endl;
+	cout << "Array Elements : ";
+	Print_Array(Arr, ArrLength);
+	cout << "\n\n";
+
+	return 0;
+}

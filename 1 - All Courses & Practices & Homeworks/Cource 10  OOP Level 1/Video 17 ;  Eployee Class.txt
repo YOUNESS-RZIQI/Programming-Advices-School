@@ -1,0 +1,188 @@
+/*
+
+						Title : Employee Class
+
+	Requirements : 
+	
+		ID
+		
+		First name
+		Last name
+		FullName()
+		Title
+		Email
+		Phone
+		Salary
+		Department
+		SendEmail(..)
+		SendSMS(...)
+		Print()
+		
+		
+		
+		including all properties set and get, except for the ID readonly
+		
+		
+		
+		Use constructor to iniate all values
+
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clsEmployee
+{
+	short _ID, _Salary;
+	string _First_Name, _Last_Name, _Email, _Phone_Number, _Department , _Title;
+
+public:
+
+	clsEmployee(string First_Name, string Last_Name, short ID, string Email, string Phone_Number , short Salary ,
+		string Department , string Title)
+	{
+		_ID = ID;
+		_Title = Title;
+		_Department = Department;
+		_Salary = Salary;
+		_First_Name = First_Name;
+		_Last_Name = Last_Name;
+		_Email = Email;
+		_Phone_Number = Phone_Number;
+	}
+
+	string FullName()
+	{
+		return  _First_Name + " " + _Last_Name;
+	}
+
+	void Print()
+	{
+		cout << "Info : \n\n--------------------------------------------\n";
+		cout << "ID           : " << _ID << endl;
+		cout << "First Name   : " << _First_Name << endl;
+		cout << "Last  Name   : " << _Last_Name << endl;
+		cout << "Full  Name   : " << FullName() << endl;
+		cout << "Email        : " << _Email << endl;
+		cout << "Phone Number : " << _Phone_Number << endl;
+		cout << "Title        : " << _Title << endl;
+		cout << "Department   : " << _Department << endl;
+		cout << "Salary       : " << _Salary << endl;
+		cout << "--------------------------------------------\n\n";
+
+	}
+
+
+	short Get_ID()
+	{
+		return _ID;
+	}
+
+	void Set_First_Name(string First_Name)
+	{
+		_First_Name = First_Name;
+	}
+	string Get_First_Name()
+	{
+		return _First_Name;
+	}
+	__declspec(property(get = Get_First_Name, put = Set_First_Name)) string First_Name;
+
+
+	void Set_Last_Name(string Last_Name)
+	{
+		_Last_Name = Last_Name;
+	}
+	string Get_Last_Name()
+	{
+		return _Last_Name;
+	}
+	__declspec(property(get = Get_Last_Name, put = Set_Last_Name)) string Last_Name;
+
+
+	void Set_Email(string Email)
+	{
+		_Email = Email;
+	}
+	string Get_Email()
+	{
+		return _Email;
+	}
+	__declspec(property(get = Get_Email, put = Set_Email)) string Email;
+
+
+	void Set_Phone_Number(string PhoneNumber)
+	{
+		_Phone_Number = PhoneNumber;
+	}
+	string Get_Phone_Number()
+	{
+		return _Phone_Number;
+	}
+	__declspec(property(get = Get_Phone_Number, put = Set_Phone_Number)) string Phone_Number;
+
+
+	void Set_Salary(short Salary)
+	{
+		_Salary = Salary;
+	}
+	short Get_Salary()
+	{
+		return _Salary;
+	}
+	__declspec(property(get = Get_Salary, put = Set_Salary)) short Salary;
+
+
+	void Set_Department(string Department)
+	{
+		_Department = Department;
+	}
+	string Get_Department()
+	{
+		return _Department;
+	}
+	__declspec(property(get = Get_Department, put = Set_Department)) string Department;
+
+
+	void Set_Title(string Title)
+	{
+		_Title = Title;
+	}
+	string Get_Title()
+	{
+		return _Title;
+	}
+	__declspec(property(get = Get_Title, put = Set_Title)) string Title;
+
+	void Sent_Email(string Subject, string Body)
+	{
+		cout << "This Message Sent Successfully to email : " + _Email << endl;
+		cout << "Subject : " + Subject << endl;
+		cout << "Body    : " + Body << endl;
+	}
+
+	void Sent_SMS(string Text)
+	{
+		cout << "The Following SMS Sent Successfully to phone : " + _Phone_Number << endl;
+		cout << Text << endl;
+	}
+
+};
+
+int main()
+{
+
+	clsEmployee Employee("YOUNESS", "RZIQI", 10, "rziqiyouness@gmail.com", "0694367478",5000 
+						, "Software Engineer" , "Development" );
+
+	Employee.Print();
+
+	Employee.Sent_Email("Hi", "My Name is youness\n\n\n");
+	Employee.Sent_SMS("Hi , how are you ?\n\n");
+
+
+	system("pause>0");
+	return 0;
+}
+

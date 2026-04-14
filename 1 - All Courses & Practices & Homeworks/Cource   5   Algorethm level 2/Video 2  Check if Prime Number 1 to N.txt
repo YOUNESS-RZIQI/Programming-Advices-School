@@ -1,0 +1,173 @@
+My Code : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+int Enter_Positive_Number(string Message)
+{
+
+	int Num;
+
+	do
+	{
+
+		cout << Message;
+		cin >> Num;
+
+
+	} while (Num <= 0);
+
+
+	return Num;
+
+}
+
+int Check_if_Prime(int Num)
+{
+
+
+
+	int M = round(Num / 2);
+
+	for (int Counter = 2; Counter <= M; Counter++)
+	{
+
+		if (Num % Counter == 0)
+		{
+			return 0 ;
+		}
+
+	}
+
+
+
+	return Num ;
+
+}
+
+void Print_Prime_Number(int Num)
+{
+
+
+	if (Num != 0)
+	{
+
+		cout << Num << endl;
+
+	}
+
+
+}
+
+void Print_From_1_to_N_Prime_Numbers()
+{
+
+	int Num1 = Enter_Positive_Number("Please enter a Number ( 2 / +00 ): ");
+
+	
+
+	for ( int i = 1 ; i <= Num1 ; i++)
+	{
+
+	    Print_Prime_Number(Check_if_Prime(i));
+		
+	}
+
+
+
+}
+
+int main()
+{
+
+	Print_From_1_to_N_Prime_Numbers();
+
+	return 0;
+}
+
+
+
+
+
+Teacher Code : 
+
+
+
+
+#include <iostream>
+using namespace std;
+
+enum en_Prime_of_Not { Prime, Not_Prime };
+
+int Enter_Positive_Number(string Message)
+{
+
+	int Num;
+
+	do
+	{
+
+		cout << Message;
+		cin >> Num;
+
+
+	} while (Num <= 0);
+
+
+	return Num;
+
+}
+
+en_Prime_of_Not Check_if_Prime(int Num)
+{
+
+	int M = round(Num / 2);
+
+	for (int Counter = 2; Counter <= M; Counter++)
+	{
+
+		if (Num % Counter == 0)
+		{
+			return en_Prime_of_Not::Not_Prime;
+		}
+
+	}
+
+	return en_Prime_of_Not::Prime;
+
+}
+
+void Print_Prime_Numbers_from_1_to_N(int Num)
+{
+
+	cout << "\n\n    All Prime Numbers from 1 to " << Num << " : \n\n";
+
+	for (int i = 1; i <= Num; i++)
+	{
+
+		if (Check_if_Prime(i) == en_Prime_of_Not::Prime)
+		{
+			cout << i << endl;
+		}
+
+	}
+
+
+
+}
+
+
+int main()
+{
+
+	Print_Prime_Numbers_from_1_to_N(Enter_Positive_Number("\t\tEnter Number : "));
+
+	return 0;
+}
+
+
+

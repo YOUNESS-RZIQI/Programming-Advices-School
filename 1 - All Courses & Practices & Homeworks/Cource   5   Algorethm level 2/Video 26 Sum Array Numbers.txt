@@ -1,0 +1,101 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void Fill_N_Array_with_Randum_Number(int Arr[100], int& ArrLength)
+{
+
+	ArrLength = Enter_Positive_Number("Please enter a Number : ");
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		Arr[i] = Randam_Number_In_Range(1, 100);
+
+	}
+
+}
+
+void Print_Array(int Arr[100], int ArrLength)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		cout << Arr[i] << " ";
+
+	}
+
+	cout << endl;
+
+
+}
+
+int Sum_Arr_Numbers(int Arr[100], int ArrLength)
+{
+
+	int Sum = 0;
+	
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		Sum += Arr[i];
+
+	}
+
+	return Sum;
+
+}
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Arr[100], ArrLengrh = 0;
+
+	Fill_N_Array_with_Randum_Number(Arr, ArrLengrh);
+	
+
+	cout << "Array Elements : ";
+	Print_Array(Arr, ArrLengrh);
+	cout << endl;
+
+
+	cout << "\Sum of All Number : ";
+	cout << Sum_Arr_Numbers(Arr, ArrLengrh);
+	cout << "\n\n";
+
+
+	return 0;
+}

@@ -1,0 +1,481 @@
+The 11 one : 
+
+#include <iostream>
+using namespace std;
+
+enum en_Pass_or_Fail{ Pass , Fail};
+
+
+void Enter_3_Numbers(float& Mark1, float& Mark2, float& Mark3)
+{
+
+	cout << "      Please Enter 3 Marks : \n\n\n";
+
+	cout << "Please enter Mark 1 : ";
+	cin >> Mark1;
+
+	cout << "Please enter Mark 2 : ";
+	cin >> Mark2;
+
+	cout << "Please enter Mark 3 : ";
+	cin >> Mark3;
+
+
+}
+
+float Calculat_sum_of_3_Marks(float Mark1, float Mark2, float Mark3)
+{
+
+	float Sum = 0, Average = 0;
+
+	Sum = Mark1 + Mark2 + Mark3;
+
+
+
+	return Sum;
+
+}
+
+float Calculat_Average_of_3_Marks(float& Mark1, float& Mark2, float& Mark3)
+{
+	float Average = 0;
+
+	Average = (float)Calculat_sum_of_3_Marks(Mark1, Mark2, Mark3) / 3;
+
+	return Average;
+
+}
+
+
+en_Pass_or_Fail Check_if_Pass_or_Fail(float Average)
+{
+
+	if (Average >= 0)
+		return en_Pass_or_Fail::Pass;
+	else
+		return en_Pass_or_Fail::Fail;
+
+}
+
+
+void Printe_Marks_Result(float Average)
+{
+	if (  Check_if_Pass_or_Fail(Average) == en_Pass_or_Fail::Pass )
+	{
+
+		cout << "\n\n\n   The Average is = " << Average << "\n\n";
+		cout << "\n\n\n         You Passed \n\n";
+
+	}
+	else 
+	{
+
+		cout << "\n\n\n   The Average is = " << Average << "\n\n";
+		cout << "\n\n\n         You Failed \n\n";
+
+	}
+}
+
+
+
+int main()
+{
+
+	float Mark1, Mark2, Mark3;
+
+	Enter_3_Numbers(Mark1, Mark2, Mark3);
+	Printe_Marks_Result(Calculat_Average_of_3_Marks(Mark1, Mark2, Mark3));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+The 12 one :    Max of two Numbers
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Enter_3_Numbers(float& Mark1, float& Mark2)
+{
+
+	cout << "      Please Enter 2 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Mark1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Mark2;
+
+
+
+}
+
+void Printe_the_laregest_Number(float Mark1, float Mark2)
+{
+
+	if (Mark1 > Mark2)
+		cout << " The Number [" << Mark1 << "] is Largested then [" << Mark2 << "]\n\n";
+	else if(Mark2 > Mark1)
+		cout << " The Number [" << Mark2 << "] is Largested then [" << Mark1 << "]\n\n";
+	else if(Mark2 = Mark1)
+		cout << " The Number [" << Mark1 << "] is Equal to [" << Mark2 << "]\n\n";
+
+
+}
+
+
+
+
+int main()
+{
+
+	float Mark1=0, Mark2=0;
+
+	Enter_3_Numbers(Mark1, Mark2);
+	Printe_the_laregest_Number(Mark1, Mark2);
+
+
+	return 0;
+}
+
+
+
+
+The 12' one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Enter_3_Numbers(float& Mark1, float& Mark2)
+{
+
+	cout << "      Please Enter 2 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Mark1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Mark2;
+
+
+
+}
+
+
+float Max_of_2Numbers(float Mark1, float Mark2)
+{
+
+	if (Mark1 > Mark2)
+		return Mark1 ;
+	else 
+		return Mark2;
+	
+
+}
+
+
+void Printe_the_laregest_Number(float Max)
+{
+
+	cout << "\n\n   The Maximum Number is : " << Max << "\n\n";
+
+}
+
+
+
+
+int main()
+{
+
+	float Mark1 = 0, Mark2 = 0;
+
+	Enter_3_Numbers(Mark1, Mark2);
+	Printe_the_laregest_Number(Max_of_2Numbers(Mark1, Mark2));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 13 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Enter_3_Numbers(float& Number1, float& Number2 , float& Number3)
+{
+
+	cout << "      Please Enter 2 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Number1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Number2;
+
+	cout << "Please enter Number 3 : ";
+	cin >> Number3;
+
+}
+
+
+float Max_of_3Numbers(float Number1, float Number2 , float Number3)
+{
+
+	if (Number1 > Number2 && Number1 > Number3)
+		return Number1;
+	else if (Number2 > Number1 && Number2 > Number3)
+		return Number2;
+	else if (Number3 > Number2 && Number3 > Number1)
+		return Number3;
+	
+
+}
+
+
+void Printe_the_laregest_Number(float Max)
+{
+
+	cout << "\n\n   The Maximum Number is : " << Max << "\n\n";
+
+}
+
+
+
+
+int main()
+{
+
+	float Number1  = 0, Number2 = 0 , Number3=0;
+
+	Enter_3_Numbers(Number1, Number2 , Number3);
+	Printe_the_laregest_Number(Max_of_3Numbers(Number1, Number2 , Number3));
+
+
+	return 0;
+}
+
+
+
+The 13' one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Enter_3_Numbers(float& Number1, float& Number2 , float& Number3)
+{
+
+	cout << "      Please Enter 2 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Number1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Number2;
+
+	cout << "Please enter Number 3 : ";
+	cin >> Number3;
+
+}
+
+
+float Max_of_3Numbers(float Number1, float Number2 , float Number3)
+{
+
+	if (Number1 > Number2)
+		if (Number1 > Number3)
+			return Number1;
+		else
+			return Number3;
+
+	else
+		 if (Number2 > Number3)
+			return Number2;
+		else
+			return Number3;
+	
+	
+
+}
+
+
+void Printe_the_laregest_Number(float Max)
+{
+
+	cout << "\n\n   The Maximum Number is : " << Max << "\n\n";
+
+}
+
+
+
+
+int main()
+{
+
+	float Number1  = 0, Number2 = 0 , Number3=0;
+
+	Enter_3_Numbers(Number1, Number2 , Number3);
+	Printe_the_laregest_Number(Max_of_3Numbers(Number1, Number2 , Number3));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 14 one : 
+
+
+
+#include <iostream>
+using namespace std;
+
+
+
+void Enter_2_Numbers(float& Mark1, float& Mark2)
+{
+
+	cout << "      Please Enter 2 Numbers : \n\n\n";
+
+	cout << "Please enter Number 1 : ";
+	cin >> Mark1;
+
+	cout << "Please enter Number 2 : ";
+	cin >> Mark2;
+
+
+
+}
+
+float Swap_of_2Numbers(float& Mark1, float& Mark2)
+{
+
+	float temp=0;
+
+	temp = Mark1;
+	Mark1 = Mark2;
+	Mark2 = temp;
+	
+
+	return Mark2, Mark1;
+
+
+}
+
+void Print_Numbers(float& Mark1, float& Mark2)
+{
+
+	cout << "\n\n\n                 " << Mark1 << "\n";
+	cout << "                 " << Mark2 << "\n";
+
+}
+
+
+
+int main()
+{
+
+	float Mark1 = 0, Mark2 = 0;
+
+	Enter_2_Numbers(Mark1, Mark2);
+	Print_Numbers(Mark1, Mark2);
+	Swap_of_2Numbers(Mark1, Mark2);
+	Print_Numbers(Mark1, Mark2);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+The 15 one : 
+
+
+#include <iostream>
+using namespace std;
+
+
+void Enter_A_B(float& A, float& B)
+{
+
+	cout << "Please enter the width (a) : ";    // Atole
+	cin >> A;
+
+	cout << "Please enter the lingth b : ";    // El3arde
+	cin >> B;
+
+
+}
+
+float Calculate_Rectangle_Area(float A, float B)
+{
+
+	return A * B;
+
+}
+
+
+void Print_Result(float Area)
+{
+
+	cout << " The rectagle Area is : " << Area << "\n\n";
+
+}
+
+
+int main()
+{
+	float A, B;
+
+	Enter_A_B(A,B);
+
+	Print_Result(Calculate_Rectangle_Area(A, B));
+
+
+	return 0;
+}
+
+

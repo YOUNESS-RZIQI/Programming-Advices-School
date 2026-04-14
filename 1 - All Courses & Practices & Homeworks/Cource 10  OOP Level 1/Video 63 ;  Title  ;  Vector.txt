@@ -1,0 +1,46 @@
+/*
+                    Title : vector Join
+
+
+    Input cases : 
+
+            1) vector<string> Words = {"youness" , "rziki" , "2004" ,  "22" , "ans"};
+
+                output :  "youness(plus seprator)rziki(plus seprator)2004(plus seprator)22";
+            
+
+    Trim Prototype : 
+
+        string JoinString(vector<string> vString, string Delim)
+
+*/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+string JoinString(vector<string> vString, string Delim)
+{
+    string S;
+    int i = 0;
+    for(string &word :vString)
+    {
+        S += word;
+        i++;
+        if ( i < vString.size())
+            S += Delim;
+    }
+
+    return (S);
+}
+
+int main(void)
+{
+
+vector<string> vString = {"youness" , "rziki" , "2004" ,  "22" , "ans\n"};
+
+cout << JoinString(vString , " ");
+    
+
+    return (0);
+}

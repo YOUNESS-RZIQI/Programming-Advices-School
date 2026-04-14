@@ -1,0 +1,25 @@
+string Trim_Left_2(string S , char seprator)
+{
+    for (int i = 0; i < S.length() ; i++)
+    {
+        if ( S[i] != seprator)
+            return (S.substr(i,S.length() - i));
+    }
+    return "";
+}
+
+string Trim_Rigth_2(string S , char seprator)
+{
+    for (int i = S.length(); i > 0 ; i--)// "y  "  3
+    {
+        if ( S[i - 1] != seprator)
+            return (S.substr( 0 , i ));
+    }
+    return "";
+}
+
+string Trim_2(string S, char seprator)
+{
+    return (Trim_Left_2( Trim_Rigth_2(S,seprator) ,seprator));
+}
+

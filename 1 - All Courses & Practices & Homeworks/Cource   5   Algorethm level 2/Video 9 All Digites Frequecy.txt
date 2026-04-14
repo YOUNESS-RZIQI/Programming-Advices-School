@@ -1,0 +1,170 @@
+My code : 
+
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+void Check_All_Digits_Frequency(int UserDigites , short Digit_to_Chek)
+{
+
+
+	 int Remainder = 0 , Digit_to_Chek_Frequency_Value_Result = 0;
+
+	while (UserDigites > 0)
+	{
+
+		Remainder = UserDigites % 10;
+		UserDigites = UserDigites / 10;
+
+		if (Digit_to_Chek == Remainder)
+		{
+			Digit_to_Chek_Frequency_Value_Result++;
+		}
+	}
+
+	if (Digit_to_Chek_Frequency_Value_Result != 0)
+	{
+
+		cout << " Digit " << Digit_to_Chek << " Frequency is : " 
+			<< Digit_to_Chek_Frequency_Value_Result
+			<< " Time(s)\n\n" << endl;
+	}
+
+	
+}
+
+void Print_All_Frequency_Digits_Result(int Digites)
+{
+
+	for (int i = 0; i <= 9; i++)
+	{
+
+		Check_All_Digits_Frequency(Digites, i);
+
+	}
+
+}
+
+int main()
+{
+
+	int Digites = Enter_Positive_Number("Please enter the Number Less then : ");
+
+
+	Print_All_Frequency_Digits_Result(Digites);
+
+
+	return 0;
+}
+
+
+
+
+Teacher Code : 
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int How_Many_Digits_Frequency(int Number, short Digit_to_Check)
+{
+
+	int Remainder = 0, Frequency_Counter = 0;
+
+	while (Number > 0)
+	{
+
+		Remainder = Number % 10;
+		Number = Number / 10;
+
+		if (Digit_to_Check == Remainder)
+		{
+			Frequency_Counter++;
+		}
+	}
+
+	return Frequency_Counter;
+}
+
+void Print_All_Number_of_Digites(int Number)
+{
+
+
+	for (int i = 0; i <= 9; i++)
+	{
+
+		short Digit_Frequecy = 0;
+
+		Digit_Frequecy = How_Many_Digits_Frequency( Number , i);
+
+
+		if (Digit_Frequecy > 0)
+		{
+
+			cout << " Digit " << i << " Frequency is : " << Digit_Frequecy 
+				<< " Time(s)\n\n" << endl;
+
+		}
+
+
+	}
+
+
+}
+
+int main()
+{
+
+	int Number = Enter_Positive_Number("Please enter the a Positive Number to Check his Frequecy : ");
+
+	Print_All_Number_of_Digites(Number);
+
+
+	return 0;
+}
+
+
+
+
+

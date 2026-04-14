@@ -1,0 +1,31 @@
+C ++ : 
+
+#include "clsString.h"
+
+static void Upper_first_leter(string &s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+        {
+            if(islower(s[i]))
+                s[i] = toupper(s[i]);
+        }
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+
+int main(void)
+{
+
+    clsString O;
+
+    cout << O.count_words_in_string("you ness rzi qi"); cout << endl;
+    O.Print_first_leter("you ness rzi qi"); cout << endl;
+
+
+    return 0;
+}

@@ -1,0 +1,42 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Check_Lib.h"
+#include "Input_Lib.h"
+#include "Screen_Lib.h"
+using namespace std;
+
+int NumberOfDaysInAMonth(short Year , short Month )
+{
+	if(Month <= 0 || Month > 12)
+		return 0;
+
+	int NumberOfDays[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+
+	return Month == 2 ? (Check_Lib::is_leap_Year(Year) ? 29 : 28) : (NumberOfDays[Month - 1]);
+	
+}
+
+
+void Print_if_Leap_or_Nor_Leap_Year_D_H_M_S(short Year, short Month)
+{
+	cout << "Number of Days     in Month [" << Month << "] is : " << NumberOfDaysInAMonth(Year, Month)    << endl;
+	
+}
+
+int main()
+{
+	Screen_Lib::Red_Screen();
+
+	short Year = Input_Lib::Read_Positive_Number("Please enter the year : ");
+	short Month = Input_Lib::Read_Positive_Number("Please enter the Month : ");
+
+	Print_if_Leap_or_Nor_Leap_Year_D_H_M_S(Year , Month);
+
+
+	system("pause>0");
+	return 0;
+}

@@ -1,0 +1,117 @@
+The 1 one : 
+
+
+#include <iostream>
+using namespace std;
+
+void Procedural()
+{
+
+	cout << "YOUNESS   RZIQI\n";
+
+}
+
+string Function1()
+{
+	
+	return  "938475";
+
+}
+
+
+float Function2()
+{
+	float x = 10.5;
+	float y = 20.3;
+
+	return x * y;
+
+}
+
+
+int main()
+{
+	float Result ;
+
+	Result = ceil ( Function2() )  ;
+
+	Procedural();
+	cout << Function1() << endl;
+	cout << Result << endl;
+
+
+
+
+	return 0;
+}
+
+
+
+The 2 one :       
+
+
+      it is a Procedural and Function
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void My_Sum_Procedure()
+{
+
+	int Number1, Number2;
+
+
+	cout << "Pleas enter the Number1? \n";
+	cin >> Number1;
+
+	cout << "Pleas enter the Number2? \n";
+	cin >> Number2;
+
+	cout << "**********************\n";
+
+	int Sum = Number1 + Number2;
+
+	cout << Sum << endl;
+
+
+
+}
+
+
+int My_sum_Function()
+{
+
+	int Number1, Number2, sum;
+
+
+	cout << "Pleas enter the Number1? \n";
+	cin >> Number1;
+
+	cout << "Pleas enter the Number2? \n";
+	cin >> Number2;
+
+	cout << "**********************\n";
+
+
+	 sum = Number1 + Number2;
+
+	 return sum ;
+
+}
+
+
+int main()
+{
+
+	My_Sum_Procedure();
+
+	cout << My_sum_Function() << endl;
+
+	
+
+	return 0;
+}
+

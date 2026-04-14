@@ -1,0 +1,34 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+void Fibonacii_Series(short & Times)
+{
+
+	short Prev_1 = 1, Prev_2 = 0, Feb_Number = 0;
+
+	cout << " 1 ";
+
+	for (short i = 0; i < Times; i++)
+	{
+
+		Feb_Number = Prev_1 + Prev_2;
+		cout << setw(7) << Feb_Number ;
+		Prev_2 = Prev_1;
+		Prev_1 = Feb_Number;
+
+	}
+
+}
+
+int main()
+{
+	short a = 9;
+	Fibonacii_Series(a);
+
+	return 0;
+}

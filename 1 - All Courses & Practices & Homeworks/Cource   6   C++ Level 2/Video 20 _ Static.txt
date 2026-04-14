@@ -1,0 +1,36 @@
+#include <iostream>
+#include "InputLib.h";   //    Input_Lib
+#include "Output_Lib.h"; //    Output_Lib
+#include "Check_Lib.h";  //    Check_Lib
+#include "Screen_Lib.h"; //    Screen_Lib
+using namespace std;
+
+
+void MyNumber()
+{
+
+	static int Number = 0;
+
+	cout << " The Number Value is : " << Number << endl;
+	Number++;
+
+}
+
+
+int main()
+{
+
+	Screen_Lib::Purple_Screen();
+
+
+	MyNumber();
+	MyNumber();
+	MyNumber();
+	MyNumber();
+	MyNumber();
+	MyNumber();
+	MyNumber();
+
+
+	return 0;
+}

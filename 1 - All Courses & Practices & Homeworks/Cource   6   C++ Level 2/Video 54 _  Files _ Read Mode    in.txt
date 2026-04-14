@@ -1,0 +1,48 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+void Print_File_Content(const string& Message)
+{
+
+	fstream File;
+	File.open( Message , ios::in);
+
+
+	if (File.is_open())
+	{
+		string Line = " ";
+
+		while (getline(File, Line))
+			cout << Line << endl;
+
+		File.close();
+	}
+
+}
+
+void Clear_File(const string& Message)
+{
+
+	fstream File;
+	File.open(Message, ios::out);
+
+	if (File.is_open())
+		File.close();
+
+}
+
+int main()
+{
+
+
+	Print_File_Content("MyFile.txt");
+	Clear_File("MyFile.txt");
+	Print_File_Content("MyFile.txt");
+
+	return 0;
+}

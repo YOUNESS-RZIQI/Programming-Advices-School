@@ -1,0 +1,30 @@
+
+#include <iostream>
+
+using namespace std;
+
+void Fibonacii_Series_Using_Recurssion(short  Number , short  Prev_1 , short  Prev_2)
+{
+
+	short Feb_Number = 0 ;
+
+
+	if (Number > 0)
+	{
+
+		Feb_Number = Prev_1 + Prev_2;
+		Prev_2 = Prev_1;
+		Prev_1 = Feb_Number;
+		cout  << Feb_Number << "     ";
+		Fibonacii_Series_Using_Recurssion(Number - 1, Prev_1, Prev_2);
+
+	}
+
+}
+
+int main()
+{
+	Fibonacii_Series_Using_Recurssion(10,0,1);
+
+	return 0;
+}

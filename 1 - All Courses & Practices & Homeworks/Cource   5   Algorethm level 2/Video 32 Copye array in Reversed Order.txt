@@ -1,0 +1,197 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+
+enum en_Prime_or_Not { Prime, Not_Prime };
+
+en_Prime_or_Not Check_if_Prime(int Num)
+{
+
+	int M = round(Num / 2);
+
+	for (int Counter = 2; Counter <= M; Counter++)
+	{
+
+		if (Num % Counter == 0)
+		{
+			return en_Prime_or_Not::Not_Prime;
+		}
+
+	}
+
+	return en_Prime_or_Not::Prime;
+
+}
+
+void Copy_Only_Prime_Number_Array(int Arr_Source[100], int Arr_copy[100], short ArrLength , short &Arr2Length)
+{
+
+	int Counter = 0;
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		if(Check_if_Prime(Arr_Source[i])  == en_Prime_or_Not::Prime )
+		{
+			
+			Arr_copy[Counter] = Arr_Source[i];
+			Counter++;
+		}
+		
+
+	}
+
+	Arr2Length = Counter;
+
+}
+
+int Enter_Positive_Number(string Massege)
+{
+
+	int Number = 0;
+
+	do
+	{
+
+		cout << Massege;
+		cin >> Number;
+		cout << endl;
+
+
+	} while (Number <= 0);
+
+
+	return Number;
+}
+
+int Randam_Number_In_Range(int From, int To)
+{
+	int RandNum = rand() % (To - From + 1) + From;
+	return RandNum;
+}
+
+void Sum_of_2_Arrays(int Arr1[100], int Arr2[100],int Sum_Arr[100], short ArrLength)
+{
+
+	
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		Sum_Arr[i] = Arr1[i] + Arr2[i];
+
+	}
+
+
+
+}
+
+void Swap(int& A, int& B)
+{
+
+	int Temp = 0;
+
+	Temp = B;
+	B = A;
+	A = Temp;
+
+	
+}
+
+void Shuffle_Arr_Numbers(int Source_Arr[100], short ArrLength)
+{
+
+	for(int i = 0 ; i< ArrLength ; i++)
+	{
+
+		Swap(Source_Arr[Randam_Number_In_Range(0, ArrLength - 1)], Source_Arr[Randam_Number_In_Range(0, ArrLength - 1)]);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+void Copy_Array_in_Reversed_Order(int Arr_Origin[100], int Arr_copy[100], int ArrLength)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+		
+		Arr_copy[i] = Arr_Origin[ArrLength-i-1];
+		
+
+	}
+
+
+
+}
+
+void Print_Array(int Arr[100], short ArrLength)
+{
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+		
+		cout << Arr[i] << " ";
+		
+	}
+
+	cout << endl;
+
+
+}
+
+void Fill_Array_with_Randum_Numbers(int Arr[100], short ArrLength)
+{
+
+
+
+	for (int i = 0; i < ArrLength; i++)
+	{
+
+		Arr[i] = Randam_Number_In_Range(1,100);
+
+	}
+
+}
+
+
+int main()
+{
+
+	srand((unsigned)time(NULL));
+
+	int Arr[100], Arr2[100] ;
+	short ArrLength = 0;
+	ArrLength = Enter_Positive_Number("Please enter a Number : ");
+
+	Fill_Array_with_Randum_Numbers(Arr, ArrLength);
+	
+	Copy_Array_in_Reversed_Order(Arr, Arr2, ArrLength);
+
+
+	cout << "Array 1 Elements                : \n";
+	Print_Array(Arr, ArrLength);
+	cout << endl;
+
+
+	cout << "Array 2 Elements After Reversed : \n";
+	Print_Array(Arr2, ArrLength);
+	cout << endl;
+
+
+
+
+
+	return 0;
+}

@@ -1,0 +1,58 @@
+/*
+
+                                                     Title :  Arrays types of class objects
+
+*/
+
+
+
+
+
+There are three main ways to create arrays of class objects in C++
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class clsA {
+public:
+    int _a;
+    clsA(int a = 0) { _a = a; }
+    void print() { cout << _a << " "; }
+};
+
+int main() {
+    // 1️⃣ Dynamic array (heap)
+    // - Allocated using 'new'
+    // - Memory comes from the HEAP (lives until you delete it)
+    // - You must call 'delete[]' manually to free it
+    clsA* arr1 = new clsA[3];
+    arr1[0] = clsA(10);
+    arr1[1] = clsA(20);
+    arr1[2] = clsA(30);
+    cout << "Dynamic array: ";
+    for (int i = 0; i < 3; i++) arr1[i].print();
+    cout << endl;
+    delete[] arr1;  // free heap memory manually
+
+    // 2️⃣ Static array (stack)
+    // - Allocated automatically (stack memory)
+    // - Fixed size known at compile time
+    // - Automatically destroyed when it goes out of scope
+    clsA arr2[] = { clsA(40), clsA(50), clsA(60) };
+    cout << "Static array: ";
+    for (int i = 0; i < 3; i++) arr2[i].print();
+    cout << endl;
+
+    // 3️⃣ std::vector (dynamic and managed)
+    // - Internally allocates on the heap
+    // - Automatically grows or shrinks as needed
+    // - Automatically frees memory (no delete needed)
+    vector<clsA> arr3 = { clsA(70), clsA(80), clsA(90) };
+    cout << "Vector: ";
+    for (int i = 0; i < 3; i++) arr3[i].print();
+    cout << endl;
+
+    return 0;
+}

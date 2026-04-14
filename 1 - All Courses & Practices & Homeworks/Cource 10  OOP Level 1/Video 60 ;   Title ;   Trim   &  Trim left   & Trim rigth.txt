@@ -1,0 +1,475 @@
+SNOUY
+hhhhhhhh7953
+Online
+
+SNOUY — 11/6/25, 3:08 PM
+k
+k
+k
+k
+k
+SNOUY — 11/6/25, 3:26 PM
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+SNOUY — 11/6/25, 3:34 PM
+k
+kk
+kk
+k
+k
+k
+k
+k
+k
+k
+SNOUY — 11/6/25, 3:58 PM
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+SNOUY — 11/6/25, 4:07 PM
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+k
+SNOUY — 11/8/25, 3:53 PM
+Title :  Stating in HTML 😉
+
+
+      •••>The word "HTML" , stand for : HyperText Markup Language.
+
+  •It is the standard markup language used to create web pages and applications .
+
+  •Important Note: HTML is not a programming language , it is a markup language used
+    to structure content on the web.
+
+    Explaining : 
+
+      
+<!DOCTYPE > : this is the Declaration of the document type and version of HTML.
+The html in side the declaration is : The root element that contains all other HTML elemen
+<head> Section: Contains meta-information about the document, such as the title, character set,
+   stylesheets, and other resources.
+<body> Section: Contains the content of the web page, such as text, images, and other medi
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUNESS_RZIQI.COM</title>
+</head>
+<body>
+  <h1>ERORR 404</h1>
+  <p>This is my first <b>HTML</b>text hhh</p>
+</body>
+</html>
+SNOUY — 11/11/25, 1:20 PM
+https://hianime.to/watch/kengan-ashura-part-2-932?ep=51906
+Watch Kengan Ashura Part 2 ONA episodes English Sub/Dub online Free...
+Watch and Download Kengan Ashura Part 2 ONA episodes English Sub/Dub Online Free on HiAnime.to
+Image
+SNOUY
+ started a call that lasted a few seconds. — 11/12/25, 5:40 AM
+Amine krt — 11/15/25, 2:51 PM
+https://github.com/Frontendab
+GitHub
+Frontendab - Overview
+Full-Stack Software Engineer 💻 | Building scalable, modern web applications using the MERN Stack (M: Mongo 🍃, E: Express, R: React⚛️, N: Node.js 🟢). - Frontendab
+Image
+Amine krt — 11/18/25, 5:13 AM
+https://github.com/OussMac/Born2BeRoot-1337
+GitHub
+GitHub - OussMac/Born2BeRoot-1337: My Detailed Guide To The Born2Be...
+My Detailed Guide To The Born2BeRoot Project. Contribute to OussMac/Born2BeRoot-1337 development by creating an account on GitHub.
+GitHub - OussMac/Born2BeRoot-1337: My Detailed Guide To The Born2Be...
+https://github.com/11Valgo11/Concepts-Diagrams/tree/main/Born2beroot_42
+GitHub
+Concepts-Diagrams/Born2beroot_42 at main · 11Valgo11/Concepts-Diag...
+Diagrams for low level concepts. Contribute to 11Valgo11/Concepts-Diagrams development by creating an account on GitHub.
+Diagrams for low level concepts. Contribute to 11Valgo11/Concepts-Diagrams development by creating an account on GitHub.
+Amine krt — 11/18/25, 8:33 AM
+SCSI3
+SNOUY — 11/18/25, 6:45 PM
+Image
+Image
+Image
+Image
+Image
+Image
+Image
+Image
+Image
+Image
+Image
+Amine krt — 11/19/25, 10:14 AM
+Debian = community, flexible, wide use (desktop/server)
+
+Rocky = enterprise, RHEL compatible, stable for production
+Amine krt — 11/19/25, 11:54 AM
+Image
+SNOUY — 11/19/25, 6:10 PM
+🇨
+ 🇵
+ 🇵
+ 
+/*
+                    Title : Trim Rigth , Trin Left , Trem (left & rigth)
+
+
+        Trim left ex  : "   youness rziqi   "  ---->  "youness rziqi   "
+        Trim rigth ex : "   youness rziqi   "  ---->  "   youness rziqi"
+Expand
+message.txt
+3 KB
+SNOUY — 11/20/25, 3:40 PM
+🇨
+ 🇵
+ 🇵
+string Trim_Left_2(string S , char seprator)
+{
+    for (int i = 0; i < S.length() ; i++)
+    {
+        if ( S[i] != seprator)
+            return (S.substr(i,S.length() - i));
+Expand
+message.txt
+1 KB
+SNOUY — 11/20/25, 4:59 PM
+🇨
+ 🇵
+ 🇵
+/*
+                    Title : vector Join
+
+
+    Input cases : 
+Expand
+message.txt
+1 KB
+SNOUY — 11/20/25, 5:21 PM
+🇨
+ 🇵
+ 🇵
+/*
+                    Title : Join String (Overloading) 
+
+
+    Input cases : 
+Expand
+message.txt
+2 KB
+SNOUY — 11/20/25, 5:41 PM
+🇨
+ 🇵
+ 🇵
+/*
+                    Title : Reverse Words In String 
+
+
+    Input cases : 
+Expand
+message.txt
+2 KB
+SNOUY — 11/20/25, 5:54 PM
+🇨
+ 🇵
+ 🇵
+/*
+                    Title : Replace Word In String Using Built In Function
+
+
+    Input cases : 
+Expand
+message.txt
+1 KB
+SNOUY — 11/21/25, 11:25 AM
+Bor2beroot
+
+What are partitions, what's their purpose and how to set them up ?
+
+
+How to Set Up Partitions ?
+
+What Are Primary and Logical Partitions ?
+
+Differences Between Primary and Logical Partitions ?
+
+What is Sudo, why use it and how to set up it's strict rules ?
+
+How to Change the Hostname of the Machine ?
+
+How to set SSH up?
+
+What is Cron?
+
+what is LVM and hes purpuce and how to use it ? 
+
+                                            ~ Born2BeRoot ~
+
+
+/*
+                Project requirments : 
+Expand
+message.txt
+10 KB
+SNOUY — 11/21/25, 2:55 PM
+🇨
+ 🇵
+ 🇵
+/*
+                    Title : Replace Word In String Using My origin Function
+
+
+    Input cases : 
+Expand
+message.txt
+3 KB
+SNOUY — 11/21/25, 3:15 PM
+🇨
+ 🇵
+ 🇵
+/*
+                    Title : Remove Punctuations From String
+
+
+    Input cases : 
+Expand
+message.txt
+1 KB
+SNOUY — 11/21/25, 3:51 PM
+🇨
+ 🇵
+ 🇵
+  :   clsStrings 
+SNOUY — 11/22/25, 2:55 PM
+Image
+SNOUY — 11/22/25, 5:20 PM
+🇨
+ 🇵
+ 🇵
+ 
+SNOUY — 11/23/25, 7:49 PM
+clsDate
+
+#pragma warning(disable : 4996)
+#pragma once
+
+#include "clsString.h"
+#include<iostream>
+Expand
+message.txt
+20 KB
+clsStrings
+/*
+                Title: My Class of String Functions That I Made
+*/
+
+
+Expand
+message.txt
+11 KB
+clsUtil
+#pragma once
+
+/*
+            Title :  Utility Library.
+
+Expand
+message.txt
+6 KB
+SNOUY — 11/25/25, 5:47 PM
+🇨
+ 🇵
+ 🇵
+/*
+
+            Title :  Variable type ?
+
+        I Created a Functoin that return string of the data type name .
+Expand
+message.txt
+2 KB
+Amine krt — Yesterday at 11:24 AM
+k3
+Image
+Amine krt — Yesterday at 6:15 PM
+sudo ufw delete allow 8080
+sudo ufw status
+﻿
+Amine krt
+amine__404
+/*
+                    Title : Trim Rigth , Trin Left , Trem (left & rigth)
+
+
+        Trim left ex  : "   youness rziqi   "  ---->  "youness rziqi   "
+        Trim rigth ex : "   youness rziqi   "  ---->  "   youness rziqi"
+        Trim       ex : "   youness rziqi   "  ---->  "youness rziqi"
+
+        
+    Input cases : 
+
+            1) "        "
+
+            2) "   youness     "
+            3) "youness"
+            3) "yous  ness"
+            3) "   yous  ness   "
+            4) "youness    "
+            5) "    youness"
+
+    Trim Prototype : 
+        void Trim(string S , char seprator);
+
+*/
+
+#include <iostream>
+using namespace std;
+
+void    Trim(string &S , char Seprator)
+{
+    int i = 0;
+    int j = (S.length() - 1);
+
+    while ( S[i] == Seprator && S[i])
+            i++;
+
+    if ( i == j + 1)
+    {
+        S = "";
+        return ;
+    }
+
+    while (S[j] == Seprator && S[j])
+            j--;
+
+    S = S.substr(i, j - i + 1);
+
+}
+
+void    Trim_Rigth(string &S , char Seprator)
+{
+    int i = 0;
+    int j = (S.length() - 1);
+
+
+
+    while (S[j] == Seprator && S[j])
+            j--;
+
+    if ( j < 0)
+    {
+        S = "";
+        return ;
+    }
+
+    S = S.substr(0, j + 1);
+
+}
+
+
+void    Trim_left(string &S , char Seprator)
+{
+    int i = 0;
+    int j = (S.length() - 1);
+
+    while ( S[i] == Seprator )
+            i++;
+
+    if ( i == j + 1)
+    {
+        S = "";
+        return ;
+    }
+
+
+    S = S.substr(i, S.length());
+
+}
+
+int main(void)
+{
+    string s = "           ";
+    Trim( s , ' ');
+    cout << s << ".\n";
+
+    s = "    youness";
+    Trim_left( s , ' ');
+    cout << s << ".\n";
+
+    s = "youness      ";
+    Trim( s , ' ');
+    cout << s << ".\n";
+
+    s = "youness";
+    Trim( s , ' ');
+    cout << s << ".\n";
+
+
+    s = "youne    rziqi";
+    Trim( s , ' ');
+    cout << s << ".\n";
+
+    s = "     youne    rziqi";
+    Trim( s , ' ');
+    cout << s << ".\n";
+
+
+    s = "youne    rziqi    ";
+    Trim( s , ' ');
+    cout << s << ".\n";
+
+
+    s = "    youne    rziqi    ";
+    Trim_left( s , ' ');
+    cout << s << ".\n";
+
+}
+message.txt
+3 KB

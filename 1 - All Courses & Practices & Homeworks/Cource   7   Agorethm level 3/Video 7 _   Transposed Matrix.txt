@@ -1,0 +1,95 @@
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+void Transposed_Matrix(int Arr[3][3],int Arr_Transposd[3][3], const short& Rows, const short& Coloms )
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Arr_Transposd[j][i] = Arr[i][j];
+		}
+
+	}
+
+}
+
+void Print_Matrix(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			//printf("%d\t", Arr[i][j]);
+			cout << setw(3) << Arr[i][j] << "    ";
+		}
+
+		cout << endl;
+
+	}
+
+
+}
+
+void Print_Array(int Arr[3], short length)
+{
+
+	for (int i = 0; i < length; i++)
+		cout << "Coloms " << i + 1 << " Sum is : " << Arr[i] << "\n";
+
+}
+
+
+void Fill_2_D_Arr_W_order_Numbers(int Arr[3][3], const short& Rows, const short& Coloms)
+{
+
+	short Count = 0;
+
+	for (int i = 0; i < Rows; i++)
+	{
+
+		for (int j = 0; j < Coloms; j++)
+		{
+			Count++;
+			Arr[i][j] = Count;
+		}
+
+	}
+
+
+}
+
+
+
+int main()
+{
+
+	int Arr[3][3],Arr_Transposd[3][3],Sum = 0;
+
+	Fill_2_D_Arr_W_order_Numbers(Arr, 3, 3);
+	cout << "The folowing is 3x3 Order Matrix : \n";
+	Print_Matrix(Arr, 3, 3);
+	cout << "\n\n" << endl;
+
+	Transposed_Matrix(Arr, Arr_Transposd, 3, 3);
+	cout << "The folowing is 3x3 Transposed Matrix : \n";
+	Print_Matrix(Arr_Transposd, 3, 3);
+
+
+
+
+	cout << "\n\n" << endl;
+
+
+
+	system("pause>0");
+}

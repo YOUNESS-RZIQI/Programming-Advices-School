@@ -1,0 +1,29 @@
+C++ : 
+
+
+/*
+                        Title : Print fist char of each Word.
+*/
+
+#include <iostream>
+using namespace std;
+
+void Print_first_leter(string s)
+{
+    short is_first_letter = true;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        if( s[i] != ' ' && is_first_letter)
+            cout << s[i];
+        is_first_letter = (s[i] == ' '? true : false);
+    }
+}
+
+int main(void)
+{
+
+    Print_first_leter(" ysdfsf osdf uasdf nasdfds esdfsd ssdf sdf\n");
+
+    return (0);
+}

@@ -1,0 +1,66 @@
+
+FOR KNOWING WHAT IS THE RANGE OF THE DATA TYPE ? :
+
+
+#include <iostream>
+using namespace std	;
+
+int main()
+{
+	cout << "*************************************************************************\n\n";
+	cout << "char range : (" << CHAR_MIN << ") , (" << CHAR_MAX << ") \n";
+	cout << "unsigned char range : (" << 0 << ") , (" << UCHAR_MAX << ") \n";
+
+	cout << "integer range : (" << INT_MIN << ") , (" << INT_MAX << ")" << "\n";
+	cout << "unsigned integer range : (" << 0 << ") , (" << UINT_MAX << ")" << "\n";
+	cout << "long long integer range : (" << LLONG_MIN << ") , (" << LLONG_MAX << ")" << "\n";
+	cout << "SHORT integer range : (" << SHRT_MIN << ") , (" << SHRT_MAX << ")" << "\n";
+	cout << "UNSIGNED LONG LONG integer range : (" << 0 << ") , (" << ULLONG_MAX << ")" << "\n";
+	cout << "UNSIGNED SHORT integer range : (" << 0 << ") , (" << USHRT_MAX << ")" << "\n";
+
+
+
+
+
+
+	cout << "float range : (" << FLT_MIN << ") , (" << FLT_MAX << ") \n";
+
+	cout << "double rage : (" << DBL_MIN << ") , (" << DBL_MAX << ") \n";
+	cout << "LONG double rage : (" << LDBL_MIN << ") , (" << LDBL_MAX << ") \n";
+
+	cout << "flaot (negative) range : (" << -FLT_MIN << ") , (" << -FLT_MAX << ") \n";
+
+	cout << "*************************************************************************\n\n";
+	return 0;
+}
+
+
+
+FOR KNOWING THE SIZE OF THE DATA TYPE ? :
+
+
+#include <iostream>
+using namespace std	;
+
+int main()
+{
+	cout << "*************************************************************************\n\n";
+	cout << "char size : " << sizeof(char) << "\n";
+
+	cout << "intger size : " << sizeof(int) << "\n";
+
+	cout << "boolean size : " << sizeof(bool) << "\n";
+
+	cout << "float size : " << sizeof(float) << "\n" ;
+
+	cout << "double size :  " << sizeof(double) << "\n";
+
+	cout << "string size :  " << sizeof(string) << "\n";
+
+	cout << "wchar_t size :  " << sizeof(wchar_t) << "\n";
+
+	
+
+	cout << "*************************************************************************\n\n";
+	return 0;
+}

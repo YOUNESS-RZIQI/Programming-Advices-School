@@ -1,0 +1,336 @@
+The 16 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void Enter_Diagonal_And_Side(float& a, float& d)
+{
+
+	cout << "Please enter Diagonale Here : ";
+	cin >> d;
+
+	cout << "please Enter Side Here : ";
+	cin >> a;
+
+}
+
+
+float Calculat_Area_By_Diagonal_and_Side(float a, float d)
+{
+	
+	float Area;
+
+	Area = a * (sqrt(pow(d, 2) - pow(a, 2)));
+
+	return Area;
+
+}
+
+
+void Print_Reslut(float Result)
+{
+
+	cout << "   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	float a, d;
+	Enter_Diagonal_And_Side(a, d);
+	Print_Reslut(Calculat_Area_By_Diagonal_and_Side(a, d));
+
+
+	return 0;
+}
+
+
+
+
+
+The 17 one : 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void Enter_Diagonal_And_Side(float& a, float& h)
+{
+	cout << "please Enter a Here : ";
+	cin >> a;
+
+	cout << "Please enter h Here : ";
+	cin >> h;
+
+	
+
+}
+
+
+float Calculat_Triangle_Area_By_Diagonal_and_Side(float a, float h)
+{
+
+	float Area;
+
+	Area = ( a * h)*1/2;
+
+	return Area;
+
+}
+
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	float a, h;
+	Enter_Diagonal_And_Side(a, h);
+	Print_Reslut(Calculat_Triangle_Area_By_Diagonal_and_Side(a, h));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The 18 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void Enter_Area_Info(float& r)
+{
+	cout << "please Enter ! 9otre ! r Here : ";
+	cin >> r;
+
+}
+
+
+float Calculat_Circle_Area(float r)
+{
+
+	float Area;
+	const float PI = 3.14159265359;
+
+	Area = PI * pow(r,2);
+
+	return Area;
+
+}
+
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	float r;
+	Enter_Area_Info(r);
+	Print_Reslut(Calculat_Circle_Area(r));
+
+
+	return 0;
+}
+
+
+
+
+The 18' one :        Calculate Radious
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float Enter_Area_Radious()
+{
+
+	float r;
+
+
+	cout << "please Enter ! 9otre ! r Here : ";
+	cin >> r;
+
+
+	return r;
+}
+
+
+float Calculat_Circle_Area(float r)
+{
+
+	float Area;
+	const float PI = 3.141592653589793238;
+	Area = PI * pow(r,2);
+
+	return Area;
+
+}
+
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	
+	
+	Print_Reslut(Calculat_Circle_Area(Enter_Area_Radious()));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+The 19 one : 
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float Enter_Area_Diameter()
+{
+
+	float D;
+
+
+	cout << "please Enter ! Diameter ![ D ]  Here : ";
+	cin >> D;
+
+
+	return D;
+}
+
+
+float Calculat_Circle_Area_Diameter(float D)
+{
+
+	float Area;
+	const float PI = 3.141592653589793238;
+	Area = (PI * pow(D,2))/4;
+
+	return Area;
+
+}
+
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	
+	
+	Print_Reslut(Calculat_Circle_Area_Diameter(Enter_Area_Diameter()));
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+The 20 one : 
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+float Enter_Area_Squar_Side()
+{
+
+	float D;
+
+
+	cout << "please Enter ! Squar  Side ![ D ]  Here : ";
+	cin >> D;
+
+
+	return D;
+}
+
+
+float Calculat_Circle_Area_By_Squar_Side(float D)
+{
+
+	float Area;
+	const float PI = 3.141592653589793238;
+	Area = (PI * pow(D, 2)) / 4;
+
+	return Area;
+
+}
+
+
+void Print_Reslut(float Result)
+{
+
+	cout << "\n   The Area is : " << Result << endl << endl;
+
+}
+
+
+int main()
+{
+
+	
+	
+	Print_Reslut(Calculat_Circle_Area_By_Squar_Side(Enter_Area_Squar_Side()));
+
+
+	return 0;
+}
+
+
+
+

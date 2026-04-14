@@ -1,0 +1,36 @@
+
+#include <iostream>
+
+
+// it let you control the memory by deleting the variable after using them if you want so ?  
+
+
+#include <iomanip>
+#include <vector>
+using namespace std;
+
+
+int main()
+{
+
+	int* pX;
+	float* pF;
+
+
+	pX = new int;
+	pF = new float;
+
+
+	*pX = 10;
+	*pF = 10.1;
+
+	cout << *pX << endl;
+	cout << *pF << endl;
+
+
+	delete pX, pF;
+
+
+
+	return 0;
+}

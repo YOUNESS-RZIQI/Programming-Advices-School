@@ -1,0 +1,46 @@
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Input_Lib.h"
+using namespace std;
+
+bool is_Vawel( char  Ch1)
+{
+
+	Ch1 = tolower(Ch1);
+
+	return ( (Ch1 == 'a') || (Ch1 == 'e') || (Ch1 == 'i') || (Ch1 == 'o') || (Ch1 == 'u') );
+	
+}
+
+void Print_Vawels(const string & s)
+{
+
+	cout << "\n\nThe Vowels are :  ";
+
+	for (short i = 0; i < s.length(); i++)
+	{
+		if (is_Vawel(s[i]))
+		{
+			cout << s[i] << "    ";
+		}
+	}
+
+	cout << "\n\n";
+
+}
+
+int main()
+{
+
+	string S1 = Input_Lib::Ask_for_string("Please Enter you String : ");
+
+	Print_Vawels(S1);
+
+
+
+	return 0;
+}

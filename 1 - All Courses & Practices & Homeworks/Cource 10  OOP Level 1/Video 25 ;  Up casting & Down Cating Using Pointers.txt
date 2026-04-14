@@ -1,0 +1,72 @@
+/*
+
+
+						Title :  Up Casting Vs Down Casting in Inheritance 
+						
+				Notion :  ! ! It is a Data type, so it Can use up/Down casting ! !
+
+
+		1) * Up Casting : 
+
+				* It is Convirting from the Drived Class to Base Class , and that is Possible .
+				* And we can do a Pointer of Base class point to a Drived class , becaus he insure 
+				  that all the Methods/Members of the Base class exist in the SubClass , but the vers is Impossible.
+				
+				
+	    2) * Down Casting : 
+
+				* it is Convirting from Base Class to a Drived Calsss , and that is Impossible! .
+				
+
+
+												** In simple way ** 
+
+			* Pointers Casting : look if the data type of the pointer all her Member exist in the Object that
+			  will point in to ? In sempil term , it is possible to a base point to a Sube , but the revers NO !!
+
+
+				
+*/
+
+
+#include <iostream>
+using namespace std;
+
+class clsPerson
+{
+public:
+	string Full_Name = "YOUNESS RZIQI";
+};
+
+class clsEmployee : public clsPerson
+{
+public:
+	float Salary = 5000;
+};
+
+int main(void)
+{
+	clsEmployee Employee;
+
+
+	// Ther is a hidden upcasting her
+	clsPerson *Person = &Employee; // Possible if : clsEmployee Object has all the Member of clsPerson
+	// The one without the hidden upcasting : clsPerson *Person = (clsPerson*)&Employee;
+
+	cout << Person->Full_Name << endl;
+
+	// but if we want to do this : 
+	/*
+	
+		clsPerson Person;
+		clsPerson *Employee = &Person;
+
+	*/
+	// It will not Work why ? because :  class clsPerson has not all the Member of class clEmployee
+
+	
+
+
+
+	return 0;
+}

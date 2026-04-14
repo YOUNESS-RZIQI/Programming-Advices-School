@@ -1,0 +1,135 @@
+/*
+
+
+							Title : Nested Class
+
+
+
+
+		1) Nested Class or Nested struct is means if you can do a stuct inside stuct or class inside class like a
+		   nested loop it means loop inside loop. "( Nested = Inner )"
+
+		2) Nested or Inner Classes : A class can also contain another class definition inside itself, which is called
+		  “Inner Class” in C++.
+
+
+
+
+
+
+*/
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class clsPerson
+{
+    class clsAddress
+    {
+        string _AddressLine1;
+        string _AddressLine2;
+        string _City;
+        string _Country;
+
+    public:
+        clsAddress() {} 
+
+        clsAddress(string AddressLine1, string AddressLine2, string City, string Country)
+        {
+            _AddressLine1 = AddressLine1;
+            _AddressLine2 = AddressLine2;
+            _City = City;
+            _Country = Country;
+        }
+
+        void Set_AddressLine1(string AddressLine1)
+        {
+            _AddressLine1 = AddressLine1;
+        }
+
+        string GetAddressLine1()
+        {
+            return _AddressLine1;
+        }
+
+        void Set_AddressLine2(string AddressLine2)
+        {
+            _AddressLine2 = AddressLine2;
+        }
+
+        string GetAddressLine2()
+        {
+            return _AddressLine2;
+        }
+
+         void Set_Country(string Country)
+        {
+            _Country = Country;
+        }
+
+        string GetCountry()
+        {
+            return _Country;
+        }
+
+        void Set_City(string City)
+        {
+            _City = City;
+        }
+
+        string GetCity()
+        {
+            return _City;
+        }
+
+
+
+
+        void Print()
+        {
+            cout << "\nAddress:\n";
+            cout << _AddressLine1 << endl;
+            cout << _AddressLine2 << endl;
+            cout << _City << endl;
+            cout << _Country << endl;
+        }
+    };
+
+    string _FullName;
+public:
+
+
+    clsAddress Address;
+
+    clsPerson(string FullName, string Address1, string Address2, string City, string Country)
+    {
+        _FullName = FullName;
+        Address = clsAddress( Address1, Address2, City, Country);
+    }
+
+
+    void Set_FullName(string FullName)
+    {
+        _FullName = FullName;
+    }
+
+    string Get_FullName()
+    {
+        return _FullName;
+    }
+
+
+};
+
+int main()
+{
+    clsPerson Person1("Youness", "13", "37", "Khoribga", "Morocco");
+
+    Person1.Address.Print();
+    
+    system("pause>0");
+    return 0;
+}
