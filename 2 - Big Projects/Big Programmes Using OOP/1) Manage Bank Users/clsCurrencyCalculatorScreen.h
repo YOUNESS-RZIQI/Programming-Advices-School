@@ -1,132 +1,106 @@
 #pragma once
-
+#include <iostream>
 #include "clsScreen.h"
 #include "clsCurrency.h"
 #include "clsInputValidate.h"
-#include "clsString.h"
-#include <string>
 
-class clsCurrencyCalculatorScreen : protected clsScreen
+class clsCurrencyCalculatorScreen :protected clsScreen
+
 {
+private:
 
-	static void _PrintCurrency(clsCurrency Currency)
-	{
-		cout << "_____________________________\n";
-		cout << "\nCountry    : " << Currency.Country();
-		cout << "\nCode       : " << Currency.CurrencyCode();
-		cout << "\nName       : " << Currency.CurrencyName();
-		cout << "\nRate(1$) = : " << Currency.Rate();
+    static float _ReadAmount()
+    {
+        cout << "\nEnter Amount to Exchange: ";
+        float Amount = 0;
 
-		cout << "\n_____________________________\n";
+        Amount = clsInputValidate::ReadFloatNumber();
+        return Amount;
+    }
 
-	}
+    static clsCurrency _GetCurrency(string Message)
+    {
 
-	static float _ExchangeFromUSDToCurrency(string CurCodeFrom, string CurCodeTo, float Amounth)
-	{
-			clsCurrency Currency = clsCurrency::FindByCode(CurCodeTo);
+        string CurrencyCode;
+        cout << Message << endl;
 
-			float exchange = clsCurrency::FromUSDToCurrency(Amounth, Currency);
+        CurrencyCode = clsInputValidate::ReadString();
 
-			cout << "\nConvert From :\n";
+        while (!clsCurrency::IsCurrencyExist(CurrencyCode))
+        {
+            cout << "\nCurrency is not found, choose another one: ";
+            CurrencyCode = clsInputValidate::ReadString();
+        }
 
-			_PrintCurrency(clsCurrency::FindByCode("usd"));
+        clsCurrency Currency = clsCurrency::FindByCode(CurrencyCode);
+        return Currency;
 
-			cout << "\n" + to_string(Amounth) + " " + CurCodeFrom + " = " + to_string(exchange) + " " + CurCodeTo + "\n";
+    }
 
-			return exchange;
-	}
 
-	static float _ExchangeFromCurrencyToUSD(string CurCodeFrom, string CurCodeTo, float Amounth)
-	{
-		
-		clsCurrency Currency = clsCurrency::FindByCode(CurCodeFrom);
+    static  void _PrintCurrencyCard(clsCurrency Currency, string Title = "Currency Card:")
+    {
 
-		float exchange = clsCurrency::FromCurrencyToUSD(Amounth, Currency);
+        cout << "\n" << Title << "\n";
+        cout << "_____________________________\n";
+        cout << "\nCountry       : " << Currency.Country();
+        cout << "\nCode          : " << Currency.CurrencyCode();
+        cout << "\nName          : " << Currency.CurrencyName();
+        cout << "\nRate(1$) =    : " << Currency.Rate();
+        cout << "\n_____________________________\n\n";
 
-		cout << "\nConvert From :\n";
+    }
 
-		_PrintCurrency(Currency);
+    static void _PrintCalculationsResults(float Amount, clsCurrency Currency1, clsCurrency Currency2)
+    {
 
-		cout << "\n" + to_string(Amounth) + " " + CurCodeFrom + " = " + to_string(exchange) + " " + CurCodeTo + "\n";
+        _PrintCurrencyCard(Currency1, "Convert From:");
 
-		return exchange;
-	}
+        float AmountInUSD = Currency1.ConvertToUSD(Amount);
 
-	static string _ReadValidCurrencyCode(string Message, string ErrorMessage)
-	{
-		string CurrencyCode = "";
+        cout << Amount << " " << Currency1.CurrencyCode()
+            << " = " << AmountInUSD << " USD\n";
 
-		cout << Message;
-		CurrencyCode = clsInputValidate::ReadString();
+        if (Currency2.CurrencyCode() == "USD")
+        {
+            return;
+        }
 
-		clsCurrency Currency = clsCurrency::FindByCode(CurrencyCode);
-		if (!Currency.IsEmpty())
-			return CurrencyCode;
+        cout << "\nConverting from USD to:\n";
 
-		while (1)
-		{
-			cout << ErrorMessage;
-			CurrencyCode = clsInputValidate::ReadString();
+        _PrintCurrencyCard(Currency2, "To:");
 
-			clsCurrency Currency1 = clsCurrency::FindByCode(CurrencyCode);
-			if (!Currency1.IsEmpty())
-				return CurrencyCode;
-		}
+        float AmountInCurrrency2 = Currency1.ConvertToOtherCurrency(Amount, Currency2);
 
-	}
-		
-	static void _CalculateExchange(string CurCodeFrom, string CurCodeTo, float Amounth)
-	{
-		if (clsString::UpperAllString(CurCodeFrom) == clsString::UpperAllString("usd"))
-		{
-			_ExchangeFromUSDToCurrency(CurCodeFrom, CurCodeTo, Amounth);
-		}
-		else if (clsString::UpperAllString(CurCodeTo) == clsString::UpperAllString("usd"))
-		{
-			_ExchangeFromCurrencyToUSD(CurCodeFrom, CurCodeTo, Amounth);
-		}
-		else
-		{
-			Amounth = _ExchangeFromCurrencyToUSD(CurCodeFrom, "usd", Amounth);
-			_ExchangeFromUSDToCurrency("usd", CurCodeTo, Amounth);
-		}
-	}
+        cout << Amount << " " << Currency1.CurrencyCode()
+            << " = " << AmountInCurrrency2 << " " << Currency2.CurrencyCode();
+
+    }
+
 
 public:
 
-	static void ShowCurrencyCalculatorScreen()
-	{
-		string Answer = "";
+    static void ShowCurrencyCalculatorScreen()
+    {
+        char Continue = 'y';
 
-		do
-		{
+        while (Continue == 'y' || Continue == 'Y')
+        {
+            system("cls");
 
-			system("cls");
+            _DrawScreenHeader("\tUpdate Currency Screen");
 
-			_DrawScreenHeader("   Calculate Currency Screen");
+            clsCurrency CurrencyFrom = _GetCurrency("\nPlease Enter Currency1 Code: ");
+            clsCurrency CurrencyTo = _GetCurrency("\nPlease Enter Currency2 Code: ");
+            float Amount = _ReadAmount();
 
-			string CurCodeFrom = "";
-			string CurCodeTo = "";
+            _PrintCalculationsResults(Amount, CurrencyFrom, CurrencyTo);
 
-			CurCodeFrom = _ReadValidCurrencyCode("\nPlease Enter Currency Code to Change From : ",
-				"\n ! ! ! Try Again ! ! !\n\nPlease Enter a Valid Currency Code to Change From : ");
+            cout << "\n\nDo you want to perform another calculation? y/n ? ";
+            cin >> Continue;
 
-			CurCodeTo = _ReadValidCurrencyCode("\nPlease Enter Currency Code to Change To : ",
-				"\n ! ! ! Try Again ! ! !\n\nPlease Enter a Valid Currency Code to Change To : ");
-
-
-			cout << "\nSo you want to change from [" << CurCodeFrom << "] To [" << CurCodeTo << "].\n\n";
-			cout << "Please Enter Amounth To Exchange : ";
-			float Amounth = clsInputValidate::ReadFloatNumberBetween(0.0001, 999999999999);
-
-			_CalculateExchange(CurCodeFrom, CurCodeTo, Amounth);
-
-			cout << "\nDo you wnat to perform an other Operation (y/n) ? ";
-			cin >> Answer;
-
-		} while (Answer == "y" || Answer == "Y");
+        }
 
 
-	}
-
+    }
 };

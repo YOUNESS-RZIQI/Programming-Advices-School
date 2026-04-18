@@ -49,13 +49,13 @@ private:
     {
         //cout << "\nUpdate Currency Rate Screen Will Be Here.\n";
         clsUpdateCurrencyRateScreen::ShowUpdateCurrencyRateScreen();
+
     }
 
     static void _ShowCurrencyCalculatorScreen()
     {
-        //cout << "\nCurrency Calculator Screen Will Be Here.\n";
+        // cout << "\nCurrency Calculator Screen Will Be Here.\n";
         clsCurrencyCalculatorScreen::ShowCurrencyCalculatorScreen();
-
     }
 
     static void _PerformCurrenciesMainMenueOptions(enCurrenciesMainMenueOptions CurrenciesMainMenueOptions)

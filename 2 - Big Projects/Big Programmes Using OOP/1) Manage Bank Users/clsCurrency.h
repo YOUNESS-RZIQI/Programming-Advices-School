@@ -169,6 +169,7 @@ public:
         return _Rate;
     }
 
+
     static   clsCurrency FindByCode(string CurrencyCode)
     {
 
@@ -239,17 +240,24 @@ public:
         return _LoadCurrencysDataFromFile();
     }
 
-    static float FromCurrencyToUSD(float Amounth, clsCurrency Currency)
+    float ConvertToUSD(float Amount)
     {
-        return (Amounth / Currency.Rate());
+        return (float)(Amount / Rate());
     }
 
-    static float FromUSDToCurrency(float Amounth, clsCurrency Currency)
+    float ConvertToOtherCurrency(float Amount, clsCurrency Currency2)
     {
-        return (Amounth * Currency.Rate());
+        float AmountInUSD = ConvertToUSD(Amount);
+
+        if (Currency2.CurrencyCode() == "USD")
+        {
+            return AmountInUSD;
+        }
+
+        return (float)(AmountInUSD * Currency2.Rate());
+
     }
 
 };
-
 
 
