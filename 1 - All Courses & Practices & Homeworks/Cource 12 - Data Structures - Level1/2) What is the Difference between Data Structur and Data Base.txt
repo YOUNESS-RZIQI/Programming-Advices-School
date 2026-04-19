@@ -1,0 +1,7 @@
+What is the Difference Between Data Structure and Data Base.
+
+
+
+	* Data Structure is a way of organizing and arranging data so it can be accessed and manipulated efficiently , and that data will be saved in RAM ( Random Access Memory). So when the program finish the data is goon.
+
+	* But Data Base is a place holder that hold a data that is organized by a good.

@@ -1,0 +1,12 @@
+What is a program?
+
+A program = Algorithms + Data Structures
+
+Algorithms:
+An algorithm is a set of steps you follow to solve a problem.
+
+What is a data structure?
+
+A data structure is the way you organize and handle data inside a program so you can access it, modify it, and manage it efficiently.
+Examples of data structures include: string, int, float, vector, array, struct, etc.
+When you understand data structures, it helps you as a developer choose the most suitable one for solving a specific problem.
