@@ -4,7 +4,12 @@ namespace Program
 {
     internal class Base
     {
-        enum eColors { Blue = 1, Red = 2, Green = 3 }
+        enum eColors : byte
+        {
+            Blue = 1,
+            Red = 2,
+            Green = 3
+        }
 
         static void Main()
         {
