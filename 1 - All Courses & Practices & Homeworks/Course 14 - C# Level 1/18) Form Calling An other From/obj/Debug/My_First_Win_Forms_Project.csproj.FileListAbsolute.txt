@@ -1,0 +1,11 @@
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\bin\Debug\My_First_Win_Forms_Project.exe.config
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\bin\Debug\My_First_Win_Forms_Project.exe
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\bin\Debug\My_First_Win_Forms_Project.pdb
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.csproj.AssemblyReference.cache
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.Properties.Resources.resources
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.csproj.GenerateResource.cache
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.csproj.CoreCompileInputs.cache
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.exe
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.pdb
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.Form1.resources
+C:\Users\rziki\source\repos\My_First_Win_Forms_Project\obj\Debug\My_First_Win_Forms_Project.frmMain.resources
