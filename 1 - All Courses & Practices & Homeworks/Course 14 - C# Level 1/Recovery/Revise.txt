@@ -10,4 +10,9 @@
 4) Text box: to put ext in it.
 
 
-5) 
+5) Lable: is just a line of text
+
+
+6) TabIndex: you control the order of tab how it moves
+
+7) 
