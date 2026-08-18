@@ -13,6 +13,10 @@
 5) Lable: is just a line of text
 
 
-6) TabIndex: you control the order of tab how it moves
+6) TabIndex: you control the order of tab how it moves + we can do TabStop to not let the tab chose somthign
 
-7) 
+
+7) Controle which Form to run first from the: Program.cs + how to open a form from a form + which show (normal, dialog).
+
+
+8) MessageBox params ( Message, Title, 
