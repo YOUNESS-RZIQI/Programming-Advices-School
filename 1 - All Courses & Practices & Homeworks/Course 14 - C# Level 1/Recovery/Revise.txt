@@ -1,0 +1,13 @@
+1) Redio Boutton: One choice from multy choices.
+
+
+2) check box: you can take as many from the choices.
+
+
+3) Eventes: when you do somthing (ex: on_click).
+
+
+4) Text box: to put ext in it.
+
+
+5) 
