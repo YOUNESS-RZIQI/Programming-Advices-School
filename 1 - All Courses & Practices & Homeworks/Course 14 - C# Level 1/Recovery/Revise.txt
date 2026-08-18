@@ -19,4 +19,4 @@
 7) Controle which Form to run first from the: Program.cs + how to open a form from a form + which show (normal, dialog).
 
 
-8) MessageBox params ( Message, Title, 
+8) MessageBox params ( Message, Title, botton(ok, ), MessageBoxIcon.Questions, MessageBoxDefaultBotton.Button2 ), if result == Dialog.OK ?
