@@ -1,0 +1,10 @@
+C:\Users\rziki\source\repos\Tests\bin\Debug\Tests.exe.config
+C:\Users\rziki\source\repos\Tests\bin\Debug\Tests.exe
+C:\Users\rziki\source\repos\Tests\bin\Debug\Tests.pdb
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.csproj.AssemblyReference.cache
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.Form1.resources
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.Properties.Resources.resources
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.csproj.GenerateResource.cache
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.csproj.CoreCompileInputs.cache
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.exe
+C:\Users\rziki\source\repos\Tests\obj\Debug\Tests.pdb
