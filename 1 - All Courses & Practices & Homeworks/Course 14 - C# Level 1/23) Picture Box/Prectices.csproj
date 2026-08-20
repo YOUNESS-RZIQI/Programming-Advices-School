@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91D5FF1D-275D-4221-8E28-A2EE88CB9B91}</ProjectGuid>
+    <ProjectGuid>{A84BA720-81BC-45A3-A515-33D9D6D64BE7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MyFirstWinFormsProject</RootNamespace>
-    <AssemblyName>MyFirstWinFormsProject</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>Prectices</RootNamespace>
+    <AssemblyName>Prectices</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -52,55 +52,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChkRadioGroup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmChkRadioGroup.Designer.cs">
-      <DependentUpon>frmChkRadioGroup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMessageBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMessageBox.Designer.cs">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPictureBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPictureBox.Designer.cs">
-      <DependentUpon>frmPictureBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTextBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTextBox.Designer.cs">
-      <DependentUpon>frmTextBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmChkRadioGroup.resx">
-      <DependentUpon>frmChkRadioGroup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMessageBox.resx">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPictureBox.resx">
-      <DependentUpon>frmPictureBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTextBox.resx">
-      <DependentUpon>frmTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

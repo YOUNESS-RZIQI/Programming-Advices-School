@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyFirstWinFormsProject.Properties
+namespace Prectices.Properties
 {
 
 
