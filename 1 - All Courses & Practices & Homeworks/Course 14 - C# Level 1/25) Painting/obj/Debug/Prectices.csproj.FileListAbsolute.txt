@@ -1,9 +1,0 @@
-C:\Users\rziki\source\repos\Prectices\bin\Debug\Prectices.exe.config
-C:\Users\rziki\source\repos\Prectices\bin\Debug\Prectices.exe
-C:\Users\rziki\source\repos\Prectices\bin\Debug\Prectices.pdb
-C:\Users\rziki\source\repos\Prectices\obj\Debug\Prectices.csproj.AssemblyReference.cache
-C:\Users\rziki\source\repos\Prectices\obj\Debug\Prectices.csproj.GenerateResource.cache
-C:\Users\rziki\source\repos\Prectices\obj\Debug\Prectices.csproj.CoreCompileInputs.cache
-C:\Users\rziki\source\repos\Prectices\obj\Debug\Prectices.exe
-C:\Users\rziki\source\repos\Prectices\obj\Debug\Prectices.pdb
-C:\Users\rziki\source\repos\Prectices\obj\Debug\Prectices.frm_Main.resources
