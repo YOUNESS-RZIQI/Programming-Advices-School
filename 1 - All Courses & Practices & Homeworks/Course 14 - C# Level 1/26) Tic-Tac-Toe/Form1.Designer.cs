@@ -134,6 +134,7 @@
             // 
             // pb_Box_2_2
             // 
+            this.pb_Box_2_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_2_2.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_2_2.Location = new System.Drawing.Point(828, 426);
             this.pb_Box_2_2.Name = "pb_Box_2_2";
@@ -146,6 +147,7 @@
             // 
             // pb_Box_1_2
             // 
+            this.pb_Box_1_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_1_2.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_1_2.Location = new System.Drawing.Point(828, 281);
             this.pb_Box_1_2.Name = "pb_Box_1_2";
@@ -158,6 +160,7 @@
             // 
             // pb_Box_0_2
             // 
+            this.pb_Box_0_2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_0_2.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_0_2.Location = new System.Drawing.Point(828, 136);
             this.pb_Box_0_2.Name = "pb_Box_0_2";
@@ -170,6 +173,7 @@
             // 
             // pb_Box_2_1
             // 
+            this.pb_Box_2_1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_2_1.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_2_1.Location = new System.Drawing.Point(636, 426);
             this.pb_Box_2_1.Name = "pb_Box_2_1";
@@ -182,6 +186,7 @@
             // 
             // pb_Box_1_1
             // 
+            this.pb_Box_1_1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_1_1.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_1_1.Location = new System.Drawing.Point(636, 281);
             this.pb_Box_1_1.Name = "pb_Box_1_1";
@@ -194,6 +199,7 @@
             // 
             // pb_Box_0_1
             // 
+            this.pb_Box_0_1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_0_1.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_0_1.Location = new System.Drawing.Point(636, 136);
             this.pb_Box_0_1.Name = "pb_Box_0_1";
@@ -206,6 +212,7 @@
             // 
             // pb_Box_2_0
             // 
+            this.pb_Box_2_0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_2_0.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_2_0.Location = new System.Drawing.Point(444, 426);
             this.pb_Box_2_0.Name = "pb_Box_2_0";
@@ -218,6 +225,7 @@
             // 
             // pb_Box_1_0
             // 
+            this.pb_Box_1_0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_1_0.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_1_0.Location = new System.Drawing.Point(444, 281);
             this.pb_Box_1_0.Name = "pb_Box_1_0";
@@ -230,6 +238,7 @@
             // 
             // pb_Box_0_0
             // 
+            this.pb_Box_0_0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_Box_0_0.Image = global::Tic_Tac_Toe.Properties.Resources.question_mark_96;
             this.pb_Box_0_0.Location = new System.Drawing.Point(444, 136);
             this.pb_Box_0_0.Name = "pb_Box_0_0";
