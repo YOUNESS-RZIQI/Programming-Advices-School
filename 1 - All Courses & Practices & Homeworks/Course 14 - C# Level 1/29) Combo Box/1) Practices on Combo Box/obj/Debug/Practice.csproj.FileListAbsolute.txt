@@ -1,0 +1,10 @@
+C:\Users\rziki\source\repos\Practice\bin\Debug\Practice.exe.config
+C:\Users\rziki\source\repos\Practice\bin\Debug\Practice.exe
+C:\Users\rziki\source\repos\Practice\bin\Debug\Practice.pdb
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.csproj.AssemblyReference.cache
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.frm_Main.resources
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.Properties.Resources.resources
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.csproj.GenerateResource.cache
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.csproj.CoreCompileInputs.cache
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.exe
+C:\Users\rziki\source\repos\Practice\obj\Debug\Practice.pdb
